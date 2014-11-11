@@ -42,16 +42,16 @@ _Shariff.prototype = {
         orientation: 'horizontal',
 
         // build URI from rel="canonical" or document.location
-        uri: function() {
-            var uri = global.document.location.href;
+        url: function() {
+            var url = global.document.location.href;
             var canonical = $('link[rel=canonical]').attr('href');
             if (canonical && canonical.length > 0) {
                 if (canonical.indexOf('http') < 0) {
                     canonical = global.document.location.protocol + '//' + global.document.location.host + canonical;
                 }
-                uri = canonical;
+                url = canonical;
             }
-            return uri;
+            return url;
         }
     },
 
@@ -65,14 +65,14 @@ _Shariff.prototype = {
         return metaContent || '';
     },
 
-    getURI: function() {
-        var uri = this.options.uri;
-        return ( typeof uri === 'function' ) ? uri() : uri;
+    getURL: function() {
+        var url = this.options.url;
+        return ( typeof url === 'function' ) ? url() : url;
     },
 
     // returns shareCounts of document
     getShares: function() {
-        return $.getJSON(this.options.backendUrl + '?url=' + encodeURIComponent(this.getURI()));
+        return $.getJSON(this.options.backendUrl + '?url=' + encodeURIComponent(this.getURL()));
     },
 
     // add value of shares for each service
