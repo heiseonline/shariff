@@ -1,21 +1,8 @@
 # Shariff
 
-## Getting Started 
+## Getting Started
 
-After downloading Shariff install its dependencies by running `npm install`.
-
-```sh
-$ git clone https://github.com/heise/shariff.git
-$ cd shariff
-$ npm install
-$ grunt demo
-```
-
-If you have [Grunt](http://gruntjs.com/) you can run `grunt demo` to run a local web server displaying buttons in several configurations. This demo page uses `shariff-backend-node` to request and display share counts.
-
-## Usage
-
-Simply include `build/shariff.min.css` and `build/shariff.min.js` into your page. After doing that, insert one or more `<div class="shariff">` elements containing data attributes described below.
+Download the latest release of Shariff and include `shariff.min.css` and `shariff.min.js` into your page. After doing that, insert one or more `<div class="shariff">` elements containing data attributes described below.
 
 ```html
 <!DOCTYPE html>
@@ -39,6 +26,40 @@ Simply include `build/shariff.min.css` and `build/shariff.min.js` into your page
 </html>
 ```
 
+## Getting Started using `npm`
+
+Alternatively you can use Shariff's node package by installing it via `npm`:
+
+```sh
+$ cd my-project
+$ npm install shariff --save
+```
+
+Edit your JS main script, include Shariff and initialize it in one or more containers:
+
+```js
+// my-app.js
+var Shariff = require('shariff');
+var $ = require('jquery');
+var buttonsContainer = $('.some-selector');
+new Shariff(buttonsContainer, {
+    orientation: 'vertical'
+});
+```
+
+## Running demo site
+
+After downloading Shariff install its dependencies by running `npm install`.
+
+```sh
+$ git clone https://github.com/heise/shariff.git
+$ cd shariff
+$ npm install
+$ grunt build
+```
+
+Make sure you installed the [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli). Run `grunt demo` to start a local web server displaying buttons in several configurations. This demo page uses [`shariff-backend-node`](https://github.com/heiseonline/shariff-backend-node) to request and display share counts.
+
 ## Options (data attributes)
 
 | Attribute        | Description |
@@ -52,8 +73,8 @@ Simply include `build/shariff.min.css` and `build/shariff.min.js` into your page
 
 In order to display share counts with Shariff, you need one of the following backends:
 
-* shariff-backend-node
-* shariff-backend-perl
-* shariff-backend-php
+* [shariff-backend-node](http://github.com/heise/shariff-backend-node)
+* [shariff-backend-perl](http://github.com/heise/shariff-backend-perl)
+* [shariff-backend-php](http://github.com/heise/shariff-backend-php)
 
 Once you have one of these backends up and running, put its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, `data-backend-url` should be `/my-shariff-backend/`. The script will do the rest. 
