@@ -64,10 +64,10 @@ Make sure you installed the [Grunt CLI](http://gruntjs.com/getting-started#insta
 
 | Attribute        | Description |
 |------------------|-------------|
-| data-backend-url | The path to your Shariff backend, see below. Settings the value to `null` disables the backend feature. No counts will occur. Default: `null`    |
-| data-orientation | `vertical` will stack the buttons vertically. Default: `horizontal`  |
-| data-theme       | We have two color schemes, `standard` or `grey`. Deafult: `standard` |
-| data-url         | The canonical URL of the page to check. Default: page's canonical URL or current URL |
+| `data-backend-url` | The path to your Shariff backend, see below. Settings the value to `null` disables the backend feature. No counts will occur. Default: `null`    |
+| `data-orientation` | `vertical` will stack the buttons vertically. Default: `horizontal`  |
+| `data-theme`       | We have two color schemes, `standard` or `grey`. Deafult: `standard` |
+| `data-url`         | The canonical URL of the page to check. Default: page's canonical URL or current URL |
 
 ## Backends
 
