@@ -12,7 +12,7 @@ var $ = require('jquery'),
     ]
 ;
 
-// Constructor, hier Elemente initialisieren, DOM-Baum aufbauen etc.
+// xonstructor, hier Elemente initialisieren, DOM-Baum aufbauen etc.
 var _Shariff = function(element, options) {
     var self = this;
 
@@ -30,13 +30,15 @@ var _Shariff = function(element, options) {
 
     this._addButtonList();
 
-    this.getShares().then( $.proxy( this._updateCounts, this ) );
+    if (this.options.backendUrl !== null) {
+        this.getShares().then( $.proxy( this._updateCounts, this ) );
+    }
 };
 
 _Shariff.prototype = {
     defaults: {
         theme      : 'color',
-        backendUrl : '/shariff/',
+        backendUrl : null,
         orientation: 'horizontal',
 
         // build URI from rel="canonical" or document.location
