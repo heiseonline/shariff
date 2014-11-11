@@ -1,4 +1,3 @@
-build/
 demo/*.js
 demo/*.css
 demo/fontawesome-*

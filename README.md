@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Download the latest release of Shariff and include `shariff.min.css` and `shariff.min.js` into your page. After doing that, insert one or more `<div class="shariff">` elements containing data attributes described below.
+Download the latest release of Shariff and include `build/shariff.min.css` and `build/shariff.min.js` into your page. After doing that, insert one or more `<div class="shariff">` elements containing data attributes described below.
 
 ```html
 <!DOCTYPE html>
