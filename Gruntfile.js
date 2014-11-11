@@ -1,7 +1,5 @@
 'use strict';
 
-// TODO Demo: Node-Backend verwenden
-
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -164,16 +162,3 @@ module.exports = function(grunt) {
     grunt.registerTask('demo', ['copy:demo', 'less:demo', 'browserify:demo', 'hapi', 'configureProxies:demo', 'connect']);
     grunt.registerTask('default', ['test', 'browserify:dev']);
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
