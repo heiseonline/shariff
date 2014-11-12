@@ -27,6 +27,10 @@
     {
       "name": "Erich Kramer",
       "email": "km@heise.de"
+    },
+    {
+      "name": "Deniz Sesli",
+      "email": "dzs@heise.de"
     }
   ],
   "dependencies": {
