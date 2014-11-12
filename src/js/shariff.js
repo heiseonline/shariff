@@ -36,6 +36,9 @@ var _Shariff = function(element, options) {
 };
 
 _Shariff.prototype = {
+
+    // Defaults may be over either by passing "options" to constructor method
+    // or by setting data attributes.
     defaults: {
         theme      : 'color',
 
