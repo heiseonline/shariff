@@ -104,12 +104,15 @@
                 background-color: #eda79d;
             }
         }
-        &.per_email {
+        &.send_by_email {
             a {
-                background: #999 url('email-button.svg') no-repeat 3px -4px;
-                background-size: 28px 28px;
+                background-color: #999;
                 &:hover {
                     background-color: #a8a8a8;
+                }
+                &::before {
+                    content:"\f0e0";
+                    font-size: 18px;
                 }
             }
         }
@@ -145,7 +148,7 @@
     }
     // ------------------------- colourless design
     &.theme-grey {
-        .twitter, .facebook, .gplus, .per_email {
+        .twitter, .facebook, .gplus, .send_by_email {
             a {
                 background-color: #b0b0b0;
             }
@@ -163,7 +166,7 @@
         .gplus a:hover {
             background-color: #d34836;
         }
-        .per_email a:hover {
+        .send_by_email a:hover {
             background-color: #999;
         }
     }

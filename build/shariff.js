@@ -9262,7 +9262,7 @@ module.exports = function(ssp) {
     return {
         popup: false,
         shareText: 'mail',
-        name: 'per_email',
+        name: 'send_by_email',
         shareUrl: ssp.getURL() + '?view=mail'
     };
 };
