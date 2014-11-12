@@ -4,10 +4,6 @@ var $ = require('jquery');
 
 module.exports = function(shariff) {
 
-    var config = {
-        handle: 'heiseonline'
-    };
-
     // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
     var abbreviateText = function(text, length) {
         var abbreviated = decodeURIComponent(text);
@@ -40,6 +36,6 @@ module.exports = function(shariff) {
         popup: true,
         shareText: 'tweet',
         name: 'twitter',
-        shareUrl: 'https://twitter.com/intent/tweet?text='+ getTweetText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack() + '&via=' + config.handle
+        shareUrl: 'https://twitter.com/intent/tweet?text='+ getTweetText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack()
     };
 };
