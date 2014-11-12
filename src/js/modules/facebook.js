@@ -6,12 +6,12 @@ module.exports = function(ssp) {
         referrerTrack: ''
     };
 
-    var fbEncUri = encodeURIComponent(ssp.getURI());
+    var fbEncUrl = encodeURIComponent(ssp.getURL());
 
     return {
         popup: true,
         shareText: 'teilen',
         name: 'facebook',
-        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + fbEncUri + config.referrerTrack
+        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + fbEncUrl + config.referrerTrack
     };
 };

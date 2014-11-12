@@ -41,6 +41,6 @@ module.exports = function(ssp) {
         popup: true,
         shareText: 'tweet',
         name: 'twitter',
-        shareUrl: 'https://twitter.com/intent/tweet?text=' + getTweetText() + '&url=' + ssp.getURI() + config.referrerTrack + '&via=' + config.handle
+        shareUrl: 'https://twitter.com/intent/tweet?text=' + getTweetText() + '&url=' + ssp.getURL() + config.referrerTrack + '&via=' + config.handle
     };
 };

@@ -9,6 +9,6 @@ module.exports = function(ssp) {
         popup: false,
         shareText: 'mail',
         name: 'per_email',
-        shareUrl: ssp.getURI() + '?view=mail'
+        shareUrl: ssp.getURL() + '?view=mail'
     };
 };
