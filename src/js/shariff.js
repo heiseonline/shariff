@@ -79,6 +79,9 @@ _Shariff.prototype = {
     _updateCounts: function(data) {
         var self = this;
         $.each(data, function(key, value) {
+            if(value >= 1000) {
+                value = Math.round(value / 1000) + 'k';
+            }
             $(self.element).find('.' + key + ' a').append('<span class="share_count">' + value);
         });
     },
