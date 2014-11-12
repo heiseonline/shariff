@@ -52,7 +52,7 @@ new Shariff(buttonsContainer, {
 After downloading Shariff install its dependencies by running `npm install`.
 
 ```sh
-$ git clone https://github.com/heise/shariff.git
+$ git clone https://github.com/heiseonline/shariff.git
 $ cd shariff
 $ npm install
 $ grunt build
@@ -73,8 +73,8 @@ Make sure you installed the [Grunt CLI](http://gruntjs.com/getting-started#insta
 
 In order to display share counts with Shariff, you need one of the following backends:
 
-* [shariff-backend-node](http://github.com/heise/shariff-backend-node)
-* [shariff-backend-perl](http://github.com/heise/shariff-backend-perl)
-* [shariff-backend-php](http://github.com/heise/shariff-backend-php)
+* [shariff-backend-node](http://github.com/heiseonline/shariff-backend-node)
+* [shariff-backend-perl](http://github.com/heiseonline/shariff-backend-perl)
+* [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
 
 Once you have one of these backends up and running, put its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, `data-backend-url` should be `/my-shariff-backend/`. The script will do the rest. 
