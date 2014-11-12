@@ -41,7 +41,7 @@
     "grunt-hapi": "^0.8.1",
     "grunt-http-server": "^1.0.0",
     "jquery": "^2.1.1",
-    "shariff-backend-node": "^0.1.2"
+    "shariff-backend-node": "^1.0.0"
   },
   "homepage": "http://www.heise.de/",
   "devDependencies": {
