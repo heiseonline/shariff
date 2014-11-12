@@ -41,6 +41,17 @@ module.exports = function(grunt) {
                 src: 'src/js/shariff.js',
                 dest: 'build/shariff.min.js'
             },
+            dev_demo: {
+                options: {
+                    browserifyOptions: {
+                        debug: true
+                    },
+                    keepAlive: true,
+                    watch: true
+                },
+                src: 'src/js/shariff.js',
+                dest: 'demo/app.min.js'
+            },
             demo: {
                 options: {
                     transform: [ ['uglifyify', { global: true } ] ]
