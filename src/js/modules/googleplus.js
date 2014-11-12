@@ -9,7 +9,7 @@ module.exports = function(ssp) {
     return {
         popup: true,
         shareText: '+1',
-        name: 'gplus',
+        name: 'googleplus',
         shareUrl: 'https://plus.google.com/share?url=' + ssp.getURL() + config.referrerTrack
     };
 };

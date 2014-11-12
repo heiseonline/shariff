@@ -6,7 +6,7 @@ var $ = require('jquery'),
     services = [
         require('./modules/twitter'),
         require('./modules/facebook'),
-        require('./modules/gplus'),
+        require('./modules/googleplus'),
         require('./modules/mail'),
         require('./modules/info')
     ]
