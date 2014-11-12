@@ -152,7 +152,9 @@ module.exports = function(grunt) {
             options: {
                 tagName: 'v<%= version %>',
                 github: {
-                   repo: 'heiseonline/shariff'
+                   repo: 'heiseonline/shariff',
+                   usernameVar: 'GITHUB_USERNAME',
+                   passwordVar: 'GITHUB_PASSWORD'
                 }
             }
         }
