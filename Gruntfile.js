@@ -14,10 +14,7 @@ module.exports = function(grunt) {
 
         browserify: {
             options: {
-                postBundleCB: function(err, src, next) {
-                    if (err) return console.log(err);
-                    next(err, grunt.template.process('<%= meta.banner %>')+src);
-                }
+                banner: '<%= meta.banner %>'
             },
             dev: {
                 options: {
@@ -30,17 +27,6 @@ module.exports = function(grunt) {
                 src: 'src/js/shariff.js',
                 dest: 'build/shariff.js'
             },
-            dist: {
-                src: 'src/js/shariff.js',
-                dest: 'build/shariff.js'
-            },
-            dist_min: {
-                options: {
-                    transform: [ ['uglifyify', { global: true } ] ]
-                },
-                src: 'src/js/shariff.js',
-                dest: 'build/shariff.min.js'
-            },
             dev_demo: {
                 options: {
                     browserifyOptions: {
@@ -51,6 +37,17 @@ module.exports = function(grunt) {
                 },
                 src: 'src/js/shariff.js',
                 dest: 'demo/app.min.js'
+            },
+            dist: {
+                src: 'src/js/shariff.js',
+                dest: 'build/shariff.js'
+            },
+            dist_min: {
+                options: {
+                    transform: [ ['uglifyify', { global: true } ] ]
+                },
+                src: 'src/js/shariff.js',
+                dest: 'build/shariff.min.js'
             },
             demo: {
                 options: {
