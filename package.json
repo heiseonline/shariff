@@ -2,14 +2,14 @@
   "name": "shariff",
   "version": "0.2.7",
   "description": "",
-  "main": "socialshareprivacy.js",
+  "main": "src/js/shariff.js",
   "scripts": {
     "test": "grunt test",
-    "buyild": "grunt build"
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heiseonline/shariff.git"
+    "url": "https://github.com/heiseonline/shariff"
   },
   "author": {
     "name": "Ines Pauer",
@@ -43,7 +43,7 @@
     "jquery": "^2.1.1",
     "shariff-backend-node": "^1.0.0"
   },
-  "homepage": "http://www.heise.de/",
+  "homepage": "https://github.com/heiseonline/shariff",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.0.1",
@@ -54,7 +54,8 @@
   },
   "keywords": [
     "heise",
-    "social buttons"
+    "social buttons",
+    "shariff"
   ],
   "license": "MIT <http://www.opensource.org/licenses/mit-license.php>"
 }
