@@ -1,10 +1,11 @@
 
 /*
- * shariff - v0.2.9 - 12.11.2014
+ * shariff - v0.2.12 - 12.11.2014
  * https://github.com/heiseonline/shariff
  * Copyright (c) 2014 Ines Pauer, Philipp Busse, Sebastian Hilbig, Erich Kramer, Deniz Sesli
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php> license
  */
+
 
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*!
@@ -9229,7 +9230,7 @@ module.exports = function(ssp) {
     return {
         popup: true,
         shareText: '+1',
-        name: 'gplus',
+        name: 'googleplus',
         shareUrl: 'https://plus.google.com/share?url=' + ssp.getURL() + config.referrerTrack
     };
 };
@@ -9325,7 +9326,7 @@ var $ = require('jquery'),
     services = [
         require('./modules/twitter'),
         require('./modules/facebook'),
-        require('./modules/gplus'),
+        require('./modules/googleplus'),
         require('./modules/mail'),
         require('./modules/info')
     ]
@@ -9357,8 +9358,15 @@ var _Shariff = function(element, options) {
 _Shariff.prototype = {
     defaults: {
         theme      : 'color',
+
+        // URL to backend that requests social counts. null means "disabled"
         backendUrl : null,
+
+        // horizontal/vertical
         orientation: 'horizontal',
+
+        // services to be enabled
+        services   : ['twitter', 'facebook', 'googleplus', 'mail', 'info'],
 
         // build URI from rel="canonical" or document.location
         url: function() {
@@ -9407,6 +9415,8 @@ _Shariff.prototype = {
 
     // add html for button-container
     _addButtonList: function() {
+        var self = this;
+
         var $buttonListHtml = '<ul class="social_share_area clearfix"></ul>';
         var $socialshareElement = this.$socialshareElement();
         $socialshareElement.prepend($buttonListHtml);
@@ -9416,8 +9426,18 @@ _Shariff.prototype = {
         $buttonList.addClass("theme-" + this.options.theme);
         $buttonList.addClass("orientation-" + this.options.orientation);
 
+        var enabled = function(service) {
+            var isEnabled = false;
+            self.options.services.forEach(function(enabledService) {
+                if (service.name === enabledService) {
+                    isEnabled = true;
+                }
+            });
+            return isEnabled;
+        };
+
         // add html for service-links
-        this.services.forEach(function(service) {
+        this.services.filter(enabled).forEach(function(service) {
             var $li = $('<li class="button">').addClass(service.name);
             var $shareText = '<span class="share_text">' + service.shareText;
 
@@ -9459,7 +9479,7 @@ module.exports = _Shariff;
 // Folgendes initialisiert automatisch die Buttons in dem/den DOM-Elementen.
 // Dieser Code wird spaeter auch in ein eigenes npm-Modul ausgelagert.
 
-// socialshareprivacy()-Aufruf verfuegbar machen
+// shariff()-Aufruf verfuegbar machen
 $.fn.shariff = function(options) {
     return this.each(function() {
         this.shariff = new _Shariff(this, options);
@@ -9472,4 +9492,4 @@ $('.shariff').shariff({
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./modules/facebook":2,"./modules/gplus":3,"./modules/info":4,"./modules/mail":5,"./modules/twitter":6,"jquery":1}]},{},[7]);
+},{"./modules/facebook":2,"./modules/googleplus":3,"./modules/info":4,"./modules/mail":5,"./modules/twitter":6,"jquery":1}]},{},[7]);

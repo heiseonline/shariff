@@ -38,8 +38,15 @@ var _Shariff = function(element, options) {
 _Shariff.prototype = {
     defaults: {
         theme      : 'color',
+
+        // URL to backend that requests social counts. null means "disabled"
         backendUrl : null,
+
+        // horizontal/vertical
         orientation: 'horizontal',
+
+        // services to be enabled
+        services   : ['twitter', 'facebook', 'googleplus', 'mail', 'info'],
 
         // build URI from rel="canonical" or document.location
         url: function() {
@@ -88,6 +95,8 @@ _Shariff.prototype = {
 
     // add html for button-container
     _addButtonList: function() {
+        var self = this;
+
         var $buttonListHtml = '<ul class="social_share_area clearfix"></ul>';
         var $socialshareElement = this.$socialshareElement();
         $socialshareElement.prepend($buttonListHtml);
@@ -97,8 +106,18 @@ _Shariff.prototype = {
         $buttonList.addClass("theme-" + this.options.theme);
         $buttonList.addClass("orientation-" + this.options.orientation);
 
+        var enabled = function(service) {
+            var isEnabled = false;
+            self.options.services.forEach(function(enabledService) {
+                if (service.name === enabledService) {
+                    isEnabled = true;
+                }
+            });
+            return isEnabled;
+        };
+
         // add html for service-links
-        this.services.forEach(function(service) {
+        this.services.filter(enabled).forEach(function(service) {
             var $li = $('<li class="button">').addClass(service.name);
             var $shareText = '<span class="share_text">' + service.shareText;
 
@@ -140,7 +159,7 @@ module.exports = _Shariff;
 // Folgendes initialisiert automatisch die Buttons in dem/den DOM-Elementen.
 // Dieser Code wird spaeter auch in ein eigenes npm-Modul ausgelagert.
 
-// socialshareprivacy()-Aufruf verfuegbar machen
+// shariff()-Aufruf verfuegbar machen
 $.fn.shariff = function(options) {
     return this.each(function() {
         this.shariff = new _Shariff(this, options);
