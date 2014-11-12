@@ -1,32 +1,25 @@
 'use strict';
 
-var $ = require('jquery'),
-    // TODO FIXME: Weg überlegen, wie die Komponenten dynamisch durch ein
-    // Download-Tool hinzugefuegt werden koennen
-    services = [
-        require('./modules/twitter'),
-        require('./modules/facebook'),
-        require('./modules/googleplus'),
-        require('./modules/mail'),
-        require('./modules/info')
-    ]
-;
+var $ = require('jquery');
 
-// xonstructor, hier Elemente initialisieren, DOM-Baum aufbauen etc.
 var _Shariff = function(element, options) {
     var self = this;
 
-    // Das Element, in dem die Buttons initialisiert werden sollen:
+    // the DOM element that will contain the buttons
     this.element = element;
 
-    // Optionen ergeben sich aus den Defaults, den uebergebenen "options"
-    // und den data-Attributen des DOM-Elements.
     this.options = $.extend({}, this.defaults, options, $(element).data());
 
-    // Services initialisieren
-    this.services = $.map(services, function(service) {
+    // initialize available services
+    this.services = $.map([
+        require('./services/facebook'),
+        require('./services/googleplus'),
+        require('./services/info'),
+        require('./services/mail'),
+        require('./services/twitter')
+    ], function(service) {
         return service(self);
-    });
+    })
 
     this._addButtonList();
 
@@ -47,6 +40,10 @@ _Shariff.prototype = {
 
         // horizontal/vertical
         orientation: 'horizontal',
+
+
+        // a string to suffix current URL
+        referrerTrack: 'TEST',
 
         // services to be enabled
         services   : ['twitter', 'facebook', 'googleplus', 'mail', 'info'],
@@ -78,6 +75,11 @@ _Shariff.prototype = {
     getURL: function() {
         var url = this.options.url;
         return ( typeof url === 'function' ) ? url() : url;
+    },
+
+    getReferrerTrack: function() {
+        console.log(this.options.referrerTrack);
+        return this.options.referrerTrack || '';
     },
 
     // returns shareCounts of document
@@ -159,17 +161,12 @@ _Shariff.prototype = {
 
 module.exports = _Shariff;
 
-// Folgendes initialisiert automatisch die Buttons in dem/den DOM-Elementen.
-// Dieser Code wird spaeter auch in ein eigenes npm-Modul ausgelagert.
-
-// shariff()-Aufruf verfuegbar machen
+// the code may be invoked as a jquery plugin
 $.fn.shariff = function(options) {
     return this.each(function() {
         this.shariff = new _Shariff(this, options);
     });
 };
 
-// ... und automatisch entsprechende Elemente initialisieren.
-$('.shariff').shariff({
-    debug: typeof DEBUG !== 'undefined'
-});
+// initialize .shariff elements
+$('.shariff').shariff();

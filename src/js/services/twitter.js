@@ -2,11 +2,10 @@
 
 var $ = require('jquery');
 
-module.exports = function(ssp) {
+module.exports = function(shariff) {
 
     var config = {
-        handle: 'heiseonline',
-        referrerTrack: ''
+        handle: 'heiseonline'
     };
 
     // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
@@ -25,8 +24,8 @@ module.exports = function(ssp) {
     // create tweet text from content of <meta name="DC.title"> and <meta name="DC.creator">
     // fallback to content of <title> tag
     var getTweetText = function() {
-        var title = ssp.getMeta('DC.title');
-        var creator = ssp.getMeta('DC.creator');
+        var title = shariff.getMeta('DC.title');
+        var creator = shariff.getMeta('DC.creator');
 
         if (title.length > 0 && creator.length > 0) {
             title += ' - ' + creator;
@@ -41,6 +40,6 @@ module.exports = function(ssp) {
         popup: true,
         shareText: 'tweet',
         name: 'twitter',
-        shareUrl: 'https://twitter.com/intent/tweet?text=' + getTweetText() + '&url=' + ssp.getURL() + config.referrerTrack + '&via=' + config.handle
+        shareUrl: 'https://twitter.com/intent/tweet?text='+ getTweetText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack() + '&via=' + config.handle
     };
 };
