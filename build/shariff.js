@@ -1,7 +1,7 @@
 
 /*
- * shariff - v0.2.5 - 12.11.2014
- * http://www.heise.de/
+ * shariff - v0.2.8 - 12.11.2014
+ * https://github.com/heiseonline/shariff
  * Copyright (c) 2014 Ines Pauer, Philipp Busse, Sebastian Hilbig, Erich Kramer, Deniz Sesli
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php> license
  */
@@ -9207,13 +9207,13 @@ module.exports = function(ssp) {
         referrerTrack: ''
     };
 
-    var fbEncUri = encodeURIComponent(ssp.getURI());
+    var fbEncUrl = encodeURIComponent(ssp.getURL());
 
     return {
         popup: true,
         shareText: 'teilen',
         name: 'facebook',
-        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + fbEncUri + config.referrerTrack
+        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + fbEncUrl + config.referrerTrack
     };
 };
 
@@ -9230,7 +9230,7 @@ module.exports = function(ssp) {
         popup: true,
         shareText: '+1',
         name: 'gplus',
-        shareUrl: 'https://plus.google.com/share?url=' + ssp.getURI() + config.referrerTrack
+        shareUrl: 'https://plus.google.com/share?url=' + ssp.getURL() + config.referrerTrack
     };
 };
 
@@ -9263,7 +9263,7 @@ module.exports = function(ssp) {
         popup: false,
         shareText: 'mail',
         name: 'per_email',
-        shareUrl: ssp.getURI() + '?view=mail'
+        shareUrl: ssp.getURL() + '?view=mail'
     };
 };
 
@@ -9311,7 +9311,7 @@ module.exports = function(ssp) {
         popup: true,
         shareText: 'tweet',
         name: 'twitter',
-        shareUrl: 'https://twitter.com/intent/tweet?text=' + getTweetText() + '&url=' + ssp.getURI() + config.referrerTrack + '&via=' + config.handle
+        shareUrl: 'https://twitter.com/intent/tweet?text=' + getTweetText() + '&url=' + ssp.getURL() + config.referrerTrack + '&via=' + config.handle
     };
 };
 
