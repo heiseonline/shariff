@@ -121,7 +121,7 @@ module.exports = function(grunt) {
                     port: 8080,
                     base: 'demo',
                     keepalive: true,
-                    livereload: true,
+                    // livereload: true,
                     open: true,
                     // debug: true,
                     middleware: function (connect, options, middlewares) {
