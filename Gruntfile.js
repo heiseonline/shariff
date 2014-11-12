@@ -146,7 +146,16 @@ module.exports = function(grunt) {
                     }
                 ]
             }
-      },
+        },
+
+        release: {
+            options: {
+                tagName: 'v<%= version %>',
+                github: {
+                   repo: 'heiseonline/shariff'
+                }
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-browserify');
@@ -155,6 +164,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-connect-proxy');
+    grunt.loadNpmTasks('grunt-release');
     grunt.loadNpmTasks('grunt-hapi');
 
     grunt.registerTask('test', ['jshint']);
