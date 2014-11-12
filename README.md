@@ -55,7 +55,7 @@ After downloading Shariff install its dependencies by running `npm install`.
 $ git clone https://github.com/heiseonline/shariff.git
 $ cd shariff
 $ npm install
-$ grunt build
+$ grunt demo 
 ```
 
 Make sure you installed the [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli). Run `grunt demo` to start a local web server displaying buttons in several configurations. This demo page uses [`shariff-backend-node`](https://github.com/heiseonline/shariff-backend-node) to request and display share counts.
