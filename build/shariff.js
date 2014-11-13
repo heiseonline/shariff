@@ -1,6 +1,6 @@
 
 /*
- * shariff - v0.2.14 - 13.11.2014
+ * shariff - v1.0.0 - 13.11.2014
  * https://github.com/heiseonline/shariff
  * Copyright (c) 2014 Ines Pauer, Philipp Busse, Sebastian Hilbig, Erich Kramer, Deniz Sesli
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php> license
@@ -9306,16 +9306,27 @@ var _Shariff = function(element, options) {
 
     this.options = $.extend({}, this.defaults, options, $(element).data());
 
-    // initialize available services
-    this.services = $.map([
+    // available services. /!\ Browserify can't require dynamically by now.
+    var availableServices = [
         require('./services/facebook'),
         require('./services/googleplus'),
         require('./services/twitter'),
         require('./services/mail'),
         require('./services/info')
-    ], function(service) {
-        return service(self);
-    })
+    ];
+
+    // filter available services to those that are enabled and initialize them
+    this.services = this.options.services.map(function(serviceName) {
+        var service;
+        availableServices.forEach(function(availableService) {
+            availableService = availableService(self);
+            if (availableService.name === serviceName) {
+                service = availableService;
+                return;
+            }
+        });
+        return service;
+    });
 
     this._addButtonList();
 
@@ -9342,7 +9353,7 @@ _Shariff.prototype = {
         referrerTrack: null,
 
         // services to be enabled in the following order
-        services   : ['twitter', 'facebook', 'googleplus', 'info'],
+        services   : ['twitter', 'facebook', 'googleplus'],
 
         // build URI from rel="canonical" or document.location
         url: function() {
@@ -9374,7 +9385,6 @@ _Shariff.prototype = {
     },
 
     getReferrerTrack: function() {
-        console.log(this.options.referrerTrack);
         return this.options.referrerTrack || '';
     },
 
@@ -9407,18 +9417,8 @@ _Shariff.prototype = {
         $buttonList.addClass("theme-" + this.options.theme);
         $buttonList.addClass("orientation-" + this.options.orientation);
 
-        var enabled = function(service) {
-            var isEnabled = false;
-            self.options.services.forEach(function(enabledService) {
-                if (service.name === enabledService) {
-                    isEnabled = true;
-                }
-            });
-            return isEnabled;
-        };
-
         // add html for service-links
-        this.services.filter(enabled).forEach(function(service) {
+        this.services.forEach(function(service) {
             var $li = $('<li class="button">').addClass(service.name);
             var $shareText = '<span class="share_text">' + service.shareText;
 
