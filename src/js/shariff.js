@@ -43,7 +43,7 @@ _Shariff.prototype = {
 
 
         // a string to suffix current URL
-        referrerTrack: 'TEST',
+        referrerTrack: null,
 
         // services to be enabled in the following order
         services   : ['twitter', 'facebook', 'googleplus', 'info'],
