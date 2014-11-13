@@ -14,9 +14,9 @@ var _Shariff = function(element, options) {
     this.services = $.map([
         require('./services/facebook'),
         require('./services/googleplus'),
-        require('./services/info'),
+        require('./services/twitter'),
         require('./services/mail'),
-        require('./services/twitter')
+        require('./services/info')
     ], function(service) {
         return service(self);
     })

@@ -1,10 +1,6 @@
 'use strict';
 
-module.exports = function(ssp) {
-
-    var config = {
-    };
-
+module.exports = function(shariff) {
     return {
         popup: false,
         shareText: 'Info',

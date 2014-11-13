@@ -1,14 +1,10 @@
 'use strict';
 
-module.exports = function(ssp) {
-
-    var config = {
-    };
-
+module.exports = function(shariff) {
     return {
         popup: false,
         shareText: 'mail',
         name: 'send_by_email',
-        shareUrl: ssp.getURL() + '?view=mail'
+        shareUrl: shariff.getURL() + '?view=mail'
     };
 };

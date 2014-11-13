@@ -1,6 +1,6 @@
 
 /*
- * shariff - v0.2.12 - 12.11.2014
+ * shariff - v0.2.14 - 13.11.2014
  * https://github.com/heiseonline/shariff
  * Copyright (c) 2014 Ines Pauer, Philipp Busse, Sebastian Hilbig, Erich Kramer, Deniz Sesli
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php> license
@@ -9202,36 +9202,25 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 'use strict';
 
-module.exports = function(ssp) {
-
-    var config = {
-        referrerTrack: ''
-    };
-
-    var fbEncUrl = encodeURIComponent(ssp.getURL());
-
+module.exports = function(shariff) {
+    var fbEncUrl = encodeURIComponent(shariff.getURL());
     return {
         popup: true,
         shareText: 'teilen',
         name: 'facebook',
-        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + fbEncUrl + config.referrerTrack
+        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + fbEncUrl + shariff.getReferrerTrack()
     };
 };
 
 },{}],3:[function(require,module,exports){
 'use strict';
 
-module.exports = function(ssp) {
-
-    var config = {
-        referrerTrack: ''
-    };
-
+module.exports = function(shariff) {
     return {
         popup: true,
         shareText: '+1',
         name: 'googleplus',
-        shareUrl: 'https://plus.google.com/share?url=' + ssp.getURL() + config.referrerTrack
+        shareUrl: 'https://plus.google.com/share?url=' + shariff.getURL() + shariff.getReferrerTrack()
     };
 };
 
@@ -9239,11 +9228,7 @@ module.exports = function(ssp) {
 },{}],4:[function(require,module,exports){
 'use strict';
 
-module.exports = function(ssp) {
-
-    var config = {
-    };
-
+module.exports = function(shariff) {
     return {
         popup: false,
         shareText: 'Info',
@@ -9255,16 +9240,12 @@ module.exports = function(ssp) {
 },{}],5:[function(require,module,exports){
 'use strict';
 
-module.exports = function(ssp) {
-
-    var config = {
-    };
-
+module.exports = function(shariff) {
     return {
         popup: false,
         shareText: 'mail',
         name: 'send_by_email',
-        shareUrl: ssp.getURL() + '?view=mail'
+        shareUrl: shariff.getURL() + '?view=mail'
     };
 };
 
@@ -9273,12 +9254,7 @@ module.exports = function(ssp) {
 
 var $ = require('jquery');
 
-module.exports = function(ssp) {
-
-    var config = {
-        handle: 'heiseonline',
-        referrerTrack: ''
-    };
+module.exports = function(shariff) {
 
     // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
     var abbreviateText = function(text, length) {
@@ -9296,8 +9272,8 @@ module.exports = function(ssp) {
     // create tweet text from content of <meta name="DC.title"> and <meta name="DC.creator">
     // fallback to content of <title> tag
     var getTweetText = function() {
-        var title = ssp.getMeta('DC.title');
-        var creator = ssp.getMeta('DC.creator');
+        var title = shariff.getMeta('DC.title');
+        var creator = shariff.getMeta('DC.creator');
 
         if (title.length > 0 && creator.length > 0) {
             title += ' - ' + creator;
@@ -9312,7 +9288,7 @@ module.exports = function(ssp) {
         popup: true,
         shareText: 'tweet',
         name: 'twitter',
-        shareUrl: 'https://twitter.com/intent/tweet?text=' + getTweetText() + '&url=' + ssp.getURL() + config.referrerTrack + '&via=' + config.handle
+        shareUrl: 'https://twitter.com/intent/tweet?text='+ getTweetText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack()
     };
 };
 
@@ -9320,33 +9296,26 @@ module.exports = function(ssp) {
 (function (global){
 'use strict';
 
-var $ = require('jquery'),
-    // TODO FIXME: Weg überlegen, wie die Komponenten dynamisch durch ein
-    // Download-Tool hinzugefuegt werden koennen
-    services = [
-        require('./modules/twitter'),
-        require('./modules/facebook'),
-        require('./modules/googleplus'),
-        require('./modules/mail'),
-        require('./modules/info')
-    ]
-;
+var $ = require('jquery');
 
-// xonstructor, hier Elemente initialisieren, DOM-Baum aufbauen etc.
 var _Shariff = function(element, options) {
     var self = this;
 
-    // Das Element, in dem die Buttons initialisiert werden sollen:
+    // the DOM element that will contain the buttons
     this.element = element;
 
-    // Optionen ergeben sich aus den Defaults, den uebergebenen "options"
-    // und den data-Attributen des DOM-Elements.
     this.options = $.extend({}, this.defaults, options, $(element).data());
 
-    // Services initialisieren
-    this.services = $.map(services, function(service) {
+    // initialize available services
+    this.services = $.map([
+        require('./services/facebook'),
+        require('./services/googleplus'),
+        require('./services/twitter'),
+        require('./services/mail'),
+        require('./services/info')
+    ], function(service) {
         return service(self);
-    });
+    })
 
     this._addButtonList();
 
@@ -9356,6 +9325,9 @@ var _Shariff = function(element, options) {
 };
 
 _Shariff.prototype = {
+
+    // Defaults may be over either by passing "options" to constructor method
+    // or by setting data attributes.
     defaults: {
         theme      : 'color',
 
@@ -9364,6 +9336,10 @@ _Shariff.prototype = {
 
         // horizontal/vertical
         orientation: 'horizontal',
+
+
+        // a string to suffix current URL
+        referrerTrack: 'TEST',
 
         // services to be enabled
         services   : ['twitter', 'facebook', 'googleplus', 'mail', 'info'],
@@ -9395,6 +9371,11 @@ _Shariff.prototype = {
     getURL: function() {
         var url = this.options.url;
         return ( typeof url === 'function' ) ? url() : url;
+    },
+
+    getReferrerTrack: function() {
+        console.log(this.options.referrerTrack);
+        return this.options.referrerTrack || '';
     },
 
     // returns shareCounts of document
@@ -9476,20 +9457,15 @@ _Shariff.prototype = {
 
 module.exports = _Shariff;
 
-// Folgendes initialisiert automatisch die Buttons in dem/den DOM-Elementen.
-// Dieser Code wird spaeter auch in ein eigenes npm-Modul ausgelagert.
-
-// shariff()-Aufruf verfuegbar machen
+// the code may be invoked as a jquery plugin
 $.fn.shariff = function(options) {
     return this.each(function() {
         this.shariff = new _Shariff(this, options);
     });
 };
 
-// ... und automatisch entsprechende Elemente initialisieren.
-$('.shariff').shariff({
-    debug: typeof DEBUG !== 'undefined'
-});
+// initialize .shariff elements
+$('.shariff').shariff();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./modules/facebook":2,"./modules/googleplus":3,"./modules/info":4,"./modules/mail":5,"./modules/twitter":6,"jquery":1}]},{},[7]);
+},{"./services/facebook":2,"./services/googleplus":3,"./services/info":4,"./services/mail":5,"./services/twitter":6,"jquery":1}]},{},[7]);
