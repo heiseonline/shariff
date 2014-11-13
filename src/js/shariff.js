@@ -10,16 +10,27 @@ var _Shariff = function(element, options) {
 
     this.options = $.extend({}, this.defaults, options, $(element).data());
 
-    // initialize available services
-    this.services = $.map([
+    // available services. /!\ Browserify can't require dynamically by now.
+    var availableServices = [
         require('./services/facebook'),
         require('./services/googleplus'),
         require('./services/twitter'),
         require('./services/mail'),
         require('./services/info')
-    ], function(service) {
-        return service(self);
-    })
+    ];
+
+    // filter available services to those that are enabled and initialize them
+    this.services = this.options.services.map(function(serviceName) {
+        var service;
+        availableServices.forEach(function(availableService) {
+            availableService = availableService(self);
+            if (availableService.name === serviceName) {
+                service = availableService;
+                return;
+            }
+        });
+        return service;
+    });
 
     this._addButtonList();
 
@@ -78,7 +89,6 @@ _Shariff.prototype = {
     },
 
     getReferrerTrack: function() {
-        console.log(this.options.referrerTrack);
         return this.options.referrerTrack || '';
     },
 
@@ -111,18 +121,8 @@ _Shariff.prototype = {
         $buttonList.addClass("theme-" + this.options.theme);
         $buttonList.addClass("orientation-" + this.options.orientation);
 
-        var enabled = function(service) {
-            var isEnabled = false;
-            self.options.services.forEach(function(enabledService) {
-                if (service.name === enabledService) {
-                    isEnabled = true;
-                }
-            });
-            return isEnabled;
-        };
-
         // add html for service-links
-        this.services.filter(enabled).forEach(function(service) {
+        this.services.forEach(function(service) {
             var $li = $('<li class="button">').addClass(service.name);
             var $shareText = '<span class="share_text">' + service.shareText;
 
