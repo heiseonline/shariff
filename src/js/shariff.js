@@ -46,7 +46,7 @@ _Shariff.prototype = {
         referrerTrack: 'TEST',
 
         // services to be enabled in the following order
-        services   : ['twitter', 'facebook', 'googleplus', 'mail', 'info'],
+        services   : ['twitter', 'facebook', 'googleplus', 'info'],
 
         // build URI from rel="canonical" or document.location
         url: function() {
