@@ -4,7 +4,7 @@ module.exports = function(shariff) {
     return {
         popup: false,
         shareText: 'mail',
-        name: 'send_by_email',
+        name: 'mail',
         shareUrl: shariff.getURL() + '?view=mail'
     };
 };
