@@ -9244,7 +9244,7 @@ module.exports = function(shariff) {
     return {
         popup: false,
         shareText: 'mail',
-        name: 'send_by_email',
+        name: 'mail',
         shareUrl: shariff.getURL() + '?view=mail'
     };
 };
@@ -9339,10 +9339,10 @@ _Shariff.prototype = {
 
 
         // a string to suffix current URL
-        referrerTrack: 'TEST',
+        referrerTrack: null,
 
-        // services to be enabled
-        services   : ['twitter', 'facebook', 'googleplus', 'mail', 'info'],
+        // services to be enabled in the following order
+        services   : ['twitter', 'facebook', 'googleplus', 'info'],
 
         // build URI from rel="canonical" or document.location
         url: function() {
