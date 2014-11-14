@@ -81,7 +81,6 @@ _Shariff.prototype = {
     },
 
     getLocalized: function(data, key) {
-        console.log(typeof data[key], data[key], this.options.lang);
         if (typeof data[key] === 'object') {
             return data[key][this.options.lang];
         } else if (typeof data[key] === 'string') {
