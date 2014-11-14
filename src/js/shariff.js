@@ -49,6 +49,9 @@ _Shariff.prototype = {
         // URL to backend that requests social counts. null means "disabled"
         backendUrl : null,
 
+        // localisation: "de" or "en"
+        lang: 'de',
+
         // horizontal/vertical
         orientation: 'horizontal',
 
@@ -75,6 +78,16 @@ _Shariff.prototype = {
 
     $socialshareElement: function() {
         return $(this.element);
+    },
+
+    getLocalized: function(data, key) {
+        console.log(typeof data[key], data[key], this.options.lang);
+        if (typeof data[key] === 'object') {
+            return data[key][this.options.lang];
+        } else if (typeof data[key] === 'string') {
+            return data[key];
+        }
+        return undefined;
     },
 
     // returns content of <meta name="" content=""> tags or '' if empty/non existant
@@ -124,7 +137,7 @@ _Shariff.prototype = {
         // add html for service-links
         this.services.forEach(function(service) {
             var $li = $('<li class="button">').addClass(service.name);
-            var $shareText = '<span class="share_text">' + service.shareText;
+            var $shareText = '<span class="share_text">' + self.getLocalized(service, "shareText");
 
             var $shareLink = $('<a>')
               .attr('href', service.shareUrl)
