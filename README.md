@@ -1,5 +1,7 @@
 # Shariff
 
+![Shariff](shariff-logo.svg)
+
 ## Getting Started
 
 Download the latest release of Shariff and include `build/shariff.min.css` and `build/shariff.min.js` into your page. After doing that, insert one or more `<div class="shariff">` elements containing data attributes described below.
