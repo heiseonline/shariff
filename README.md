@@ -1,6 +1,6 @@
 # Shariff
 
-![Shariff](shariff-logo.svg)
+![Shariff](https://raw.githubusercontent.com/heiseonline/shariff/master/shariff-logo.svg)
 
 ## Getting Started
 
