@@ -1,10 +1,22 @@
 # Shariff
 
+Want your website visitors to share your content? Want to show them how popular your page is on Facebook? Don't like the privacy implications of the official code snippets from Twitter, Facebook, and Google+?
+
+Shariff `(/ˈʃɛɹɪf/)` to the rescue!
+
 ![Shariff](shariff-logo.png)
+
+Shariff is a simple Javascript client library with an optional server-side component to fetch the number of likes, tweets and plus-ones. Share buttons and share counts without a connection between your visitors' browsers and the *networks* (unless they do share, of course).
 
 ## Getting Started
 
-Download the latest release of Shariff and include `build/shariff.min.css` and `build/shariff.min.js` into your page. After doing that, insert one or more `<div class="shariff">` elements containing data attributes described below.
+1. Download the latest release of Shariff and include `build/shariff.min.css` and `build/shariff.min.js` in your page.
+2. Insert one or more `<div class="shariff">` elements.
+3. Customize using data-* attributes.
+
+To enable the counters in the buttons see section [Backends](#backends).
+
+Usage example:
 
 ```html
 <!DOCTYPE html>
