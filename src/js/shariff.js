@@ -130,13 +130,13 @@ _Shariff.prototype = {
 
         var $buttonList = $socialshareElement.find('.social_share_area');
 
-        $buttonList.addClass("theme-" + this.options.theme);
-        $buttonList.addClass("orientation-" + this.options.orientation);
+        $buttonList.addClass('theme-' + this.options.theme);
+        $buttonList.addClass('orientation-' + this.options.orientation);
 
         // add html for service-links
         this.services.forEach(function(service) {
             var $li = $('<li class="button">').addClass(service.name);
-            var $shareText = '<span class="share_text">' + self.getLocalized(service, "shareText");
+            var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
 
             var $shareLink = $('<a>')
               .attr('href', service.shareUrl)
