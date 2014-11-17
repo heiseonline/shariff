@@ -84,7 +84,7 @@ Make sure you installed the [Grunt CLI](http://gruntjs.com/getting-started#insta
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
 | `data-services`   | An entity encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `mail`, `info` | (all enabled) |
 | `data-theme`       | We have two color schemes, `standard` or `grey`. | `standard` |
-| `data-url`         | The canonical URL of the page to check. | page's canonical URL or current URL |
+| `data-url`         | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
 
 ## Backends
 

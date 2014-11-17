@@ -65,13 +65,17 @@ _Shariff.prototype = {
         // build URI from rel="canonical" or document.location
         url: function() {
             var url = global.document.location.href;
-            var canonical = $('link[rel=canonical]').attr('href');
-            if (canonical && canonical.length > 0) {
+            var canonical = $('link[rel=canonical]').attr('href')
+              || this.getMeta('og:url')
+              || '';
+
+            if (canonical.length > 0) {
                 if (canonical.indexOf('http') < 0) {
                     canonical = global.document.location.protocol + '//' + global.document.location.host + canonical;
                 }
                 url = canonical;
             }
+
             return url;
         }
     },
@@ -91,13 +95,13 @@ _Shariff.prototype = {
 
     // returns content of <meta name="" content=""> tags or '' if empty/non existant
     getMeta: function(name) {
-        var metaContent = $('meta[name="' + name + '"]').attr('content');
+        var metaContent = $('meta[name="' + name + '"],[property="' + name + '"]').attr('content');
         return metaContent || '';
     },
 
     getURL: function() {
         var url = this.options.url;
-        return ( typeof url === 'function' ) ? url() : url;
+        return ( typeof url === 'function' ) ? $.proxy(url, this)() : url;
     },
 
     getReferrerTrack: function() {
