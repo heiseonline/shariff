@@ -6,7 +6,7 @@ module.exports = function(shariff) {
         shareText: 'mail',
         name: 'mail',
         title: {
-            'de': 'Per Email versenden',
+            'de': 'Per E-Mail versenden',
             'en': 'Send by email'
         },
         shareUrl: shariff.getURL() + '?view=mail'
