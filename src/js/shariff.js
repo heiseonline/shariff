@@ -145,12 +145,9 @@ _Shariff.prototype = {
               .append($shareText);
 
             if(service.popup) {
-                $shareLink
-                  .attr('rel', 'popup')
-                  .attr('title', self.getLocalized(service, 'title'));
-            } else {
-                $shareLink.attr('title', service.shareText);
+                $shareLink.attr('rel', 'popup');
             }
+            $shareLink.attr('title', self.getLocalized(service, 'title'));
 
             $li.append($shareLink);
 
