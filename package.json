@@ -43,6 +43,9 @@
     "jquery": "^2.1.1",
     "shariff-backend-node": "^1.0.0"
   },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
   "homepage": "https://github.com/heiseonline/shariff",
   "devDependencies": {
     "grunt": "^0.4.5",
