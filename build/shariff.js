@@ -1,6 +1,6 @@
 
 /*
- * shariff - v1.0.0 - 13.11.2014
+ * shariff - v1.2.1 - 18.11.2014
  * https://github.com/heiseonline/shariff
  * Copyright (c) 2014 Ines Pauer, Philipp Busse, Sebastian Hilbig, Erich Kramer, Deniz Sesli
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php> license
@@ -9206,8 +9206,15 @@ module.exports = function(shariff) {
     var fbEncUrl = encodeURIComponent(shariff.getURL());
     return {
         popup: true,
-        shareText: 'teilen',
+        shareText: {
+            'de': 'teilen',
+            'en': 'share'
+        },
         name: 'facebook',
+        title: {
+            'de': 'Bei Facebook teilen',
+            'en': 'Share on Facebook'
+        },
         shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + fbEncUrl + shariff.getReferrerTrack()
     };
 };
@@ -9220,6 +9227,10 @@ module.exports = function(shariff) {
         popup: true,
         shareText: '+1',
         name: 'googleplus',
+        title: {
+            'de': 'Bei Google+ teilen',
+            'en': 'Share on Google+'
+        },
         shareUrl: 'https://plus.google.com/share?url=' + shariff.getURL() + shariff.getReferrerTrack()
     };
 };
@@ -9233,6 +9244,10 @@ module.exports = function(shariff) {
         popup: false,
         shareText: 'Info',
         name: 'info',
+        title: {
+            'de': 'weitere Informationen',
+            'en': 'more information'
+        },
         shareUrl: 'http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html'
     };
 };
@@ -9245,6 +9260,10 @@ module.exports = function(shariff) {
         popup: false,
         shareText: 'mail',
         name: 'mail',
+        title: {
+            'de': 'Per E-Mail versenden',
+            'en': 'Send by email'
+        },
         shareUrl: shariff.getURL() + '?view=mail'
     };
 };
@@ -9288,6 +9307,10 @@ module.exports = function(shariff) {
         popup: true,
         shareText: 'tweet',
         name: 'twitter',
+        title: {
+            'de': 'Bei Twitter teilen',
+            'en': 'Share on Twitter'
+        },
         shareUrl: 'https://twitter.com/intent/tweet?text='+ getTweetText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack()
     };
 };
@@ -9345,6 +9368,9 @@ _Shariff.prototype = {
         // URL to backend that requests social counts. null means "disabled"
         backendUrl : null,
 
+        // localisation: "de" or "en"
+        lang: 'de',
+
         // horizontal/vertical
         orientation: 'horizontal',
 
@@ -9358,13 +9384,15 @@ _Shariff.prototype = {
         // build URI from rel="canonical" or document.location
         url: function() {
             var url = global.document.location.href;
-            var canonical = $('link[rel=canonical]').attr('href');
-            if (canonical && canonical.length > 0) {
+            var canonical = $('link[rel=canonical]').attr('href') || this.getMeta('og:url') || '';
+
+            if (canonical.length > 0) {
                 if (canonical.indexOf('http') < 0) {
                     canonical = global.document.location.protocol + '//' + global.document.location.host + canonical;
                 }
                 url = canonical;
             }
+
             return url;
         }
     },
@@ -9373,15 +9401,24 @@ _Shariff.prototype = {
         return $(this.element);
     },
 
+    getLocalized: function(data, key) {
+        if (typeof data[key] === 'object') {
+            return data[key][this.options.lang];
+        } else if (typeof data[key] === 'string') {
+            return data[key];
+        }
+        return undefined;
+    },
+
     // returns content of <meta name="" content=""> tags or '' if empty/non existant
     getMeta: function(name) {
-        var metaContent = $('meta[name="' + name + '"]').attr('content');
+        var metaContent = $('meta[name="' + name + '"],[property="' + name + '"]').attr('content');
         return metaContent || '';
     },
 
     getURL: function() {
         var url = this.options.url;
-        return ( typeof url === 'function' ) ? url() : url;
+        return ( typeof url === 'function' ) ? $.proxy(url, this)() : url;
     },
 
     getReferrerTrack: function() {
@@ -9408,31 +9445,26 @@ _Shariff.prototype = {
     _addButtonList: function() {
         var self = this;
 
-        var $buttonListHtml = '<ul class="social_share_area clearfix"></ul>';
         var $socialshareElement = this.$socialshareElement();
-        $socialshareElement.prepend($buttonListHtml);
 
-        var $buttonList = $socialshareElement.find('.social_share_area');
+        var themeClass = 'theme-' + this.options.theme;
+        var orientationClass = 'orientation-' + this.options.orientation;
 
-        $buttonList.addClass("theme-" + this.options.theme);
-        $buttonList.addClass("orientation-" + this.options.orientation);
+        var $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass);
 
         // add html for service-links
         this.services.forEach(function(service) {
             var $li = $('<li class="button">').addClass(service.name);
-            var $shareText = '<span class="share_text">' + service.shareText;
+            var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
 
             var $shareLink = $('<a>')
               .attr('href', service.shareUrl)
               .append($shareText);
 
             if(service.popup) {
-                $shareLink
-                  .attr('rel', 'popup')
-                  .attr('title', service.name + '-share-dialog');
-            } else {
-                $shareLink.attr('title', service.shareText);
+                $shareLink.attr('rel', 'popup');
             }
+            $shareLink.attr('title', self.getLocalized(service, 'title'));
 
             $li.append($shareLink);
 
@@ -9452,6 +9484,8 @@ _Shariff.prototype = {
             global.window.open(url, windowName, windowSize);
 
         });
+
+        $socialshareElement.append($buttonList);
     },
 };
 
