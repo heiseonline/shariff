@@ -128,14 +128,12 @@ _Shariff.prototype = {
     _addButtonList: function() {
         var self = this;
 
-        var $buttonListHtml = '<ul class="social_share_area clearfix"></ul>';
         var $socialshareElement = this.$socialshareElement();
-        $socialshareElement.prepend($buttonListHtml);
 
-        var $buttonList = $socialshareElement.find('.social_share_area');
+        var themeClass = 'theme-' + this.options.theme;
+        var orientationClass = 'orientation-' + this.options.orientation;
 
-        $buttonList.addClass('theme-' + this.options.theme);
-        $buttonList.addClass('orientation-' + this.options.orientation);
+        var $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass);
 
         // add html for service-links
         this.services.forEach(function(service) {
@@ -149,7 +147,7 @@ _Shariff.prototype = {
             if(service.popup) {
                 $shareLink
                   .attr('rel', 'popup')
-                  .attr('title', service.name + '-share-dialog');
+                  .attr('title', self.getLocalized(service, 'title'));
             } else {
                 $shareLink.attr('title', service.shareText);
             }
@@ -172,6 +170,8 @@ _Shariff.prototype = {
             global.window.open(url, windowName, windowSize);
 
         });
+
+        $socialshareElement.append($buttonList)
     },
 };
 

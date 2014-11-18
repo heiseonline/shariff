@@ -9,6 +9,10 @@ module.exports = function(shariff) {
             'en': 'share'
         },
         name: 'facebook',
+        title: {
+            'de': 'Bei Facebook teilen',
+            'en': 'Share on Facebook'
+        },
         shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + fbEncUrl + shariff.getReferrerTrack()
     };
 };

@@ -11,25 +11,21 @@
     font-weight: normal;
     font-style: normal;
 }
-.clearfix {
-    &::after {
-        content: ".";
-        display: block;
-        visibility: hidden;
-        height: 0;
-        line-height: 0;
-        clear: both;
+.shariff {
+    ul {
+        padding: 0;
+        margin: 0;
+        :after {
+            content: "";
+            display: table;
+        }
     }
-}
-.social_share_area {
-    padding: 0;
-    margin: 0;
     li {
-        height: 25px;
+        height: 30px;
         display: inline-block;
-        margin-right: 2.5%;
+        margin-right: 14px;
         overflow: hidden;
-        width: 21.2%;
+        width: 120px;
         &:last-child {
             margin-right: 0;
         }
@@ -41,7 +37,7 @@
             padding-left: 34px;
             padding-right: 5px;
             font-size: 12px;
-            line-height: 26px;
+            line-height: 31px;
             text-decoration: none;
         }
         &.button {
@@ -118,7 +114,7 @@
         }
         &.info {
             width: 23px;
-            height: 23px;
+            height: 28px;
             border: 1px solid #ccc;
             a {
                 padding: 0;
@@ -139,16 +135,16 @@
         }
         .share_count {
             padding: 0 8px;
-            height: 23px;
+            height: 28px;
             position: absolute;
             top: 1px;
             right: 1px;
-            line-height: 24px;
+            line-height: 30px;
         }
     }
     // ------------------------- colourless design
-    &.theme-grey {
-        .twitter, .facebook, .googleplus, .send_by_email {
+    .theme-grey {
+        .twitter, .facebook, .googleplus, .mail {
             a {
                 background-color: #b0b0b0;
             }
@@ -171,8 +167,8 @@
         }
     }
     // ------------------------- even less colorful design
-    &.theme-white {
-        .twitter, .facebook, .googleplus, .send_by_email {
+    .theme-white {
+        .button {
             border: 1px solid #ddd;
             a {
                 background-color: #fff;
@@ -194,22 +190,21 @@
         .googleplus a {
             color: #d34836;
         }
-        .send_by_email a {
+        .mail a {
             color: #999;
-            &:hover {
-                background-color: #eee;
-            }
         }
     }
     // ------------------------- vertical alignment
-    &.orientation-vertical {
+    .orientation-vertical {
         li {
             display: block;
             margin: 5px 0;
-            width: 109px;
+            .share_count {
+                width: 22px;
+                text-align: right;
+            }
             &.info {
-                width: 23px;
-                margin-left: 84px;
+                margin-left: 95px;
             }
         }
     }

@@ -36,6 +36,10 @@ module.exports = function(shariff) {
         popup: true,
         shareText: 'tweet',
         name: 'twitter',
+        title: {
+            'de': 'Bei Twitter teilen',
+            'en': 'Share on Twitter'
+        },
         shareUrl: 'https://twitter.com/intent/tweet?text='+ getTweetText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack()
     };
 };
