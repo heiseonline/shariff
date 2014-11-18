@@ -65,9 +65,7 @@ _Shariff.prototype = {
         // build URI from rel="canonical" or document.location
         url: function() {
             var url = global.document.location.href;
-            var canonical = $('link[rel=canonical]').attr('href')
-              || this.getMeta('og:url')
-              || '';
+            var canonical = $('link[rel=canonical]').attr('href') || this.getMeta('og:url') || '';
 
             if (canonical.length > 0) {
                 if (canonical.indexOf('http') < 0) {
@@ -168,7 +166,7 @@ _Shariff.prototype = {
 
         });
 
-        $socialshareElement.append($buttonList)
+        $socialshareElement.append($buttonList);
     },
 };
 
