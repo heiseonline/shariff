@@ -172,12 +172,7 @@ _Shariff.prototype = {
 
 module.exports = _Shariff;
 
-// the code may be invoked as a jquery plugin
-$.fn.shariff = function(options) {
-    return this.each(function() {
-        this.shariff = new _Shariff(this, options);
-    });
-};
-
 // initialize .shariff elements
-$('.shariff').shariff();
+$('.shariff').each(function() {
+    this.shariff = new _Shariff(this);
+});
