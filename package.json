@@ -35,13 +35,7 @@
   ],
   "dependencies": {
     "font-awesome": "^4.2.0",
-    "grunt-connect-proxy": "^0.1.11",
-    "grunt-contrib-connect": "^0.9.0",
-    "grunt-contrib-copy": "^0.7.0",
-    "grunt-hapi": "^0.8.1",
-    "grunt-http-server": "^1.0.0",
-    "jquery": "^2.1.1",
-    "shariff-backend-node": "^1.0.0"
+    "jquery": "^2.1.1"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
@@ -50,10 +44,16 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.0.1",
+    "grunt-connect-proxy": "^0.1.11",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-less": "^0.12.0",
+    "grunt-hapi": "^0.8.1",
+    "grunt-http-server": "^1.0.0",
     "grunt-release": "^0.7.0",
     "http-server": "^0.7.3",
+    "shariff-backend-node": "^1.0.0",
     "uglifyify": "^2.5.0"
   },
   "keywords": [
