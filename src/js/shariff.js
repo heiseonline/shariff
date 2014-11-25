@@ -15,8 +15,7 @@ var _Shariff = function(element, options) {
         require('./services/facebook'),
         require('./services/googleplus'),
         require('./services/twitter'),
-        require('./services/mail'),
-        require('./services/info')
+        require('./services/mail')
     ];
 
     // filter available services to those that are enabled and initialize them
@@ -32,11 +31,15 @@ var _Shariff = function(element, options) {
         return service;
     });
 
+    // service "info" is mandatory
+    this.services.push(require('./services/info')(self));
+
     this._addButtonList();
 
     if (this.options.backendUrl !== null) {
         this.getShares().then( $.proxy( this._updateCounts, this ) );
     }
+
 };
 
 _Shariff.prototype = {
@@ -48,6 +51,9 @@ _Shariff.prototype = {
 
         // URL to backend that requests social counts. null means "disabled"
         backendUrl : null,
+
+        // Link to the "about" page
+        infoUrl: 'http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html',
 
         // localisation: "de" or "en"
         lang: 'de',
@@ -95,6 +101,10 @@ _Shariff.prototype = {
     getMeta: function(name) {
         var metaContent = $('meta[name="' + name + '"],[property="' + name + '"]').attr('content');
         return metaContent || '';
+    },
+
+    getInfoUrl: function() {
+        return this.options.infoUrl;
     },
 
     getURL: function() {
