@@ -15,7 +15,8 @@ var _Shariff = function(element, options) {
         require('./services/facebook'),
         require('./services/googleplus'),
         require('./services/twitter'),
-        require('./services/mail')
+        require('./services/mail'),
+        require('./services/info')
     ];
 
     // filter available services to those that are enabled and initialize them
@@ -30,9 +31,6 @@ var _Shariff = function(element, options) {
         });
         return service;
     });
-
-    // service "info" is mandatory
-    this.services.push(require('./services/info')(self));
 
     this._addButtonList();
 
@@ -66,7 +64,7 @@ _Shariff.prototype = {
         referrerTrack: null,
 
         // services to be enabled in the following order
-        services   : ['twitter', 'facebook', 'googleplus'],
+        services   : ['twitter', 'facebook', 'googleplus', 'info'],
 
         // build URI from rel="canonical" or document.location
         url: function() {
