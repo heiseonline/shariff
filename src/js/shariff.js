@@ -19,13 +19,13 @@ var _Shariff = function(element, options) {
     ];
 
     // filter available services to those that are enabled and initialize them
-    this.services = this.options.services.map(function(serviceName) {
+    this.services = $.map(this.options.services, function(serviceName) {
         var service;
         availableServices.forEach(function(availableService) {
             availableService = availableService(self);
             if (availableService.name === serviceName) {
                 service = availableService;
-                return;
+                return null;
             }
         });
         return service;
@@ -152,7 +152,7 @@ _Shariff.prototype = {
               .attr('href', service.shareUrl)
               .append($shareText);
 
-            if(service.popup) {
+            if (service.popup) {
                 $shareLink.attr('rel', 'popup');
             }
             $shareLink.attr('title', self.getLocalized(service, 'title'));
