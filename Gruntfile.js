@@ -126,7 +126,8 @@ module.exports = function(grunt) {
         connect: {
             demo: {
                 options: {
-                    hostname: 'localhost',
+                    hostname: '0.0.0.0',
+                    // hostname: 'localhost',
                     port: 8080,
                     base: 'demo',
                     keepalive: true,
