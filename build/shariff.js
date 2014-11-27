@@ -1,6 +1,6 @@
 
 /*
- * shariff - v1.3.2 - 25.11.2014
+ * shariff - v1.4.0 - 27.11.2014
  * https://github.com/heiseonline/shariff
  * Copyright (c) 2014 Ines Pauer, Philipp Busse, Sebastian Hilbig, Erich Kramer, Deniz Sesli
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php> license
@@ -10392,35 +10392,6 @@ module.exports = function(shariff) {
 var $ = require('jquery');
 
 module.exports = function(shariff) {
-
-    // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
-    var abbreviateText = function(text, length) {
-        var abbreviated = decodeURIComponent(text);
-        if (abbreviated.length <= length) {
-            return text;
-        }
-
-        var lastWhitespaceIndex = abbreviated.substring(0, length - 1).lastIndexOf(' ');
-        abbreviated = encodeURIComponent(abbreviated.substring(0, lastWhitespaceIndex)) + '\u2026';
-
-        return abbreviated;
-    };
-
-    // create tweet text from content of <meta name="DC.title"> and <meta name="DC.creator">
-    // fallback to content of <title> tag
-    var getTweetText = function() {
-        var title = shariff.getMeta('DC.title');
-        var creator = shariff.getMeta('DC.creator');
-
-        if (title.length > 0 && creator.length > 0) {
-            title += ' - ' + creator;
-        } else {
-            title = $('title').text();
-        }
-        // 120 is the max character count left after twitters automatic url shortening with t.co
-        return encodeURIComponent( abbreviateText(title, 120) );
-    };
-
     return {
         popup: true,
         shareText: 'tweet',
@@ -10429,11 +10400,27 @@ module.exports = function(shariff) {
             'de': 'Bei Twitter teilen',
             'en': 'Share on Twitter'
         },
-        shareUrl: 'https://twitter.com/intent/tweet?text='+ getTweetText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack()
+        shareUrl: 'https://twitter.com/intent/tweet?text='+ shariff.getShareText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack()
     };
 };
 
 },{"jquery":1}],7:[function(require,module,exports){
+'use strict';
+
+module.exports = function(shariff) {
+    return {
+        popup: false,
+        shareText: 'WhatsApp',
+        name: 'whatsapp',
+        title: {
+            'de': 'Bei Whatsapp teilen',
+            'en': 'Share on Whatsapp'
+        },
+        shareUrl: 'whatsapp://send?text=' + shariff.getShareText() + '%20' + shariff.getURL() + shariff.getReferrerTrack()
+    };
+};
+
+},{}],8:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -10452,6 +10439,7 @@ var _Shariff = function(element, options) {
         require('./services/facebook'),
         require('./services/googleplus'),
         require('./services/twitter'),
+        require('./services/whatsapp'),
         require('./services/mail'),
         require('./services/info')
     ];
@@ -10613,6 +10601,34 @@ _Shariff.prototype = {
 
         $socialshareElement.append($buttonList);
     },
+
+    // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
+    abbreviateText: function(text, length) {
+        var abbreviated = decodeURIComponent(text);
+        if (abbreviated.length <= length) {
+            return text;
+        }
+
+        var lastWhitespaceIndex = abbreviated.substring(0, length - 1).lastIndexOf(' ');
+        abbreviated = encodeURIComponent(abbreviated.substring(0, lastWhitespaceIndex)) + '\u2026';
+
+        return abbreviated;
+    },
+
+    // create tweet text from content of <meta name="DC.title"> and <meta name="DC.creator">
+    // fallback to content of <title> tag
+    getShareText: function() {
+        var title = this.getMeta('DC.title');
+        var creator = this.getMeta('DC.creator');
+
+        if (title.length > 0 && creator.length > 0) {
+            title += ' - ' + creator;
+        } else {
+            title = $('title').text();
+        }
+        // 120 is the max character count left after twitters automatic url shortening with t.co
+        return encodeURIComponent(this.abbreviateText(title, 120));
+    }
 };
 
 module.exports = _Shariff;
@@ -10623,4 +10639,4 @@ $('.shariff').each(function() {
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./services/facebook":2,"./services/googleplus":3,"./services/info":4,"./services/mail":5,"./services/twitter":6,"jquery":1}]},{},[7]);
+},{"./services/facebook":2,"./services/googleplus":3,"./services/info":4,"./services/mail":5,"./services/twitter":6,"./services/whatsapp":7,"jquery":1}]},{},[8]);
