@@ -144,7 +144,7 @@ _Shariff.prototype = {
 
         // add html for service-links
         this.services.forEach(function(service) {
-            var $li = $('<li class="button">').addClass(service.name);
+            var $li = $('<li class="shariff-button">').addClass(service.name);
             var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
 
             var $shareLink = $('<a>')
