@@ -9,6 +9,6 @@ module.exports = function(shariff) {
             'de': 'Bei Whatsapp teilen',
             'en': 'Share on Whatsapp'
         },
-        shareUrl: 'whatsapp://send?text=' + shariff.getShareText() + "%20" + shariff.getURL() + shariff.getReferrerTrack()
+        shareUrl: 'whatsapp://send?text=' + shariff.getShareText() + '%20' + shariff.getURL() + shariff.getReferrerTrack()
     };
 };
