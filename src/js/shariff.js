@@ -52,7 +52,7 @@ _Shariff.prototype = {
         backendUrl : null,
 
         // Link to the "about" page
-        infoUrl: 'http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html',
+        infoUrl: 'http://ct.de/-2467514',
 
         // localisation: "de" or "en"
         lang: 'de',
