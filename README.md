@@ -6,7 +6,7 @@ Facebook, Google+ and Twitter supply official sharing code snippets which quietl
 
 Shariff `(/ˈʃɛɹɪf/)` is an open-source, low-maintenance, high-privacy solution maintained by German computer magazine c't and heise online.
 
-<!-- ![Shariff](shariff-logo.png) -->
+![Shariff](shariff-logo.png)
 
 Shariff consists of two parts: a simple JavaScript client library and an optional server-side component. The latter fetches the number of likes, tweets and plus-ones. Share buttons and share counts work without a connection between your visitors' browsers and *social networks* (unless they decide to share, of course).
 

@@ -6,7 +6,7 @@ Der Code der offiziellen Buttons von Facebook, Google+ und Twitter überträgt v
 
 Shariff `(/ˈʃɛɹɪf/)` ist ein Open-Source Projekt von c't und heise online.
 
-<!-- ![Shariff](shariff-logo.png) -->
+![Shariff](shariff-logo.png)
 
 Shariff besteht aus zwei Teilen. Der erste Teil ist eine einfache JavaScript-Bibliothek einschließlich Vektor-Icons und CSS zur Formatierung der Knöpfe. Der zweite ist die optionale, server-seitige Komponente (derzeit für PHP, Perl oder NodeJS). Mit dem Shariff-Backend auf dem eigenen Server muss der Browser des Besuchers zur Darstellung der Share-Counts keine Verbindung zu Facebook, Twitter oder Google+ aufbauen. Daten werden erst dann zum Social-Media-Netzwerk übertragen, wenn der Besucher den Inhalt tatsächlich teilen möchte.
 
