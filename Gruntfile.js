@@ -14,6 +14,9 @@ module.exports = function(grunt) {
 
         browserify: {
             options: {
+                browserifyOptions: {
+                    fullPaths: false
+                },
                 banner: '<%= meta.banner %>'
             },
             dev: {
