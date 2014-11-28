@@ -1,6 +1,6 @@
 
 /*
- * shariff - v1.4.0 - 27.11.2014
+ * shariff - v1.4.1 - 28.11.2014
  * https://github.com/heiseonline/shariff
  * Copyright (c) 2014 Ines Pauer, Philipp Busse, Sebastian Hilbig, Erich Kramer, Deniz Sesli
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php> license
@@ -10476,7 +10476,7 @@ _Shariff.prototype = {
         backendUrl : null,
 
         // Link to the "about" page
-        infoUrl: 'http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html',
+        infoUrl: 'http://ct.de/-2467514',
 
         // localisation: "de" or "en"
         lang: 'de',
@@ -10568,7 +10568,7 @@ _Shariff.prototype = {
 
         // add html for service-links
         this.services.forEach(function(service) {
-            var $li = $('<li class="button">').addClass(service.name);
+            var $li = $('<li class="shariff-button">').addClass(service.name);
             var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
 
             var $shareLink = $('<a>')
