@@ -1,6 +1,6 @@
 {
   "name": "shariff",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "homepage": "http://ct.de/-2467514",
   "authors": [
     "Ines Pauer <ipa@heise.de>",
@@ -14,12 +14,6 @@
     "build/shariff.min.js"
   ],
   "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
-  "ignore": [
-    "/.*",
-    "/*.js",
-    "/*.png",
-    "src/"
-  ],
   "keywords": [
     "heise",
     "social buttons",
@@ -27,6 +21,10 @@
   ],
   "license": "MIT",
   "ignore": [
+    "/.*",
+    "/*.js",
+    "/*.png",
+    "src/",
     "**/.*",
     "node_modules",
     "bower_components",
