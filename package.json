@@ -33,6 +33,9 @@
       "email": "dzs@heise.de"
     }
   ],
+  "browserify-shim": {
+    "jquery": "global:$"
+  },
   "dependencies": {
     "font-awesome": "^4.2.0",
     "jquery": "^1.11.1"
@@ -42,6 +45,8 @@
   },
   "homepage": "https://github.com/heiseonline/shariff",
   "devDependencies": {
+    "browserify": "^6.3.3",
+    "browserify-shim": "^3.8.0",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.2.0",
     "grunt-connect-proxy": "^0.1.11",
