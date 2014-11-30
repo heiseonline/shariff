@@ -96,14 +96,13 @@ module.exports = function(grunt) {
         less: {
             options: {
                 strictMath: true,
-                sourceMap: true,
-                outputSourceFiles: true,
                 compress: true,
                 report: 'min'
             },
             demo: {
                 options: {
-                    compress: true,
+                    sourceMap: true,
+                    outputSourceFiles: true
                 },
                 src: ['src/style/shariff.less', 'src/style/demo.less'],
                 dest: 'demo/app.min.css'
