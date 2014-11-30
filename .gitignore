@@ -2,6 +2,8 @@ demo/*.js
 demo/*.css
 demo/fontawesome-*
 
+bower_components
+
 # Created by http://www.gitignore.io
 
 ### Node ###
