@@ -12,7 +12,7 @@ Shariff consists of two parts: a simple JavaScript client library and an optiona
 
 ## Getting Started
 
-1. Download the latest release of Shariff and include `build/shariff.min.css` and `build/shariff.min.js` in your page.
+1. Download the latest release of Shariff and include `build/shariff.min.css` and `build/shariff.min.js` or `build/shariff.complete.js` (includes jQuery) in your page.
 2. Insert one or more `<div class="shariff">` elements.
 3. Customize the look using data-* attributes.
 

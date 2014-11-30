@@ -13,7 +13,7 @@ Shariff besteht aus zwei Teilen. Der erste Teil ist eine einfache JavaScript-Bib
 ## Erste Schritte
 
 1. Das [aktuellste Shariff-Release](https://github.com/heiseonline/shariff/releases/latest) herunterladen
-2. JavaScript `build/shariff.min.js` und CSS `build/shariff.min.css` einbinden
+2. JavaScript `build/shariff.min.js` bzw. `build/shariff.complete.js` (enthält jQuery) und CSS `build/shariff.min.css` einbinden
 3. Beliebig viele `<div class="shariff">` Elemente einfügen
 4. Mit den unten beschriebenen `data`-Attributen Aussehen und Funktion konfigurieren
 
