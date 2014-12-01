@@ -34,7 +34,7 @@
     }
   ],
   "browserify-shim": {
-    "jquery": "global:$"
+    "jquery": "global:jQuery"
   },
   "dependencies": {
     "font-awesome": "^4.2.0",
