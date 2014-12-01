@@ -13,6 +13,7 @@ var _Shariff = function(element, options) {
     // available services. /!\ Browserify can't require dynamically by now.
     var availableServices = [
         require('./services/facebook'),
+        require('./services/facebook-like'),
         require('./services/googleplus'),
         require('./services/twitter'),
         require('./services/whatsapp'),
@@ -65,7 +66,7 @@ _Shariff.prototype = {
         referrerTrack: null,
 
         // services to be enabled in the following order
-        services   : ['twitter', 'facebook', 'googleplus', 'info'],
+        services   : ['twitter', 'facebook','facebook-like', 'googleplus', 'info'],
 
         // build URI from rel="canonical" or document.location
         url: function() {
