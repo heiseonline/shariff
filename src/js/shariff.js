@@ -18,6 +18,7 @@ var Shariff = function(element, options) {
     var availableServices = [
         require('./services/addthis'),
         require('./services/facebook'),
+        require('./services/facebook-like'),
         require('./services/googleplus'),
         require('./services/info'),
         require('./services/linkedin'),
@@ -94,7 +95,7 @@ Shariff.prototype = {
         referrerTrack: null,
 
         // services to be enabled in the following order
-        services   : ['twitter', 'facebook', 'googleplus', 'info'],
+        services   : ['twitter', 'facebook','facebook-like', 'googleplus', 'info'],
 
         title: function() {
             return $('head title').text();
