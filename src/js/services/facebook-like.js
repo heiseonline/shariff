@@ -8,7 +8,7 @@ module.exports = function(shariff) {
             'de': 'gefällt mir',
             'en': 'like'
         },
-        name: 'facebook-like',
+        name: 'facebooklike',
         title: {
             'de': 'Gefällt mir bei Facebook ',
             'en': 'Like on Facebook'
