@@ -1,7 +1,5 @@
 'use strict';
 
-var $ = require('jquery');
-
 module.exports = function(shariff) {
     return {
         popup: true,
