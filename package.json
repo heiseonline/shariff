@@ -1,6 +1,6 @@
 {
   "name": "shariff",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
   "main": "src/js/shariff.js",
   "scripts": {
@@ -34,7 +34,7 @@
     }
   ],
   "browserify-shim": {
-    "jquery": "global:$"
+    "jquery": "global:jQuery"
   },
   "dependencies": {
     "font-awesome": "^4.2.0",
