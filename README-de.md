@@ -97,4 +97,8 @@ Wenn in den Shariff-Buttons die Share-Counts angezeigt werden sollen, wird eines
 * [shariff-backend-perl](http://github.com/heiseonline/shariff-backend-perl)
 * [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
 
+Drittanbieter-Backends:
+
+* [shariff-backend-java](http://github.com/headissue/shariff-backend-java)
+
 Die URL, unter der das Backend erreichbar ist, muss im `data`-Attribut `data-backend-url` angegeben werden. Ein Backend unter der URL `http://example.com/my-shariff-backend/` wird in `data-backend-url` so angegeben: `/my-shariff-backend/`. Den Rest erledigt das Skript.
