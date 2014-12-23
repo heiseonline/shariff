@@ -1,14 +1,15 @@
 'use strict';
 
 module.exports = function(shariff) {
+    var name = 'pinterest';
     return {
         popup: true,
         shareText: 'Pin it!',
-        name: 'pinterest',
+        name: name,
         title: {
             'de': 'Bei Pinterest teilen',
             'en': 'Share on Pinterest'
         },
-        shareUrl: 'http://pinterest.com/pin/create/button/?media=undefined&description='+ shariff.getShareText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack()
+        shareUrl: 'https://pinterest.com/pin/create/button/?media=' + (encodeURIComponent(shariff.getImageUrl(name))||'undefined') + '&description=' + encodeURIComponent(shariff.getShareText(name)) + '&url=' + encodeURIComponent(shariff.getURL() + shariff.getReferrerTrack(name))
     };
 };

@@ -1,14 +1,15 @@
 'use strict';
 
 module.exports = function(shariff) {
-    return {
+    var name = 'tumblr';
+	return {
         popup: true,
         shareText: 'Tumblr!',
-        name: 'tumblr',
+        name: name,
         title: {
             'de': 'Bei Tumblr teilen',
             'en': 'Share on Tumblr'
         },
-        shareUrl: 'http://www.tumblr.com/share/link?url=' + encodeURIComponent(shariff.getURL()) + '&name='+ shariff.getShareText() + '&description='+ shariff.getShareText() + shariff.getReferrerTrack()
+        shareUrl: 'https://www.tumblr.com/share/link?name='+ encodeURIComponent(shariff.getShareText(name)) + '&description=' + encodeURIComponent(shariff.getShareDescription(name)) + '&url=' + encodeURIComponent(shariff.getURL()) + shariff.getReferrerTrack(name)
     };
 };

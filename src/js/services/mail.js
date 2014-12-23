@@ -3,14 +3,15 @@
 var url = require('url');
 
 module.exports = function(shariff) {
+    var name = 'mail';
     return {
         popup: false,
-        shareText: 'mail',
-        name: 'mail',
+        shareText: 'E-Mail',
+        name: name,
         title: {
             'de': 'Per E-Mail versenden',
             'en': 'Send by email'
         },
-        shareUrl: 'mailto:?subject=' + shariff.getShareText() + '&body=' + shariff.getShareText() + encodeURIComponent('\n' + shariff.getURL())
+        shareUrl: 'mailto:?subject=' + encodeURIComponent(shariff.getShareText(name)) + '&body=' + encodeURIComponent(shariff.getURL() + shariff.getReferrerTrack(name) + '\n' + shariff.getShareText(name) + '\n' + shariff.getShareDescription(name))
 	};
 };

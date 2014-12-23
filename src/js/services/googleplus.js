@@ -1,10 +1,11 @@
 'use strict';
 
 module.exports = function(shariff) {
-    return {
+    var name = 'googleplus';
+	return {
         popup: true,
         shareText: '+1',
-        name: 'googleplus',
+        name: name,
         title: {
             'de': 'Bei Google+ teilen',
             'en': 'Share on Google+'

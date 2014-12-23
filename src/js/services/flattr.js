@@ -1,14 +1,15 @@
 'use strict';
 
 module.exports = function(shariff) {
-    return {
+    var name = 'flattr';
+	return {
         popup: true,
         shareText: 'Flattr this!',
-        name: 'flattr',
+        name: name,
         title: {
             'de': 'Artikel flattrn',
             'en': 'Flattr this'
         },
-        shareUrl: 'https://flattr.com/submit/auto?url=' + shariff.getURL() + '&title='+ shariff.getShareText() + '&description=&language=de_DE&tags=&category=text&user_id=' + shariff.getReferrerTrack('flattr')
+        shareUrl: 'https://flattr.com/submit/auto?title='+ encodeURIComponent(shariff.getShareText(name)) + '&description=' + encodeURIComponent(shariff.getShareDescription(name)) + '&language=de_DE&tags=' + encodeURIComponent(shariff.getTags(name)) + '&category=' + encodeURIComponent(shariff.getOption('flattrCategory') || 'text') + '&user_id=' + encodeURIComponent(shariff.getOption('flattrUser')) + '&url=' + shariff.getURL() + shariff.getReferrerTrack(name)
     };
 };
