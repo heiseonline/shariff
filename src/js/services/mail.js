@@ -3,11 +3,6 @@
 var url = require('url');
 
 module.exports = function(shariff) {
-
-    var shareUrl = url.parse(shariff.getURL(), true);
-    shareUrl.query.view = "mail";
-    delete shareUrl.search;
-
     return {
         popup: false,
         shareText: 'mail',
@@ -16,6 +11,6 @@ module.exports = function(shariff) {
             'de': 'Per E-Mail versenden',
             'en': 'Send by email'
         },
-        shareUrl: url.format(shareUrl)
-    };
+        shareUrl: 'mailto:?subject=' + shariff.getShareText() + '&body=' + shariff.getShareText() + encodeURIComponent('\n' + shariff.getURL())
+	};
 };

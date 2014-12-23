@@ -85,17 +85,10 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ['node_modules/font-awesome/fonts/fontawesome*'],
+                        src: ['node_modules/font-awesome/fonts/fontawesome*', 'src/img/*'],
                         dest: 'demo/',
                         filter: 'isFile'
-                    },
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ['src/img/*'],
-                        dest: 'demo/',
-                        filter: 'isFile'
-                    },
+                    }
                 ]
             }
         },
@@ -145,7 +138,7 @@ module.exports = function(grunt) {
         connect: {
             demo: {
                 options: {
-                    hostname: '0.0.0.0',
+                    hostname: '127.0.0.1',
                     // hostname: 'localhost',
                     port: 8080,
                     base: 'demo',

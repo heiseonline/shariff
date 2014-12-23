@@ -13,11 +13,15 @@ var _Shariff = function(element, options) {
     // available services. /!\ Browserify can't require dynamically by now.
     var availableServices = [
         require('./services/facebook'),
+        require('./services/flattr'),
         require('./services/googleplus'),
-        require('./services/twitter'),
-        require('./services/whatsapp'),
+        require('./services/info'),
         require('./services/mail'),
-        require('./services/info')
+        require('./services/pinterest'),
+        require('./services/reddit'),
+        require('./services/tumblr'),
+        require('./services/twitter'),
+        require('./services/whatsapp')
     ];
 
     // filter available services to those that are enabled and initialize them
@@ -65,7 +69,7 @@ _Shariff.prototype = {
         referrerTrack: null,
 
         // services to be enabled in the following order
-        services   : ['twitter', 'facebook', 'googleplus', 'info'],
+        services   : ['facebook', 'googleplus', 'twitter', 'pinterest', 'reddit', 'tumblr', 'flattr', 'mail', 'info'],
 
         // build URI from rel="canonical" or document.location
         url: function() {
@@ -111,8 +115,8 @@ _Shariff.prototype = {
         return ( typeof url === 'function' ) ? $.proxy(url, this)() : url;
     },
 
-    getReferrerTrack: function() {
-        return this.options.referrerTrack || '';
+    getReferrerTrack: function(service) {
+        return this.options[service + 'ReferrerTrack'] || this.options.referrerTrack || '';
     },
 
     // returns shareCounts of document
@@ -153,8 +157,6 @@ _Shariff.prototype = {
 
             if (service.popup) {
                 $shareLink.attr('rel', 'popup');
-            } else {
-                $shareLink.attr('target', '_blank');
             }
             $shareLink.attr('title', self.getLocalized(service, 'title'));
 

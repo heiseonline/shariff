@@ -1,5 +1,6 @@
 demo/*.js
 demo/*.css
+demo/*.png
 demo/fontawesome-*
 
 bower_components

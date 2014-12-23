@@ -51,6 +51,7 @@
                 &::before {
                     content:"\f09a";
                     font-size: 17px;
+					margin-left: 2px;
                 }
             }
             .share_count {
@@ -93,6 +94,70 @@
                     content:"\f0d5";
                     font-size: 17px;
                     top: 1px;
+                }
+            }
+            .share_count {
+                color: #a31601;
+                background-color: #eda79d;
+            }
+        }
+        &.flattr {
+            a {
+                background-color: #7ea352;
+				background-image: url("flattr-medium.png");
+				background-repeat: no-repeat;
+				background-size: contain;
+                &:hover {
+                    background-color: #F67C1A;
+                }
+            }
+            .share_count {
+                color: #a31601;
+                background-color: #eda79d;
+            }
+        }
+        &.tumblr {
+            a {
+                background-color: #2C4762;
+                &:hover {
+                    background-color: lighten(#2C4762, 10%);
+                }
+                &::before {
+                    content:"\f173";
+                    font-size: 17px;
+                    margin-left: 2px;
+                }
+            }
+            .share_count {
+                color: #a31601;
+                background-color: #eda79d;
+            }
+        }
+        &.reddit {
+            a {
+                background-color: #FF4500;
+                &:hover {
+                    background-color: lighten(#FF4500, 10%);
+                }
+                &::before {
+                    content:"\f1a1";
+                    font-size: 17px;
+                }
+            }
+            .share_count {
+                color: #a31601;
+                background-color: #eda79d;
+            }
+        }
+        &.pinterest {
+            a {
+                background-color: #CB2027;
+                &:hover {
+                    background-color: lighten(#CB2027, 10%);
+                }
+                &::before {
+                    content:"\f0d2";
+                    font-size: 17px;
                 }
             }
             .share_count {
