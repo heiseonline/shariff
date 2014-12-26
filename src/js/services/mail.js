@@ -14,7 +14,8 @@ module.exports = function(shariff) {
         name: 'mail',
         title: {
             'de': 'Per E-Mail versenden',
-            'en': 'Send by email'
+            'en': 'Send by email',
+            'es': 'Enviar por email'
         },
         shareUrl: url.format(shareUrl)
     };

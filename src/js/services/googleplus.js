@@ -7,7 +7,8 @@ module.exports = function(shariff) {
         name: 'googleplus',
         title: {
             'de': 'Bei Google+ teilen',
-            'en': 'Share on Google+'
+            'en': 'Share on Google+',
+            'es': 'Compartir en Google+'
         },
         shareUrl: 'https://plus.google.com/share?url=' + shariff.getURL() + shariff.getReferrerTrack()
     };
