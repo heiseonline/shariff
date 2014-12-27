@@ -82,7 +82,7 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 | Attribut         | Beschreibung | Default |
 |------------------|--------------|---------|
 | `data-backend-url` | Pfad zum Shariff-[Backend](#backends). Der Wert `null` deaktiviert die Anzeige von Share-Counts.  | `null` |
-| `data-lang`      | Lokalisierung auswählen. Verfügbar: `de`, `en` | `de` |
+| `data-lang`      | Lokalisierung auswählen. Verfügbar: `de`, `en`, `es` | `de` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
 | `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `googleplus`, `mail`, `info` | Twitter, Facebook, Google+ |
