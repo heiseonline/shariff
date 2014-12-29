@@ -133,7 +133,7 @@ _Shariff.prototype = {
 	},
 	
 	getTags: function(service) {
-		return this.options[service + 'Tags'] || this.options.tags || $('meta[property="article:tag"]').map(function(_,j){return j.content}).toArray().join(',');
+		return this.options[service + 'Tags'] || this.options.tags || $('meta[property="article:tag"]').map(function(_,j){return j.content;}).toArray().join(',');
 	},
 
     getReferrerTrack: function(service) {
