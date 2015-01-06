@@ -2,6 +2,8 @@
 
 Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu bewahren, können Webseiten-Betreiber mit dem Projekt Shariff eigene Teilen-Buttons integrieren.
 
+![Shariff Logo © 2014 Heise Zeitschriften Verlag](http://www.heise.de/icons/ho/shariff-logo.png)
+
 Der Code der offiziellen Buttons von Facebook, Google+ und Twitter überträgt von jedem Besucher kennzeichnende Daten an die Social-Media-Netzwerke. Shariff erzeugt hingegen Share-Buttons, die mit einem Klick teilen, die Anzahl der Likes, Tweets und Plus-Ones für die aktuelle Seite anzeigen und trotzdem keine unnötigen Daten übertragen.
 
 Shariff `(/ˈʃɛɹɪf/)` ist ein Open-Source Projekt von c't und heise online.
