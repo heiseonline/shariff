@@ -129,7 +129,7 @@ _Shariff.prototype = {
 	},
 	
 	getImageUrl: function(service) {
-		return this.options[service + 'Image'] || this.options.image || '';
+		return this.options[service + 'Image'] || this.options.image || this.getMeta('image') || '';
 	},
 	
 	getTags: function(service) {
