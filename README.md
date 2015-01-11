@@ -85,7 +85,7 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-lang`      | The localisation to use. Available: `de`, `en`, `es` | `de` |
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
-| `data-services`  | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `mail`, `info` | (all enabled) |
+| `data-services`  | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `whatsapp`, `tumblr`, `reddit`, `pinterst`, `flattr`, `mail`, `info` | 'facebook', 'googleplus', 'twitter', 'pinterest', 'reddit', 'tumblr', 'mail', 'info' |
 | `data-theme`     | We include two color schemes, `standard` or `grey`. | `standard` |
 | `data-url`       | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
 | `data-title`     | The headline of your content. | `meta[(name|property)="(og:)?title"]` or the title of the current page. |
