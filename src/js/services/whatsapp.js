@@ -8,7 +8,8 @@ module.exports = function(shariff) {
         name: name,
         title: {
             'de': 'Bei Whatsapp teilen',
-            'en': 'Share on Whatsapp'
+            'en': 'Share on Whatsapp',
+            'es': 'Compartir en Whatsapp'
         },
         shareUrl: 'whatsapp://send?text=' + encodeURIComponent(shariff.getShareText(name) + ' ') + shariff.getURL() + shariff.getReferrerTrack(name)
     };
