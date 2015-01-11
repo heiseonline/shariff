@@ -109,11 +109,15 @@
 				background-size: contain;
                 &:hover {
                     background-color: #F67C1A;
+					.share_count {
+						color: darken(#F67C1A, 10%);
+						background-color: lighten(#F67C1A, 20%);
+					}
                 }
             }
             .share_count {
-                color: #a31601;
-                background-color: #eda79d;
+                color: darken(#7ea352, 10%);
+                background-color: lighten(#7ea352, 20%);
             }
         }
         &.tumblr {
@@ -129,8 +133,8 @@
                 }
             }
             .share_count {
-                color: #a31601;
-                background-color: #eda79d;
+                color: darken(#2C4762, 10%);
+                background-color: lighten(#2C4762, 20%);
             }
         }
         &.reddit {
@@ -145,8 +149,8 @@
                 }
             }
             .share_count {
-                color: #a31601;
-                background-color: #eda79d;
+                color: darken(#FF4500, 10%);
+                background-color: lighten(#FF4500, 20%);
             }
         }
         &.pinterest {
@@ -162,8 +166,8 @@
                 }
             }
             .share_count {
-                color: #a31601;
-                background-color: #eda79d;
+                color: darken(#CB2027, 10%);
+                background-color: lighten(#CB2027, 20%);
             }
         }
         &.mail {
@@ -240,6 +244,10 @@
                 background-color: #fff;
                 &:hover {
                     background-color: #eee;
+					.share_count {
+						background-color: #fff;
+						color: #999;
+					}
                 }
             }
             .share_count {
