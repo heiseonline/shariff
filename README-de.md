@@ -85,9 +85,31 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 | `data-lang`      | Lokalisierung auswählen. Verfügbar: `de`, `en`, `es` | `de` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
-| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `googleplus`, `mail`, `info` | Twitter, Facebook, Google+ |
-| `data-theme`       | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
-| `data-url`         | URL, die geteilt werden soll. | Wenn `data-url` nicht gesetzt ist, wird `link[rel="canonical"]`, `meta[property="og:url"]` oder `location.href` verwendet. |
+| `data-services`  | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `googleplus`, `mail`, `info` | Twitter, Facebook, Google+ |
+| `data-theme`     | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
+| `data-url`       | URL, die geteilt werden soll. | Wenn `data-url` nicht gesetzt ist, wird `link[rel="canonical"]`, `meta[property="og:url"]` oder `location.href` verwendet. |
+| `data-title`     | Überschrift, die geteilt werden soll. | Wenn `data-title` nicht gesetzt ist, wird `meta[(name|property)="(og:)?title"]` oder `<title>` verwendet. |
+| `data-description` | Beschreibungstext, der geteilt werden soll. | Wenn `data-description` nicht gesetzt ist, wird `meta[(name|property)="(og:)?description"]` verwendet. |
+| `data-image`     | Bild, das geteilt werden soll. | Wenn `data-image` nicht gesetzt ist, wird `meta[(name|property)="(og:)?image"]` verwendet. |
+| `data-tags`      | Tags, die geteilt werden sollen. Im Format: `Tag 1,foo,bar`| Wenn `data-tags` nicht gesetzt ist, wird `meta[property="article:tag"]` verwendet. |
+
+Die Optionen `data-title`, `data-description`, `data-image`, `data-tags` und `data-referrer-track` können für jeden Service separat angegeben werden: z.B.: `data-referrer-track-facebook`
+
+Folgende Optionen sind nicht für jeden Service verfügbar:
+
+| Service   | `title` | `description` | `image` | `tags` |
+|:----------|:-------:|:-------------:|:-------:|:------:|
+| Facebook  | [ ]     | [ ]           | [ ]     | [ ]    |
+| Google+   | [ ]     | [ ]           | [ ]     | [ ]    |
+| Twittr    | [x]     | [ ]           | [ ]     | [ ]    |
+| Whatsapp  | [x]     | [ ]           | [ ]     | [ ]    |
+| E-Mail    | [x]     | [x]           | [ ]     | [ ]    |
+| Tumblr    | [x]     | [x]           | [ ]     | [ ]    |
+| Reddit    | [x]     | [ ]           | [ ]     | [ ]    |
+| Pinterest | [x]     | [ ]           | [x]     | [ ]    |
+| Flattr    | [x]     | [x]           | [ ]     | [x]    |
+
+Der Service Flattr muss zudem über die zusätzlichen Optionen `data-flattr-user` und `data-flattr-category` konfiguriert werden.
 
 ## Backends
 
