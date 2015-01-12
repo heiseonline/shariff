@@ -93,7 +93,7 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 | `data-image`     | Bild, das geteilt werden soll. | Wenn `data-image` nicht gesetzt ist, wird `meta[(name|property)="(og:)?image"]` verwendet. |
 | `data-tags`      | Tags, die geteilt werden sollen. Im Format: `Tag 1,foo,bar`| Wenn `data-tags` nicht gesetzt ist, wird `meta[property="article:tag"]` verwendet. |
 
-Die Optionen `data-title`, `data-description`, `data-image`, `data-tags` und `data-referrer-track` können für jeden Service separat angegeben werden: z.B.: `data-referrer-track-facebook`
+Die Optionen `data-title`, `data-description`, `data-image`, `data-tags` und `data-referrer-track` können für jeden Service separat angegeben werden: z.B.: `data-facebook-referrer-track`
 
 Folgende Optionen sind nicht für jeden Service verfügbar:
 

@@ -93,7 +93,7 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-image`     | The URL of an image you want to share. | `meta[(name|property)="(og:)?image"]` |
 | `data-tags`      | Comma separated list of tags of your article. | `meta[property="article:tag"]` |
 
-The options `data-title`, `data-description`, `data-image`, `data-tags` and `data-referrer-track` could be different for each service. Just specify them in the format `data-<option>-<service>`. For example: `data-referrer-track-facebook`
+The options `data-title`, `data-description`, `data-image`, `data-tags` and `data-referrer-track` could be different for each service. Just specify them in the format `data-<service>-<option>`. For example: `data-facebook-referrer-track`
 
 Following options are not available for every service:
 
