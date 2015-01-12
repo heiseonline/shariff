@@ -43,7 +43,6 @@
         }
         &.facebook {
             a {
-                padding-left: 24px;
                 background-color: #3b5998;
                 &:hover {
                     background-color: #4273c8;
@@ -51,6 +50,7 @@
                 &::before {
                     content:"\f09a";
                     font-size: 17px;
+					margin-left: 5px;
                 }
             }
             .share_count {
@@ -93,11 +93,81 @@
                     content:"\f0d5";
                     font-size: 17px;
                     top: 1px;
+					margin-left: 3px;
                 }
             }
             .share_count {
                 color: #a31601;
                 background-color: #eda79d;
+            }
+        }
+        &.flattr {
+            a {
+                background-color: #7ea352;
+				background-image: url("flattr-medium.png");
+				background-repeat: no-repeat;
+				background-size: contain;
+                &:hover {
+                    background-color: #F67C1A;
+					.share_count {
+						color: darken(#F67C1A, 10%);
+						background-color: lighten(#F67C1A, 20%);
+					}
+                }
+            }
+            .share_count {
+                color: darken(#7ea352, 10%);
+                background-color: lighten(#7ea352, 20%);
+            }
+        }
+        &.tumblr {
+            a {
+                background-color: #2C4762;
+                &:hover {
+                    background-color: lighten(#2C4762, 10%);
+                }
+                &::before {
+                    content:"\f173";
+                    font-size: 17px;
+                    margin-left: 3px;
+                }
+            }
+            .share_count {
+                color: darken(#2C4762, 10%);
+                background-color: lighten(#2C4762, 20%);
+            }
+        }
+        &.reddit {
+            a {
+                background-color: #FF4500;
+                &:hover {
+                    background-color: lighten(#FF4500, 10%);
+                }
+                &::before {
+                    content:"\f1a1";
+                    font-size: 17px;
+                }
+            }
+            .share_count {
+                color: darken(#FF4500, 10%);
+                background-color: lighten(#FF4500, 20%);
+            }
+        }
+        &.pinterest {
+            a {
+                background-color: #CB2027;
+                &:hover {
+                    background-color: lighten(#CB2027, 10%);
+                }
+                &::before {
+                    content:"\f0d2";
+                    font-size: 17px;
+					margin-left: 2px;
+                }
+            }
+            .share_count {
+                color: darken(#CB2027, 10%);
+                background-color: lighten(#CB2027, 20%);
             }
         }
         &.mail {
@@ -144,7 +214,7 @@
     }
     // ------------------------- colourless design
     .theme-grey {
-        .twitter, .facebook, .googleplus, .mail {
+        .shariff-button {
             a {
                 background-color: #b0b0b0;
             }
@@ -162,7 +232,7 @@
         .googleplus a:hover {
             background-color: #d34836;
         }
-        .send_by_email a:hover {
+        .mail a:hover {
             background-color: #999;
         }
     }
@@ -174,6 +244,10 @@
                 background-color: #fff;
                 &:hover {
                     background-color: #eee;
+					.share_count {
+						background-color: #fff;
+						color: #999;
+					}
                 }
             }
             .share_count {
@@ -196,6 +270,22 @@
         .info {
             height: 30px;
         }
+		.whatsapp a {
+			color: #5cbe4a;
+		}
+		.flattr a {
+			color: #7ea352;
+			background-image: url("flattr-medium-black.png");
+		}
+		.tumblr a {
+			color: #2C4762;
+		}
+		.reddit a {
+			color: #FF4500;
+		}
+		.pinterest a {
+			color: #CB2027;
+		}
     }
     // ------------------------- vertical alignment
     .orientation-vertical {

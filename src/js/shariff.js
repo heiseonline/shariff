@@ -13,11 +13,15 @@ var _Shariff = function(element, options) {
     // available services. /!\ Browserify can't require dynamically by now.
     var availableServices = [
         require('./services/facebook'),
+        require('./services/flattr'),
         require('./services/googleplus'),
-        require('./services/twitter'),
-        require('./services/whatsapp'),
+        require('./services/info'),
         require('./services/mail'),
-        require('./services/info')
+        require('./services/pinterest'),
+        require('./services/reddit'),
+        require('./services/tumblr'),
+        require('./services/twitter'),
+        require('./services/whatsapp')
     ];
 
     // filter available services to those that are enabled and initialize them
@@ -65,7 +69,7 @@ _Shariff.prototype = {
         referrerTrack: null,
 
         // services to be enabled in the following order
-        services   : ['twitter', 'facebook', 'googleplus', 'info'],
+        services   : ['facebook', 'googleplus', 'twitter', 'pinterest', 'reddit', 'tumblr', 'mail', 'info'],
 
         // build URI from rel="canonical" or document.location
         url: function() {
@@ -96,11 +100,14 @@ _Shariff.prototype = {
         return undefined;
     },
 
-    // returns content of <meta name="" content=""> tags or '' if empty/non existant
+    // returns content of <meta name="" content=""> tags or '' if empty/non existent
     getMeta: function(name) {
-        var metaContent = $('meta[name="' + name + '"],[property="' + name + '"]').attr('content');
-        return metaContent || '';
+        return $('meta[name="' + name + '"],meta[property="' + name + '"],meta[name="DC.' + name + '"],meta[property="DC.' + name + '"],meta[name="og:' + name + '"],meta[property="og:' + name + '"]').attr('content') || '';
     },
+	
+	getOption: function(name) {
+		return this.options[name] || this.getMeta(name);
+	},
 
     getInfoUrl: function() {
         return this.options.infoUrl;
@@ -110,9 +117,27 @@ _Shariff.prototype = {
         var url = this.options.url;
         return ( typeof url === 'function' ) ? $.proxy(url, this)() : url;
     },
+	
+	// Important: each service must sanitize the return with encodeURIComponent() by it own needs
+	//				this is for more flexibility within each service
+	getShareText: function(service) {
+		return this.options[service + 'Title'] || this.options.title || this.getMeta('title') || $('title').text() || '';
+	},
+	
+	getShareDescription: function(service) {
+		return this.options[service + 'Description'] || this.options.description || this.getMeta('description') || '';
+	},
+	
+	getImageUrl: function(service) {
+		return this.options[service + 'Image'] || this.options.image || this.getMeta('image') || '';
+	},
+	
+	getTags: function(service) {
+		return this.options[service + 'Tags'] || this.options.tags || $('meta[property="article:tag"]').map(function(_,j){return j.content;}).toArray().join(',');
+	},
 
-    getReferrerTrack: function() {
-        return this.options.referrerTrack || '';
+    getReferrerTrack: function(service) {
+        return this.options[service + 'ReferrerTrack'] || this.options.referrerTrack || '';
     },
 
     // returns shareCounts of document
@@ -153,8 +178,6 @@ _Shariff.prototype = {
 
             if (service.popup) {
                 $shareLink.attr('rel', 'popup');
-            } else {
-                $shareLink.attr('target', '_blank');
             }
             $shareLink.attr('title', self.getLocalized(service, 'title'));
 
@@ -191,21 +214,6 @@ _Shariff.prototype = {
         abbreviated = encodeURIComponent(abbreviated.substring(0, lastWhitespaceIndex)) + '\u2026';
 
         return abbreviated;
-    },
-
-    // create tweet text from content of <meta name="DC.title"> and <meta name="DC.creator">
-    // fallback to content of <title> tag
-    getShareText: function() {
-        var title = this.getMeta('DC.title');
-        var creator = this.getMeta('DC.creator');
-
-        if (title.length > 0 && creator.length > 0) {
-            title += ' - ' + creator;
-        } else {
-            title = $('title').text();
-        }
-        // 120 is the max character count left after twitters automatic url shortening with t.co
-        return encodeURIComponent(this.abbreviateText(title, 120));
     }
 };
 

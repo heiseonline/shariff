@@ -12,9 +12,10 @@ Shariff consists of two parts: a simple JavaScript client library and an optiona
 
 ## Getting Started
 
-1. Download the latest release of Shariff and include `build/shariff.min.css` and `build/shariff.min.js` or `build/shariff.complete.js` (includes jQuery) in your page.
-2. Insert one or more `<div class="shariff">` elements.
-3. Customize the look using data-* attributes.
+1. Download the latest release of Shariff.
+2. Include `build/shariff.min.css` and `build/shariff.min.js` or `build/shariff.complete.js` (includes jQuery) in your page.
+3. Insert one or more `<div class="shariff">` elements.
+4. Customize the look using data-* attributes.
 
 To enable the counters in the buttons, see section [Backends](#backends).
 
@@ -84,9 +85,31 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-lang`      | The localisation to use. Available: `de`, `en`, `es` | `de` |
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
-| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `mail`, `info` | (all enabled) |
-| `data-theme`       | We include two color schemes, `standard` or `grey`. | `standard` |
-| `data-url`         | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
+| `data-services`  | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `whatsapp`, `tumblr`, `reddit`, `pinterst`, `flattr`, `mail`, `info` | 'facebook', 'googleplus', 'twitter', 'pinterest', 'reddit', 'tumblr', 'mail', 'info' |
+| `data-theme`     | We include two color schemes, `standard` or `grey`. | `standard` |
+| `data-url`       | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
+| `data-title`     | The headline of your content. | `meta[(name|property)="(og:)?title"]` or the title of the current page. |
+| `data-description` | The description of your content. | `meta[(name|property)="(og:)?description"]` |
+| `data-image`     | The URL of an image you want to share. | `meta[(name|property)="(og:)?image"]` |
+| `data-tags`      | Comma separated list of tags of your article. | `meta[property="article:tag"]` |
+
+The options `data-title`, `data-description`, `data-image`, `data-tags` and `data-referrer-track` could be different for each service. Just specify them in the format `data-<service>-<option>`. For example: `data-facebook-referrer-track`
+
+Following options are not available for every service:
+
+| Service   | `title` | `description` | `image` | `tags` |
+|:----------|:-------:|:-------------:|:-------:|:------:|
+| Facebook  | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Google+   | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Twittr    | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Whatsapp  | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| E-Mail    | :white_check_mark: | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Tumblr    | :white_check_mark: | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Reddit    | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Pinterest | :white_check_mark: | :negative_squared_cross_mark: | :white_check_mark: | :negative_squared_cross_mark: |
+| Flattr    | :white_check_mark: | :white_check_mark: | :negative_squared_cross_mark: | :white_check_mark: |
+
+The Flattr service must be configured with the options `data-flattr-user` and `data-flattr-category`.
 
 ## Backends
 
@@ -97,6 +120,7 @@ In order to display share counts with Shariff, you need one of the following bac
 * [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
 
 Third-party backends:
+
 * [shariff-backend-java](http://github.com/headissue/shariff-backend-java)
 
 Once you have one of these backends up and running, insert its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, the `data-backend-url` should be `/my-shariff-backend/`. The script will handle the rest. 

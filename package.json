@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heiseonline/shariff"
+    "url": "https://github.com/devimplode/shariff"
   },
   "author": {
     "name": "Ines Pauer",
@@ -31,6 +31,10 @@
     {
       "name": "Deniz Sesli",
       "email": "dzs@heise.de"
+    },
+    {
+      "name": "Ludwig Behm",
+      "email": "ludwig.behm@gmail.com"
     }
   ],
   "browserify-shim": {
@@ -43,7 +47,7 @@
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
   },
-  "homepage": "https://github.com/heiseonline/shariff",
+  "homepage": "https://github.com/devimplode/shariff",
   "devDependencies": {
     "browserify": "^6.3.3",
     "browserify-shim": "^3.8.0",

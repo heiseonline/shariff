@@ -3,20 +3,16 @@
 var url = require('url');
 
 module.exports = function(shariff) {
-
-    var shareUrl = url.parse(shariff.getURL(), true);
-    shareUrl.query.view = "mail";
-    delete shareUrl.search;
-
+    var name = 'mail';
     return {
         popup: false,
-        shareText: 'mail',
-        name: 'mail',
+        shareText: 'E-Mail',
+        name: name,
         title: {
             'de': 'Per E-Mail versenden',
             'en': 'Send by email',
             'es': 'Enviar por email'
         },
-        shareUrl: url.format(shareUrl)
-    };
+        shareUrl: 'mailto:?subject=' + encodeURIComponent(shariff.getShareText(name)) + '&body=' + encodeURIComponent(shariff.getURL() + shariff.getReferrerTrack(name) + '\n' + shariff.getShareText(name) + '\n' + shariff.getShareDescription(name))
+	};
 };

@@ -1,15 +1,16 @@
 'use strict';
 
 module.exports = function(shariff) {
-    return {
+    var name = 'whatsapp';
+	return {
         popup: false,
         shareText: 'WhatsApp',
-        name: 'whatsapp',
+        name: name,
         title: {
             'de': 'Bei Whatsapp teilen',
             'en': 'Share on Whatsapp',
             'es': 'Compartir en Whatsapp'
         },
-        shareUrl: 'whatsapp://send?text=' + shariff.getShareText() + '%20' + shariff.getURL() + shariff.getReferrerTrack()
+        shareUrl: 'whatsapp://send?text=' + encodeURIComponent(shariff.getShareText(name) + ' ') + shariff.getURL() + shariff.getReferrerTrack(name)
     };
 };
