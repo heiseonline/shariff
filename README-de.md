@@ -99,15 +99,15 @@ Folgende Optionen sind nicht für jeden Service verfügbar:
 
 | Service   | `title` | `description` | `image` | `tags` |
 |:----------|:-------:|:-------------:|:-------:|:------:|
-| Facebook  | [ ]     | [ ]           | [ ]     | [ ]    |
-| Google+   | [ ]     | [ ]           | [ ]     | [ ]    |
-| Twittr    | [x]     | [ ]           | [ ]     | [ ]    |
-| Whatsapp  | [x]     | [ ]           | [ ]     | [ ]    |
-| E-Mail    | [x]     | [x]           | [ ]     | [ ]    |
-| Tumblr    | [x]     | [x]           | [ ]     | [ ]    |
-| Reddit    | [x]     | [ ]           | [ ]     | [ ]    |
-| Pinterest | [x]     | [ ]           | [x]     | [ ]    |
-| Flattr    | [x]     | [x]           | [ ]     | [x]    |
+| Facebook  | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Google+   | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Twittr    | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Whatsapp  | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| E-Mail    | :white_check_mark: | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Tumblr    | :white_check_mark: | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Reddit    | :white_check_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: | :negative_squared_cross_mark: |
+| Pinterest | :white_check_mark: | :negative_squared_cross_mark: | :white_check_mark: | :negative_squared_cross_mark: |
+| Flattr    | :white_check_mark: | :white_check_mark: | :negative_squared_cross_mark: | :white_check_mark: |
 
 Der Service Flattr muss zudem über die zusätzlichen Optionen `data-flattr-user` und `data-flattr-category` konfiguriert werden.
 
