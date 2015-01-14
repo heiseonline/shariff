@@ -12,9 +12,15 @@ Shariff consists of two parts: a simple JavaScript client library and an optiona
 
 ## Getting Started
 
-1. Download the latest release of Shariff and include `build/shariff.min.css` and `build/shariff.min.js` or `build/shariff.complete.js` (includes jQuery) in your page.
-2. Insert one or more `<div class="shariff">` elements.
-3. Customize the look using data-* attributes.
+1. Download the [latest release](https://github.com/heiseonline/shariff/releases/latest)
+2. Include CSS in `<head>`:
+    * `build/shariff.complete.css` contains all dependencies
+    * use `build/shariff.min.css`, if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site
+3. Include JavaScript right before `</body>`:
+    * `build/shariff.complete.js` contains all dependencies
+    * use `build/shariff.min.js`, if [jQuery](https://github.com/jquery/jquery) is already included in your site
+4. Insert one or more `<div class="shariff">` elements.
+5. Customize the look using data-* attributes.
 
 To enable the counters in the buttons, see section [Backends](#backends).
 

@@ -1,6 +1,8 @@
 demo/*.js
 demo/*.css
-demo/fontawesome-*
+demo/build
+demo/css
+demo/fonts
 
 bower_components
 

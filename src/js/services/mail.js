@@ -5,7 +5,7 @@ var url = require('url');
 module.exports = function(shariff) {
 
     var shareUrl = url.parse(shariff.getURL(), true);
-    shareUrl.query.view = "mail";
+    shareUrl.query.view = 'mail';
     delete shareUrl.search;
 
     return {
