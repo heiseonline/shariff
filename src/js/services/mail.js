@@ -5,7 +5,7 @@ var url = require('url');
 module.exports = function(shariff) {
 
     var shareUrl = url.parse(shariff.getURL(), true);
-    shareUrl.query.view = "mail";
+    shareUrl.query.view = 'mail';
     delete shareUrl.search;
 
     return {
@@ -14,7 +14,8 @@ module.exports = function(shariff) {
         name: 'mail',
         title: {
             'de': 'Per E-Mail versenden',
-            'en': 'Send by email'
+            'en': 'Send by email',
+            'es': 'Enviar por email'
         },
         shareUrl: url.format(shareUrl)
     };

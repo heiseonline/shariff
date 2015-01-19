@@ -2,19 +2,25 @@
 
 Shariff enables website users to share their favorite content without compromising their privacy.
 
+![Shariff Logo © 2014 Heise Zeitschriften Verlag](http://www.heise.de/icons/ho/shariff-logo.png)
+
 Facebook, Google+ and Twitter supply official sharing code snippets which quietly siphon personal data from all page visitors. Shariff enables visitors to see how popular your page is on Facebook and share your content with others without needless data leaks.
 
 Shariff `(/ˈʃɛɹɪf/)` is an open-source, low-maintenance, high-privacy solution maintained by German computer magazine c't and heise online.
-
-![Shariff](shariff-logo.png)
 
 Shariff consists of two parts: a simple JavaScript client library and an optional server-side component. The latter fetches the number of likes, tweets and plus-ones. Share buttons and share counts work without a connection between your visitors' browsers and *social networks* (unless they decide to share, of course).
 
 ## Getting Started
 
-1. Download the latest release of Shariff and include `build/shariff.min.css` and `build/shariff.min.js` or `build/shariff.complete.js` (includes jQuery) in your page.
-2. Insert one or more `<div class="shariff">` elements.
-3. Customize the look using data-* attributes.
+1. Download the [latest release](https://github.com/heiseonline/shariff/releases/latest)
+2. Include CSS in `<head>`:
+    * `build/shariff.complete.css` contains all dependencies
+    * use `build/shariff.min.css`, if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site
+3. Include JavaScript right before `</body>`:
+    * `build/shariff.complete.js` contains all dependencies
+    * use `build/shariff.min.js`, if [jQuery](https://github.com/jquery/jquery) is already included in your site
+4. Insert one or more `<div class="shariff">` elements.
+5. Customize the look using data-* attributes.
 
 To enable the counters in the buttons, see section [Backends](#backends).
 
@@ -81,7 +87,7 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | Attribute        | Description | Default |
 |------------------|-------------|---------|
 | `data-backend-url` | The path to your Shariff backend, see below. Settings the value to `null` disables the backend feature. No counts will occur.  | `null` |
-| `data-lang`      | The localisation to use. Available: `de`, `en` | `de` |
+| `data-lang`      | The localisation to use. Available: `de`, `en`, `es` | `de` |
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
 | `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `mail`, `info` | (all enabled) |

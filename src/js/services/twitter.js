@@ -7,7 +7,8 @@ module.exports = function(shariff) {
         name: 'twitter',
         title: {
             'de': 'Bei Twitter teilen',
-            'en': 'Share on Twitter'
+            'en': 'Share on Twitter',
+            'es': 'Compartir en Twitter'
         },
         shareUrl: 'https://twitter.com/intent/tweet?text='+ shariff.getShareText() + '&url=' + shariff.getURL() + shariff.getReferrerTrack()
     };
