@@ -154,7 +154,10 @@ _Shariff.prototype = {
 
             if (service.popup) {
                 $shareLink.attr('rel', 'popup');
-            } else {
+            } else if(service.iframe){
+                $shareLink.addClass('embed-iframe');
+            }
+            else {
                 $shareLink.attr('target', '_blank');
             }
             $shareLink.attr('title', self.getLocalized(service, 'title'));
@@ -169,6 +172,7 @@ _Shariff.prototype = {
             e.preventDefault();
 
             var url = $(this).attr('href');
+
             var windowName = $(this).attr('title');
             var windowSizeX = '600';
             var windowSizeY = '460';
@@ -176,6 +180,13 @@ _Shariff.prototype = {
 
             global.window.open(url, windowName, windowSize);
 
+        });
+        $('.embed-iframe').on('click',function(e){
+            e.preventDefault();
+            var url = $(this).attr('href');
+            $(this).replaceWith(
+                '<iframe src="' + url +'"></iframe>'
+            );
         });
 
         $socialshareElement.append($buttonList);

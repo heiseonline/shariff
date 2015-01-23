@@ -3,7 +3,8 @@
 module.exports = function(shariff) {
     var fbEncUrl = encodeURIComponent(shariff.getURL());
     return {
-        popup: true,
+        popup: false,
+        iframe: true,
         shareText: {
             'de': 'gefällt mir',
             'en': 'like'
