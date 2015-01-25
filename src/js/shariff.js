@@ -189,7 +189,7 @@ _Shariff.prototype = {
             e.preventDefault();
             var url = $(this).attr('href');
             if($(this).data('width')){
-                $(this).parent().width(130);
+                $(this).parent().width($(this).data('width'));
             }
             $(this).replaceWith(
                 '<iframe src="' + url +'"></iframe>'
