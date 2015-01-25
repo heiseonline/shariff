@@ -5,6 +5,7 @@ module.exports = function(shariff) {
     return {
         popup: false,
         iframe: true,
+        width: 130,
         shareText: {
             'de': 'gefällt mir',
             'en': 'like'
@@ -14,6 +15,6 @@ module.exports = function(shariff) {
             'de': 'Gefällt mir bei Facebook ',
             'en': 'Like on Facebook'
         },
-        shareUrl: 'http://www.facebook.com/plugins/like.php?href=' + fbEncUrl + shariff.getReferrerTrack() + '&width&layout=standard&action=like&show_faces=true&share=false&height=80'
+        shareUrl: 'http://www.facebook.com/plugins/like.php?href=' + fbEncUrl + shariff.getReferrerTrack() + '&width=80&layout=button_count&action=like&show_faces=false&share=false&height=30'
     };
 };
