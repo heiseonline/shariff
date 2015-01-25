@@ -153,6 +153,9 @@ _Shariff.prototype = {
               .attr('href', service.shareUrl)
               .append($shareText);
 
+            if(service.width){
+                $shareLink.data('width',service.width);
+            }
             if (service.popup) {
                 $shareLink.attr('rel', 'popup');
             } else if(service.iframe){
@@ -185,7 +188,9 @@ _Shariff.prototype = {
         $buttonList.on('click', '[rel="iframe"]', function(e) {
             e.preventDefault();
             var url = $(this).attr('href');
-            $(this).parent().width(130);
+            if($(this).data('width')){
+                $(this).parent().width(130);
+            }
             $(this).replaceWith(
                 '<iframe src="' + url +'"></iframe>'
             );

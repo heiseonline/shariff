@@ -5,6 +5,7 @@ module.exports = function(shariff) {
     return {
         popup: false,
         iframe: true,
+        width: 130,
         shareText: {
             'de': 'gefällt mir',
             'en': 'like'
