@@ -13,7 +13,8 @@ var _Shariff = function(element, options) {
     // available services. /!\ Browserify can't require dynamically by now.
     var availableServices = [
         require('./services/facebook'),
-        require('./services/facebook-like'),
+        require('./services/facebooklike'),
+        require('./services/xing'),
         require('./services/googleplus'),
         require('./services/twitter'),
         require('./services/whatsapp'),
@@ -155,7 +156,7 @@ _Shariff.prototype = {
             if (service.popup) {
                 $shareLink.attr('rel', 'popup');
             } else if(service.iframe){
-                $shareLink.addClass('embed-iframe');
+                $shareLink.attr('rel', 'iframe');
             }
             else {
                 $shareLink.attr('target', '_blank');
@@ -181,9 +182,10 @@ _Shariff.prototype = {
             global.window.open(url, windowName, windowSize);
 
         });
-        $('.embed-iframe').on('click',function(e){
+        $buttonList.on('click', '[rel="iframe"]', function(e) {
             e.preventDefault();
             var url = $(this).attr('href');
+            $(this).parent().width(130);
             $(this).replaceWith(
                 '<iframe src="' + url +'"></iframe>'
             );
