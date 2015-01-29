@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         meta: {
-            banner: '\n/*\n * <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
+            banner: '\n/*!\n * <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
                 '<%= grunt.template.today("dd.mm.yyyy") %>\n' +
                 ' * <%= pkg.homepage %>\n' +
                 ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>, <%= _.pluck(pkg.contributors, "name").join(", ") %>\n' +
@@ -105,13 +105,14 @@ module.exports = function(grunt) {
 
         less: {
             options: {
+                banner: '<%= meta.banner %>',
                 paths: [
                     'node_modules/font-awesome/less',
                     'node_modules/shariff/src/style'
                 ],
                 plugins: [
                     new (require('less-plugin-autoprefix'))({browsers: browsers}),
-                    new (require('less-plugin-clean-css'))()
+                    new (require('less-plugin-clean-css'))({keepSpecialComments: 1})
                 ],
                 strictMath: true
             },
