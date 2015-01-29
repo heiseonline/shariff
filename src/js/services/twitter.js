@@ -5,6 +5,7 @@ module.exports = function(shariff) {
         popup: true,
         shareText: 'tweet',
         name: 'twitter',
+        faName: 'fa-twitter',
         title: {
             'de': 'Bei Twitter teilen',
             'en': 'Share on Twitter',

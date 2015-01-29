@@ -3,8 +3,13 @@
 module.exports = function(shariff) {
     return {
         popup: false,
-        shareText: 'WhatsApp',
+        shareText: {
+            'de': 'teilen',
+            'en': 'share',
+            'es': 'compartir'
+        },
         name: 'whatsapp',
+        faName: 'fa-whatsapp',
         title: {
             'de': 'Bei Whatsapp teilen',
             'en': 'Share on Whatsapp',

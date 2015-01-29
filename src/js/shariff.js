@@ -151,6 +151,10 @@ _Shariff.prototype = {
               .attr('href', service.shareUrl)
               .append($shareText);
 
+            if (typeof service.faName !== 'undefined') {
+                $shareLink.prepend('<span class="fa ' +  service.faName + '">');
+            }
+
             if (service.popup) {
                 $shareLink.attr('rel', 'popup');
             } else {
@@ -213,5 +217,7 @@ module.exports = _Shariff;
 
 // initialize .shariff elements
 $('.shariff').each(function() {
-    this.shariff = new _Shariff(this);
+    if (!this.hasOwnProperty('shariff')) {
+        this.shariff = new _Shariff(this);
+    }
 });

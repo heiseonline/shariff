@@ -10,6 +10,7 @@ module.exports = function(shariff) {
             'es': 'compartir'
         },
         name: 'facebook',
+        faName: 'fa-facebook',
         title: {
             'de': 'Bei Facebook teilen',
             'en': 'Share on Facebook',

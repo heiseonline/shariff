@@ -12,6 +12,7 @@ module.exports = function(shariff) {
         popup: false,
         shareText: 'mail',
         name: 'mail',
+        faName: 'fa-envelope',
         title: {
             'de': 'Per E-Mail versenden',
             'en': 'Send by email',

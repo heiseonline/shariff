@@ -5,6 +5,7 @@ module.exports = function(shariff) {
         popup: true,
         shareText: '+1',
         name: 'googleplus',
+        faName: 'fa-google-plus',
         title: {
             'de': 'Bei Google+ teilen',
             'en': 'Share on Google+',

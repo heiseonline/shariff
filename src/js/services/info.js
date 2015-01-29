@@ -5,6 +5,7 @@ module.exports = function(shariff) {
         popup: false,
         shareText: 'Info',
         name: 'info',
+        faName: 'fa-info',
         title: {
             'de': 'weitere Informationen',
             'en': 'more information',

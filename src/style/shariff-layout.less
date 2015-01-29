@@ -21,117 +21,23 @@
             margin-right: 0;
         }
         a {
-            font-family: Arial, Helvetica, sans-serif;
             color: #fff;
             position: relative;
             display: block;
-            padding-left: 34px;
-            padding-right: 5px;
-            font-size: 12px;
-            line-height: 31px;
+            padding: 0 5px 0 34px;
+            line-height: 30px;
             text-decoration: none;
         }
-        &.shariff-button {
-            a::before {
-                position: absolute;
-                left: 5px;
-                font-family: FontAwesome;
-                font-weight: normal;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
+        .share_text,
+        .share_count {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            vertical-align: middle;
         }
-        &.facebook {
-            a {
-                padding-left: 24px;
-                background-color: #3b5998;
-                &:hover {
-                    background-color: #4273c8;
-                }
-                &::before {
-                    content:"\f09a";
-                    font-size: 17px;
-                }
-            }
-            .share_count {
-                color: #183a75;
-                background-color: #99adcf;
-            }
-        }
-        &.whatsapp {
-            a {
-                padding-left: 24px;
-                background-color: #5cbe4a;
-                &:hover {
-                    background-color: #34af23;
-                }
-            }
-        }
-        &.twitter {
-            a {
-                background-color: #55acee;
-                &:hover {
-                    background-color: #32bbf5;
-                }
-                &::before {
-                    content:"\f099";
-                    font-size: 24px;
-                }
-            }
-            .share_count {
-                color: #0174a4;
-                background-color: #96D4EE;
-            }
-        }
-        &.googleplus {
-            a {
-                background-color: #d34836;
-                &:hover {
-                    background-color: #f75b44;
-                }
-                &::before {
-                    content:"\f0d5";
-                    font-size: 17px;
-                    top: 1px;
-                }
-            }
-            .share_count {
-                color: #a31601;
-                background-color: #eda79d;
-            }
-        }
-        &.mail {
-            a {
-                background-color: #999;
-                &:hover {
-                    background-color: #a8a8a8;
-                }
-                &::before {
-                    content:"\f0e0";
-                    font-size: 18px;
-                }
-            }
-        }
-        &.info {
-            width: 23px;
-            height: 28px;
-            border: 1px solid #ccc;
-            a {
-                padding: 0;
-                &::before {
-                    content:"\f129";
-                    font-size: 16px;
-                    left: 9px;
-                    color: #666;
-                }
-                &:hover {
-                    background-color: #efefef;
-                }
-            }
-            .share_text {
-                display: block;
-                text-indent: -9999px;
-            }
+        .fa {
+            line-height: inherit;
+            position: absolute;
+            left: 5px;
         }
         .share_count {
             padding: 0 8px;
@@ -144,7 +50,7 @@
     }
     // ------------------------- colourless design
     .theme-grey {
-        .twitter, .facebook, .googleplus, .mail {
+        .shariff-button {
             a {
                 background-color: #b0b0b0;
             }
@@ -152,18 +58,6 @@
                 background-color: #ccc;
                 color: #333;
             }
-        }
-        .twitter a:hover {
-            background-color: #55acee;
-        }
-        .facebook a:hover {
-            background-color: #3b5998;
-        }
-        .googleplus a:hover {
-            background-color: #d34836;
-        }
-        .send_by_email a:hover {
-            background-color: #999;
         }
     }
     // ------------------------- even less colorful design
@@ -181,21 +75,6 @@
                 color: #999;
             }
         }
-        .twitter a {
-            color: #55acee;
-        }
-        .facebook a {
-            color: #3b5998;
-        }
-        .googleplus a {
-            color: #d34836;
-        }
-        .mail a {
-            color: #999;
-        }
-        .info {
-            height: 30px;
-        }
     }
     // ------------------------- vertical alignment
     .orientation-vertical {
@@ -205,12 +84,6 @@
             .share_count {
                 width: 24px;
                 text-align: right;
-            }
-            &.facebook a {
-                padding-left: 34px;
-            }
-            &.info {
-                margin-left: 95px;
             }
         }
     }
