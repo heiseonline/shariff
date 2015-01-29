@@ -186,7 +186,7 @@ _Shariff.prototype = {
 
     // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
     abbreviateText: function(text, length) {
-        var abbreviated = decodeURIComponent(text);
+        var abbreviated = $('<div/>').html(text).text();
         if (abbreviated.length <= length) {
             return text;
         }
