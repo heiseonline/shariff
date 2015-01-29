@@ -3,6 +3,7 @@ demo/*.css
 demo/build
 demo/css
 demo/fonts
+*.map
 
 bower_components
 
