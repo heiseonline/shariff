@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(shariff) {
+    var url = encodeURIComponent(shariff.getURL());
     return {
         popup: false,
         shareText: {
@@ -15,6 +16,6 @@ module.exports = function(shariff) {
             'en': 'Share on Whatsapp',
             'es': 'Compartir en Whatsapp'
         },
-        shareUrl: 'whatsapp://send?text=' + shariff.getShareText() + '%20' + shariff.getURL() + shariff.getReferrerTrack()
+        shareUrl: 'whatsapp://send?text=' + shariff.getShareText() + '%20' + url + shariff.getReferrerTrack()
     };
 };

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(shariff) {
-    var fbEncUrl = encodeURIComponent(shariff.getURL());
+    var url = encodeURIComponent(shariff.getURL());
     return {
         popup: true,
         shareText: {
@@ -16,6 +16,6 @@ module.exports = function(shariff) {
             'en': 'Share on Facebook',
             'es': 'Compartir en Facebook'
         },
-        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + fbEncUrl + shariff.getReferrerTrack()
+        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + url + shariff.getReferrerTrack()
     };
 };

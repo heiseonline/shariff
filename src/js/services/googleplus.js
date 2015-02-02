@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(shariff) {
+    var url = encodeURIComponent(shariff.getURL());
     return {
         popup: true,
         shareText: '+1',
@@ -11,7 +12,7 @@ module.exports = function(shariff) {
             'en': 'Share on Google+',
             'es': 'Compartir en Google+'
         },
-        shareUrl: 'https://plus.google.com/share?url=' + shariff.getURL() + shariff.getReferrerTrack()
+        shareUrl: 'https://plus.google.com/share?url=' + url + shariff.getReferrerTrack()
     };
 };
 
