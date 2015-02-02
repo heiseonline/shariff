@@ -1,7 +1,18 @@
 'use strict';
 
+var url = require('url');
+
 module.exports = function(shariff) {
-    var url = encodeURIComponent(shariff.getURL());
+    var shareUrl = url.parse('https://twitter.com/intent/tweet', true);
+
+    // TODO FIXME: remove "encodeURIComponent()" from getShareText()
+    shareUrl.query.text = decodeURIComponent(shariff.getShareText());
+    shareUrl.query.url = shariff.getURL();
+    if (typeof shariff.options.twitterVia !== null) {
+        shareUrl.query.via = shariff.options.twitterVia;
+    }
+    delete shareUrl.search;
+
     return {
         popup: true,
         shareText: 'tweet',
@@ -12,6 +23,7 @@ module.exports = function(shariff) {
             'en': 'Share on Twitter',
             'es': 'Compartir en Twitter'
         },
-        shareUrl: 'https://twitter.com/intent/tweet?text='+ shariff.getShareText() + '&url=' + url + shariff.getReferrerTrack()
+        // shareUrl: 'https://twitter.com/intent/tweet?text='+ shariff.getShareText() + '&url=' + url
+        shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
     };
 };

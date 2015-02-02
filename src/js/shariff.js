@@ -67,6 +67,8 @@ _Shariff.prototype = {
         // services to be enabled in the following order
         services   : ['twitter', 'facebook', 'googleplus', 'info'],
 
+        twitterVia: null,
+
         // build URI from rel="canonical" or document.location
         url: function() {
             var url = global.document.location.href;
