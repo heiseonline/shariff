@@ -12,6 +12,6 @@ module.exports = function(shariff) {
             'en': 'Share on Twitter',
             'es': 'Compartir en Twitter'
         },
-        shareUrl: 'https://twitter.com/intent/tweet?text='+ url + '&url=' + shariff.getURL() + shariff.getReferrerTrack()
+        shareUrl: 'https://twitter.com/intent/tweet?text='+ shariff.getShareText() + '&url=' + url + shariff.getReferrerTrack()
     };
 };
