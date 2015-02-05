@@ -188,6 +188,7 @@ module.exports = function(grunt) {
 
         release: {
             options: {
+                additionalFiles: ['bower.json'],
                 afterBumpTasks: ['build'],
                 tagName: 'v<%= version %>',
                 github: {
