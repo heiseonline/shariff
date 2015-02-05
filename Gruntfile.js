@@ -188,6 +188,7 @@ module.exports = function(grunt) {
 
         release: {
             options: {
+                afterBumpTasks: ['build'],
                 tagName: 'v<%= version %>',
                 github: {
                    repo: 'heiseonline/shariff',
