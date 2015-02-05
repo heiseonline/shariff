@@ -8,7 +8,7 @@ module.exports = function(shariff) {
     // TODO FIXME: remove "encodeURIComponent()" from getShareText()
     shareUrl.query.text = decodeURIComponent(shariff.getShareText());
     shareUrl.query.url = shariff.getURL();
-    if (typeof shariff.options.twitterVia !== null) {
+    if (shariff.options.twitterVia !== null) {
         shareUrl.query.via = shariff.options.twitterVia;
     }
     delete shareUrl.search;
