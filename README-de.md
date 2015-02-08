@@ -13,9 +13,14 @@ Shariff besteht aus zwei Teilen. Der erste Teil ist eine einfache JavaScript-Bib
 ## Erste Schritte
 
 1. Das [aktuellste Shariff-Release](https://github.com/heiseonline/shariff/releases/latest) herunterladen
-2. JavaScript `build/shariff.min.js` bzw. `build/shariff.complete.js` (enthält jQuery) und CSS `build/shariff.min.css` einbinden
-3. Beliebig viele `<div class="shariff">` Elemente einfügen
-4. Mit den unten beschriebenen `data`-Attributen Aussehen und Funktion konfigurieren
+2.  CSS im `<head>` einbinden:
+    * `build/shariff.complete.css` enthält alle Abhängigkeiten
+    * `build/shariff.min.css` verwenden, wenn [Font Awesome](https://github.com/FortAwesome/Font-Awesome) bereits in Ihrer Seite geladen wird
+3. JavaScript unmittelbar vor `</body>` einbinden:
+    * `build/shariff.complete.js` enthält alle Abhängigkeiten
+    * `build/shariff.min.js` verwenden, wenn [jQuery](https://github.com/jquery/jquery) bereits in der Seite vorhanden ist
+4. Beliebig viele `<div class="shariff">` Elemente einfügen
+5. Mit den unten beschriebenen `data`-Attributen Aussehen und Funktion konfigurieren
 
 Die Share-Counts in den Buttons benötigen ein [Backend](#backends) auf ihrem Server.
 
@@ -25,7 +30,7 @@ Code-Beispiel:
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="/path/to/shariff.min.css" rel="stylesheet">
+    <link href="/path/to/shariff.complete.css" rel="stylesheet">
 </head>
 <body>
     <h1>My article</h1>
@@ -38,7 +43,7 @@ Code-Beispiel:
     <div class="shariff" data-backend-url="/path/to/backend" data-url="http://www.example.com/my-article.html" data-theme="grey" data-orientation="vertical"></div>
 
     <!-- vor dem schließenden </body>-Tag -->
-    <script src="/path/to/shariff.min.js"></script>
+    <script src="/path/to/shariff.complete.js"></script>
 </body>
 </html>
 ```

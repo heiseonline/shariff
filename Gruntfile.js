@@ -65,18 +65,7 @@ module.exports = function(grunt) {
                 },
                 src: 'src/js/shariff.js',
                 dest: 'demo/app.min.js'
-            },
-            demo_min: {
-                options: {
-                    transform: [
-                        ['uglifyify', { global: true } ],
-                        ['browserify-shim', { global: true } ]
-                    ],
-                    watch: true
-                },
-                src: 'src/js/shariff.js',
-                dest: 'demo/shariff.min.js'
-            },
+            }
         },
 
         copy: {
@@ -84,18 +73,14 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        flatten: true,
-                        src: ['node_modules/font-awesome/fonts/fontawesome*'],
-                        dest: 'demo/',
-                        filter: 'isFile'
+                        cwd: 'node_modules/font-awesome',
+                        src: '{fonts,css}/*',
+                        dest: 'demo/'
                     },
                     {
-                        expand: true,
-                        flatten: true,
-                        src: ['src/img/*'],
-                        dest: 'demo/',
-                        filter: 'isFile'
-                    },
+                        src: 'build/*',
+                        dest: 'demo/'
+                    }
                 ]
             }
         },
@@ -129,6 +114,13 @@ module.exports = function(grunt) {
                     compress: true,
                 },
                 src: 'src/style/shariff.less',
+                dest: 'build/shariff.complete.css'
+            },
+            dist_min: {
+                options: {
+                    compress: true,
+                },
+                src: 'src/style/shariff-layout.less',
                 dest: 'build/shariff.min.css'
             }
         },
@@ -151,7 +143,7 @@ module.exports = function(grunt) {
                     base: 'demo',
                     keepalive: true,
                     // livereload: true,
-                    open: true,
+                    // open: true,
                     // debug: true,
                     middleware: function (connect, options, middlewares) {
                         var proxy = require('grunt-connect-proxy/lib/utils').proxyRequest;
@@ -200,6 +192,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('build', ['test', 'less:demo', 'less:dist', 'browserify:dist_complete_min', 'browserify:dist_min']);
-    grunt.registerTask('demo', ['copy:demo', 'less:demo', 'browserify:demo', 'browserify:demo_min', 'hapi', 'configureProxies:demo', 'connect']);
+    grunt.registerTask('demo', ['copy:demo', 'less:demo', 'browserify:demo', 'hapi', 'configureProxies:demo', 'connect']);
     grunt.registerTask('default', ['test', 'browserify:dev']);
 };
