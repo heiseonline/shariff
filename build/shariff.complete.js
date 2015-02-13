@@ -1,6 +1,6 @@
 
 /*
- * shariff - v1.5.0 - 08.02.2015
+ * shariff - v1.5.0 - 12.02.2015
  * https://github.com/heiseonline/shariff
  * Copyright (c) 2015 Ines Pauer, Philipp Busse, Sebastian Hilbig, Erich Kramer, Deniz Sesli
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php> license
@@ -27,7 +27,7 @@ if(!r)break}return n?s.length:s?t.error(e):I(e,u).slice(0)},k=t.compile=function
 },{}],7:[function(require,module,exports){
 "use strict";module.exports=function(e){var r=encodeURIComponent(e.getURL());return{popup:!0,shareText:{de:"teilen",en:"share",es:"compartir"},name:"facebook",title:{de:"Bei Facebook teilen",en:"Share on Facebook",es:"Compartir en Facebook"},shareUrl:"https://www.facebook.com/sharer/sharer.php?u="+r+e.getReferrerTrack()}};
 },{}],8:[function(require,module,exports){
-"use strict";module.exports=function(e){var t=encodeURIComponent(e.getURL());return{tooltip:!0,width:130,shareText:{de:"gefällt mir",en:"like"},name:"facebooklike",title:{de:"Gefällt mir bei Facebook ",en:"Like on Facebook"},shareUrl:"http://www.facebook.com/plugins/like.php?href="+t+e.getReferrerTrack()+"&width=80&layout=button_count&action=like&show_faces=false&share=false&height=30",popupInfoText:{de:"Zum Schutz Ihrer Daten nehmen wir erst jetzt Kontakt mit Facebook auf. Klicken Sie bitte den nachfolgenden Button um diese Seite zu liken."}}};
+"use strict";module.exports=function(e){var t=encodeURIComponent(e.getURL());return{tooltip:!0,width:130,shareText:{de:"gefällt mir",en:"like"},name:"facebooklike",title:{de:"Gefällt mir bei Facebook ",en:"Like on Facebook"},shareUrl:"https://www.facebook.com/plugins/like.php?href="+t+e.getReferrerTrack()+"&width=80&layout=button_count&action=like&show_faces=false&share=false&height=30",popupInfoText:{de:"Zum Schutz Ihrer Daten nehmen wir erst jetzt Kontakt mit Facebook auf. Klicken Sie bitte den nachfolgenden Button um diese Seite zu liken."}}};
 },{}],9:[function(require,module,exports){
 "use strict";module.exports=function(e){return{popup:!0,shareText:"+1",name:"googleplus",title:{de:"Bei Google+ teilen",en:"Share on Google+",es:"Compartir en Google+"},shareUrl:"https://plus.google.com/share?url="+e.getURL()+e.getReferrerTrack()}};
 },{}],10:[function(require,module,exports){
