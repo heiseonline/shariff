@@ -133,6 +133,11 @@ module.exports = function(grunt) {
                 dest: 'demo/app.min.css'
             },
             dist: {
+                options: {
+                    modifyVars: {
+                        'fa-font-path': '"//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts"'
+                    }
+                },
                 src: 'src/style/shariff-complete.less',
                 dest: 'build/shariff.complete.css'
             },
