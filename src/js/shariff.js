@@ -174,7 +174,7 @@ _Shariff.prototype = {
             e.preventDefault();
 
             var url = $(this).attr('href');
-            var windowName = $(this).attr('title');
+            var windowName = '_blank';
             var windowSizeX = '600';
             var windowSizeY = '460';
             var windowSize = 'width=' + windowSizeX + ',height=' + windowSizeY;
