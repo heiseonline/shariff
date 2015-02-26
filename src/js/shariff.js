@@ -119,7 +119,9 @@ _Shariff.prototype = {
 
     // returns shareCounts of document
     getShares: function() {
-        return $.getJSON(this.options.backendUrl + '?url=' + encodeURIComponent(this.getURL()));
+        var baseUrl = this.options.backendUrl;
+	    baseUrl += baseUrl.indexOf('?') ? '&' : '?';
+        return $.getJSON(baseUrl + 'url=' + encodeURIComponent(this.getURL()));
     },
 
     // add value of shares for each service
