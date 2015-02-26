@@ -1,6 +1,7 @@
 'use strict';
 
 var $ = require('jquery');
+var url = require('url');
 
 var _Shariff = function(element, options) {
     var self = this;
@@ -119,7 +120,10 @@ _Shariff.prototype = {
 
     // returns shareCounts of document
     getShares: function() {
-        return $.getJSON(this.options.backendUrl + '?url=' + encodeURIComponent(this.getURL()));
+        var baseUrl = url.parse(this.options.backendUrl, true);
+        baseUrl.query.url = this.getURL();
+        delete baseUrl.search;
+        return $.getJSON(url.format(baseUrl));
     },
 
     // add value of shares for each service
