@@ -194,7 +194,9 @@ module.exports = function(grunt) {
         release: {
             options: {
                 additionalFiles: ['bower.json'],
-                afterBumpTasks: ['build'],
+
+                // Not working properly
+                // afterBump: ['build'],
                 tagName: 'v<%= version %>',
                 github: {
                    repo: 'heiseonline/shariff',
