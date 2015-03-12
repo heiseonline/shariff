@@ -1,10 +1,7 @@
 .shariff {
     .info {
-        width: 23px;
-        height: 28px;
         border: 1px solid #ccc;
         a {
-            padding: 0;
             color: #666;
             background-color: #fff;
             &:hover {
@@ -12,12 +9,12 @@
             }
         }
         .fa-info {
-            font-size: 16px;
-            left: 9px;
+            font-size: 20px;
+            width: 33px;
         }
         .share_text {
-            display: block;
-            text-indent: -9999px;
+            display: block !important;
+            text-indent: -9999px !important;
         }
     }
     .theme-grey {
@@ -28,14 +25,34 @@
             }
         }
     }
-    .theme-white {
-        .info {
-            height: 30px;
-        }
-    }
     .orientation-vertical {
         .info {
-            margin-left: 95px;
+            width: 35px;
+            float: right;
+        }
+    }
+}
+
+@media only screen and (min-width: 360px) {
+    .shariff .orientation-horizontal .info {
+        flex: none !important;
+        width: 35px;
+        min-width: 35px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .shariff {
+        .info .fa-info {
+            font-size: 16px;
+            width: 23px;
+        }
+        .orientation-horizontal .info {
+            width: 25px;
+            min-width: 25px;
+        }
+        .orientation-vertical .info {
+            width: 25px;
         }
     }
 }

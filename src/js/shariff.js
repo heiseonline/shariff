@@ -145,8 +145,9 @@ _Shariff.prototype = {
 
         var themeClass = 'theme-' + this.options.theme;
         var orientationClass = 'orientation-' + this.options.orientation;
+        var serviceCountClass = 'col-' + this.options.services.length;
 
-        var $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass);
+        var $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass).addClass(serviceCountClass);
 
         // add html for service-links
         this.services.forEach(function(service) {

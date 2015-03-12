@@ -2,9 +2,10 @@
 
 article {
     font-family: Arial,sans-serif;
-    margin: auto;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
     &.slim {
-        width: 540px;
         h1 {
             line-height: 1.2em;
             font-size: 1.5em;
@@ -26,27 +27,29 @@ article {
         }
     }
     &.wide {
-        left: -160px;
-        margin: 0 auto;
-        padding: 0 5px 0 165px;
-        position: relative;
-        width: 1078px;
         h1 {
-            font-size: 2.9em;
-            width: 85%;
+            font-size: 2em;
+            @media only screen and (min-width: 600px) {
+                font-size: 2.9em;
+            }
+        }
+        #article_extras {
+            @media only screen and (min-width: 600px) {
+                width: 30%;
+                min-width: 130px;
+                max-width: 190px;
+                float: left;
+                box-sizing: border-box;
+                padding-right: 30px;
+            }
         }
         #article_content {
-            padding-left: 150px;
-            position: relative;
-            nav#article_navigation {
-                left: 0;
-                position: absolute;
-                top: 0;
-                width: 130px;
+            @media only screen and (min-width: 600px) {
+                width: 70%;
+                float: left;
             }
             p {
-                margin: 1.875em 0;
-                max-width: 800px;
+                margin: 0;
                 line-height: 1.4;
             }
         }

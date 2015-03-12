@@ -1,15 +1,13 @@
 .shariff {
     .facebook {
         a {
-            padding-left: 24px;
             background-color: #3b5998;
             &:hover {
                 background-color: #4273c8;
             }
         }
         .fa-facebook {
-            font-size: 18px;
-            top: 1px;
+            font-size: 22px;
         }
         .share_count {
             color: #183a75;
@@ -21,9 +19,12 @@
             color: #3b5998;
         }
     }
-    .orientation-vertical {
-        .facebook a {
-            padding-left: 34px;
+}
+
+@media only screen and (min-width: 600px) {
+    .shariff {
+        .facebook .fa-facebook {
+            font-size: 19px;
         }
     }
 }
