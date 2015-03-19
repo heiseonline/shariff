@@ -21,7 +21,11 @@ module.exports = function(shariff) {
         title: {
             'de': 'Bei Twitter teilen',
             'en': 'Share on Twitter',
-            'es': 'Compartir en Twitter'
+            'es': 'Compartir en Twitter',
+            'fr': 'Partager sur Twitter',
+            'it': 'Condividi su Twitter',
+            'da': 'Del på Twitter',
+            'nl': 'Delen op Twitter'
         },
         // shareUrl: 'https://twitter.com/intent/tweet?text='+ shariff.getShareText() + '&url=' + url
         shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
