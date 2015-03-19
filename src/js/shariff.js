@@ -62,7 +62,7 @@ _Shariff.prototype = {
             var shareUrl = url.parse(this.getURL(), true);
             shareUrl.query.view = 'mail';
             delete shareUrl.search;
-            return url.format(shareUrl)
+            return url.format(shareUrl);
         },
 
         // horizontal/vertical
