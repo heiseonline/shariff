@@ -1,13 +1,6 @@
 'use strict';
 
-var url = require('url');
-
 module.exports = function(shariff) {
-
-    var shareUrl = url.parse(shariff.getURL(), true);
-    shareUrl.query.view = 'mail';
-    delete shareUrl.search;
-
     return {
         popup: false,
         shareText: 'mail',
@@ -18,6 +11,6 @@ module.exports = function(shariff) {
             'en': 'Send by email',
             'es': 'Enviar por email'
         },
-        shareUrl: url.format(shareUrl)
+        shareUrl: shariff.getOption('mailUrl')
     };
 };

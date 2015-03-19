@@ -58,9 +58,15 @@ _Shariff.prototype = {
         // localisation: "de" or "en"
         lang: 'de',
 
+        mailUrl: function() {
+            var shareUrl = url.parse(this.getURL(), true);
+            shareUrl.query.view = 'mail';
+            delete shareUrl.search;
+            return url.format(shareUrl)
+        },
+
         // horizontal/vertical
         orientation: 'horizontal',
-
 
         // a string to suffix current URL
         referrerTrack: null,
@@ -110,8 +116,12 @@ _Shariff.prototype = {
     },
 
     getURL: function() {
-        var url = this.options.url;
-        return ( typeof url === 'function' ) ? $.proxy(url, this)() : url;
+        return this.getOption('url');
+    },
+
+    getOption: function(name) {
+        var option = this.options[name];
+        return (typeof option === 'function') ? $.proxy(option, this)() : option;
     },
 
     getReferrerTrack: function() {
