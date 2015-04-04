@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX example</title>
+    <link rel="stylesheet" type="text/css" href="app.min.css">
+    <script src="app.min.js"></script>
+</head>
+<body>
+
+<script>
+var createDiv = function() {
+    var div = document.createElement("div");
+    div.classList.add("shariff");
+    document.querySelector("body").appendChild(div);
+    return div;
+}
+
+new Shariff(createDiv());
+
+// Set custom options in constructor
+new Shariff(createDiv(), {
+    theme: "grey",
+    services: ["twitter", "googleplus"],
+    infoUrl: "http://www.example.com"
+});
+</script>
+</body>
+</html>
