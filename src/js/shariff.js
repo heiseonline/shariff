@@ -3,7 +3,7 @@
 var $ = require('jquery');
 var url = require('url');
 
-var _Shariff = function(element, options) {
+var Shariff = function(element, options) {
     var self = this;
 
     // the DOM element that will contain the buttons
@@ -42,7 +42,7 @@ var _Shariff = function(element, options) {
 
 };
 
-_Shariff.prototype = {
+Shariff.prototype = {
 
     // Defaults may be over either by passing "options" to constructor method
     // or by setting data attributes.
@@ -230,11 +230,14 @@ _Shariff.prototype = {
     }
 };
 
-module.exports = _Shariff;
+module.exports = Shariff;
+
+// export Shariff class to global (for non-Node users)
+global.Shariff = Shariff;
 
 // initialize .shariff elements
 $('.shariff').each(function() {
     if (!this.hasOwnProperty('shariff')) {
-        this.shariff = new _Shariff(this);
+        this.shariff = new Shariff(this);
     }
 });
