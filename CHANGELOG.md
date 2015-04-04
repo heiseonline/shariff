@@ -1,3 +1,5 @@
+* export Shariff class to global window object
+
 v1.8.0
 * Added data-mail-url feature which enables customization of the mail service button.
 * Added language support for da, fr, it and nl. (mikejpr)
