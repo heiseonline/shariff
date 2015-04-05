@@ -74,6 +74,10 @@ Shariff.prototype = {
         // services to be enabled in the following order
         services   : ['twitter', 'facebook', 'googleplus', 'info'],
 
+        title: function() {
+            return $('title').text();
+        },
+
         twitterVia: null,
 
         // build URI from rel="canonical" or document.location
@@ -122,6 +126,10 @@ Shariff.prototype = {
     getOption: function(name) {
         var option = this.options[name];
         return (typeof option === 'function') ? $.proxy(option, this)() : option;
+    },
+
+    getTitle: function() {
+        return this.getOption('title');
     },
 
     getReferrerTrack: function() {
@@ -199,34 +207,6 @@ Shariff.prototype = {
         });
 
         $socialshareElement.append($buttonList);
-    },
-
-    // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
-    abbreviateText: function(text, length) {
-        var abbreviated = $('<div/>').html(text).text();
-        if (abbreviated.length <= length) {
-            return text;
-        }
-
-        var lastWhitespaceIndex = abbreviated.substring(0, length - 1).lastIndexOf(' ');
-        abbreviated = encodeURIComponent(abbreviated.substring(0, lastWhitespaceIndex)) + '\u2026';
-
-        return abbreviated;
-    },
-
-    // create tweet text from content of <meta name="DC.title"> and <meta name="DC.creator">
-    // fallback to content of <title> tag
-    getShareText: function() {
-        var title = this.getMeta('DC.title');
-        var creator = this.getMeta('DC.creator');
-
-        if (title.length > 0 && creator.length > 0) {
-            title += ' - ' + creator;
-        } else {
-            title = $('title').text();
-        }
-        // 120 is the max character count left after twitters automatic url shortening with t.co
-        return encodeURIComponent(this.abbreviateText(title, 120));
     }
 };
 

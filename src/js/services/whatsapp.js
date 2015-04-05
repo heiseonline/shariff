@@ -2,6 +2,16 @@
 
 module.exports = function(shariff) {
     var url = encodeURIComponent(shariff.getURL());
+
+    var title = shariff.getMeta('DC.title');
+    var creator = shariff.getMeta('DC.creator');
+
+    if (title.length > 0 && creator.length > 0) {
+        title += ' - ' + creator;
+    } else {
+        title = shariff.getTitle();
+    }
+
     return {
         popup: false,
         shareText: {
@@ -24,6 +34,6 @@ module.exports = function(shariff) {
             'da': 'Del på Whatsapp',
             'nl': 'Delen op Whatsapp'
         },
-        shareUrl: 'whatsapp://send?text=' + shariff.getShareText() + '%20' + url + shariff.getReferrerTrack()
+        shareUrl: 'whatsapp://send?text=' + encodeURIComponent(title) + '%20' + url + shariff.getReferrerTrack()
     };
 };
