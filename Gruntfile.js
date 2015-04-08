@@ -189,21 +189,6 @@ module.exports = function(grunt) {
                     }
                 ]
             }
-        },
-
-        release: {
-            options: {
-                additionalFiles: ['bower.json'],
-
-                // Not working properly
-                // afterBump: ['build'],
-                tagName: 'v<%= version %>',
-                github: {
-                   repo: 'heiseonline/shariff',
-                   usernameVar: 'GITHUB_USERNAME',
-                   passwordVar: 'GITHUB_PASSWORD'
-                }
-            }
         }
     });
 
@@ -213,7 +198,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-connect-proxy');
-    grunt.loadNpmTasks('grunt-release');
     grunt.loadNpmTasks('grunt-hapi');
 
     grunt.registerTask('test', ['jshint']);
