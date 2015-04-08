@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.9.3 2015-04-08
+* Added missing shariff.min.css in release.
+
 ## v1.9.2 2015-04-08
 * Made sure shariff element does not have any children on initialization.
 
