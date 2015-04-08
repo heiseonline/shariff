@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.9.2 2015-04-08
+* Made sure shariff element does not have any children on initialization.
+
 ## v1.9.1 2015-04-08
 * Fixed bower integration.
 
