@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.9.1 2015-04-08
+* Fixed bower integration.
+
 ## v1.9.0 2015-04-08
 * Added custom title support.
 * Added Shariff class to global window object so it can be used without Node.js.
