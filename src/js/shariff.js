@@ -18,10 +18,11 @@ var Shariff = function(element, options) {
     var availableServices = [
         require('./services/facebook'),
         require('./services/googleplus'),
+        require('./services/info'),
+        require('./services/mail'),
         require('./services/twitter'),
         require('./services/whatsapp'),
-        require('./services/mail'),
-        require('./services/info')
+        require('./services/xing')
     ];
 
     // filter available services to those that are enabled and initialize them

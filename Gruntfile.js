@@ -27,17 +27,6 @@ module.exports = function(grunt) {
                 },
                 banner: '<%= meta.banner %>'
             },
-            dev: {
-                options: {
-                    browserifyOptions: {
-                        debug: true
-                    },
-                    keepAlive: true,
-                    watch: true
-                },
-                src: 'src/js/shariff.js',
-                dest: 'build/shariff.js'
-            },
             dev_demo: {
                 options: {
                     browserifyOptions: {
@@ -203,5 +192,5 @@ module.exports = function(grunt) {
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('build', ['test', 'less:demo', 'less:dist', 'less:dist_min', 'browserify:dist_complete_min', 'browserify:dist_min']);
     grunt.registerTask('demo', ['copy:demo', 'less:demo', 'browserify:demo', 'hapi', 'configureProxies:demo', 'connect']);
-    grunt.registerTask('default', ['test', 'browserify:dev']);
+    grunt.registerTask('default', ['test', 'demo']);
 };

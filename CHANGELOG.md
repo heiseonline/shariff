@@ -1,5 +1,7 @@
 # Changelog
 
+* Added xing service. (osahner)
+
 ## v1.9.3 2015-04-08
 * Added missing shariff.min.css in release.
 
