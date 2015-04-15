@@ -1,6 +1,7 @@
 # Changelog
 
 * Added xing service. (osahner)
+* Fixed mailto links opening in new tabs.
 * Updated node dependencies.
 
 ## v1.9.3 2015-04-08

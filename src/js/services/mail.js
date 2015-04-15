@@ -1,7 +1,9 @@
 'use strict';
 
 module.exports = function(shariff) {
+    var url = shariff.getOption('mailUrl');
     return {
+        blank: url.indexOf('http') === 0,
         popup: false,
         shareText: 'mail',
         name: 'mail',
@@ -15,6 +17,6 @@ module.exports = function(shariff) {
             'da': 'Sende via e-mail',
             'nl': 'Sturen via e-mail '
         },
-        shareUrl: shariff.getOption('mailUrl')
+        shareUrl: url
     };
 };
