@@ -92,7 +92,7 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
 | `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `xing`, `whatsapp`, `mail`, `info` | (all enabled) |
-| `data-theme`       | We include two color schemes, `standard` or `grey`. | `standard` |
+| `data-theme`       | We include 3 color schemes, `standard`, `grey` and `white`. | `standard` |
 | `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` | 
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
 | `data-url`         | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
