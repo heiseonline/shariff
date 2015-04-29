@@ -1,5 +1,7 @@
 # Changelog
 
+* Fixed info-button width in col <= 3
+
 ## v1.10.0 2015-04-15
 
 * Added xing service. (osahner)
