@@ -1,17 +1,19 @@
 'use strict';
 
-module.exports = function(shariff) {
-    var url = encodeURIComponent(shariff.getURL());
-    var media = encodeURIComponent(shariff.getOption('pinterestMedia') || shariff.getOption('image'));
+var url = require('url');
 
+module.exports = function(shariff) {
     var title = shariff.getMeta('DC.title') || shariff.getTitle();
     var creator = shariff.getMeta('DC.creator');
-
     if (creator.length > 0) {
         title += ' - ' + creator;
     }
 
-    title = encodeURIComponent(title);
+    var shareUrl = url.parse('https://www.pinterest.com/pin/create/button/', true);
+    shareUrl.query.url = shariff.getURL();
+    shareUrl.query.media = shariff.getOption('mediaUrl');
+    shareUrl.query.description = title;
+    delete shareUrl.search;
 
     return {
         popup: true,
@@ -27,6 +29,6 @@ module.exports = function(shariff) {
             'da': 'Del på Pinterest',
             'nl': 'Delen op Pinterest'
         },
-        shareUrl: 'https://www.pinterest.com/pin/create/button/?url=' + url + '&media=' +  media + '&description=' + title + shariff.getReferrerTrack()
+        shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
     };
 };
