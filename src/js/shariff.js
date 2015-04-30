@@ -70,6 +70,9 @@ Shariff.prototype = {
             return url.format(shareUrl);
         },
 
+        // Media (e.g. image) URL to be shared
+        mediaUrl: null,
+
         // horizontal/vertical
         orientation: 'horizontal',
 
