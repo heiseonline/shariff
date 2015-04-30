@@ -1,0 +1,32 @@
+.shariff {
+    .pinterest {
+        a {
+            background-color: #bd081c;
+            &:hover {
+                background-color: lighten(#bd081c, 5%);
+            }
+        }
+        .fa-pinterest-p {
+            font-size: 22px;
+        }
+        .share_count {
+            color: #a31601;
+            background-color: #eda79d;
+        }
+    }
+    .theme-white {
+        .pinterest a {
+            color: #bd081c;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .shariff {
+        .pinterest .fa-pinterest-p {
+            font-size: 19px;
+            position: relative;
+            top: 1px;
+        }
+    }
+}

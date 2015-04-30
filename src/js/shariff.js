@@ -20,6 +20,7 @@ var Shariff = function(element, options) {
         require('./services/googleplus'),
         require('./services/info'),
         require('./services/mail'),
+        require('./services/pinterest'),
         require('./services/twitter'),
         require('./services/whatsapp'),
         require('./services/xing')
@@ -68,6 +69,9 @@ Shariff.prototype = {
             delete shareUrl.search;
             return url.format(shareUrl);
         },
+
+        // Media (e.g. image) URL to be shared
+        mediaUrl: null,
 
         // horizontal/vertical
         orientation: 'horizontal',
