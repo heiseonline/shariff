@@ -20,6 +20,7 @@ var Shariff = function(element, options) {
         require('./services/googleplus'),
         require('./services/info'),
         require('./services/mail'),
+        require('./services/pinterest'),
         require('./services/twitter'),
         require('./services/whatsapp'),
         require('./services/xing')
