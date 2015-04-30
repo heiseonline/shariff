@@ -1,9 +1,9 @@
 # Changelog
 
-* Fixed info-button width in col <= 3
+* Fixed info button width in col <= 3
+* Fixed typo in README.md (nyze2oo9)
 
 ## v1.10.0 2015-04-15
-
 * Added xing service. (osahner)
 * Fixed mailto links opening in new tabs.
 * Updated node dependencies.
