@@ -1,6 +1,6 @@
 
 /*!
- * shariff - v1.10.0 - 15.04.2015
+ * shariff - v1.10.1 - 30.04.2015
  * https://github.com/heiseonline/shariff
  * Copyright (c) 2015 Ines Pauer, Philipp Busse, Sebastian Hilbig, Erich Kramer, Deniz Sesli
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php> license
@@ -53,7 +53,7 @@ var i;return ie.isWindow(t)?t.document.documentElement["client"+e]:9===t.nodeTyp
 
 
 },{}],11:[function(require,module,exports){
-"use strict";var url=require("url"),$=require("jquery"),abbreviateText=function(t,e){var r=$("<div/>").html(t).text();if(r.length<=e)return t;var i=r.substring(0,e-1).lastIndexOf(" ");return r=encodeURIComponent(r.substring(0,i))+"…"};module.exports=function(t){var e=url.parse("https://twitter.com/intent/tweet",!0),r=t.getMeta("DC.title"),i=t.getMeta("DC.creator");return r.length>0&&i.length>0?r+=" - "+i:r=t.getTitle(),e.query.text=abbreviateText(r,120),e.query.url=t.getURL(),null!==t.options.twitterVia&&(e.query.via=t.options.twitterVia),delete e.search,{popup:!0,shareText:"tweet",name:"twitter",faName:"fa-twitter",title:{de:"Bei Twitter teilen",en:"Share on Twitter",es:"Compartir en Twitter",fr:"Partager sur Twitter",it:"Condividi su Twitter",da:"Del på Twitter",nl:"Delen op Twitter"},shareUrl:url.format(e)+t.getReferrerTrack()}};
+"use strict";var url=require("url"),$=require("jquery"),abbreviateText=function(t,e){var r=$("<div/>").html(t).text();if(r.length<=e)return t;var i=r.substring(0,e-1).lastIndexOf(" ");return r=r.substring(0,i)+"…"};module.exports=function(t){var e=url.parse("https://twitter.com/intent/tweet",!0),r=t.getMeta("DC.title"),i=t.getMeta("DC.creator");return r.length>0&&i.length>0?r+=" - "+i:r=t.getTitle(),e.query.text=abbreviateText(r,120),e.query.url=t.getURL(),null!==t.options.twitterVia&&(e.query.via=t.options.twitterVia),delete e.search,{popup:!0,shareText:"tweet",name:"twitter",faName:"fa-twitter",title:{de:"Bei Twitter teilen",en:"Share on Twitter",es:"Compartir en Twitter",fr:"Partager sur Twitter",it:"Condividi su Twitter",da:"Del på Twitter",nl:"Delen op Twitter"},shareUrl:url.format(e)+t.getReferrerTrack()}};
 
 
 },{"jquery":6,"url":5}],12:[function(require,module,exports){
