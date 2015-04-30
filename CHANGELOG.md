@@ -1,5 +1,7 @@
 # Changelog
 
+## v1.10.1 2015-04-30
+* Fixed encoding issue in twitter service with text longer than 120 chars (wegewerk-mdt)
 * Fixed info button width in col <= 3
 * Fixed typo in README.md (nyze2oo9)
 
