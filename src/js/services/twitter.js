@@ -11,7 +11,7 @@ var abbreviateText = function(text, length) {
     }
 
     var lastWhitespaceIndex = abbreviated.substring(0, length - 1).lastIndexOf(' ');
-    abbreviated = encodeURIComponent(abbreviated.substring(0, lastWhitespaceIndex)) + '\u2026';
+    abbreviated = abbreviated.substring(0, lastWhitespaceIndex) + '\u2026';
 
     return abbreviated;
 };
