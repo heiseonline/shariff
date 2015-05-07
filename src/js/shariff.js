@@ -23,7 +23,8 @@ var Shariff = function(element, options) {
         require('./services/pinterest'),
         require('./services/twitter'),
         require('./services/whatsapp'),
-        require('./services/xing')
+        require('./services/xing'),
+        require('./services/linkedin'),
     ];
 
     // filter available services to those that are enabled and initialize them
