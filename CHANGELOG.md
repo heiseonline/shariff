@@ -1,6 +1,7 @@
 # Changelog
 
 * Added linkedin service (dmarks2)
+* Improved mail service to enable customization of subject and body.
 
 ## v1.11.0 2015-04-30
 

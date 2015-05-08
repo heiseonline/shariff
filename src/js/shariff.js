@@ -71,8 +71,16 @@ Shariff.prototype = {
             return url.format(shareUrl);
         },
 
+        // if
+        mailSubject: function() {
+            return this.getMeta('DC.title') || this.getTitle();
+        },
+
+        mailBody: function() { return '<' + this.getURL() + '>'; },
+
         // Media (e.g. image) URL to be shared
         mediaUrl: null,
+
 
         // horizontal/vertical
         orientation: 'horizontal',

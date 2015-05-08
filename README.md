@@ -77,7 +77,7 @@ After downloading Shariff, install its dependencies by running `npm install`.
 $ git clone https://github.com/heiseonline/shariff.git
 $ cd shariff
 $ npm install
-$ grunt demo 
+$ grunt demo
 ```
 
 Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli). Run `grunt demo` to start a local web server which displays several button configurations. The demo page uses [`shariff-backend-node`](https://github.com/heiseonline/shariff-backend-node) to request and display share counts.
@@ -88,13 +88,15 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 |------------------|-------------|---------|
 | `data-backend-url` | The path to your Shariff backend, see below. Settings the value to `null` disables the backend feature. No counts will occur.  | `null` |
 | `data-lang`      | The localisation to use. Available: `de`, `en`, `es` | `de` |
+| `data-mail-body` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail body. | see `data-url`  |
+| `data-mail-subject` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail subject. | see `data-title` |
 | `data-mail-url`  | The url target used for the `mail` service button | `?view=mail` |
 | `data-media-url` | Media url to be shared (pinterest) | `null` |
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
 | `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info` | (all enabled) |
 | `data-theme`       | We include 3 color schemes, `standard`, `grey` and `white`. | `standard` |
-| `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` | 
+| `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` |
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
 | `data-url`         | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
 
@@ -109,4 +111,4 @@ In order to display share counts with Shariff, you need one of the following bac
 Third-party backends:
 * [shariff-backend-java](http://github.com/headissue/shariff-backend-java)
 
-Once you have one of these backends up and running, insert its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, the `data-backend-url` should be `/my-shariff-backend/`. The script will handle the rest. 
+Once you have one of these backends up and running, insert its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, the `data-backend-url` should be `/my-shariff-backend/`. The script will handle the rest.
