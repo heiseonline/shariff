@@ -1,5 +1,7 @@
 # Changelog
 
+* Added linkedin service (dmarks2)
+
 ## v1.11.0 2015-04-30
 
 * Added pinterest service (jsor)
@@ -34,7 +36,7 @@
 * Added responsive layout.
 * Fixed bug in backend url detection. (liayn)
 * Fixed bug in service popups where popups did not open in IE. (doerler)
- 
+
 ## v1.7.3 2015-02-14
 * Fixed shariff-complete.css to use font-awesome CDN.
 
