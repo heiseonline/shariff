@@ -77,7 +77,7 @@ Nach dem Download von Shariff mit `npm install` die Abhängigkeiten installieren
 $ git clone https://github.com/heiseonline/shariff.git
 $ cd shariff
 $ npm install
-$ grunt demo 
+$ grunt demo
 ```
 
 Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli) installiert sein. Die Beispielseite verwendet [`shariff-backend-node`](https://github.com/heiseonline/shariff-backend-node), um die Share-Counts für die Buttons bereitzustellen.
@@ -88,13 +88,15 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 |------------------|--------------|---------|
 | `data-backend-url` | Pfad zum Shariff-[Backend](#backends). Der Wert `null` deaktiviert die Anzeige von Share-Counts.  | `null` |
 | `data-lang`      | Lokalisierung auswählen. Verfügbar: `de`, `en`, `es` | `de` |
+| `data-mail-body` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Body verwendet. | siehe `data-url` |
+| `data-mail-subject` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Betreff verwendet. | siehe `data-title` |
 | `data-mail-url`  | Der Link des `mail`-Buttons | `?view=mail` |
 | `data-media-url` | Zu teilendes Bild (pinterest) | `null` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
 | `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info` | Twitter, Facebook, Google+ |
 | `data-theme`       | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
-| `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` | 
+| `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` |
 | `data-url`         | URL, die geteilt werden soll. | Wenn `data-url` nicht gesetzt ist, wird `link[rel="canonical"]`, `meta[property="og:url"]` oder `location.href` verwendet. |
 
 ## Backends

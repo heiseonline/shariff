@@ -1,13 +1,18 @@
 # Changelog
 
+## v1.12.0 2015-05-08
+
+* Added linkedin service. (dmarks2)
+* Improved mail service to enable customization of subject and body.
+
 ## v1.11.0 2015-04-30
 
-* Added pinterest service (jsor)
+* Added pinterest service. (jsor)
 
 ## v1.10.1 2015-04-30
-* Fixed encoding issue in twitter service with text longer than 120 chars (wegewerk-mdt)
-* Fixed info button width in col <= 3
-* Fixed typo in README.md (nyze2oo9)
+* Fixed encoding issue in twitter service with text longer than 120 chars. (wegewerk-mdt)
+* Fixed info button width in col <= 3.
+* Fixed typo in README.md. (nyze2oo9)
 
 ## v1.10.0 2015-04-15
 * Added xing service. (osahner)
@@ -34,7 +39,7 @@
 * Added responsive layout.
 * Fixed bug in backend url detection. (liayn)
 * Fixed bug in service popups where popups did not open in IE. (doerler)
- 
+
 ## v1.7.3 2015-02-14
 * Fixed shariff-complete.css to use font-awesome CDN.
 

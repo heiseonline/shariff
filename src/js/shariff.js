@@ -19,12 +19,12 @@ var Shariff = function(element, options) {
         require('./services/facebook'),
         require('./services/googleplus'),
         require('./services/info'),
+        require('./services/linkedin'),
         require('./services/mail'),
         require('./services/pinterest'),
         require('./services/twitter'),
         require('./services/whatsapp'),
-        require('./services/xing'),
-        require('./services/linkedin'),
+        require('./services/xing')
     ];
 
     // filter available services to those that are enabled and initialize them
@@ -71,8 +71,16 @@ Shariff.prototype = {
             return url.format(shareUrl);
         },
 
+        // if
+        mailSubject: function() {
+            return this.getMeta('DC.title') || this.getTitle();
+        },
+
+        mailBody: function() { return '<' + this.getURL() + '>'; },
+
         // Media (e.g. image) URL to be shared
         mediaUrl: null,
+
 
         // horizontal/vertical
         orientation: 'horizontal',
