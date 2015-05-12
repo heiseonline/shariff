@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.13.0 2015-05-12
+
+* Added partial translations for `bg`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh`. (heppstux)
+* Fixed LinkedIn colors. (dmarks2)
+
 ## v1.12.0 2015-05-08
 
 * Added linkedin service. (dmarks2)
