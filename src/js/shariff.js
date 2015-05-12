@@ -64,6 +64,9 @@ Shariff.prototype = {
         // localisation: "de" or "en"
         lang: 'de',
 
+        // fallback language for not fully localized services
+        langFallback: 'en',
+
         mailUrl: function() {
             var shareUrl = url.parse(this.getURL(), true);
             shareUrl.query.view = 'mail';
@@ -119,10 +122,14 @@ Shariff.prototype = {
 
     getLocalized: function(data, key) {
         if (typeof data[key] === 'object') {
-            return data[key][this.options.lang];
+            if (typeof data[key][this.options.lang] === 'undefined') {
+            	return data[key][this.options.langFallback];
+            } else {
+            	return data[key][this.options.lang];
+            }
         } else if (typeof data[key] === 'string') {
             return data[key];
-        }
+        } 
         return undefined;
     },
 
