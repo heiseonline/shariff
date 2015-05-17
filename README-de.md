@@ -87,7 +87,7 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 | Attribut         | Beschreibung | Default |
 |------------------|--------------|---------|
 | `data-backend-url` | Pfad zum Shariff-[Backend](#backends). Der Wert `null` deaktiviert die Anzeige von Share-Counts.  | `null` |
-| `data-lang`      | Lokalisierung auswählen. Verfügbar: `de`, `en`, `es` | `de` |
+| `data-lang`      | Lokalisierung auswählen. Verfügbar: `bg`, `de`, `en`, `es`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Body verwendet. | siehe `data-url` |
 | `data-mail-subject` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Betreff verwendet. | siehe `data-title` |
 | `data-mail-url`  | Der Link des `mail`-Buttons | `?view=mail` |
