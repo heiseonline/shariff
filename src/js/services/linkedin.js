@@ -24,6 +24,6 @@ module.exports = function(shariff) {
             'da': 'Del på LinkedIn',
             'nl': 'Delen op LinkedIn'
         },
-        shareUrl: 'http://www.linkedin.com/cws/share?url=' + url + shariff.getReferrerTrack()
+        shareUrl: 'https://www.linkedin.com/cws/share?url=' + url + shariff.getReferrerTrack()
     };
 };
