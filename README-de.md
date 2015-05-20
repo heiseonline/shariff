@@ -112,3 +112,12 @@ Drittanbieter-Backends:
 * [shariff-backend-java](http://github.com/headissue/shariff-backend-java)
 
 Die URL, unter der das Backend erreichbar ist, muss im `data`-Attribut `data-backend-url` angegeben werden. Ein Backend unter der URL `http://example.com/my-shariff-backend/` wird in `data-backend-url` so angegeben: `/my-shariff-backend/`. Den Rest erledigt das Skript.
+
+## Drittanbieter-Integrationen
+
+Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
+
+* [TYPO3-Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
+* [Wordpress-Plugin shariff-sharing](https://wordpress.org/plugins/shariff-sharing/)
+* [Shariff integration for Joomla 3.3+](https://github.com/joomla-agency/plg_jooag_shariff)
+* [Contao integration](https://github.com/hofff/contao-shariff)
