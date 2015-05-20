@@ -113,9 +113,9 @@ Third-party backends:
 
 Once you have one of these backends up and running, insert its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, the `data-backend-url` should be `/my-shariff-backend/`. The script will handle the rest.
 
-## Implementations
+## Third-party integrations
 
-The following list link to implementations for third party systems like content management systems
+This is a list of integrations for third-party systems:
 
 * [TYPO3 Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
 * [Wordpress Plugin shariff-sharing](https://wordpress.org/plugins/shariff-sharing/)
