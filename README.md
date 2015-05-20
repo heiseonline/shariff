@@ -112,3 +112,12 @@ Third-party backends:
 * [shariff-backend-java](http://github.com/headissue/shariff-backend-java)
 
 Once you have one of these backends up and running, insert its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, the `data-backend-url` should be `/my-shariff-backend/`. The script will handle the rest.
+
+## Third-party integrations
+
+This is a list of integrations for third-party systems:
+
+* [TYPO3 Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
+* [Wordpress Plugin shariff-sharing](https://wordpress.org/plugins/shariff-sharing/)
+* [Shariff integration for Joomla 3.3+](https://github.com/joomla-agency/plg_jooag_shariff)
+* [Contao integration](https://github.com/hofff/contao-shariff)
