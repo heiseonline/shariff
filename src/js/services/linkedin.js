@@ -43,7 +43,7 @@ module.exports = function(shariff) {
             'it': 'Condividi su LinkedIn',
             'ja': 'LinkedIn上で共有',
             'ko': 'LinkedIn에서 공유하기',
-            'nl': 'Delen op Whatsapp',
+            'nl': 'Delen op LinkedIn',
             'no': 'Del på LinkedIn',
             'pl': 'Udostępnij przez LinkedIn',
             'pt': 'Compartilhar no LinkedIn',
