@@ -56,6 +56,6 @@ module.exports = function(shariff) {
             'tr': 'LinkedIn\'ta paylaş',
             'zh': '在LinkedIn上分享'
         },
-        shareUrl: 'http://www.linkedin.com/cws/share?url=' + url + shariff.getReferrerTrack()
+        shareUrl: 'https://www.linkedin.com/cws/share?url=' + url + shariff.getReferrerTrack()
     };
 };
