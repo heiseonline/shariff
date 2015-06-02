@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.14.0 2015-06-02
+
+* Added available languages to documentation. (liayn)
+* Added list of third-party integrations to documentation. (NeoBlack, joomla-agency)
+* Added translations for LinkedIn. (dominikmarks)
+* Fixed defaults of `data-services` in README.md. (liayn)
+* Fixed LinkedIn `shareUrl` not using TLS. (dasexil)
+
 ## v1.13.0 2015-05-12
 
 * Added partial translations for `bg`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh`. (heppstux)
