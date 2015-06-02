@@ -1,13 +1,11 @@
 'use strict';
 
 module.exports = function(shariff) {
-    //var url = shariff.getOption('mailUrl');
     var url = shariff.getOption('smsUrl');
 
     // sms: link? Add body.
     if (url.indexOf('sms:') === 0) {
-        //url += '&body=' + encodeURIComponent(shariff.getOption('mailBody'));
-        url += '&body=' + encodeURIComponent(shariff.getOption('smsBody'));
+        url += '?body=' + encodeURIComponent(shariff.getOption('smsBody'));
     }
 
     return {
@@ -15,10 +13,10 @@ module.exports = function(shariff) {
         popup: false,
         shareText: 'sms',
         name: 'sms',
-        faName: 'fa-envelope',
+        faName: 'fa-mobile',
         title: {
             'de': 'Per SMS versenden',
-            'en': 'Send by SMS',
+            'en': 'Send by text',
         },
         shareUrl: url
     };
