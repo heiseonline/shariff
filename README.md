@@ -117,7 +117,7 @@ Once you have one of these backends up and running, insert its URL into the `dat
 
 This is a list of integrations for third-party systems:
 
+* [Contao integration](https://github.com/hofff/contao-shariff)
+* [Joomla 3.4+ Shariff Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
 * [TYPO3 Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
 * [Wordpress Plugin shariff-sharing](https://wordpress.org/plugins/shariff-sharing/)
-* [Joomla 3.4+ Shariff Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
-* [Contao integration](https://github.com/hofff/contao-shariff)
