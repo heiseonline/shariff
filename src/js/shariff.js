@@ -211,6 +211,10 @@ Shariff.prototype = {
             }
             $shareLink.attr('title', self.getLocalized(service, 'title'));
 
+            // add attributes for screen readers
+            $shareLink.attr('role', 'button');
+            $shareLink.attr('aria-label', self.getLocalized(service, 'title'));
+
             $li.append($shareLink);
 
             $buttonList.append($li);
