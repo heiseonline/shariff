@@ -9,7 +9,7 @@ module.exports = function(shariff) {
         title += ' - ' + creator;
     }
 
-    var shareUrl = url.parse('https://www.pinterest.com/pin/create/button/', true);
+    var shareUrl = url.parse('https://www.pinterest.com/pin/create/link/', true);
     shareUrl.query.url = shariff.getURL();
     shareUrl.query.media = shariff.getOption('mediaUrl');
     shareUrl.query.description = title;
