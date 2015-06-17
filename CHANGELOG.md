@@ -1,5 +1,8 @@
 # Changelog
 
+* Fixed pinterest link (startef)
+* Added attributes for screen readers (startef)
+
 ## v1.14.0 2015-06-02
 
 * Added available languages to documentation. (liayn)
