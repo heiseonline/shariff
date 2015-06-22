@@ -124,3 +124,4 @@ Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
 * [TYPO3-Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
 * [Wordpress-Plugin shariff-sharing](https://wordpress.org/plugins/shariff-sharing/)
 * [WordPress-Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
+* [Xenforo 1.4 Plugin](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
