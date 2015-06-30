@@ -1,7 +1,9 @@
 # Changelog
 
-* Fixed pinterest link (startef)
-* Added attributes for screen readers (startef)
+## v1.15.0 2015-06-30
+
+* Fixed pinterest link. (startef)
+* Added attributes for screen readers. (startef)
 
 ## v1.14.0 2015-06-02
 
