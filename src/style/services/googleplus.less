@@ -3,30 +3,34 @@
         a {
             background-color: #d34836;
             &:hover {
-                background-color: #f75b44;
+                background-color: @col-gp-h;
             }
+			div {
+				border: 1px solid @col-gp;
+				&:hover {
+					border-color: @col-gp-h;
+				}
+			}
         }
         .fa-google-plus {
-            font-size: 22px;
+            font-size: 19px;
+            position: relative;
+            top: 1px;
+			&:before { content: @fa-var-google-plus; }
         }
         .share_count {
-            color: #a31601;
-            background-color: #eda79d;
+            color: @col-gp-cs;
+            background-color: @col-gp-bgs;
         }
     }
     .theme-white {
         .googleplus a {
-            color: #d34836;
+            color: @col-gp;
         }
     }
-}
-
-@media only screen and (min-width: 600px) {
-    .shariff {
-        .googleplus .fa-google-plus {
-            font-size: 19px;
-            position: relative;
-            top: 1px;
-        }
-    }
+	.theme-grey {
+		.facebooklike a:hover {
+			background-color: @col-gp;
+		}
+	}
 }

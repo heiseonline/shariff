@@ -1,32 +1,36 @@
 .shariff {
     .pinterest {
         a {
-            background-color: #bd081c;
+            background-color: @col-pi;
             &:hover {
-                background-color: lighten(#bd081c, 5%);
+                background-color: @col-pi-h;
             }
-        }
+ 			div {
+				border: 1px solid @col-pi;
+				&:hover {
+					border-color: @col-pi-h;
+				}
+			}
+       }
         .fa-pinterest-p {
-            font-size: 22px;
+            font-size: 19px;
+            position: relative;
+            top: 1px;
+			&:before { content: @fa-var-pinterest-p; }
         }
         .share_count {
-            color: #a31601;
-            background-color: #eda79d;
+            color: @col-pi-cs;
+            background-color: @col-pi-bgs;
         }
     }
     .theme-white {
         .pinterest a {
-            color: #bd081c;
+            color: @col-pi;
         }
     }
-}
-
-@media only screen and (min-width: 600px) {
-    .shariff {
-        .pinterest .fa-pinterest-p {
-            font-size: 19px;
-            position: relative;
-            top: 1px;
-        }
-    }
+	.theme-grey {
+		.facebooklike a:hover {
+			background-color: @col-pi;
+		}
+	}
 }
