@@ -1,26 +1,30 @@
 .shariff {
     .mail {
         a {
-            background-color: #999;
+            background-color: @col-ma;
             &:hover {
-                background-color: #a8a8a8;
+                background-color: @col-ma-h;
             }
+			div {
+				border: 1px solid @col-ma;
+				&:hover {
+					border-color: @col-ma-h;
+				}
+			}
         }
         .fa-envelope {
-            font-size: 21px;
+            font-size: 18px;
+			&:before { content: @fa-var-envelope; }
         }
     }
     .theme-white {
         .mail a {
-            color: #999;
+            color: @col-ma;
         }
     }
-}
-
-@media only screen and (min-width: 600px) {
-    .shariff {
-        .mail .fa-envelope {
-            font-size: 18px;
-        }
-    }
+	.theme-grey {
+		.facebooklike a:hover {
+			background-color: @col-ma;
+		}
+	}
 }

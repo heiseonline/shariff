@@ -1,20 +1,20 @@
 .shariff {
     .info {
-        border: 1px solid #ccc;
         a {
-            color: #666;
             background-color: #fff;
             &:hover {
                 background-color: #efefef;
             }
+			div {
+				border: 1px solid #ccc;
+				span {
+					color: #666;
+				}
+			}
         }
         .fa-info {
             font-size: 20px;
-            width: 33px;
-        }
-        .share_text {
-            display: block !important;
-            text-indent: -9999px !important;
+			&:before { content: @fa-var-info; }
         }
     }
     .theme-grey {
@@ -25,34 +25,6 @@
             }
         }
     }
-    .orientation-vertical {
-        .info {
-            width: 35px;
-            float: right;
-        }
-    }
+
 }
 
-@media only screen and (min-width: 360px) {
-    .shariff .orientation-horizontal .info {
-        flex: none !important;
-        width: 35px;
-        min-width: 35px !important;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .shariff {
-        .info .fa-info {
-            font-size: 16px;
-            width: 23px;
-        }
-        .orientation-horizontal .info {
-            width: 25px;
-            min-width: 25px !important;
-        }
-        .orientation-vertical .info {
-            width: 25px;
-        }
-    }
-}
