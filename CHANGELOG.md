@@ -1,5 +1,7 @@
 # Changelog
 
+## v1.16.0 2015-07-13
+
 * Made license SPDX compatible.
 * Updated grunt-connect-proxy dependency. (medienverbinder)
 
