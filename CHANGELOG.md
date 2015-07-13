@@ -1,5 +1,7 @@
 # Changelog
 
+* Made license SPDX compatible.
+
 ## v1.15.0 2015-06-30
 
 * Fixed pinterest link. (startef)
