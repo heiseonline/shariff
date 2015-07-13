@@ -24,7 +24,8 @@ var Shariff = function(element, options) {
         require('./services/pinterest'),
         require('./services/twitter'),
         require('./services/whatsapp'),
-        require('./services/xing')
+        require('./services/xing'),
+        require('./services/sms')
     ];
 
     // filter available services to those that are enabled and initialize them
@@ -74,12 +75,21 @@ Shariff.prototype = {
             return url.format(shareUrl);
         },
 
+        smsUrl: function() {
+            var shareUrl = url.parse(this.getURL(), true);
+            shareUrl.query.view = 'sms';
+            delete shareUrl.search;
+            return url.format(shareUrl);
+        },
+
         // if
         mailSubject: function() {
             return this.getMeta('DC.title') || this.getTitle();
         },
 
         mailBody: function() { return '<' + this.getURL() + '>'; },
+
+        smsBody: function() { return '<' + this.getURL() + '>'; },
 
         // Media (e.g. image) URL to be shared
         mediaUrl: null,

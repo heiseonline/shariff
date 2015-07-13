@@ -91,10 +91,12 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-mail-body` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail body. | see `data-url`  |
 | `data-mail-subject` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail subject. | see `data-title` |
 | `data-mail-url`  | The url target used for the `mail` service button | `?view=mail` |
+| `data-sms-body` | If a `sms:` link is used in `data-sms-url`, then this value is used as the SMS body. | see `data-url`  |
+| `data-sms-url`  | The url target used for the `sms` service button | `?view=sms` |
 | `data-media-url` | Media url to be shared (pinterest) | `null` |
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
-| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info` | `twitter`, `facebook`, `googleplus`, `info` |
+| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `sms`, `info` | `twitter`, `facebook`, `googleplus`, `info` |
 | `data-theme`       | We include 3 color schemes, `standard`, `grey` and `white`. | `standard` |
 | `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` |
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
