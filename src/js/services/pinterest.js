@@ -17,7 +17,9 @@ module.exports = function(shariff) {
 
     return {
         popup: true,
-        shareText: 'pin it',
+        shareText: {
+			'en': 'pin it'
+		},
         name: 'pinterest',
         faName: 'fa-pinterest-p',
         title: {

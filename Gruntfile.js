@@ -1,5 +1,8 @@
 'use strict';
 
+var fs = require('fs');
+var jsonminify = require('jsonminify');
+
 var browsers = [
     'last 2 versions',
     'ie 9',
@@ -188,9 +191,26 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-connect-proxy');
     grunt.loadNpmTasks('grunt-hapi');
-
+	
+	grunt.registerTask('l10n', function() {
+		var done = this.async();
+		
+		fs.readFile('src/l10n.json', 'utf8', function (err, data) {
+			if (err) {
+				throw err;
+			}
+			var jsonp = 'var shariff_l10n = ' + JSON.minify(data);
+			
+			fs.writeFile('build/shariff.l10n.js', jsonp, function (err) {
+				if (err) {
+					throw err;
+				}
+				done();
+			});
+		});
+	});
     grunt.registerTask('test', ['jshint']);
-    grunt.registerTask('build', ['test', 'less:demo', 'less:dist', 'less:dist_min', 'browserify:dist_complete_min', 'browserify:dist_min']);
+    grunt.registerTask('build', ['test', 'less:demo', 'less:dist', 'less:dist_min', 'browserify:dist_complete_min', 'browserify:dist_min', 'browserify:demo', 'l10n']);
     grunt.registerTask('demo', ['copy:demo', 'less:demo', 'browserify:demo', 'hapi', 'configureProxies:demo', 'connect']);
     grunt.registerTask('default', ['test', 'demo']);
 };
