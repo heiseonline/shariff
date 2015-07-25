@@ -6,7 +6,7 @@
 
 
     // Predefined globals
-
+	
     // Whether the standard browser globals should be predefined.
     "browser": false,
     // Whether the Node.js environment globals should be predefined.
@@ -147,7 +147,7 @@
     // Maximum number of function parameters.
     "maxparams": 5,
     // Maximum block nesting depth.
-    "maxdepth": 3,
+    "maxdepth": 5,
     // Maximum number of statements per function.
     "maxstatements": 25,
     // Maximum cyclomatic complexity.

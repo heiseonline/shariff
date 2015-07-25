@@ -1,5 +1,7 @@
 'use strict';
 
+/*globals shariff_l10n */
+
 var $ = require('jquery');
 var url = require('url');
 
