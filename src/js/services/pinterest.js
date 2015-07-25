@@ -25,11 +25,6 @@ module.exports = function(shariff) {
         title: {
             'de': 'Bei Pinterest pinnen',
             'en': 'Pin it on Pinterest',
-            'es': 'Compartir en Pinterest',
-            'fr': 'Partager sur Pinterest',
-            'it': 'Condividi su Pinterest',
-            'da': 'Del på Pinterest',
-            'nl': 'Delen op Pinterest'
         },
         shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
     };
