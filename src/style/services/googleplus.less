@@ -1,32 +1,45 @@
+// Google+
+@col-gp: #d34836;
+@col-gp-h: lighten(@col-gp, @lighten);
+@col-gp-cs: darken(@col-gp, @darken);
+@col-gp-bgs: lighten(@col-gp, @lighten_bg);
+
 .shariff {
     .googleplus {
         a {
             background-color: #d34836;
             &:hover {
-                background-color: #f75b44;
+                background-color: @col-gp-h;
             }
+			div {
+				border: 1px solid @col-gp;
+				&:hover {
+					border-color: @col-gp-h;
+				}
+			}
         }
         .fa-google-plus {
-            font-size: 22px;
-        }
-        .share_count {
-            color: #a31601;
-            background-color: #eda79d;
-        }
-    }
-    .theme-white {
-        .googleplus a {
-            color: #d34836;
-        }
-    }
-}
-
-@media only screen and (min-width: 600px) {
-    .shariff {
-        .googleplus .fa-google-plus {
             font-size: 19px;
             position: relative;
             top: 1px;
+			&:before { content: @fa-var-google-plus; }
+        }
+        .share_count {
+            color: @col-gp-cs;
+            background-color: @col-gp-bgs;
         }
     }
+    .theme-white {
+        .googleplus a span {
+            color: @col-gp;
+        }
+    }
+	.theme-grey {
+		.googleplus a:hover {
+			background-color: @col-gp;
+			div {
+				border-color: @col-gp;
+			}
+		}
+	}
 }
