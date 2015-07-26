@@ -47,9 +47,6 @@ var Shariff = function(element, options) {
 						if (typeof shariff_l10n[serviceName].title !== 'undefined' && typeof service.title !== 'string') {
 							$.extend(service.title, shariff_l10n[serviceName].title);
 						}
-						if (typeof shariff_l10n[serviceName].desc !== 'undefined' && typeof service.desc !== 'undefined' && typeof shariff_l10n[serviceName].desc !== 'string') {
-							$.extend(service.title, shariff_l10n[serviceName].title);
-						}
 					}
 				}
                 return null;
