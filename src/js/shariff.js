@@ -199,9 +199,7 @@ Shariff.prototype = {
             var $li = $('<li class="shariff-button">').append('<div>').addClass(service.name);
             var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
 
-            var $shareLink = $('<a><div>';
-			  
-			$shareLink
+            var $shareLink = $('<a><div>')
 				.attr('href', service.shareUrl)
 				.children('div').append($shareText);
 			
