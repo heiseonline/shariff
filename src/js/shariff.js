@@ -201,7 +201,9 @@ Shariff.prototype = {
 
             var $shareLink = $('<a><div>';
 			  
-			$shareLink.children('div').append($shareText);
+			$shareLink
+				.attr('href', service.shareUrl)
+				.children('div').append($shareText);
 			
             if (typeof service.faName !== 'undefined') {
                 $shareLink.children('div').prepend('<span class="fa ' +  service.faName + '">');
