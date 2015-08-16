@@ -8,10 +8,14 @@ module.exports = function(shariff) {
     if (creator.length > 0) {
         title += ' - ' + creator;
     }
+    var img = shariff.getOption('mediaUrl');
+    if (img.length <= 0) {
+        img = shariff.getMeta('og:image');
+    }
 
     var shareUrl = url.parse('https://www.pinterest.com/pin/create/link/', true);
     shareUrl.query.url = shariff.getURL();
-    shareUrl.query.media = shariff.getOption('mediaUrl');
+    shareUrl.query.media = img;
     shareUrl.query.description = title;
     delete shareUrl.search;
 
