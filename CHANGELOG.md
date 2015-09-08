@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.17.0 TBD
+
+* Added Open Graph Tag fallback for pinterest image. (creatoras)
+* Fixed shariff not using correct title tag in some cases. (kraftner)
+
 ## v1.16.0 2015-07-13
 
 * Made license SPDX compatible.
