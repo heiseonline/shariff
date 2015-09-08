@@ -129,7 +129,7 @@ Shariff.prototype = {
             }
         } else if (typeof data[key] === 'string') {
             return data[key];
-        } 
+        }
         return undefined;
     },
 
