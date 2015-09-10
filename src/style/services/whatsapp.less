@@ -1,26 +1,39 @@
+// Whatsapp
+@col-wa: #5cbe4a;
+@col-wa-h: lighten(@col-wa, @lighten);
+@col-wa-cs: darken(@col-wa, @darken);
+@col-wa-bgs: lighten(@col-wa, @lighten_bg);
+
 .shariff {
     .whatsapp {
         a {
-            background-color: #5cbe4a;
+            background-color: @col-wa;
             &:hover {
-                background-color: #34af23;
+                background-color: @col-wa-h;
             }
+			div {
+				border: 1px solid @col-wa;
+				&:hover {
+					border-color: @col-wa-h;
+				}
+			}
         }
         .fa-whatsapp {
-            font-size: 28px;
+            font-size: 22px;
+			&:before { content: @fa-var-whatsapp; }
         }
     }
     .theme-white {
-        .whatsapp a {
-            color: #5cbe4a;
+        .whatsapp a span {
+            color: @col-wa;
         }
     }
-}
-
-@media only screen and (min-width: 600px) {
-    .shariff {
-        .whatsapp .fa-whatsapp {
-            font-size: 22px;
-        }
-    }
+	.theme-grey {
+		.whatsapp a:hover {
+			background-color: @col-wa;
+			div {
+				border-color: @col-wa;
+			}
+		}
+	}
 }

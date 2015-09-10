@@ -175,7 +175,7 @@ Shariff.prototype = {
             if(value >= 1000) {
                 value = Math.round(value / 1000) + 'k';
             }
-            $(self.element).find('.' + key + ' a').append('<span class="share_count">' + value);
+            $(self.element).find('.' + key + ' a span:first').after('<span class="share_count">' + value);
         });
     },
 
@@ -186,22 +186,25 @@ Shariff.prototype = {
         var $socialshareElement = this.$socialshareElement();
 
         var themeClass = 'theme-' + this.options.theme;
-        var orientationClass = 'orientation-' + this.options.orientation;
         var serviceCountClass = 'col-' + this.options.services.length;
 
-        var $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass).addClass(serviceCountClass);
+        var $buttonList = $('<ul>').addClass(themeClass).addClass(serviceCountClass);
+		
+		if(this.options.orientation !== 'horizontal') {
+			$buttonList.addClass('orientation-' + this.options.orientation);
+		}
 
         // add html for service-links
         this.services.forEach(function(service) {
-            var $li = $('<li class="shariff-button">').addClass(service.name);
+            var $li = $('<li class="shariff-button">').append('<div>').addClass(service.name);
             var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
 
-            var $shareLink = $('<a>')
-              .attr('href', service.shareUrl)
-              .append($shareText);
-
+            var $shareLink = $('<a><div>')
+				.attr('href', service.shareUrl)
+				.children('div').append($shareText);
+			
             if (typeof service.faName !== 'undefined') {
-                $shareLink.prepend('<span class="fa ' +  service.faName + '">');
+                $shareLink.children('div').prepend('<span class="fa ' +  service.faName + '">');
             }
 
             if (service.popup) {
@@ -215,7 +218,7 @@ Shariff.prototype = {
             $shareLink.attr('role', 'button');
             $shareLink.attr('aria-label', self.getLocalized(service, 'title'));
 
-            $li.append($shareLink);
+            $li.children('div').append($shareLink);
 
             $buttonList.append($li);
         });

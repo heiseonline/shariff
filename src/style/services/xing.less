@@ -1,30 +1,43 @@
+// Xing
+@col-xi: #126567;
+@col-xi-h: lighten(@col-xi, @lighten);
+@col-xi-cs: darken(@col-xi, @darken);
+@col-xi-bgs: lighten(@col-xi, @lighten_bg);
+
 .shariff {
     .xing {
         a {
-            background-color: #126567;
+            background-color: @col-xi;
             &:hover {
-                background-color: #29888a;
+                background-color: @col-xi-h;
             }
-        }
+ 			div {
+				border: 1px solid @col-xi;
+				&:hover {
+					border-color: @col-xi-h;
+				}
+			}
+       }
         .fa-xing {
-            font-size: 22px;
+            font-size: 19px;
+			&:before { content: @fa-var-xing; }
         }
         .share_count {
-            color: #15686a;
-            background-color: #4fa5a7;
+            color: @col-xi-cs;
+            background-color: @col-xi-bgs;
         }
     }
     .theme-white {
-        .xing a {
-            color: #126567;
-        }
+        .xing a span {
+            color: @col-xi;
+       }
     }
-}
-
-@media only screen and (min-width: 600px) {
-    .shariff {
-        .xing .fa-xing {
-            font-size: 19px;
-        }
-    }
+	.theme-grey {
+		.xing a:hover {
+			background-color: @col-xi;
+			div {
+				border-color: @col-xi;
+			}
+		}
+	}
 }

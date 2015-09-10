@@ -1,30 +1,43 @@
+// Facebook
+@col-fb: #3b5998;
+@col-fb-h: lighten(@col-fb, @lighten); 	// Hover
+@col-fb-cs: darken(@col-fb, @darken);	// Backend Zahlen
+@col-fb-bgs: #dfe3ee;					// Backend Hintergrund
+
 .shariff {
     .facebook {
         a {
-            background-color: #3b5998;
+            background-color: @col-fb;
             &:hover {
-                background-color: #4273c8;
+                background-color: @col-fb-h;
             }
+			div {
+				border: 1px solid @col-fb;
+				&:hover {
+					border-color: @col-fb-h;
+				}
+			}
         }
         .fa-facebook {
-            font-size: 22px;
+            font-size: 19px;
+			&:before { content: @fa-var-facebook; }
         }
         .share_count {
-            color: #183a75;
-            background-color: #99adcf;
+            color: @col-fb-cs;
+            background-color: @col-fb-bgs;
         }
     }
     .theme-white {
-        .facebook a {
-            color: #3b5998;
+        .facebook a span {
+            color: @col-fb;
         }
     }
-}
-
-@media only screen and (min-width: 600px) {
-    .shariff {
-        .facebook .fa-facebook {
-            font-size: 19px;
-        }
-    }
+	.theme-grey {
+		.facebook a:hover {
+			background-color: @col-fb;
+			div {
+				border-color: @col-fb;
+			}
+		}
+	}
 }
