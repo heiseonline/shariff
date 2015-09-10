@@ -124,7 +124,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     modifyVars: {
-                        'fa-font-path': '"//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts"'
+                        'fa-font-path': '"https://netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts"'
                     }
                 },
                 src: 'src/style/shariff-complete.less',
