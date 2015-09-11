@@ -2,6 +2,7 @@
 
 ## v1.17.0 TBD
 
+* Added addThis service. (bozana)
 * Added Open Graph Tag fallback for pinterest image. (creatoras)
 * Fixed shariff not using correct title tag in some cases. (kraftner)
 
