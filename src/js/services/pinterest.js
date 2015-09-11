@@ -9,7 +9,7 @@ module.exports = function(shariff) {
         title += ' - ' + creator;
     }
     var img = shariff.getOption('mediaUrl');
-    if (img.length <= 0) {
+    if (img && img.length <= 0) {
         img = shariff.getMeta('og:image');
     }
 
