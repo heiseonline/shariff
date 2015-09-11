@@ -1,9 +1,10 @@
 # Changelog
 
-## v1.17.0 TBD
+## v1.17.0 2015-09-11
 
 * Added addThis service. (bozana)
 * Added Open Graph Tag fallback for pinterest image. (creatoras)
+* Forced Font-Awesome to load via https. (kraftner)
 * Fixed shariff not using correct title tag in some cases. (kraftner)
 
 ## v1.16.0 2015-07-13
