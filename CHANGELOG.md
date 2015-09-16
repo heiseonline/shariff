@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.18.0 2015-09-16
+
+* Added tumblr service. (medienverbinder)
+
 ## v1.17.1 2015-09-11
 
 * Fixed github-release not pointing to the release commit.
