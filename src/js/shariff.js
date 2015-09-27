@@ -3,7 +3,7 @@
 var $ = require('jquery');
 var url = require('url');
 
-var _Shariff = function(element, options) {
+var Shariff = function(element, options) {
     var self = this;
 
     // the DOM element that will contain the buttons
