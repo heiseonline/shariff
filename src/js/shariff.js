@@ -3,6 +3,11 @@
 var $ = require('jquery');
 var url = require('url');
 
+var pausecomp = function (ms) {
+    ms += new Date().getTime();
+    while (new Date() < ms){}
+};
+
 var Shariff = function(element, options) {
     var self = this;
 
@@ -211,6 +216,13 @@ Shariff.prototype = {
                 $shareLink.attr('rel', 'popup');
             } else if (service.blank) {
                 $shareLink.attr('target', '_blank');
+            } else if(service.iframe){
+                $shareLink.attr('rel', 'iframe');
+            }
+            if(service.customContent){
+                $shareLink.attr('data-useCustomContent',service.useCustomContent);
+                $shareLink.attr('data-customContent',service.customContent);
+                $shareLink.attr('data-name',service.name);
             }
             $shareLink.attr('title', self.getLocalized(service, 'title'));
 
@@ -234,6 +246,35 @@ Shariff.prototype = {
             var windowSize = 'width=' + windowSizeX + ',height=' + windowSizeY;
 
             global.window.open(url, windowName, windowSize);
+
+        });
+
+        $buttonList.on('click', '[rel="iframe"]', function(e) {
+            e.preventDefault();
+            var url = $(this).attr('href');
+
+            if ($(this).data('width')) {
+                $(this).parent().width($(this).data('width'));
+            }
+
+            if ($(this).data("useCustomContent")) {
+                var customContent = $(this).data('customContent');
+                var name = $(this).data('name');
+                $(this).replaceWith('<div></div>');
+                var $iframeContainer = $(this);
+
+                $("<iframe name='"+ name +"'></iframe>").load(function(){
+                    $("iframe [name='"+ name +"]").contents().find('body').html(customContent);
+                }).appendTo($iframeContainer);
+
+
+                //$(this).contents().find('body').html(customContent);
+            } else {
+                $(this).replaceWith(
+                    '<iframe src="' + url + '"></iframe>'
+                );
+            }
+
 
         });
 
