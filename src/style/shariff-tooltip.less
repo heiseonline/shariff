@@ -1,0 +1,30 @@
+.shariff-tooltip {
+    position: absolute;
+    z-index: 1000;
+    width: 300px;
+    border-radius: 6px;
+    border: 1px solid #000000;
+    padding: 10px;
+    color: #000000;
+    background: #ffffff;
+
+    &:before {
+        position: absolute;
+        content: ' ';
+        bottom: -16px;
+        left: 17px;
+        border-color: #000000 transparent transparent;
+        border-style: solid;
+        border-width: 8px;
+    }
+
+    &::after {
+        position: absolute;
+        content: ' ';
+        bottom: -15px;
+        left: 17px;
+        border-color: #ffffff transparent transparent;
+        border-style: solid;
+        border-width: 8px;
+    }
+}
