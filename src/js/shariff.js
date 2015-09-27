@@ -3,12 +3,7 @@
 var $ = require('jquery');
 var url = require('url');
 
-var pausecomp = function (ms) {
-    ms += new Date().getTime();
-    while (new Date() < ms){}
-};
-
-var Shariff = function(element, options) {
+var _Shariff = function(element, options) {
     var self = this;
 
     // the DOM element that will contain the buttons
@@ -99,6 +94,16 @@ Shariff.prototype = {
         // a string to suffix current URL
         referrerTrack: null,
 
+        // number the share count gets divided by (at the moment the possibility
+        // to set a different unit beside k is not given)
+        countDivisor: 1000,
+
+        // start division at this number
+        countDivisionStart: 1000,
+
+        // possibility to do something like 24.6k shares (not finally implemented yet)
+        countRoundPrecision: 0,
+
         // services to be enabled in the following order
         services   : ['twitter', 'facebook','facebook-like', 'googleplus', 'info'],
 
@@ -176,14 +181,33 @@ Shariff.prototype = {
         return $.getJSON(url.format(baseUrl));
     },
 
+    getCountDivisor: function() {
+        return this.options.countDivisor;
+    },
+
+    getCountDivisionStart: function() {
+        return this.options.countDivisionStart;
+    },
+
+    getCountRoundPrecision: function() {
+        return this.options.countRoundPrecision;
+    },
+
     // add value of shares for each service
     _updateCounts: function(data) {
-        var self = this;
+        var
+            self = this,
+            suffix = ''
+        ;
         $.each(data, function(key, value) {
-            if(value >= 1000) {
-                value = Math.round(value / 1000) + 'k';
+            if(value >= self.getCountDivisionStart()) {
+                value = Math.round(value / self.getCountDivisor());
+                suffix = 'k';
             }
-            $(self.element).find('.' + key + ' a').append('<span class="share_count">' + value);
+            if (value >= 1000) {
+                value = Math.floor(value / 1000) + '.' + (value % 1000);
+            }
+            $(self.element).find('.' + key + ' a').append('<span class="share_count">' + value + suffix);
         });
     },
 
@@ -247,6 +271,50 @@ Shariff.prototype = {
 
             global.window.open(url, windowName, windowSize);
 
+        });
+        $buttonList.on('click', '[rel="iframe"]', function(e) {
+            e.preventDefault();
+            var url = $(this).attr('href');
+
+            if ($(this).data('width')) {
+                $(this).parent().width($(this).data('width'));
+            }
+
+            $(this).replaceWith(
+                '<iframe src="' + url +'"></iframe>'
+            );
+        });
+
+        $buttonList.on('click', '[rel="tooltip"]', function(e) {
+            e.preventDefault();
+            var
+                self = this,
+                url = $(this).attr('href'),
+                ot = $(this).offset().top - 150,
+                ol = $(this).offset().left
+                ;
+
+            if ($(this).data('width')){
+                $(this).parent().width($(this).data('width'));
+            }
+
+            $('body').prepend('' +
+            '<div class="shariff-tooltip" style="top: ' + ot + 'px; left: ' + ol + 'px;">' +
+            $(this).parent().data('popupinfotext') +
+            '<br><br><iframe style="height: 30px;" src="' + url + '"></iframe></div>' +
+            '</div>' +
+            '');
+
+            // closes tooltip again
+            /* global document */
+            $(document).on('click', function(event) {
+                if (undefined === $(event.target).closest('.shariff-tooltip').get(0)) {
+                    if (undefined === $(event.target).closest('div.shariff').get(0)) {
+                        $('.shariff-tooltip').remove();
+                        $(this).off(event);
+                    }
+                }
+            });
         });
 
         $buttonList.on('click', '[rel="iframe"]', function(e) {
