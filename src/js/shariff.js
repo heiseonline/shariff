@@ -18,6 +18,7 @@ var Shariff = function(element, options) {
     var availableServices = [
         require('./services/addthis'),
         require('./services/facebook'),
+        require('./services/flattr'),
         require('./services/googleplus'),
         require('./services/info'),
         require('./services/linkedin'),
@@ -101,6 +102,10 @@ Shariff.prototype = {
         },
 
         twitterVia: null,
+
+        flattrUser: null,
+
+        flattrCategory: null,
 
         // build URI from rel="canonical" or document.location
         url: function() {
