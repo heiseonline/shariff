@@ -87,6 +87,8 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | Attribute        | Description | Default |
 |------------------|-------------|---------|
 | `data-backend-url` | The path to your Shariff backend, see below. Settings the value to `null` disables the backend feature. No counts will occur.  | `null` |
+| `data-flattr-category` | Category to be used for Flattr. | `null` |
+| `data-flattr-user` | User that receives Flattr donation. | `null` |
 | `data-lang`      | The localisation to use. Available: `bg`, `de`, `en`, `es`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail body. | see `data-url`  |
 | `data-mail-subject` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail subject. | see `data-title` |
