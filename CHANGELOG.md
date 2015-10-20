@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.19.0 2015-10-20
+
+* Added Flattr service. (core23)
+* Added twitter option to README-de.
+
 ## v1.18.0 2015-09-16
 
 * Added tumblr service. (medienverbinder)
