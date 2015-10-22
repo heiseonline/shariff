@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.20.0 2015-10-22
+
+* Added Diaspora* service. (craiq)
+* Added Flattr service to README.
+
 ## v1.19.0 2015-10-20
 
 * Added Flattr service. (core23)
