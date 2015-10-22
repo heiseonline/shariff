@@ -6,7 +6,7 @@ module.exports = function(shariff) {
     var shareUrl = url.parse('https://sharetodiaspora.github.io/', true);
     shareUrl.query.url = shariff.getURL();
     shareUrl.query.title = shariff.getTitle() || shariff.getMeta('DC.title');
-	shareUrl.protocol = 'https';
+    shareUrl.protocol = 'https';
     delete shareUrl.search;
 
     return {
