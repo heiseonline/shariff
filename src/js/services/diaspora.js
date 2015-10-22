@@ -16,7 +16,7 @@ module.exports = function(shariff) {
             'en': 'share',
         },
         name: 'diaspora',
-        faName: 'fa-times-circle',
+        faName: 'fa-asterisk',
         title: {
             'de': 'Bei Diaspora teilen',
             'en': 'Share on Diaspora',
