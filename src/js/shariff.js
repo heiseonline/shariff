@@ -213,7 +213,7 @@ Shariff.prototype = {
             }
 
             if (service.popup) {
-                $shareLink.attr('rel', 'popup');
+                $shareLink.attr('data-rel', 'popup');
             } else if (service.blank) {
                 $shareLink.attr('target', '_blank');
             }
@@ -229,7 +229,7 @@ Shariff.prototype = {
         });
 
         // event delegation
-        $buttonList.on('click', '[rel="popup"]', function(e) {
+        $buttonList.on('click', '[data-rel="popup"]', function(e) {
             e.preventDefault();
 
             var url = $(this).attr('href');
