@@ -1,5 +1,6 @@
 # Changelog
 
+* Added Reddit service. (craiq)
 * Changed rel=popup to data-rel.
 
 ## v1.20.0 2015-10-22
