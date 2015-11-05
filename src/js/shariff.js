@@ -26,10 +26,11 @@ var Shariff = function(element, options) {
         require('./services/mail'),
         require('./services/pinterest'),
         require('./services/reddit'),
+        require('./services/stumbleupon'),
         require('./services/twitter'),
         require('./services/whatsapp'),
         require('./services/xing'),
-	    require('./services/tumblr')
+	require('./services/tumblr')
     ];
 
     // filter available services to those that are enabled and initialize them
