@@ -1,5 +1,6 @@
 # Changelog
 
+* Added Threema service. (medienverbinder)
 * Added StumbleUpon service. (craiq)
 * Added Reddit service. (craiq)
 * Changed rel=popup to data-rel.
