@@ -1,5 +1,7 @@
 # Changelog
 
+## v1.21.0 2015-11-06
+
 * Added Threema service. (medienverbinder)
 * Added StumbleUpon service. (craiq)
 * Added Reddit service. (craiq)
