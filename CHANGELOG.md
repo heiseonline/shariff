@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.22.0 TBD
+
+* Changed G+ text from "+1" to "share". (dlueth)
+* Fixed offset for new G+ fa-icon. (flowdee)
+
 ## v1.21.0 2015-11-06
 
 * Added Threema service. (medienverbinder)
