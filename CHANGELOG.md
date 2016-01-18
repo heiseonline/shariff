@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.22.0 TBD
+## v1.22.0 2016-01-19
 
 * Changed G+ text from "+1" to "share". (dlueth)
 * Fixed offset for new G+ fa-icon. (flowdee)
