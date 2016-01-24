@@ -102,6 +102,18 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
 | `data-url`         | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
 
+
+## Supported browsers
+
+Shariff supports the following Browsers:
+
+- Firefox
+- Google Chrome
+- Internet Explorer/Edge
+- Safari
+
+The current and previous releases of Firefox, Google Chrome, Internet Explorer/Edge and Safari are supported on a rolling basis.
+
 ## Backends
 
 In order to display share counts with Shariff, you need one of the following backends:

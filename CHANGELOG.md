@@ -2,6 +2,7 @@
 
 ## v1.23.0 TBD
 
+* Clarified browser support in README.
 * Made button text more accessible.
 
 ## v1.22.0 2016-01-19

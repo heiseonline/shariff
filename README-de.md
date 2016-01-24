@@ -102,6 +102,18 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
 | `data-url`         | URL, die geteilt werden soll. | Wenn `data-url` nicht gesetzt ist, wird `link[rel="canonical"]`, `meta[property="og:url"]` oder `location.href` verwendet. |
 
+
+## Unterstützte Browser
+
+Shariff unterstützt folgende Browser:
+
+- Firefox
+- Google Chrome
+- Internet Explorer/Edge
+- Safari
+
+Die jeweils aktuell letzten und vorletzten Versionen von Firefox, Google Chrome, Internet Explorer/Edge und Safari werden untersützt.
+
 ## Backends
 
 Wenn in den Shariff-Buttons die Share-Counts angezeigt werden sollen, wird eines der folgenden Backends benötigt:
