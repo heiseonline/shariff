@@ -112,7 +112,7 @@ Shariff supports the following Browsers:
 - Internet Explorer/Edge
 - Safari
 
-The current and previous releases of Firefox, Google Chrome, Internet Explorer/Edge and Safari are supported on a rolling basis.
+The current and previous major releases of Firefox, Google Chrome, Internet Explorer/Edge and Safari are supported on a rolling basis.
 
 ## Backends
 
