@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.23.0 TBD
+
+* Made button text more accessible.
+
 ## v1.22.0 2016-01-19
 
 * Changed G+ text from "+1" to "share". (dlueth)

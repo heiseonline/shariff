@@ -186,7 +186,7 @@ Shariff.prototype = {
             if(value >= 1000) {
                 value = Math.round(value / 1000) + 'k';
             }
-            $(self.element).find('.' + key + ' a').append('<span class="share_count">' + value);
+            $(self.element).find('.' + key + ' a').append('&nbsp;<span class="share_count">' + value);
         });
     },
 
