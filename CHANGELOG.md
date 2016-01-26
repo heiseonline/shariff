@@ -1,5 +1,9 @@
 # Changelog
 
+## TBD
+
+* Fixed font path for demo site. (craiq)
+
 ## v1.23.0 2016-01-27
 
 * Changed diaspora share url to official one. (Faldrian)
