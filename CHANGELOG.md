@@ -1,7 +1,8 @@
 # Changelog
 
-## v1.23.0 TBD
+## v1.23.0 2016-01-27
 
+* Changed diaspora share url to official one. (Faldrian)
 * Clarified browser support in README.
 * Made button text more accessible.
 
