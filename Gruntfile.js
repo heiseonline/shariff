@@ -107,6 +107,9 @@ module.exports = function(grunt) {
             },
             demo: {
                 options: {
+                     modifyVars: {
+                        'fa-font-path': '"fonts"'
+                    },
                     sourceMap: true,
                     outputSourceFiles: true,
                     sourceMapFileInline: true,
