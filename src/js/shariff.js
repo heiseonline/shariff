@@ -28,6 +28,7 @@ var Shariff = function(element, options) {
         require('./services/reddit'),
         require('./services/stumbleupon'),
         require('./services/twitter'),
+        require('./services/twitter-follow'),
         require('./services/whatsapp'),
         require('./services/xing'),
         require('./services/tumblr'),
@@ -106,6 +107,8 @@ Shariff.prototype = {
         },
 
         twitterVia: null,
+
+        twitterFollow: null,
 
         flattrUser: null,
 
