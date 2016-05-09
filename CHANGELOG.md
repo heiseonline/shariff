@@ -2,6 +2,7 @@
 
 ## TBD
 
+* Updated various third party integrations in README. (McAtze, core23)
 * Fixed font path for demo site. (craiq)
 
 ## v1.23.0 2016-01-27
