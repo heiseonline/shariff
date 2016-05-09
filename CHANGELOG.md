@@ -1,6 +1,6 @@
 # Changelog
 
-## TBD
+## v1.23.1 2016-05-09 
 
 * Updated various third party integrations in README. (McAtze, core23)
 * Fixed font path for demo site. (craiq)
