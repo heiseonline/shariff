@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.23.2 2016-05-09
+
+* Attach build artifacts to broken 1.23.1 release.
+
 ## v1.23.1 2016-05-09 
 
 * Updated various third party integrations in README. (McAtze, core23)
