@@ -1,5 +1,7 @@
 'use strict';
 
+/*globals shariff_l10n */
+
 var $ = require('jquery');
 var url = require('url');
 
@@ -41,6 +43,19 @@ var Shariff = function(element, options) {
             availableService = availableService(self);
             if (availableService.name === serviceName) {
                 service = availableService;
+				if (typeof shariff_l10n !== 'undefined') {
+					if (typeof shariff_l10n.share !== 'undefined' && service.shareText.en === 'share') {
+						$.extend(service.shareText, shariff_l10n.share.shareText);
+					}
+					if (typeof shariff_l10n[serviceName] !== 'undefined') {
+						if (typeof shariff_l10n[serviceName].shareText !== 'undefined' && typeof service.shareText !== 'string') {
+							$.extend(service.shareText, shariff_l10n[serviceName].shareText);
+						}
+						if (typeof shariff_l10n[serviceName].title !== 'undefined' && typeof service.title !== 'string') {
+							$.extend(service.title, shariff_l10n[serviceName].title);
+						}
+					}
+				}
                 return null;
             }
         });

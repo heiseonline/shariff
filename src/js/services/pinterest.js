@@ -21,17 +21,14 @@ module.exports = function(shariff) {
 
     return {
         popup: true,
-        shareText: 'pin it',
+        shareText: {
+			'en': 'pin it'
+		},
         name: 'pinterest',
         faName: 'fa-pinterest-p',
         title: {
             'de': 'Bei Pinterest pinnen',
             'en': 'Pin it on Pinterest',
-            'es': 'Compartir en Pinterest',
-            'fr': 'Partager sur Pinterest',
-            'it': 'Condividi su Pinterest',
-            'da': 'Del på Pinterest',
-            'nl': 'Delen op Pinterest'
         },
         shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
     };

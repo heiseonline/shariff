@@ -38,34 +38,14 @@ module.exports = function(shariff) {
 
     return {
         popup: true,
-        shareText: 'tweet',
+        shareText: {
+			'en': 'tweet'
+		},
         name: 'twitter',
         faName: 'fa-twitter',
         title: {
-            'bg': 'Сподели в Twitter',
-            'da': 'Del på Twitter',
             'de': 'Bei Twitter teilen',
             'en': 'Share on Twitter',
-            'es': 'Compartir en Twitter',
-            'fi': 'Jaa Twitterissä',
-            'fr': 'Partager sur Twitter',
-            'hr': 'Podijelite na Twitteru',
-            'hu': 'Megosztás Twitteren',
-            'it': 'Condividi su Twitter',
-            'ja': 'ツイッター上で共有',
-            'ko': '트위터에서 공유하기',
-            'nl': 'Delen op Twitter',
-            'no': 'Del på Twitter',
-            'pl': 'Udostępnij na Twitterze',
-            'pt': 'Compartilhar no Twitter',
-            'ro': 'Partajează pe Twitter',
-            'ru': 'Поделиться на Twitter',
-            'sk': 'Zdieľať na Twitteri',
-            'sl': 'Deli na Twitterju',
-            'sr': 'Podeli na Twitter-u',
-            'sv': 'Dela på Twitter',
-            'tr': 'Twitter\'da paylaş',
-            'zh': '在Twitter上分享'
         },
         // shareUrl: 'https://twitter.com/intent/tweet?text='+ shariff.getShareText() + '&url=' + url
         shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
