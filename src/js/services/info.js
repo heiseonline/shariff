@@ -14,7 +14,8 @@ module.exports = function(shariff) {
             'fr': 'plus d\'informations',
             'it': 'maggiori informazioni',
             'da': 'flere oplysninger',
-            'nl': 'verdere informatie'
+            'nl': 'verdere informatie',
+            'zh': '更多信息'
         },
         shareUrl: shariff.getInfoUrl()
     };
