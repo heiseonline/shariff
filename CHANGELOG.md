@@ -1,5 +1,9 @@
 # Changelog
 
+## TBD
+
+* Add Serendipity third party integration. (ddeimeke)
+
 ## v1.23.2 2016-05-09
 
 * Attach build artifacts to broken 1.23.1 release.
