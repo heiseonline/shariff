@@ -135,6 +135,7 @@ This is a list of integrations for third-party systems:
 * [Drupal module](https://www.drupal.org/project/shariff)
 * [Joomla 3.4+ Shariff Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
 * [Open Monograph Press Plugin](https://github.com/langsci/shariff)
+* [Serendipity](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
 * [SilverStripe Module](https://github.com/andrelohmann/silverstripe-shariff)
 * [Symfony ShariffBundle](https://github.com/core23/ShariffBundle)
 * [TYPO3 Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
