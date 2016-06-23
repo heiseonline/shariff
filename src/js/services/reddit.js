@@ -13,12 +13,14 @@ module.exports = function(shariff) {
         shareText: {
             'de': 'teilen',
             'en': 'share',
+            'zh': '分享',
         },
         name: 'reddit',
         faName: 'fa-reddit',
         title: {
             'de': 'Bei Reddit teilen',
             'en': 'Share on Reddit',
+            'zh': '分享至Reddit'
         },
         shareUrl: 'https://reddit.com/submit?url=' + url + title + shariff.getReferrerTrack()
     };

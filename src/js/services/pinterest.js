@@ -31,7 +31,8 @@ module.exports = function(shariff) {
             'fr': 'Partager sur Pinterest',
             'it': 'Condividi su Pinterest',
             'da': 'Del på Pinterest',
-            'nl': 'Delen op Pinterest'
+            'nl': 'Delen op Pinterest',
+            'zh': '分享至Pinterest'
         },
         shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
     };

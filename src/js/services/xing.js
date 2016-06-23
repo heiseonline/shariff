@@ -11,7 +11,8 @@ module.exports = function(shariff) {
             'fr': 'partager',
             'it': 'condividi',
             'da': 'del',
-            'nl': 'delen'
+            'nl': 'delen',
+            'zh': '分享'
         },
         name: 'xing',
         faName: 'fa-xing',
@@ -22,7 +23,8 @@ module.exports = function(shariff) {
             'fr': 'Partager sur XING',
             'it': 'Condividi su XING',
             'da': 'Del på XING',
-            'nl': 'Delen op XING'
+            'nl': 'Delen op XING',
+            'zh': '分享至XING'
         },
         shareUrl: 'https://www.xing.com/social_plugins/share?url=' + url + shariff.getReferrerTrack()
     };
