@@ -2,6 +2,7 @@
 
 ## TBD
 
+* Add Weibo, Tencent-Weibo, Qzone services. (shls)
 * Add Serendipity third party integration. (ddeimeke)
 
 ## v1.23.2 2016-05-09
