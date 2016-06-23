@@ -2,6 +2,7 @@
 
 ## TBD
 
+* Fix flexbox bug for Safari (yellowled)
 * Add Weibo, Tencent-Weibo, Qzone services. (shls)
 * Add Serendipity third party integration. (ddeimeke)
 
