@@ -31,7 +31,10 @@ var Shariff = function(element, options) {
         require('./services/whatsapp'),
         require('./services/xing'),
         require('./services/tumblr'),
-        require('./services/threema')
+        require('./services/threema'),
+        require('./services/weibo'),
+        require('./services/tencent-weibo'),
+        require('./services/qzone')
     ];
 
     // filter available services to those that are enabled and initialize them

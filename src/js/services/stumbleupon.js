@@ -13,12 +13,14 @@ module.exports = function(shariff) {
         shareText: {
             'de': 'teilen',
             'en': 'share',
+            'zh': '分享'
         },
         name: 'stumbleupon',
         faName: 'fa-stumbleupon',
         title: {
             'de': 'Bei Stumbleupon teilen',
             'en': 'Share on Stumbleupon',
+            'zh': '分享至Stumbleupon'
         },
         shareUrl: 'https://www.stumbleupon.com/submit?url=' + url + title + shariff.getReferrerTrack()
     };

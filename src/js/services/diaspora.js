@@ -14,12 +14,14 @@ module.exports = function(shariff) {
         shareText: {
             'de': 'teilen',
             'en': 'share',
+            'zh': '分享'
         },
         name: 'diaspora',
         faName: 'fa-asterisk',
         title: {
             'de': 'Bei Diaspora teilen',
             'en': 'Share on Diaspora',
+            'zh': '分享至Diaspora'
         },
         shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
     };
