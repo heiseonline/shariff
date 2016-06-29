@@ -1,6 +1,6 @@
 # Changelog
 
-## TBD
+## 1.24.0 2016-06-29
 
 * Fix flexbox bug for Safari (yellowled)
 * Add Weibo, Tencent-Weibo, Qzone services. (shls)
@@ -10,7 +10,7 @@
 
 * Attach build artifacts to broken 1.23.1 release.
 
-## v1.23.1 2016-05-09 
+## v1.23.1 2016-05-09
 
 * Updated various third party integrations in README. (McAtze, core23)
 * Fixed font path for demo site. (craiq)
