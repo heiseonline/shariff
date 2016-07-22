@@ -135,6 +135,7 @@ Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
 * [Contao-Integration](https://github.com/hofff/contao-shariff)
 * [Drupal-Modul](https://www.drupal.org/project/shariff)
 * [Joomla 3.4+ Shariff-Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
+* [MediaWiki Extension] (https://github.com/vonloxley/Shariff-Mediawiki/)
 * [Open Monograph Press-Plugin](https://github.com/langsci/shariff)
 * [Serendipity Plugin](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
 * [SilverStripe-Modul](https://github.com/andrelohmann/silverstripe-shariff)
