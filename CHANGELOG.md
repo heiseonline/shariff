@@ -1,5 +1,9 @@
 # Changelog
 
+## TBD
+
+* Add MediaWiki third party integration. (stefahn)
+
 ## 1.24.0 2016-06-29
 
 * Fix flexbox bug for Safari (yellowled)
