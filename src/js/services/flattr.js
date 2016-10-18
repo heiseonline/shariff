@@ -21,6 +21,9 @@ module.exports = function(shariff) {
             'de': 'Artikel flattrn',
             'en': 'Flattr this'
         },
-        shareUrl: 'https://flattr.com/submit/auto?title=' + encodeURIComponent(title) + '&description=' + encodeURIComponent(description) + '&category=' + encodeURIComponent(shariff.options.flattrCategory || 'text') + '&user_id=' + encodeURIComponent(shariff.options.flattrUser) + '&url=' + url + shariff.getReferrerTrack()
+        shareUrl: 'https://flattr.com/submit/auto?title=' + encodeURIComponent(title) + '&description=' + encodeURIComponent(description) + '&category=' + encodeURIComponent(shariff.options.flattrCategory || 'text') + '&user_id=' + encodeURIComponent(shariff.options.flattrUser) + '&url=' + url + shariff.getReferrerTrack(),
+        updateUrl: function() {
+          return 'https://flattr.com/submit/auto?title=' + encodeURIComponent(title) + '&description=' + encodeURIComponent(description) + '&category=' + encodeURIComponent(shariff.options.flattrCategory || 'text') + '&user_id=' + encodeURIComponent(shariff.options.flattrUser) + '&url=' + shariff.getUpdatedUrl() + shariff.getReferrerTrack();
+        }
     };
 };

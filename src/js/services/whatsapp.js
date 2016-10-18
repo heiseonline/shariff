@@ -68,6 +68,9 @@ module.exports = function(shariff) {
             'tr': 'Whatsapp\'ta paylaş',
             'zh': '在Whatsapp上分享'
         },
-        shareUrl: 'whatsapp://send?text=' + encodeURIComponent(title) + '%20' + url + shariff.getReferrerTrack()
+        shareUrl: 'whatsapp://send?text=' + encodeURIComponent(title) + '%20' + url + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          return 'whatsapp://send?text=' + encodeURIComponent(title) + '%20' + shariff.getUpdatedUrl() + shariff.getReferrerTrack();
+        }
     };
 };

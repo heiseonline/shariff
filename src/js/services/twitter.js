@@ -68,6 +68,10 @@ module.exports = function(shariff) {
             'zh': '在Twitter上分享'
         },
         // shareUrl: 'https://twitter.com/intent/tweet?text='+ shariff.getShareText() + '&url=' + url
-        shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
+        shareUrl: url.format(shareUrl) + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          shareUrl.query.url = shariff.getUpdatedUrl();
+          return url.format(shareUrl) + shariff.getReferrerTrack();
+        }
     };
 };

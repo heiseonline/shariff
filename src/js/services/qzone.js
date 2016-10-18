@@ -47,6 +47,9 @@ module.exports = function(shariff) {
             'en': 'Share on Qzone',
             'zh': '分享至QQ空间'
         },
-        shareUrl: 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + url + '&title=' + title + shariff.getReferrerTrack()
+        shareUrl: 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + url + '&title=' + title + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          return 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + shariff.getUpdatedUrl() + '&title=' + title + shariff.getReferrerTrack();
+        }
     };
 };

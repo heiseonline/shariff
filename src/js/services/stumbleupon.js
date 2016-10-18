@@ -3,11 +3,11 @@
 module.exports = function(shariff) {
     var url = encodeURIComponent(shariff.getURL()),
         title = encodeURIComponent(shariff.getTitle());
-	
+
 	if ( title !== '' ) {
 		title = '&title=' + title;
 	}
-        
+
     return {
         popup: true,
         shareText: {
@@ -22,6 +22,9 @@ module.exports = function(shariff) {
             'en': 'Share on Stumbleupon',
             'zh': '分享至Stumbleupon'
         },
-        shareUrl: 'https://www.stumbleupon.com/submit?url=' + url + title + shariff.getReferrerTrack()
+        shareUrl: 'https://www.stumbleupon.com/submit?url=' + url + title + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          return 'https://www.stumbleupon.com/submit?url=' + shariff.getUpdatedUrl() + title + shariff.getReferrerTrack();
+        }
     };
 };

@@ -47,6 +47,9 @@ module.exports = function(shariff) {
             'en': 'Share on tencent weibo',
             'zh': '分享至腾讯微博'
         },
-        shareUrl: 'http://v.t.qq.com/share/share.php?url=' + url + '&title=' + title + shariff.getReferrerTrack()
+        shareUrl: 'http://v.t.qq.com/share/share.php?url=' + url + '&title=' + title + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          return 'http://v.t.qq.com/share/share.php?url=' + shariff.getUpdatedUrl() + '&title=' + title + shariff.getReferrerTrack();
+        }
     };
 };

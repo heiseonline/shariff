@@ -58,7 +58,9 @@ module.exports = function(shariff) {
             'tr': 'Google+\'da paylaş',
             'zh': '在Google+上分享'
         },
-        shareUrl: 'https://plus.google.com/share?url=' + url + shariff.getReferrerTrack()
+        shareUrl: 'https://plus.google.com/share?url=' + url + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          return 'https://plus.google.com/share?url=' + shariff.getUpdatedUrl() + shariff.getReferrerTrack();
+        }
     };
 };
-

@@ -23,6 +23,10 @@ module.exports = function(shariff) {
             'en': 'Share on Diaspora',
             'zh': '分享至Diaspora'
         },
-        shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
+        shareUrl: url.format(shareUrl) + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          shareUrl.query.url = shariff.getUpdatedUrl();
+          return url.format(shareUrl) + shariff.getReferrerTrack();
+        }
     };
 };

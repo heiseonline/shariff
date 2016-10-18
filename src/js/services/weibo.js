@@ -47,6 +47,9 @@ module.exports = function(shariff) {
             'en': 'Share on weibo',
             'zh': '分享至新浪微博'
         },
-        shareUrl: 'http://service.weibo.com/share/share.php?url=' + url + '&title=' + title + shariff.getReferrerTrack()
+        shareUrl: 'http://service.weibo.com/share/share.php?url=' + url + '&title=' + title + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          return 'http://service.weibo.com/share/share.php?url=' + shariff.getUpdatedUrl() + '&title=' + title + shariff.getReferrerTrack();
+        }
     };
 };

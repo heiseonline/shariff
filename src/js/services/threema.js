@@ -68,6 +68,9 @@ module.exports = function(shariff) {
             'tr': 'Threema\'ta paylaş',
             'zh': '在Threema上分享'
         },
-        shareUrl: 'threema://compose?text=' + encodeURIComponent(title) + '%20' + url + shariff.getReferrerTrack()
+        shareUrl: 'threema://compose?text=' + encodeURIComponent(title) + '%20' + url + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          return 'threema://compose?text=' + encodeURIComponent(title) + '%20' + shariff.getUpdatedUrl() + shariff.getReferrerTrack();
+        }
     };
 };
