@@ -1,6 +1,6 @@
 # Changelog
 
-## TBD
+## 1.24.1 2016-11-17
 
 * Fixed mail body handling on some mobile devices.
 * Improved readability of README. (aranaur)
