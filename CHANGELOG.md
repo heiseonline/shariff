@@ -4,7 +4,7 @@
 
 * Fixed mail body handling on some mobile devices.
 * Improved readability of README. (aranaur)
-* Changed jQuery dependency to allow all 2.x.x versions. (MoritzKn)
+* Changed dependency on jQuery to allow all 2.x.x versions. (MoritzKn)
 * Added MediaWiki third party integration. (stefahn)
 
 ## 1.24.0 2016-06-29
