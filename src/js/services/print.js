@@ -1,7 +1,8 @@
+/*jshint scripturl:true*/
 'use strict';
 
 module.exports = function(shariff) {
-    var url = 'javascript:window.print();'
+    var url = 'javascript:window.print();';
 
     return {
         name: 'print',
