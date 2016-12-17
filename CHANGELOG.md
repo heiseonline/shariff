@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.25.0 2016-12-17
+
+* Added RSS integration. (michaelkeller)
+
 ## 1.24.1 2016-11-17
 
 * Fixed mail body handling on some mobile devices.

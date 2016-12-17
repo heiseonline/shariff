@@ -34,7 +34,8 @@ var Shariff = function(element, options) {
         require('./services/threema'),
         require('./services/weibo'),
         require('./services/tencent-weibo'),
-        require('./services/qzone')
+        require('./services/qzone'),
+        require('./services/rss')
     ];
 
     // filter available services to those that are enabled and initialize them
@@ -127,6 +128,10 @@ Shariff.prototype = {
             }
 
             return url;
+        },
+
+        rssUrl: function() {
+            return global.document.location.protocol + '//' + global.document.location.host + '/index.xml';
         }
     },
 
