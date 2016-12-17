@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.25.1 2016-12-17
+
+* Support for external button creation scripts. (michaelkeller)
+
 ## 1.25.0 2016-12-17
 
 * Added RSS integration. (michaelkeller)

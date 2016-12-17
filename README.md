@@ -145,3 +145,152 @@ This is a list of integrations for third-party systems:
 * [WordPress Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
 * [Xenforo [ITM] ctSSB for Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
 * [Xenforo [WMTech] Social Share Privacy Plugin](https://wmtech.net/products/wmtech-social-share-privacy.41/)
+
+## External button scripts
+
+### Usage
+Define a scripts which defines map window.ShariffExternalCreator . Shariff will call the functions createBtListfunc and createBtFunc if provided. At leat createBtFunc is needed. 
+
+Each function should return the HTML-element to be appended or null;
+
+```js
+window.ShariffExternalCreator = {
+    'createBtListFunc': function(options, socialshareElement, shariff) {
+    var self = shariff;
+    return null;
+    },
+    'createBtFunc': function(service, btIndex, options, buttonList, shariff) {
+    var self = shariff;
+
+    var a = $('<a>').attr('href', service.shareUrl);
+    a.attr('title', shariff.getLocalized(service, 'title'));
+
+    a.append(shariff.getTitle());
+
+    if (service.popup) {
+        a.attr('data-rel', 'popup');
+    } else if (service.blank) {
+        a.attr('target', '_blank');
+    }
+    
+    // add attributes for screen readers
+    a.attr('role', 'button');
+    a.attr('aria-label', shariff.getLocalized(service, 'title'));
+
+    return a;
+    }
+}
+```
+
+
+### createBtListFunc function
+
+- options: as shariff.options
+- socialshareElement: the HTML-Element with class="Shariff"
+- shariff: the calling Shariff instance of the HTML-Element
+
+### createBtFunc function
+
+- service: the service whose element should be created
+- btIndex: the index of the service (starting at 0). Counts upwards even when no HTML-element is returned.
+- options: as shariff.options
+- buttonList: the parent HTML-Element to which Shariff will append the returned HTML-Element
+- shariff: he calling Shariff instance of the HTML-Element with class="Shariff"
+
+### Example for [beautifulhugo](https://github.com/halogenica/beautifulhugo)
+
+```html
+<script>
+    window.ShariffExternalCreator = {
+      'createBtListFunc': function(options, socialshareElement, shariff) {
+        if (shariff.options.theme === "text") return null;
+        return $('<ul class="list-inline text-center footer-links">');
+      },
+      'createBtFunc': function(service, btIndex, options, buttonList, shariff) {
+        var self = shariff;
+
+        if (shariff.options.theme !== "text") {
+          var span = $('<span class="fa-stack fa-lg">');
+          var faCircle = '<i class="fa fa-circle fa-stack-2x">';
+          
+          var faService = '<i class="fa fa-stack-1x fa-inverse';
+          if (typeof service.faName !== 'undefined') {
+              faService = faService + ' ' + service.faName;
+          }
+          faService = faService + '">';
+
+          span.append(faCircle).append(faService);
+
+          var li = $('<li>');
+
+          var shareLink = $('<a>').attr('href', service.shareUrl).append(span);
+          shareLink.attr('title', shariff.getLocalized(service, 'title'));
+          if (service.popup) {
+              shareLink.attr('data-rel', 'popup');
+          } else if (service.blank) {
+              shareLink.attr('target', '_blank');
+          }
+          
+          // add attributes for screen readers
+          shareLink.attr('role', 'button');
+          shareLink.attr('aria-label', shariff.getLocalized(service, 'title'));
+
+          li.append(shareLink);
+
+          return li;
+
+        } else if (service.name === 'twitter') {
+          var shareLink = $('<a>').attr('href', service.shareUrl);
+          shareLink.attr('title', shariff.getLocalized(service, 'title'));
+          if (service.popup) {
+              shareLink.attr('data-rel', 'popup');
+          } else if (service.blank) {
+              shareLink.attr('target', '_blank');
+          }
+          
+          // add attributes for screen readers
+          shareLink.attr('role', 'button');
+          shareLink.attr('aria-label', shariff.getLocalized(service, 'title'));
+
+          var faService = '<i class="post-twitter fa';
+          if (typeof service.faName !== 'undefined') {
+              faService = faService + ' ' + service.faName;
+          }
+          faService = faService + '">';
+
+          shareLink.append(faService);
+          shareLink.append(shariff.getTitle())
+          
+
+          return shareLink
+        }
+        return null;
+      }
+    }
+  </script>  
+</head>
+<body>
+  <!-- show all services as circle buttons -->
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="shariff" 
+             data-lang="{{ .Site.Language }}" 
+             data-services="[&quot;{{ delimit .Site.Params.services "&quot;,&quot;" }}&quot;]"
+             data-mail-url="mailto:{{ .Site.Author.email }}"
+             data-mail-subject="{{ .Site.Title }}: {{ .Title }}"
+             data-mail-body="{{ .Site.BaseURL }}{{ .URL }}"
+        ></div>
+      </div>
+    </div>
+
+    <!-- show only twitter as its icon -->
+    <h3 class="post-title shariff"
+        data-theme="text" 
+        data-lang="{{ .Site.Language }}" 
+        data-services="[&quot;twitter&quot;]"
+        data-url="{{ .Permalink }}"
+        data-title="{{ .Params.tweet}}"
+    ></h3>
+    <script src="{{ .Site.BaseURL }}js/shariff.min.js"></script>
+```

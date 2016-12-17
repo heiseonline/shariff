@@ -1,6 +1,6 @@
 {
   "name": "shariff",
-  "version": "1.24.1",
+  "version": "1.25.1",
   "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
   "main": "src/js/shariff.js",
   "scripts": {
