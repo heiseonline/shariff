@@ -239,6 +239,16 @@ Shariff.prototype = {
             e.preventDefault();
 
             var url = $(this).attr('href');
+
+            // if a twitter widget is embedded on current site twitter's widget.js
+            // will open a popup so we should not open a second one.
+            if (url.match(/twitter\.com\/intent\/(\w+)/)) {
+                var w = global.window;
+                if(w.__twttr && w.__twttr.widgets && w.__twttr.widgets.loaded) {
+                    return;
+                }
+            }
+
             var windowName = '_blank';
             var windowSizeX = '600';
             var windowSizeY = '460';
