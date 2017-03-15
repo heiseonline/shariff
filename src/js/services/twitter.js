@@ -38,7 +38,10 @@ module.exports = function(shariff) {
 
     return {
         popup: true,
-        shareText: 'tweet',
+        shareText: {
+            'en': 'tweet',
+            'zh': '分享'
+        },
         name: 'twitter',
         faName: 'fa-twitter',
         title: {
