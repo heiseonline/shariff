@@ -34,7 +34,8 @@ var Shariff = function(element, options) {
         require('./services/threema'),
         require('./services/weibo'),
         require('./services/tencent-weibo'),
-        require('./services/qzone')
+        require('./services/qzone'),
+        require('./services/rss')
     ];
 
     // filter available services to those that are enabled and initialize them
@@ -127,6 +128,10 @@ Shariff.prototype = {
             }
 
             return url;
+        },
+
+        rssUrl: function() {
+            return global.document.location.protocol + '//' + global.document.location.host + '/index.xml';
         }
     },
 
@@ -197,45 +202,8 @@ Shariff.prototype = {
     _addButtonList: function() {
         var self = this;
 
-        var $socialshareElement = this.$socialshareElement();
-
-        var themeClass = 'theme-' + this.options.theme;
-        var orientationClass = 'orientation-' + this.options.orientation;
-        var serviceCountClass = 'col-' + this.options.services.length;
-
-        var $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass).addClass(serviceCountClass);
-
-        // add html for service-links
-        this.services.forEach(function(service) {
-            var $li = $('<li class="shariff-button">').addClass(service.name);
-            var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
-
-            var $shareLink = $('<a>')
-              .attr('href', service.shareUrl)
-              .append($shareText);
-
-            if (typeof service.faName !== 'undefined') {
-                $shareLink.prepend('<span class="fa ' +  service.faName + '">');
-            }
-
-            if (service.popup) {
-                $shareLink.attr('data-rel', 'popup');
-            } else if (service.blank) {
-                $shareLink.attr('target', '_blank');
-            }
-            $shareLink.attr('title', self.getLocalized(service, 'title'));
-
-            // add attributes for screen readers
-            $shareLink.attr('role', 'button');
-            $shareLink.attr('aria-label', self.getLocalized(service, 'title'));
-
-            $li.append($shareLink);
-
-            $buttonList.append($li);
-        });
-
-        // event delegation
-        $buttonList.on('click', '[data-rel="popup"]', function(e) {
+        // event delegation function
+        var $clickFunc = function(e) {
             e.preventDefault();
 
             var url = $(this).attr('href');
@@ -246,9 +214,82 @@ Shariff.prototype = {
 
             global.window.open(url, windowName, windowSize);
 
-        });
+        };
 
-        $socialshareElement.append($buttonList);
+        var $socialshareElement = this.$socialshareElement();
+        var externalCreator = global.window.ShariffExternalCreator;
+
+        var themeClass = 'theme-' + this.options.theme;
+        var orientationClass = 'orientation-' + this.options.orientation;
+        var serviceCountClass = 'col-' + this.options.services.length;
+
+        var $buttonList = null;
+
+        if (typeof externalCreator === 'undefined') { // create buttons here as normal
+
+            $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass).addClass(serviceCountClass);
+
+            // add html for service-links
+            this.services.forEach(function(service) {
+                var $li = $('<li class="shariff-button">').addClass(service.name);
+                var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
+
+                var $shareLink = $('<a>')
+                .attr('href', service.shareUrl)
+                .append($shareText);
+
+                if (typeof service.faName !== 'undefined') {
+                    $shareLink.prepend('<span class="fa ' +  service.faName + '">');
+                }
+
+                if (service.popup) {
+                    $shareLink.attr('data-rel', 'popup');
+                } else if (service.blank) {
+                    $shareLink.attr('target', '_blank');
+                }
+                $shareLink.attr('title', self.getLocalized(service, 'title'));
+
+                // add attributes for screen readers
+                $shareLink.attr('role', 'button');
+                $shareLink.attr('aria-label', self.getLocalized(service, 'title'));
+
+                $li.append($shareLink);
+
+                $buttonList.append($li);
+            });
+
+            // event delegation
+            $buttonList.on('click', '[data-rel="popup"]', $clickFunc);
+
+            $socialshareElement.append($buttonList);
+
+        } else { // use external function to create buttons function
+            
+            if (typeof externalCreator.createBtListFunc !== 'undefined') {
+                $buttonList = externalCreator.createBtListFunc(self.options, $socialshareElement, self);
+            }
+            if (typeof $buttonList === 'undefined' || $buttonList === null) {
+                $buttonList = $socialshareElement;
+            } 
+
+            // add html for service-links
+            var btIndex = 0;
+            this.services.forEach(function(service) {
+                var $button = externalCreator.createBtFunc(service, btIndex, self.options, $buttonList, self);
+                if (typeof $button !== undefined && $button !== null) {
+                    $buttonList.append($button);
+                }
+                btIndex = btIndex + 1;
+            });
+
+            // event delegation
+            $socialshareElement.on('click', '[data-rel="popup"]', $clickFunc);
+
+            // if a buttonList was created add it to the socialshareElement 
+            if ($buttonList !== $socialshareElement) {
+                $socialshareElement.append($buttonList);
+            }
+        }
     }
 };
 
