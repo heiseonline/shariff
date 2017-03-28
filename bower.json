@@ -1,6 +1,6 @@
 {
   "name": "shariff",
-  "version": "1.24.0",
+  "version": "1.24.1",
   "homepage": "http://ct.de/-2467514",
   "authors": [
     "Ines Pauer <ipa@heise.de>",
@@ -32,6 +32,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1"
+    "jquery": "^2.1.1"
   }
 }

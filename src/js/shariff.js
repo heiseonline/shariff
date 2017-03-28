@@ -94,7 +94,7 @@ Shariff.prototype = {
             return this.getMeta('DC.title') || this.getTitle();
         },
 
-        mailBody: function() { return '<' + this.getURL() + '>'; },
+        mailBody: function() { return this.getURL(); },
 
         // Media (e.g. image) URL to be shared
         mediaUrl: null,

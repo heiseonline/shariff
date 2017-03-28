@@ -1,18 +1,21 @@
 # Changelog
 
-## TBD
+## 1.24.1 2016-11-17
 
-* Add MediaWiki third party integration. (stefahn)
+* Fixed mail body handling on some mobile devices.
+* Improved readability of README. (aranaur)
+* Changed dependency on jQuery to allow all 2.x.x versions. (MoritzKn)
+* Added MediaWiki third party integration. (stefahn)
 
 ## 1.24.0 2016-06-29
 
-* Fix flexbox bug for Safari (yellowled)
-* Add Weibo, Tencent-Weibo, Qzone services. (shls)
-* Add Serendipity third party integration. (ddeimeke)
+* Fixed flexbox bug for Safari (yellowled)
+* Added Weibo, Tencent-Weibo, Qzone services. (shls)
+* Added Serendipity third party integration. (ddeimeke)
 
 ## v1.23.2 2016-05-09
 
-* Attach build artifacts to broken 1.23.1 release.
+* Attached build artifacts to broken 1.23.1 release.
 
 ## v1.23.1 2016-05-09
 

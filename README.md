@@ -15,10 +15,10 @@ Shariff consists of two parts: a simple JavaScript client library and an optiona
 1. Download the [latest release](https://github.com/heiseonline/shariff/releases/latest)
 2. Include CSS in `<head>`:
     * `build/shariff.complete.css` contains all dependencies
-    * use `build/shariff.min.css`, if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site
+    * if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site, use `build/shariff.min.css` 
 3. Include JavaScript right before `</body>`:
     * `build/shariff.complete.js` contains all dependencies
-    * use `build/shariff.min.js`, if [jQuery](https://github.com/jquery/jquery) is already included in your site
+    * if [jQuery](https://github.com/jquery/jquery) is already included in your site, use `build/shariff.min.js`
 4. Insert one or more `<div class="shariff">` elements.
 5. Customize the look using data-* attributes.
 

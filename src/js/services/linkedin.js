@@ -2,6 +2,8 @@
 
 module.exports = function(shariff) {
     var url = encodeURIComponent(shariff.getURL());
+    var title = encodeURIComponent(shariff.getTitle());
+    var descr = encodeURIComponent(shariff.getMeta('description'));
     return {
         popup: true,
         shareText: {
@@ -56,9 +58,13 @@ module.exports = function(shariff) {
             'tr': 'LinkedIn\'ta paylaş',
             'zh': '在LinkedIn上分享'
         },
+<<<<<<< master
         shareUrl: 'https://www.linkedin.com/cws/share?url=' + url + shariff.getReferrerTrack(),
         updateUrl: function() {
           return 'https://www.linkedin.com/cws/share?url=' + shariff.getUpdatedUrl() + shariff.getReferrerTrack();
         }
+=======
+        shareUrl: 'https://www.linkedin.com/shareArticle?mini=true&summary=' + descr + '&title=' + title + '&url=' + url
+>>>>>>> master
     };
 };

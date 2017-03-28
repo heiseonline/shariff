@@ -12,7 +12,10 @@ module.exports = function(shariff) {
     return {
         blank: url.indexOf('http') === 0,
         popup: false,
-        shareText: 'mail',
+        shareText: {
+            'en': 'mail',
+            'zh': '分享'
+        }, 
         name: 'mail',
         faName: 'fa-envelope',
         title: {
