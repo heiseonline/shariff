@@ -221,7 +221,7 @@ Shariff.prototype = {
               .append($shareText);
 
             // create link icon (default font awesome)
-            self.options.createLinkIcon.call($shareLink, service);
+            self.options.createLinkIcon.call(self, $shareLink, service);
 
             if (service.popup) {
                 $shareLink.attr('data-rel', 'popup');
