@@ -114,7 +114,7 @@ Shariff.prototype = {
 
         createLinkIcon: function($shareLink, service) {
             if (typeof service.faName !== 'undefined') {
-                $shareLink.prepend('<span class="fa ' +  service.faName + '">');
+                $shareLink.prepend('<span class="fa ' +  service.faName + '" aria-hidden="true">');
             }
         },
 
