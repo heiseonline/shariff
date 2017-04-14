@@ -189,7 +189,7 @@ Shariff.prototype = {
             if(value >= 1000) {
                 value = Math.round(value / 1000) + 'k';
             }
-            $(self.element).find('.' + key + ' a').append('&nbsp;<span class="share_count">' + value);
+            $(self.element).find('.' + key + ' a').append('&nbsp;<span class="share_count" />' + value);
         });
     },
 
@@ -207,15 +207,15 @@ Shariff.prototype = {
 
         // add html for service-links
         this.services.forEach(function(service) {
-            var $li = $('<li class="shariff-button">').addClass(service.name);
-            var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
+            var $li = $('<li class="shariff-button" />').addClass(service.name);
+            var $shareText = '<span class="share_text" />' + self.getLocalized(service, 'shareText');
 
-            var $shareLink = $('<a>')
+            var $shareLink = $('<a />')
               .attr('href', service.shareUrl)
               .append($shareText);
 
             if (typeof service.faName !== 'undefined') {
-                $shareLink.prepend('<span class="fa ' +  service.faName + '">');
+                $shareLink.prepend('<span class="fa ' +  service.faName + '" />');
             }
 
             if (service.popup) {
@@ -257,9 +257,12 @@ module.exports = Shariff;
 // export Shariff class to global (for non-Node users)
 global.Shariff = Shariff;
 
-// initialize .shariff elements
-$('.shariff').each(function() {
-    if (!this.hasOwnProperty('shariff')) {
-        this.shariff = new Shariff(this);
-    }
+$(global.document).ready(function () {
+    // initialize .shariff elements
+    $('.shariff').each(function () {
+        if (!this.hasOwnProperty('shariff')) {
+            this.shariff = new Shariff(this);
+        }
+    });
+
 });
