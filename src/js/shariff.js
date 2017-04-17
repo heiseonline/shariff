@@ -257,12 +257,11 @@ module.exports = Shariff;
 // export Shariff class to global (for non-Node users)
 global.Shariff = Shariff;
 
-$(global.document).ready(function () {
+$(function () {
     // initialize .shariff elements
     $('.shariff').each(function () {
         if (!this.hasOwnProperty('shariff')) {
             this.shariff = new Shariff(this);
         }
     });
-
 });
