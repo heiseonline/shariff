@@ -1,11 +1,12 @@
 'use strict';
 
 var url = require('url');
-var $ = require('jquery');
 
 // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
 var abbreviateText = function(text, length) {
-    var abbreviated = $('<div/>').html(text).text();
+    var div = document.createElement('div');
+    div.innerHTML = text;
+    var abbreviated = div.textContent;
     if (abbreviated.length <= length) {
         return text;
     }

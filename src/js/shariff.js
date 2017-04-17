@@ -1,6 +1,6 @@
 'use strict';
 
-var $ = require('jquery');
+var $ = require('./dom');
 var url = require('url');
 
 var Shariff = function(element, options) {
@@ -53,7 +53,7 @@ var Shariff = function(element, options) {
     this._addButtonList();
 
     if (this.options.backendUrl !== null) {
-        this.getShares().then( $.proxy( this._updateCounts, this ) );
+        this.getShares(this._updateCounts.bind(this));
     }
 
 };
@@ -163,7 +163,7 @@ Shariff.prototype = {
 
     getOption: function(name) {
         var option = this.options[name];
-        return (typeof option === 'function') ? $.proxy(option, this)() : option;
+        return (typeof option === 'function') ? option.call(this) : option;
     },
 
     getTitle: function() {
@@ -175,15 +175,15 @@ Shariff.prototype = {
     },
 
     // returns shareCounts of document
-    getShares: function() {
+    getShares: function(callback) {
         var baseUrl = url.parse(this.options.backendUrl, true);
         baseUrl.query.url = this.getURL();
         delete baseUrl.search;
-        return $.getJSON(url.format(baseUrl));
+        return $.getJSON(url.format(baseUrl), callback);
     },
 
     // add value of shares for each service
-    _updateCounts: function(data) {
+    _updateCounts: function(success, data) {
         var self = this;
         $.each(data, function(key, value) {
             if(value >= 1000) {

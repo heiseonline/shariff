@@ -30,8 +30,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "jquery": "^2.1.1"
-  }
+  ]
 }
