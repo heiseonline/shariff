@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Replaced jQuery with vanilla js (glaszig)
+
 ## 1.24.1 2016-11-17
 
 * Fixed mail body handling on some mobile devices.
