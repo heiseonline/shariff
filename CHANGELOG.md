@@ -1,8 +1,9 @@
 # Changelog
 
-## 1.25.0 2017-04-21
+## 1.25.1 2017-04-21
 
 * Replaced jQuery with vanilla js. (glaszig)
+* Removed obsolete build artifact. 
 
 ## 1.24.1 2016-11-17
 
