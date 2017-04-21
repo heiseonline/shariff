@@ -58,6 +58,9 @@ module.exports = function(shariff) {
             'tr': 'Facebook\'ta paylaş',
             'zh': '在Facebook上分享',
         },
-        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + url + shariff.getReferrerTrack()
+        shareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + url + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          return 'https://www.facebook.com/sharer/sharer.php?u=' + shariff.getUpdatedUrl() + shariff.getReferrerTrack();
+        }
     };
 };

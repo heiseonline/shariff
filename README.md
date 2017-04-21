@@ -99,6 +99,7 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` |
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
 | `data-url`         | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
+| `data-use-updated-url`  | Tells if updated url (Hash, history.pushState, etc) should be used  | If `data-use-updated-url` is not set, `link[rel="canonical"]`, `meta[property="og:url"]` or original `location.href` will be used. |
 
 
 ## Supported browsers

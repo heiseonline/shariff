@@ -99,6 +99,7 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 | `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` |
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
 | `data-url`         | URL, die geteilt werden soll. | Wenn `data-url` nicht gesetzt ist, wird `link[rel="canonical"]`, `meta[property="og:url"]` oder `location.href` verwendet. |
+| `data-use-updated-url`  | Gibt an, ob veränderte Url (Hash, history.pushState, etc) genommen werden soll  | Ist `data-use-updated-url` nicht gesetzt, wird `link[rel="canonical"]`, `meta[property="og:url"]` oder ursprünglicher `location.href` verwendet. |
 
 
 ## Unterstützte Browser

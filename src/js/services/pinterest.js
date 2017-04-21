@@ -34,6 +34,10 @@ module.exports = function(shariff) {
             'nl': 'Delen op Pinterest',
             'zh': '分享至Pinterest'
         },
-        shareUrl: url.format(shareUrl) + shariff.getReferrerTrack()
+        shareUrl: url.format(shareUrl) + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          shareUrl.query.url = shariff.getUpdatedUrl();
+          return url.format(shareUrl) + shariff.getReferrerTrack();
+        }
     };
 };

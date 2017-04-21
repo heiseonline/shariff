@@ -26,6 +26,9 @@ module.exports = function(shariff) {
             'nl': 'Delen op XING',
             'zh': '分享至XING'
         },
-        shareUrl: 'https://www.xing.com/social_plugins/share?url=' + url + shariff.getReferrerTrack()
+        shareUrl: 'https://www.xing.com/social_plugins/share?url=' + url + shariff.getReferrerTrack(),
+        updateUrl: function(){
+          return 'https://www.xing.com/social_plugins/share?url=' + shariff.getUpdatedUrl() + shariff.getReferrerTrack();
+        }
     };
 };

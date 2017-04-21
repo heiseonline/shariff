@@ -4,10 +4,15 @@ var $ = require('./dom');
 var url = require('url');
 
 var Shariff = function(element, options) {
+
     var self = this;
 
     // the DOM element that will contain the buttons
     this.element = element;
+
+    this.getUpdatedUrl = function(){
+      return global.document.location.href;
+    };
 
     // Ensure elemnt is empty
     $(element).empty();
@@ -114,6 +119,8 @@ Shariff.prototype = {
 
         flattrCategory: null,
 
+        useUpdatedUrl: false,
+
         // build URI from rel="canonical" or document.location
         url: function() {
             var url = global.document.location.href;
@@ -212,6 +219,7 @@ Shariff.prototype = {
 
             var $shareLink = $('<a>')
               .attr('href', service.shareUrl)
+              .data('name', service.name)
               .append($shareText);
 
             if (typeof service.faName !== 'undefined') {
@@ -237,8 +245,19 @@ Shariff.prototype = {
         // event delegation
         $buttonList.on('click', '[data-rel="popup"]', function(e) {
             e.preventDefault();
-
             var url = $(this).attr('href');
+
+            // check if changed link should be used
+            if (Boolean(self.options.useUpdatedUrl) === true) {
+              self.services.forEach(function(service) {
+                // find button click related service
+                if (service.name === $(this).data('name') && typeof service.updateUrl !== 'undefined') {
+                  // update url of service with (p.e. via history.pushState or location.hash) updated url
+                  url = service.updateUrl();
+                }
+              }.bind(this));
+            }
+
             var windowName = '_blank';
             var windowSizeX = '600';
             var windowSizeY = '460';
