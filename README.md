@@ -17,8 +17,7 @@ Shariff consists of two parts: a simple JavaScript client library and an optiona
     * `build/shariff.complete.css` contains all dependencies
     * if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site, use `build/shariff.min.css` 
 3. Include JavaScript right before `</body>`:
-    * `build/shariff.complete.js` contains all dependencies
-    * if [jQuery](https://github.com/jquery/jquery) is already included in your site, use `build/shariff.min.js`
+    * `build/shariff.min.js`
 4. Insert one or more `<div class="shariff">` elements.
 5. Customize the look using data-* attributes.
 
@@ -62,8 +61,7 @@ Edit your JS main script, include Shariff and initialize it in one or more conta
 ```js
 // my-app.js
 var Shariff = require('shariff');
-var $ = require('jquery');
-var buttonsContainer = $('.some-selector');
+var buttonsContainer = document.querySelector('.some-selector');
 new Shariff(buttonsContainer, {
     orientation: 'vertical'
 });

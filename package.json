@@ -33,12 +33,8 @@
       "email": "dzs@heise.de"
     }
   ],
-  "browserify-shim": {
-    "jquery": "global:jQuery"
-  },
   "dependencies": {
-    "font-awesome": "^4.3.0",
-    "jquery": "^1.11.2"
+    "font-awesome": "^4.3.0"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"

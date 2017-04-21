@@ -17,8 +17,7 @@ Shariff besteht aus zwei Teilen. Der erste Teil ist eine einfache JavaScript-Bib
     * `build/shariff.complete.css` enthält alle Abhängigkeiten
     * `build/shariff.min.css` verwenden, wenn [Font Awesome](https://github.com/FortAwesome/Font-Awesome) bereits in Ihrer Seite geladen wird
 3. JavaScript unmittelbar vor `</body>` einbinden:
-    * `build/shariff.complete.js` enthält alle Abhängigkeiten
-    * `build/shariff.min.js` verwenden, wenn [jQuery](https://github.com/jquery/jquery) bereits in der Seite vorhanden ist
+    * `build/shariff.min.js`
 4. Beliebig viele `<div class="shariff">` Elemente einfügen
 5. Mit den unten beschriebenen `data`-Attributen Aussehen und Funktion konfigurieren
 
@@ -43,7 +42,7 @@ Code-Beispiel:
     <div class="shariff" data-backend-url="/path/to/backend" data-url="http://www.example.com/my-article.html" data-theme="grey" data-orientation="vertical"></div>
 
     <!-- vor dem schließenden </body>-Tag -->
-    <script src="/path/to/shariff.complete.js"></script>
+    <script src="/path/to/shariff.min.js"></script>
 </body>
 </html>
 ```
@@ -62,8 +61,7 @@ Dann kann Shariff im eigenen Skript initialisiert und an DOM-Elemente gebunden w
 ```js
 // my-app.js
 var Shariff = require('shariff');
-var $ = require('jquery');
-var buttonsContainer = $('.some-selector');
+var buttonsContainer = document.querySelector('.some-selector');
 new Shariff(buttonsContainer, {
     orientation: 'vertical'
 });
