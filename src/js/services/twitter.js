@@ -40,6 +40,7 @@ module.exports = function(shariff) {
     return {
         popup: true,
         shareText: {
+	        'de': 'Share on Twitter',
             'en': 'tweet',
             'zh': '分享'
         },
