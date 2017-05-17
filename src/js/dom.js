@@ -39,7 +39,7 @@ function dq(selector, context) {
     nodes = [ selector ];
   } else if (typeof selector === 'string') {
     if (selector[0] === '<') {
-      nodes = fragment(selector);
+      nodes = Array.prototype.slice.call(fragment(selector));
     } else {
       nodes = Array.prototype.slice.call(context.querySelectorAll(selector));
     }
