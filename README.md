@@ -98,6 +98,7 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-theme`       | We include 3 color schemes, `standard`, `grey` and `white`. | `standard` |
 | `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` |
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
+| `data-twitter-follow` | Twitter account, if shorter than 9 characters it will be displayed on the button | `null` |
 | `data-url`         | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
 
 
