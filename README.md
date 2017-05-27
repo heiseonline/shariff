@@ -132,6 +132,7 @@ This is a list of integrations for third-party systems:
 * [Contao integration](https://github.com/hofff/contao-shariff)
 * [Drupal module](https://www.drupal.org/project/shariff)
 * [Joomla! 3 Shariff Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
+* [Kirby-CMS Shariff-Plugin](https://github.com/SpicyWeb-de/kirby-plugin-shariff)
 * [MediaWiki Extension](https://github.com/vonloxley/Shariff-Mediawiki/)
 * [Open Monograph Press Plugin](https://github.com/langsci/shariff)
 * [Serendipity](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
