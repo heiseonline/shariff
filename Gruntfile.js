@@ -54,6 +54,16 @@ module.exports = function(grunt) {
                 },
                 src: 'src/js/shariff.js',
                 dest: 'demo/app.min.js'
+            },
+            specs: {
+                src: [ 'src/js/*.js', 'spec/**/*Spec.js' ],
+                dest: "tmp/specs.js",
+                options: {
+                    browserifyOptions: {
+                        debug: true,
+                        paths: [ './node_modules' ],
+                    }
+                }
             }
         },
 
@@ -82,6 +92,23 @@ module.exports = function(grunt) {
                 'src/js/*.js',
                 'src/js/services/*.js'
             ]
+        },
+
+        jasmine: {
+            specs: {
+                src: [],
+                options: {
+                    outfile: 'tmp/_SpecRunner.html',
+                    specs: '<%= browserify.specs.dest %>'
+                }
+            }
+        },
+
+        watch: {
+          scripts: {
+            files: ['src/js/dom.js', 'spec/**/*Spec.js'],
+            tasks: ['test']
+          },
         },
 
         less: {
@@ -181,10 +208,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-connect-proxy');
     grunt.loadNpmTasks('grunt-hapi');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
 
-    grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('test', ['jshint', 'browserify:specs', 'jasmine:specs']);
     grunt.registerTask('build', ['test', 'less:demo', 'less:dist', 'less:dist_min', 'browserify:dist_min']);
     grunt.registerTask('demo', ['copy:demo', 'less:demo', 'browserify:demo', 'hapi', 'configureProxies:demo', 'connect']);
     grunt.registerTask('default', ['test', 'demo']);
