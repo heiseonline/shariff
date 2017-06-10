@@ -203,19 +203,19 @@ Shariff.prototype = {
         var orientationClass = 'orientation-' + this.options.orientation;
         var serviceCountClass = 'col-' + this.options.services.length;
 
-        var $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass).addClass(serviceCountClass);
+        var $buttonList = $('<ul />').addClass(themeClass).addClass(orientationClass).addClass(serviceCountClass);
 
         // add html for service-links
         this.services.forEach(function(service) {
-            var $li = $('<li class="shariff-button">').addClass(service.name);
-            var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText');
+            var $li = $('<li class="shariff-button" />').addClass(service.name);
+            var $shareText = '<span class="share_text" />' + self.getLocalized(service, 'shareText');
 
-            var $shareLink = $('<a>')
+            var $shareLink = $('<a />')
               .attr('href', service.shareUrl)
               .append($shareText);
 
             if (typeof service.faName !== 'undefined') {
-                $shareLink.prepend('<span class="fa ' +  service.faName + '">');
+                $shareLink.prepend('<span class="fa ' +  service.faName + '" />');
             }
 
             if (service.popup) {
