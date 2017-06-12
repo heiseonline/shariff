@@ -35,7 +35,9 @@ if (typeof Object.assign !== 'function') {
 function dq(selector, context) {
   var nodes = [];
   context = context || document;
-  if (selector instanceof Element) {
+  if (typeof selector === 'function') {
+    context.addEventListener('DOMContentLoaded', selector);
+  } else if (selector instanceof Element) {
     nodes = [ selector ];
   } else if (typeof selector === 'string') {
     if (selector[0] === '<') {
