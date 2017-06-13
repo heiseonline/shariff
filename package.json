@@ -57,6 +57,9 @@
     "shariff-backend-node": "^3.0.0",
     "uglifyify": "^3.0.1"
   },
+  "browserify-shim": {
+    "./dom": "global:jQuery"
+  },
   "keywords": [
     "heise",
     "social buttons",

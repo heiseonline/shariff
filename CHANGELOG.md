@@ -1,7 +1,12 @@
 # Changelog
 
+## 1.25.2 2017-
+
+* Restored the jQuery dependency for the min.js version. (liayn)
+
 ## 1.25.1 2017-04-21
 
+* RELEASE reverted!
 * Replaced jQuery with vanilla js. (glaszig)
 * Removed obsolete build artifact. 
 
