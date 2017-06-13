@@ -39,7 +39,7 @@ var Shariff = function(element, options) {
 
     // filter available services to those that are enabled and initialize them
     this.services = $.map(this.options.services, function(serviceName) {
-        var service;
+        var service = null;
         availableServices.forEach(function(availableService) {
             availableService = availableService(self);
             if (availableService.name === serviceName) {
