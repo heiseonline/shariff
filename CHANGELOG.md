@@ -1,14 +1,25 @@
 # Changelog
 
-## 1.25.2 2017-
+## TBD
 
 * Restored the jQuery dependency for the min.js version. (liayn)
+* Added Kirby third party integration. (AndiLeni)
+* Added support for DOM-ready functions. (glaszig)
+* Updated dependencies. (liayn)
+* Fixed shariff initializing before DOM is ready. (theseer)
+* Fixed handling of images in pinterest service. (7oot)
+* Fixed MediaWiki third party integration link. (AndiLeni)
+* Fixed Internet Explorer 11 support. (glaszig, heppstux, liayn)
 
 ## 1.25.1 2017-04-21
 
 * RELEASE reverted!
 * Replaced jQuery with vanilla js. (glaszig)
 * Removed obsolete build artifact. 
+
+## 1.25.0 2017-04-21
+
+* RELEASE reverted!
 
 ## 1.24.1 2016-11-17
 
