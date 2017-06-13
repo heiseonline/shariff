@@ -1,6 +1,6 @@
 # Changelog
 
-## TBD
+## 1.25.2 2017-06-13
 
 * Restored the jQuery dependency for the min.js version. (liayn)
 * Added Kirby third party integration. (AndiLeni)
