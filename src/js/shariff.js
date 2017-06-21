@@ -105,7 +105,7 @@ Shariff.prototype = {
         services   : ['twitter', 'facebook', 'googleplus', 'info'],
 
         title: function() {
-            return $('head title').text();
+            return $('head title').html();
         },
 
         twitterVia: null,
