@@ -114,6 +114,29 @@ Shariff supports the following Browsers:
 
 The current and previous major releases of Firefox, Google Chrome, Internet Explorer/Edge and Safari are supported on a rolling basis.
 
+## Supported services
+
+Shariff supports the following social sharing services:
+
+- AddThis
+- diaspora*
+- facebook
+- Flattr
+- Google+
+- LinkedIn
+- Mail
+- Pinterest
+- Qzone
+- reddit
+- StumbleUpon
+- Tencent Weibo
+- Threema
+- Tumblr
+- Twitter
+- Weibo
+- WhatsApp
+- XING
+
 ## Backends
 
 In order to display share counts with Shariff, you need one of the following backends:
