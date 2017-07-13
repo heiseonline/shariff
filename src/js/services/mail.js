@@ -6,7 +6,7 @@ module.exports = function(shariff) {
     // mailto: link? Add body and subject.
     if (url.indexOf('mailto:') === 0) {
         url += '?subject=' + encodeURIComponent(shariff.getOption('mailSubject'));
-        url += '&body=' + encodeURIComponent(shariff.getOption('mailBody'));
+        url += '&body=' + encodeURIComponent(shariff.getOption('mailBody').replace(/\{url\}/i, shariff.getURL()));
     }
 
     return {
