@@ -1,5 +1,12 @@
 # Changelog
 
+## TBD
+
+* Added tests for the DOM library. (glaszig)
+* Added list of supported sharing services to READMEs.
+* Added `{url}` placeholder to `data-mail-body` option. (stephankellermayr)
+* Fixed Twitter popup opening twice when a tweet is embedded on a page. (Nebel54)
+
 ## 1.25.2 2017-06-13
 
 * Restored the jQuery dependency for the min.js version. (liayn)
