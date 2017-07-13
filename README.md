@@ -1,4 +1,5 @@
-# Shariff – Give Social Media Buttons Some Privacy
+# Shariff – Give Social Media Buttons Some Privacy [![Build Status](https://travis-ci.org/heiseonline/shariff.svg?branch=master)](https://travis-ci.org/heiseonline/shariff)
+
 
 Shariff enables website users to share their favorite content without compromising their privacy. [Demo](http://heiseonline.github.io/shariff/)
 

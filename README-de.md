@@ -1,4 +1,4 @@
-# Shariff – Schützen und teilen
+# Shariff – Schützen und teilen [![Build Status](https://travis-ci.org/heiseonline/shariff.svg?branch=master)](https://travis-ci.org/heiseonline/shariff)
 
 Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu bewahren, können Webseiten-Betreiber mit dem Projekt Shariff eigene Teilen-Buttons integrieren.  [Demo](http://heiseonline.github.io/shariff/)
 
