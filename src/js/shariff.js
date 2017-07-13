@@ -24,6 +24,7 @@ var Shariff = function(element, options) {
         require('./services/info'),
         require('./services/linkedin'),
         require('./services/mail'),
+        require('./services/print'),
         require('./services/pinterest'),
         require('./services/reddit'),
         require('./services/stumbleupon'),
