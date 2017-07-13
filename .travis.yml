@@ -19,7 +19,7 @@ env:
     - TGZ_FILENAME=shariff-$VERSION.tar.gz
 
 script:
-  - echo "grunt test"
+  - grunt test
 
 before_deploy:
   - echo "$TRAVIS_TAG / $VERSION / $VVERSION"
