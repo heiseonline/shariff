@@ -39,10 +39,8 @@ var Shariff = function(element, options) {
     };
 
     // filter available services to those that are enabled and initialize them
-    this.services = this.options.services
-        .filter(function(serviceName) {
-            return availableServices.hasOwnProperty(serviceName);
-        })
+    this.services = Object.keys(availableServices)
+        .filter(this.isEnabledService.bind(this))
         .map(function(serviceName) {
             return availableServices[serviceName](self);
         });
@@ -52,7 +50,6 @@ var Shariff = function(element, options) {
     if (this.options.backendUrl !== null) {
         this.getShares(this._updateCounts.bind(this));
     }
-
 };
 
 Shariff.prototype = {
@@ -127,6 +124,10 @@ Shariff.prototype = {
         }
     },
 
+    isEnabledService: function(serviceName) {
+        return this.options.services.indexOf(serviceName) > 0;
+    },
+
     $socialshareElement: function() {
         return $(this.element);
     },
@@ -183,6 +184,7 @@ Shariff.prototype = {
     _updateCounts: function(success, data) {
         var self = this;
         $.each(data, function(key, value) {
+            if (!self.isEnabledService(key)) return;
             if(value >= 1000) {
                 value = Math.round(value / 1000) + 'k';
             }
