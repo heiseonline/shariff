@@ -1,29 +1,29 @@
-'use strict';
+'use strict'
 
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Polyfill
 if (typeof Object.assign !== 'function') {
   // jshint maxdepth:4
   Object.assign = function(target, varArgs) { // .length of function is 2
     if (target === null) { // TypeError if undefined or null
-      throw new TypeError('Cannot convert undefined or null to object');
+      throw new TypeError('Cannot convert undefined or null to object')
     }
 
-    var to = Object(target);
+    var to = Object(target)
 
     for (var index = 1; index < arguments.length; index++) {
-      var nextSource = arguments[index];
+      var nextSource = arguments[index]
 
       if (nextSource !== null) { // Skip over if undefined or null
         for (var nextKey in nextSource) {
           // Avoid bugs when hasOwnProperty is shadowed
           if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-            to[nextKey] = nextSource[nextKey];
+            to[nextKey] = nextSource[nextKey]
           }
         }
       }
     }
-    return to;
-  };
+    return to
+  }
 }
 
 /**
@@ -33,22 +33,22 @@ if (typeof Object.assign !== 'function') {
  * @returns {DOMQuery} A DOMQuery instance containing the selected set of nodes
  */
 function dq(selector, context) {
-  var nodes = [];
-  context = context || document;
+  var nodes = []
+  context = context || document
   if (typeof selector === 'function') {
-    context.addEventListener('DOMContentLoaded', selector);
+    context.addEventListener('DOMContentLoaded', selector)
   } else if (selector instanceof Element) {
-    nodes = [ selector ];
+    nodes = [ selector ]
   } else if (typeof selector === 'string') {
     if (selector[0] === '<') {
-      nodes = Array.prototype.slice.call(fragment(selector));
+      nodes = Array.prototype.slice.call(fragment(selector))
     } else {
-      nodes = Array.prototype.slice.call(context.querySelectorAll(selector));
+      nodes = Array.prototype.slice.call(context.querySelectorAll(selector))
     }
   } else {
-    nodes = selector;
+    nodes = selector
   }
-  return new DOMQuery(nodes, context);
+  return new DOMQuery(nodes, context)
 }
 
 /**
@@ -56,10 +56,10 @@ function dq(selector, context) {
  * @constructor
  */
 function DOMQuery(elements, context) {
-  this.length = elements.length;
-  this.context = context;
-  var self = this;
-  each(elements, function(i) { self[i] = this; });
+  this.length = elements.length
+  this.context = context
+  var self = this
+  each(elements, function(i) { self[i] = this })
 }
 
 /**
@@ -69,18 +69,18 @@ function DOMQuery(elements, context) {
  */
 DOMQuery.prototype.each = function(callback) {
   for (var i = this.length - 1; i >= 0; i--) {
-    callback.call(this[i], i, this[i]);
+    callback.call(this[i], i, this[i])
   }
-  return this;
-};
+  return this
+}
 
 /**
  * Empties each node.
  * @returns {DOMQuery}
  */
 DOMQuery.prototype.empty = function() {
-  return this.each(empty);
-};
+  return this.each(empty)
+}
 
 /**
  * Sets the text content of each node. Returns the text content of the first node.
@@ -89,10 +89,10 @@ DOMQuery.prototype.empty = function() {
  */
 DOMQuery.prototype.text = function(text) {
   if (text === undefined) {
-    return this[0].textContent;
+    return this[0].textContent
   }
-  return this.each(function () { this.textContent = text; });
-};
+  return this.each(function () { this.textContent = text })
+}
 
 /**
  * Sets an attribute on each node. Returns the attribute's value of the first node.
@@ -102,13 +102,13 @@ DOMQuery.prototype.text = function(text) {
  */
 DOMQuery.prototype.attr = function (name, value) {
   if (this.length < 1) {
-    return null;
+    return null
   }
   if (value === undefined) {
-    return this[0].getAttribute(name);
+    return this[0].getAttribute(name)
   }
-  return this.each(function() { this.setAttribute(name, value); });
-};
+  return this.each(function() { this.setAttribute(name, value) })
+}
 
 /**
  * Sets a data attribute on each node. Returns the data attribute's value of the first node.
@@ -119,15 +119,15 @@ DOMQuery.prototype.attr = function (name, value) {
  */
 DOMQuery.prototype.data = function(key, value) {
   if (value) {
-    return this.attr('data-' + key, value);
+    return this.attr('data-' + key, value)
   }
   if (key) {
-    return this.attr('data-' + key);
+    return this.attr('data-' + key)
   }
-  var data = Object.assign({}, this[0].dataset);
-  each(data, function(k, v) { data[k] = deserializeValue(v); });
-  return data;
-};
+  var data = Object.assign({}, this[0].dataset)
+  each(data, function(k, v) { data[k] = deserializeValue(v) })
+  return data
+}
 
 /**
  * Returns a new DOMQuery instance containing all matched nodes in the context
@@ -136,15 +136,15 @@ DOMQuery.prototype.data = function(key, value) {
  * @returns {DOMQuery}
  */
 DOMQuery.prototype.find = function(selector) {
-  var matches;
+  var matches
   // querySelectorAll in the context of each element in the set
-  matches = map(this, function(el) { return el.querySelectorAll(selector); });
+  matches = map(this, function(el) { return el.querySelectorAll(selector) })
   // convert NodeList matches into Array
-  matches = map(matches, function(el) { return Array.prototype.slice.call(el); });
+  matches = map(matches, function(el) { return Array.prototype.slice.call(el) })
   // flatten the array
-  matches = Array.prototype.concat.apply([], matches);
-  return new DOMQuery(matches);
-};
+  matches = Array.prototype.concat.apply([], matches)
+  return new DOMQuery(matches)
+}
 
 /**
  * Appends nodes to the end of the first node in the set.
@@ -153,11 +153,11 @@ DOMQuery.prototype.find = function(selector) {
  */
 DOMQuery.prototype.append = function(html) {
   if (typeof html === 'string') {
-    html = fragment(html);
+    html = fragment(html)
   }
-  append(this[0], html);
-  return this;
-};
+  append(this[0], html)
+  return this
+}
 
 /**
  * Prepends nodes at the top of the first node in the set.
@@ -166,11 +166,11 @@ DOMQuery.prototype.append = function(html) {
  */
 DOMQuery.prototype.prepend = function(html) {
   if (typeof html === 'string') {
-    html = fragment(html);
+    html = fragment(html)
   }
-  prepend(this[0], html);
-  return this;
-};
+  prepend(this[0], html)
+  return this
+}
 
 /**
  * Adds a CSS class name to the nodes in the set.
@@ -178,8 +178,8 @@ DOMQuery.prototype.prepend = function(html) {
  * @returns {DOMQuery}
  */
 DOMQuery.prototype.addClass = function(name) {
-  return this.each(function() { this.classList.add(name); });
-};
+  return this.each(function() { this.classList.add(name) })
+}
 
 /**
  * Removes a CSS class name from the nodes in the set.
@@ -187,8 +187,8 @@ DOMQuery.prototype.addClass = function(name) {
  * @returns {DOMQuery}
  */
 DOMQuery.prototype.removeClass = function(name) {
-  return this.each(function() { this.classList.remove(name); });
-};
+  return this.each(function() { this.classList.remove(name) })
+}
 
 /**
  * Delegates an event for a node matching a selector to each element in the set.
@@ -199,9 +199,9 @@ DOMQuery.prototype.removeClass = function(name) {
  */
 DOMQuery.prototype.on = function(event, selector, handler) {
   return this.each(function() {
-    delegateEvent(selector, event, handler, this);
-  });
-};
+    delegateEvent(selector, event, handler, this)
+  })
+}
 
 /**
  * Removes each child of a node.
@@ -209,9 +209,9 @@ DOMQuery.prototype.on = function(event, selector, handler) {
  */
 var empty = function () {
   while (this.hasChildNodes()) {
-    this.removeChild(this.firstChild);
+    this.removeChild(this.firstChild)
   }
-};
+}
 
 /**
  * Callback function used for map(array, callback).
@@ -229,8 +229,8 @@ var empty = function () {
  * @returns {Array}
  */
 var map = function (objects, callback) {
-  return Array.prototype.map.call(objects, callback);
-};
+  return Array.prototype.map.call(objects, callback)
+}
 
 /**
  * Callback function used for each(array, callback).
@@ -264,15 +264,15 @@ var map = function (objects, callback) {
 var each = function (object, callback) {
   if (object instanceof Array) {
     for (var i = 0; i < object.length; i++) {
-      callback.call(object[i], i, object[i]);
+      callback.call(object[i], i, object[i])
     }
   } else if (object instanceof Object) {
     for (var prop in object) {
-      callback.call(object[prop], prop, object[prop], object);
+      callback.call(object[prop], prop, object[prop], object)
     }
   }
-  return object;
-};
+  return object
+}
 
 /**
  * Constructs HTML nodes from a string of HTML.
@@ -281,10 +281,10 @@ var each = function (object, callback) {
  * @private
  */
 var fragment = function (html) {
-  var div = document.createElement('div');
-  div.innerHTML = html;
-  return div.children;
-};
+  var div = document.createElement('div')
+  div.innerHTML = html
+  return div.children
+}
 
 /**
  * Appends an array of nodes to the end of an HTML element.
@@ -294,9 +294,9 @@ var fragment = function (html) {
  */
 var append = function (parent, nodes) {
   for (var i = 0; i < nodes.length; i++) {
-    parent.appendChild(nodes[i]);
+    parent.appendChild(nodes[i])
   }
-};
+}
 
 /**
  * Prepends an array of nodes to the top of an HTML element.
@@ -306,9 +306,9 @@ var append = function (parent, nodes) {
  */
 var prepend = function (parent, nodes) {
   for (var i = nodes.length - 1; i >= 0; i--) {
-    parent.insertBefore(nodes[nodes.length-1], parent.firstChild);
+    parent.insertBefore(nodes[nodes.length - 1], parent.firstChild)
   }
-};
+}
 
 /**
  * Returns the closest parent of a node matching a CSS selector.
@@ -319,18 +319,18 @@ var prepend = function (parent, nodes) {
  * @see {@link https://gist.github.com/Daniel-Hug/abbded91dd55466e590b}
  */
 var closest = (function() {
-  var element = HTMLElement.prototype;
+  var element = HTMLElement.prototype
   var matches = element.matches ||
     element.webkitMatchesSelector ||
     element.mozMatchesSelector ||
-    element.msMatchesSelector;
+    element.msMatchesSelector
 
   return function closest(element, selector) {
-    return matches.call(element, selector) ?
-      element :
-      closest(element.parentElement, selector);
-  };
-})();
+    return matches.call(element, selector)
+      ? element
+      : closest(element.parentElement, selector)
+  }
+})()
 
 /**
  * An event handler.
@@ -349,12 +349,12 @@ var closest = (function() {
  */
 var delegateEvent = function (selector, event, handler, scope) {
   (scope || document).addEventListener(event, function(event) {
-    var listeningTarget = closest(event.target, selector);
+    var listeningTarget = closest(event.target, selector)
     if (listeningTarget) {
-      handler.call(listeningTarget, event);
+      handler.call(listeningTarget, event)
     }
-  });
-};
+  })
+}
 
 /**
  * Extends properties of all arguments into a single object.
@@ -366,39 +366,39 @@ var delegateEvent = function (selector, event, handler, scope) {
  */
 var extend = function (objects) {
   // Variables
-  var extended = {};
-  var deep = false;
-  var i = 0;
-  var length = arguments.length;
+  var extended = {}
+  var deep = false
+  var i = 0
+  var length = arguments.length
 
   // Check if a deep merge
-  if ( Object.prototype.toString.call( arguments[0] ) === '[object Boolean]' ) {
-      deep = arguments[0];
-      i++;
+  if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
+    deep = arguments[0]
+    i++
   }
 
   // Merge the object into the extended object
   var merge = function (obj) {
-      for ( var prop in obj ) {
-          if ( Object.prototype.hasOwnProperty.call( obj, prop ) ) {
-              // If deep merge and property is an object, merge properties
-              if ( deep && Object.prototype.toString.call(obj[prop]) === '[object Object]' ) {
-                  extended[prop] = extend( true, extended[prop], obj[prop] );
-              } else {
-                  extended[prop] = obj[prop];
-              }
-          }
+    for (var prop in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, prop)) {
+        // If deep merge and property is an object, merge properties
+        if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
+          extended[prop] = extend(true, extended[prop], obj[prop])
+        } else {
+          extended[prop] = obj[prop]
+        }
       }
-  };
-
-  // Loop through each object and conduct a merge
-  for ( ; i < length; i++ ) {
-      var obj = arguments[i];
-      merge(obj);
+    }
   }
 
-  return extended;
-};
+  // Loop through each object and conduct a merge
+  for (; i < length; i++) {
+    var obj = arguments[i]
+    merge(obj)
+  }
+
+  return extended
+}
 
 /**
  * The callback function for getJSON().
@@ -418,26 +418,26 @@ var extend = function (objects) {
  * @returns {XMLHttpRequest}
  */
 var getJSON = function (url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.setRequestHeader('Accept', 'application/json');
+  var xhr = new XMLHttpRequest()
+  xhr.open('GET', url, true)
+  xhr.setRequestHeader('Content-Type', 'application/json')
+  xhr.setRequestHeader('Accept', 'application/json')
 
   xhr.onload = function() {
     if (xhr.status >= 200 && xhr.status < 400) {
-      var data = JSON.parse(xhr.responseText);
-      callback(true, data, xhr);
+      var data = JSON.parse(xhr.responseText)
+      callback(true, data, xhr)
     } else {
-      callback(false, null, xhr);
+      callback(false, null, xhr)
     }
-  };
+  }
 
   xhr.onerror = function() {
-    callback(false, null, xhr);
-  };
+    callback(false, null, xhr)
+  }
 
-  xhr.send();
-};
+  xhr.send()
+}
 
 /**
  * Deserializes JSON values from strings. Used with data attributes.
@@ -446,29 +446,29 @@ var getJSON = function (url, callback) {
  * @private
  */
 var deserializeValue = function (value) {
-  /*jshint maxcomplexity:7 */
+  /* jshint maxcomplexity:7 */
   // boolean
-  if ('true' === value) { return true; }
-  if ('false' === value) { return false; }
+  if (value === 'true') { return true }
+  if (value === 'false') { return false }
   // null
-  if ('null' === value) { return null; }
+  if (value === 'null') { return null }
   // number
-  if (+value + '' === value) { return +value; }
+  if (+value + '' === value) { return +value }
   // json
   if (/^[\[\{]/.test(value)) {
     try {
-      return JSON.parse(value);
-    } catch(e) {
-      return value;
+      return JSON.parse(value)
+    } catch (e) {
+      return value
     }
   }
   // everything else
-  return value;
-};
+  return value
+}
 
-dq.extend  = extend;
-dq.map     = map;
-dq.each    = each;
-dq.getJSON = getJSON;
+dq.extend = extend
+dq.map = map
+dq.each = each
+dq.getJSON = getJSON
 
-module.exports = dq;
+module.exports = dq
