@@ -171,16 +171,11 @@ class Shariff {
 
   // add html for button-container
   _addButtonList() {
-    var $socialshareElement = this.$socialshareElement()
-
-    var themeClass = 'theme-' + this.options.theme
-    var orientationClass = 'orientation-' + this.options.orientation
-    var serviceCountClass = 'col-' + this.options.services.length
-
-    var $buttonList = $('<ul/>')
-      .addClass(themeClass)
-      .addClass(orientationClass)
-      .addClass(serviceCountClass)
+    var $buttonList = $('<ul/>').addClass(
+      'theme-' + this.options.theme,
+      'orientation-' + this.options.orientation,
+      'col-' + this.options.services.length
+    )
 
     // add html for service-links
     this.services.forEach(service => {
@@ -231,7 +226,7 @@ class Shariff {
       global.window.open(url, '_blank', 'width=600,height=460')
     })
 
-    $socialshareElement.append($buttonList)
+    this.$socialshareElement().append($buttonList)
   }
 }
 
