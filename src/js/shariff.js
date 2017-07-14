@@ -24,18 +24,18 @@ var Shariff = function(element, options) {
         info: require('./services/info'),
         linkedin: require('./services/linkedin'),
         mail: require('./services/mail'),
-        print: require('./services/print'),
         pinterest: require('./services/pinterest'),
+        print: require('./services/print'),
+        qzone: require('./services/qzone'),
         reddit: require('./services/reddit'),
         stumbleupon: require('./services/stumbleupon'),
-        twitter: require('./services/twitter'),
-        whatsapp: require('./services/whatsapp'),
-        xing: require('./services/xing'),
-        tumblr: require('./services/tumblr'),
-        threema: require('./services/threema'),
-        weibo: require('./services/weibo'),
         tencent: require('./services/tencent-weibo'),
-        qzone: require('./services/qzone')
+        threema: require('./services/threema'),
+        tumblr: require('./services/tumblr'),
+        twitter: require('./services/twitter'),
+        weibo: require('./services/weibo'),
+        whatsapp: require('./services/whatsapp'),
+        xing: require('./services/xing')
     };
 
     // filter available services to those that are enabled and initialize them
