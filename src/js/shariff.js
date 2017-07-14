@@ -106,6 +106,12 @@ Shariff.prototype = {
 
         flattrUser: null,
 
+        createLinkIcon: function($shareLink, service) {
+            if (typeof service.faName !== 'undefined') {
+                $shareLink.prepend('<span class="fa ' +  service.faName + '" aria-hidden="true">');
+            }
+        },
+
         flattrCategory: null,
 
         // build URI from rel="canonical" or document.location
@@ -215,9 +221,8 @@ Shariff.prototype = {
               .attr('href', service.shareUrl)
               .append($shareText);
 
-            if (typeof service.faName !== 'undefined') {
-                $shareLink.prepend('<span class="fa ' +  service.faName + '">');
-            }
+            // create link icon (default font awesome)
+            self.options.createLinkIcon.call(self, $shareLink, service);
 
             if (service.popup) {
                 $shareLink.attr('data-rel', 'popup');
