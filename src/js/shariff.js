@@ -41,11 +41,11 @@ var Shariff = function(element, options) {
     // filter available services to those that are enabled and initialize them
     this.services = this.options.services
         .filter(function(serviceName) {
-            return availableServices.hasOwnProperty(serviceName)
+            return availableServices.hasOwnProperty(serviceName);
         })
         .map(function(serviceName) {
-            return availableServices[serviceName](self)
-        })
+            return availableServices[serviceName](self);
+        });
 
     this._addButtonList();
 
