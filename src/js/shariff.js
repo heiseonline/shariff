@@ -184,7 +184,9 @@ Shariff.prototype = {
     _updateCounts: function(success, data) {
         var self = this;
         $.each(data, function(key, value) {
-            if (!self.isEnabledService(key)) return;
+            if (!self.isEnabledService(key)) {
+                return;
+            }
             if(value >= 1000) {
                 value = Math.round(value / 1000) + 'k';
             }
