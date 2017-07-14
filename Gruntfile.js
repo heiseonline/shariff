@@ -32,6 +32,9 @@ module.exports = function(grunt) {
           browserifyOptions: {
             debug: true
           },
+          transform: [
+            ['babelify', {presets: ['es2015']}],
+          ],
           banner: '',
           watch: true
         },
@@ -40,7 +43,10 @@ module.exports = function(grunt) {
       },
       dist_complete_min: {
         options: {
-          transform: [['uglifyify', { global: true }]]
+          transform: [
+            ['babelify', {presets: ['es2015']}],
+            ['uglifyify', { global: true }]
+          ]
         },
         src: 'src/js/shariff.js',
         dest: 'build/shariff.complete.js'
@@ -48,6 +54,7 @@ module.exports = function(grunt) {
       dist_min: {
         options: {
           transform: [
+            ['babelify', {presets: ['es2015']}],
             ['uglifyify', { global: true }],
             ['browserify-shim', { global: true }]
           ]
@@ -57,7 +64,10 @@ module.exports = function(grunt) {
       },
       demo: {
         options: {
-          transform: [['uglifyify', { global: true }]],
+          transform: [
+            ['babelify', {presets: ['es2015']}],
+            ['uglifyify', { global: true }]
+          ],
           watch: true
         },
         src: 'src/js/shariff.js',
@@ -67,6 +77,9 @@ module.exports = function(grunt) {
         src: [ 'src/js/*.js', 'spec/**/*Spec.js' ],
         dest: 'tmp/specs.js',
         options: {
+          transform: [
+            ['babelify', {presets: ['es2015']}],
+          ],
           browserifyOptions: {
             debug: true,
             paths: [ './node_modules' ],
