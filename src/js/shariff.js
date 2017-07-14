@@ -156,14 +156,16 @@ class Shariff {
   // add value of shares for each service
   _updateCounts(err, data) {
     if (err) return
-    $.each(data, (key, value) => {
-      if (!this.isEnabledService(key)) {
+    $.each(data, (serviceName, value) => {
+      if (!this.isEnabledService(serviceName)) {
         return
       }
       if (value >= 1000) {
         value = Math.round(value / 1000) + 'k'
       }
-      $(this.element).find('.' + key + ' a').append('&nbsp;<span class="share_count">' + value)
+      $(this.element)
+        .find(`.${serviceName} a`)
+        .append($('<span/>').addClass('share_count').text(value))
     })
   }
 
@@ -175,22 +177,24 @@ class Shariff {
     var orientationClass = 'orientation-' + this.options.orientation
     var serviceCountClass = 'col-' + this.options.services.length
 
-    var $buttonList = $('<ul>')
+    var $buttonList = $('<ul/>')
       .addClass(themeClass)
       .addClass(orientationClass)
       .addClass(serviceCountClass)
 
     // add html for service-links
     this.services.forEach(service => {
-      var $li = $('<li class="shariff-button">').addClass(service.name)
-      var $shareText = '<span class="share_text">' + this.getLocalized(service, 'shareText')
+      var $li = $('<li/>').addClass('shariff-button', service.name)
+      var $shareText = $('<span/>')
+        .addClass('share_text')
+        .text(this.getLocalized(service, 'shareText'))
 
-      var $shareLink = $('<a>')
+      var $shareLink = $('<a/>')
         .attr('href', service.shareUrl)
         .append($shareText)
 
       if (typeof service.faName !== 'undefined') {
-        $shareLink.prepend('<span class="fa ' + service.faName + '">')
+        $shareLink.prepend($('<span/>').addClass('fa', service.faName))
       }
 
       if (service.popup) {
