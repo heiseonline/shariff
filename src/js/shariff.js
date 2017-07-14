@@ -1,137 +1,134 @@
 'use strict'
 
-var $ = require('./dom')
-var url = require('url')
+// require('babel-polyfill')
 
-var Shariff = function(element, options) {
-  var self = this
+const $ = require('./dom')
+const url = require('url')
 
-  // the DOM element that will contain the buttons
-  this.element = element
+class Shariff {
+  constructor(element, options) {
+    // the DOM element that will contain the buttons
+    this.element = element
 
-  // Ensure element is empty
-  $(element).empty()
+    // Ensure elemnt is empty
+    $(element).empty()
 
-  this.options = $.extend({}, this.defaults, options, $(element).data())
+    // Defaults may be over either by passing "options" to constructor method
+    // or by setting data attributes.
+    this.defaults = {
+      theme: 'color',
 
-  // available services. /!\ Browserify can't require dynamically by now.
-  var availableServices = {
-    addthis: require('./services/addthis'),
-    diaspora: require('./services/diaspora'),
-    facebook: require('./services/facebook'),
-    flattr: require('./services/flattr'),
-    googleplus: require('./services/googleplus'),
-    info: require('./services/info'),
-    linkedin: require('./services/linkedin'),
-    mail: require('./services/mail'),
-    pinterest: require('./services/pinterest'),
-    print: require('./services/print'),
-    qzone: require('./services/qzone'),
-    reddit: require('./services/reddit'),
-    stumbleupon: require('./services/stumbleupon'),
-    tencent: require('./services/tencent-weibo'),
-    threema: require('./services/threema'),
-    tumblr: require('./services/tumblr'),
-    twitter: require('./services/twitter'),
-    weibo: require('./services/weibo'),
-    whatsapp: require('./services/whatsapp'),
-    xing: require('./services/xing')
-  }
+      // URL to backend that requests social counts. null means "disabled"
+      backendUrl: null,
 
-  // filter available services to those that are enabled and initialize them
-  this.services = Object.keys(availableServices)
-    .filter(this.isEnabledService.bind(this))
-    .map(function(serviceName) {
-      return availableServices[serviceName](self)
-    })
+      // Link to the "about" page
+      infoUrl: 'http://ct.de/-2467514',
 
-  this._addButtonList()
+      // localisation: "de" or "en"
+      lang: 'de',
 
-  if (this.options.backendUrl !== null) {
-    this.getShares(this._updateCounts.bind(this))
-  }
-}
+      // fallback language for not fully localized services
+      langFallback: 'en',
 
-Shariff.prototype = {
+      mailUrl: function() {
+        var shareUrl = url.parse(this.getURL(), true)
+        shareUrl.query.view = 'mail'
+        delete shareUrl.search
+        return url.format(shareUrl)
+      },
 
-  // Defaults may be over either by passing "options" to constructor method
-  // or by setting data attributes.
-  defaults: {
-    theme: 'color',
+      // if
+      mailSubject: function() {
+        return this.getMeta('DC.title') || this.getTitle()
+      },
 
-    // URL to backend that requests social counts. null means "disabled"
-    backendUrl: null,
+      mailBody: function() { return this.getURL() },
 
-    // Link to the "about" page
-    infoUrl: 'http://ct.de/-2467514',
+      // Media (e.g. image) URL to be shared
+      mediaUrl: null,
 
-    // localisation: "de" or "en"
-    lang: 'de',
+      // horizontal/vertical
+      orientation: 'horizontal',
 
-    // fallback language for not fully localized services
-    langFallback: 'en',
+      // a string to suffix current URL
+      referrerTrack: null,
 
-    mailUrl: function() {
-      var shareUrl = url.parse(this.getURL(), true)
-      shareUrl.query.view = 'mail'
-      delete shareUrl.search
-      return url.format(shareUrl)
-    },
+      // services to be enabled in the following order
+      services: ['twitter', 'facebook', 'googleplus', 'info'],
 
-    // if
-    mailSubject: function() {
-      return this.getMeta('DC.title') || this.getTitle()
-    },
+      title: function() {
+        return $('head title').text()
+      },
 
-    mailBody: function() { return this.getURL() },
+      twitterVia: null,
 
-    // Media (e.g. image) URL to be shared
-    mediaUrl: null,
+      flattrUser: null,
 
-    // horizontal/vertical
-    orientation: 'horizontal',
+      flattrCategory: null,
 
-    // a string to suffix current URL
-    referrerTrack: null,
+      // build URI from rel="canonical" or document.location
+      url: function() {
+        var url = global.document.location.href
+        var canonical = $('link[rel=canonical]').attr('href') || this.getMeta('og:url') || ''
 
-    // services to be enabled in the following order
-    services: ['twitter', 'facebook', 'googleplus', 'info'],
-
-    title: function() {
-      return $('head title').text()
-    },
-
-    twitterVia: null,
-
-    flattrUser: null,
-
-    flattrCategory: null,
-
-    // build URI from rel="canonical" or document.location
-    url: function() {
-      var url = global.document.location.href
-      var canonical = $('link[rel=canonical]').attr('href') || this.getMeta('og:url') || ''
-
-      if (canonical.length > 0) {
-        if (canonical.indexOf('http') < 0) {
-          canonical = global.document.location.protocol + '//' + global.document.location.host + canonical
+        if (canonical.length > 0) {
+          if (canonical.indexOf('http') < 0) {
+            canonical = global.document.location.protocol + '//' + global.document.location.host + canonical
+          }
+          url = canonical
         }
-        url = canonical
+
+        return url
       }
-
-      return url
     }
-  },
 
-  isEnabledService: function(serviceName) {
+    this.options = $.extend({}, this.defaults, options, $(element).data())
+
+    // available services. /!\ Browserify can't require dynamically by now.
+    let availableServices = {
+      addthis: require('./services/addthis'),
+      diaspora: require('./services/diaspora'),
+      facebook: require('./services/facebook'),
+      flattr: require('./services/flattr'),
+      googleplus: require('./services/googleplus'),
+      info: require('./services/info'),
+      linkedin: require('./services/linkedin'),
+      mail: require('./services/mail'),
+      pinterest: require('./services/pinterest'),
+      print: require('./services/print'),
+      qzone: require('./services/qzone'),
+      reddit: require('./services/reddit'),
+      stumbleupon: require('./services/stumbleupon'),
+      tencent: require('./services/tencent-weibo'),
+      threema: require('./services/threema'),
+      tumblr: require('./services/tumblr'),
+      twitter: require('./services/twitter'),
+      weibo: require('./services/weibo'),
+      whatsapp: require('./services/whatsapp'),
+      xing: require('./services/xing')
+    }
+
+    // filter available services to those that are enabled and initialize them
+    this.services = Object.keys(availableServices)
+      .filter(service => this.isEnabledService(service))
+      .map(serviceName => availableServices[serviceName](this))
+
+    this._addButtonList()
+
+    if (this.options.backendUrl !== null) {
+      this.getShares(this._updateCounts.bind(this))
+    }
+  }
+
+  isEnabledService(serviceName) {
     return this.options.services.indexOf(serviceName) > 0
-  },
+  }
 
-  $socialshareElement: function() {
+  $socialshareElement() {
     return $(this.element)
-  },
+  }
 
-  getLocalized: function(data, key) {
+  getLocalized(data, key) {
     if (typeof data[key] === 'object') {
       if (typeof data[key][this.options.lang] === 'undefined') {
         return data[key][this.options.langFallback]
@@ -142,61 +139,59 @@ Shariff.prototype = {
       return data[key]
     }
     return undefined
-  },
+  }
 
   // returns content of <meta name="" content=""> tags or '' if empty/non existant
-  getMeta: function(name) {
+  getMeta(name) {
     var metaContent = $('meta[name="' + name + '"],[property="' + name + '"]').attr('content')
     return metaContent || ''
-  },
+  }
 
-  getInfoUrl: function() {
+  getInfoUrl() {
     return this.options.infoUrl
-  },
+  }
 
-  getURL: function() {
+  getURL() {
     return this.getOption('url')
-  },
+  }
 
-  getOption: function(name) {
+  getOption(name) {
     var option = this.options[name]
     return (typeof option === 'function') ? option.call(this) : option
-  },
+  }
 
-  getTitle: function() {
+  getTitle() {
     return this.getOption('title')
-  },
+  }
 
-  getReferrerTrack: function() {
+  getReferrerTrack() {
     return this.options.referrerTrack || ''
-  },
+  }
 
   // returns shareCounts of document
-  getShares: function(callback) {
+  getShares(callback) {
     var baseUrl = url.parse(this.options.backendUrl, true)
     baseUrl.query.url = this.getURL()
     delete baseUrl.search
     return $.getJSON(url.format(baseUrl), callback)
-  },
+  }
 
   // add value of shares for each service
-  _updateCounts: function(success, data) {
-    var self = this
-    $.each(data, function(key, value) {
-      if (!self.isEnabledService(key)) {
+  _updateCounts(err, data) {
+    if (err) return
+    $.each(data, (key, value) => {
+      if (!this.isEnabledService(key)) {
         return
       }
       if (value >= 1000) {
         value = Math.round(value / 1000) + 'k'
       }
-      $(self.element).find('.' + key + ' a').append('&nbsp;<span class="share_count">' + value)
+      $(this.element).find('.' + key + ' a').append('&nbsp;<span class="share_count">' + value)
     })
-  },
+  }
 
   // add html for button-container
-  _addButtonList: function() {
-    var self = this
-
+  _addButtonList() {
     var $socialshareElement = this.$socialshareElement()
 
     var themeClass = 'theme-' + this.options.theme
@@ -206,9 +201,9 @@ Shariff.prototype = {
     var $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass).addClass(serviceCountClass)
 
     // add html for service-links
-    this.services.forEach(function(service) {
+    this.services.forEach(service => {
       var $li = $('<li class="shariff-button">').addClass(service.name)
-      var $shareText = '<span class="share_text">' + self.getLocalized(service, 'shareText')
+      var $shareText = '<span class="share_text">' + this.getLocalized(service, 'shareText')
 
       var $shareLink = $('<a>')
         .attr('href', service.shareUrl)
@@ -223,11 +218,11 @@ Shariff.prototype = {
       } else if (service.blank) {
         $shareLink.attr('target', '_blank')
       }
-      $shareLink.attr('title', self.getLocalized(service, 'title'))
+      $shareLink.attr('title', this.getLocalized(service, 'title'))
 
       // add attributes for screen readers
       $shareLink.attr('role', 'button')
-      $shareLink.attr('aria-label', self.getLocalized(service, 'title'))
+      $shareLink.attr('aria-label', this.getLocalized(service, 'title'))
 
       $li.append($shareLink)
 
