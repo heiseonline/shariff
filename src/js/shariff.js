@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 var $ = require('./dom');
 var url = require('url');
@@ -15,41 +15,37 @@ var Shariff = function(element, options) {
     this.options = $.extend({}, this.defaults, options, $(element).data());
 
     // available services. /!\ Browserify can't require dynamically by now.
-    var availableServices = [
-        require('./services/addthis'),
-        require('./services/diaspora'),
-        require('./services/facebook'),
-        require('./services/flattr'),
-        require('./services/googleplus'),
-        require('./services/info'),
-        require('./services/linkedin'),
-        require('./services/mail'),
-        require('./services/print'),
-        require('./services/pinterest'),
-        require('./services/reddit'),
-        require('./services/stumbleupon'),
-        require('./services/twitter'),
-        require('./services/whatsapp'),
-        require('./services/xing'),
-        require('./services/tumblr'),
-        require('./services/threema'),
-        require('./services/weibo'),
-        require('./services/tencent-weibo'),
-        require('./services/qzone')
-    ];
+    var availableServices = {
+        addthis: require('./services/addthis'),
+        diaspora: require('./services/diaspora'),
+        facebook: require('./services/facebook'),
+        flattr: require('./services/flattr'),
+        googleplus: require('./services/googleplus'),
+        info: require('./services/info'),
+        linkedin: require('./services/linkedin'),
+        mail: require('./services/mail'),
+        print: require('./services/print'),
+        pinterest: require('./services/pinterest'),
+        reddit: require('./services/reddit'),
+        stumbleupon: require('./services/stumbleupon'),
+        twitter: require('./services/twitter'),
+        whatsapp: require('./services/whatsapp'),
+        xing: require('./services/xing'),
+        tumblr: require('./services/tumblr'),
+        threema: require('./services/threema'),
+        weibo: require('./services/weibo'),
+        tencent: require('./services/tencent-weibo'),
+        qzone: require('./services/qzone')
+    };
 
     // filter available services to those that are enabled and initialize them
-    this.services = $.map(this.options.services, function(serviceName) {
-        var service = null;
-        availableServices.forEach(function(availableService) {
-            availableService = availableService(self);
-            if (availableService.name === serviceName) {
-                service = availableService;
-                return null;
-            }
-        });
-        return service;
-    });
+    this.services = this.options.services
+        .filter(function(serviceName) {
+            return availableServices.hasOwnProperty(serviceName)
+        })
+        .map(function(serviceName) {
+            return availableServices[serviceName](self)
+        })
 
     this._addButtonList();
 
@@ -276,4 +272,3 @@ $(function() {
         }
     });
 });
-
