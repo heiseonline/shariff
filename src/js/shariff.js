@@ -9,7 +9,7 @@ var Shariff = function(element, options) {
     // the DOM element that will contain the buttons
     this.element = element;
 
-    // Ensure elemnt is empty
+    // Ensure element is empty
     $(element).empty();
 
     this.options = $.extend({}, this.defaults, options, $(element).data());
