@@ -92,11 +92,8 @@ module.exports = function(grunt) {
             }
         },
 
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc'
-            },
-            files: [
+        eslint: {
+            target: [
                 'src/js/*.js',
                 'src/js/services/*.js'
             ]
@@ -213,15 +210,15 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-connect-proxy');
+    grunt.loadNpmTasks('grunt-eslint');
     grunt.loadNpmTasks('grunt-hapi');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
 
-    grunt.registerTask('test', ['jshint', 'browserify:specs', 'jasmine:specs']);
+    grunt.registerTask('test', ['eslint', 'browserify:specs', 'jasmine:specs']);
     grunt.registerTask('build', ['test', 'less:demo', 'less:dist', 'less:dist_min', 'browserify:dist_complete_min', 'browserify:dist_min']);
     grunt.registerTask('demo', ['copy:demo', 'less:demo', 'browserify:demo', 'hapi', 'configureProxies:demo', 'connect']);
     grunt.registerTask('dev', ['copy:demo', 'less:demo', 'browserify:dev_demo', 'hapi', 'configureProxies:demo', 'connect']);
