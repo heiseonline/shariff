@@ -177,8 +177,8 @@ DOMQuery.prototype.prepend = function(html) {
  * @param {string} name - Class name to add
  * @returns {DOMQuery}
  */
-DOMQuery.prototype.addClass = function(name) {
-  return this.each(function() { this.classList.add(name) })
+DOMQuery.prototype.addClass = function(...names) {
+  return this.each(function() { this.classList.add(...names) })
 }
 
 /**
