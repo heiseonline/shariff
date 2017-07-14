@@ -4,6 +4,7 @@
   "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
   "main": "src/js/shariff.js",
   "scripts": {
+    "dev": "grunt dev",
     "test": "grunt test",
     "build": "grunt build"
   },

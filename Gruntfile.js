@@ -32,7 +32,6 @@ module.exports = function(grunt) {
                     browserifyOptions: {
                         debug: true
                     },
-                    keepAlive: true,
                     watch: true
                 },
                 src: 'src/js/shariff.js',
@@ -180,7 +179,7 @@ module.exports = function(grunt) {
                 options: {
                     hostname: '0.0.0.0',
                     // hostname: 'localhost',
-                    port: 8080,
+                    port: 9000,
                     base: 'demo',
                     keepalive: true,
                     // livereload: true,
@@ -224,5 +223,6 @@ module.exports = function(grunt) {
     grunt.registerTask('test', ['jshint', 'browserify:specs', 'jasmine:specs']);
     grunt.registerTask('build', ['test', 'less:demo', 'less:dist', 'less:dist_min', 'browserify:dist_complete_min', 'browserify:dist_min']);
     grunt.registerTask('demo', ['copy:demo', 'less:demo', 'browserify:demo', 'hapi', 'configureProxies:demo', 'connect']);
+    grunt.registerTask('dev', ['copy:demo', 'less:demo', 'browserify:dev_demo', 'hapi', 'configureProxies:demo', 'connect']);
     grunt.registerTask('default', ['test', 'demo']);
 };

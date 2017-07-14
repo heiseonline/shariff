@@ -2,6 +2,7 @@
 
 ## TBD
 
+* Added `npm run dev` command.
 * Added tests for the DOM library. (glaszig)
 * Added list of supported sharing services to READMEs.
 * Added `{url}` placeholder to `data-mail-body` option. (stephankellermayr)
@@ -22,7 +23,7 @@
 
 * RELEASE reverted!
 * Replaced jQuery with vanilla js. (glaszig)
-* Removed obsolete build artifact. 
+* Removed obsolete build artifact.
 
 ## 1.25.0 2017-04-21
 
