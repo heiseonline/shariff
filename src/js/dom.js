@@ -326,6 +326,7 @@ var closest = (function() {
     element.msMatchesSelector
 
   return function closest(element, selector) {
+    if (element === null) return
     return matches.call(element, selector)
       ? element
       : closest(element.parentElement, selector)
