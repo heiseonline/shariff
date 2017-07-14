@@ -87,6 +87,10 @@ class Shariff {
     // filter available services to those that are enabled and initialize them
     this.services = Object.keys(services)
       .filter(service => this.isEnabledService(service))
+      .sort((a, b) => {
+        let services = this.options.services
+        return services.indexOf(a) - services.indexOf(b)
+      })
       .map(serviceName => services[serviceName](this))
 
     this._addButtonList()
