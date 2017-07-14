@@ -69,7 +69,7 @@
     "less-plugin-clean-css": "^1.5.0",
     "load-grunt-tasks": "^3.5.2",
     "shariff-backend-node": "^3.0.0",
-    "uglifyify": "^3.0.1"
+    "uglifyify": "^4.0.2"
   },
   "browserify-shim": {
     "./dom": "global:jQuery"
