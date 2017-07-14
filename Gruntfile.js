@@ -208,15 +208,7 @@ module.exports = function(grunt) {
     }
   })
 
-  grunt.loadNpmTasks('grunt-browserify')
-  grunt.loadNpmTasks('grunt-contrib-copy')
-  grunt.loadNpmTasks('grunt-contrib-less')
-  grunt.loadNpmTasks('grunt-contrib-connect')
-  grunt.loadNpmTasks('grunt-contrib-watch')
-  grunt.loadNpmTasks('grunt-connect-proxy')
-  grunt.loadNpmTasks('grunt-eslint')
-  grunt.loadNpmTasks('grunt-hapi')
-  grunt.loadNpmTasks('grunt-contrib-jasmine')
+  require('load-grunt-tasks')(grunt)
 
   grunt.registerTask('test', ['eslint', 'browserify:specs', 'jasmine:specs'])
   grunt.registerTask('build', ['test', 'less:demo', 'less:dist', 'less:dist_min', 'browserify:dist_complete_min', 'browserify:dist_min'])
