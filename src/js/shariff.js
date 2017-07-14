@@ -143,7 +143,7 @@ class Shariff {
 
   // returns content of <meta name="" content=""> tags or '' if empty/non existant
   getMeta(name) {
-    var metaContent = $('meta[name="' + name + '"],[property="' + name + '"]').attr('content')
+    var metaContent = $(`meta[name="${name}"],[property="${name}"]`).attr('content')
     return metaContent || ''
   }
 
@@ -198,7 +198,10 @@ class Shariff {
     var orientationClass = 'orientation-' + this.options.orientation
     var serviceCountClass = 'col-' + this.options.services.length
 
-    var $buttonList = $('<ul>').addClass(themeClass).addClass(orientationClass).addClass(serviceCountClass)
+    var $buttonList = $('<ul>')
+      .addClass(themeClass)
+      .addClass(orientationClass)
+      .addClass(serviceCountClass)
 
     // add html for service-links
     this.services.forEach(service => {
