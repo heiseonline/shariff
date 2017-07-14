@@ -3,6 +3,7 @@
 // require('babel-polyfill')
 
 const $ = require('./dom')
+const services = require('./services')
 const url = require('url')
 
 class Shariff {
@@ -84,34 +85,10 @@ class Shariff {
 
     this.options = $.extend({}, this.defaults, options, $(element).data())
 
-    // available services. /!\ Browserify can't require dynamically by now.
-    let availableServices = {
-      addthis: require('./services/addthis'),
-      diaspora: require('./services/diaspora'),
-      facebook: require('./services/facebook'),
-      flattr: require('./services/flattr'),
-      googleplus: require('./services/googleplus'),
-      info: require('./services/info'),
-      linkedin: require('./services/linkedin'),
-      mail: require('./services/mail'),
-      pinterest: require('./services/pinterest'),
-      print: require('./services/print'),
-      qzone: require('./services/qzone'),
-      reddit: require('./services/reddit'),
-      stumbleupon: require('./services/stumbleupon'),
-      tencent: require('./services/tencent-weibo'),
-      threema: require('./services/threema'),
-      tumblr: require('./services/tumblr'),
-      twitter: require('./services/twitter'),
-      weibo: require('./services/weibo'),
-      whatsapp: require('./services/whatsapp'),
-      xing: require('./services/xing')
-    }
-
     // filter available services to those that are enabled and initialize them
-    this.services = Object.keys(availableServices)
+    this.services = Object.keys(services)
       .filter(service => this.isEnabledService(service))
-      .map(serviceName => availableServices[serviceName](this))
+      .map(serviceName => services[serviceName](this))
 
     this._addButtonList()
 
