@@ -426,14 +426,14 @@ var getJSON = function (url, callback) {
   xhr.onload = function() {
     if (xhr.status >= 200 && xhr.status < 400) {
       var data = JSON.parse(xhr.responseText)
-      callback(true, data, xhr)
+      callback(null, data, xhr)
     } else {
-      callback(false, null, xhr)
+      callback(new Error(xhr.status), null, xhr)
     }
   }
 
-  xhr.onerror = function() {
-    callback(false, null, xhr)
+  xhr.onerror = function(e) {
+    callback(new Error(e), null, xhr)
   }
 
   xhr.send()
