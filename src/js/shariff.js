@@ -244,12 +244,7 @@ class Shariff {
         }
       }
 
-      var windowName = '_blank'
-      var windowSizeX = '600'
-      var windowSizeY = '460'
-      var windowSize = 'width=' + windowSizeX + ',height=' + windowSizeY
-
-      global.window.open(url, windowName, windowSize)
+      global.window.open(url, '_blank', 'width=600,height=460')
     })
 
     $socialshareElement.append($buttonList)
