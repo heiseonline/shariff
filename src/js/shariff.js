@@ -6,6 +6,75 @@ const $ = require('./dom')
 const services = require('./services')
 const url = require('url')
 
+// Defaults may be overridden either by passing "options" to Shariff constructor
+// or by setting data attributes.
+const Defaults = {
+  theme: 'color',
+
+  // URL to backend that requests social counts. null means "disabled"
+  backendUrl: null,
+
+  // Link to the "about" page
+  infoUrl: 'http://ct.de/-2467514',
+
+  // localisation: "de" or "en"
+  lang: 'de',
+
+  // fallback language for not fully localized services
+  langFallback: 'en',
+
+  mailUrl: function() {
+    var shareUrl = url.parse(this.getURL(), true)
+    shareUrl.query.view = 'mail'
+    delete shareUrl.search
+    return url.format(shareUrl)
+  },
+
+  // if
+  mailSubject: function() {
+    return this.getMeta('DC.title') || this.getTitle()
+  },
+
+  mailBody: function() { return this.getURL() },
+
+  // Media (e.g. image) URL to be shared
+  mediaUrl: null,
+
+  // horizontal/vertical
+  orientation: 'horizontal',
+
+  // a string to suffix current URL
+  referrerTrack: null,
+
+  // services to be enabled in the following order
+  services: ['twitter', 'facebook', 'googleplus', 'info'],
+
+  title: function() {
+    return $('head title').text()
+  },
+
+  twitterVia: null,
+
+  flattrUser: null,
+
+  flattrCategory: null,
+
+  // build URI from rel="canonical" or document.location
+  url: function() {
+    var url = global.document.location.href
+    var canonical = $('link[rel=canonical]').attr('href') || this.getMeta('og:url') || ''
+
+    if (canonical.length > 0) {
+      if (canonical.indexOf('http') < 0) {
+        canonical = global.document.location.protocol + '//' + global.document.location.host + canonical
+      }
+      url = canonical
+    }
+
+    return url
+  }
+}
+
 class Shariff {
   constructor(element, options) {
     // the DOM element that will contain the buttons
@@ -14,76 +83,7 @@ class Shariff {
     // Ensure elemnt is empty
     $(element).empty()
 
-    // Defaults may be over either by passing "options" to constructor method
-    // or by setting data attributes.
-    this.defaults = {
-      theme: 'color',
-
-      // URL to backend that requests social counts. null means "disabled"
-      backendUrl: null,
-
-      // Link to the "about" page
-      infoUrl: 'http://ct.de/-2467514',
-
-      // localisation: "de" or "en"
-      lang: 'de',
-
-      // fallback language for not fully localized services
-      langFallback: 'en',
-
-      mailUrl: function() {
-        var shareUrl = url.parse(this.getURL(), true)
-        shareUrl.query.view = 'mail'
-        delete shareUrl.search
-        return url.format(shareUrl)
-      },
-
-      // if
-      mailSubject: function() {
-        return this.getMeta('DC.title') || this.getTitle()
-      },
-
-      mailBody: function() { return this.getURL() },
-
-      // Media (e.g. image) URL to be shared
-      mediaUrl: null,
-
-      // horizontal/vertical
-      orientation: 'horizontal',
-
-      // a string to suffix current URL
-      referrerTrack: null,
-
-      // services to be enabled in the following order
-      services: ['twitter', 'facebook', 'googleplus', 'info'],
-
-      title: function() {
-        return $('head title').text()
-      },
-
-      twitterVia: null,
-
-      flattrUser: null,
-
-      flattrCategory: null,
-
-      // build URI from rel="canonical" or document.location
-      url: function() {
-        var url = global.document.location.href
-        var canonical = $('link[rel=canonical]').attr('href') || this.getMeta('og:url') || ''
-
-        if (canonical.length > 0) {
-          if (canonical.indexOf('http') < 0) {
-            canonical = global.document.location.protocol + '//' + global.document.location.host + canonical
-          }
-          url = canonical
-        }
-
-        return url
-      }
-    }
-
-    this.options = $.extend({}, this.defaults, options, $(element).data())
+    this.options = $.extend({}, Defaults, options, $(element).data())
 
     // filter available services to those that are enabled and initialize them
     this.services = Object.keys(services)
