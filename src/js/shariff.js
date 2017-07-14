@@ -30,7 +30,6 @@ const Defaults = {
     return url.format(shareUrl)
   },
 
-  // if
   mailSubject: function() {
     return this.getMeta('DC.title') || this.getTitle()
   },
