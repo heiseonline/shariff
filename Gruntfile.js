@@ -32,6 +32,7 @@ module.exports = function(grunt) {
                     browserifyOptions: {
                         debug: true
                     },
+                    banner: '',
                     watch: true
                 },
                 src: 'src/js/shariff.js',
