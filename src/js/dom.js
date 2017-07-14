@@ -455,7 +455,7 @@ var deserializeValue = function (value) {
   // number
   if (+value + '' === value) { return +value }
   // json
-  if (/^[\[\{]/.test(value)) {
+  if (/^[[{]/.test(value)) {
     try {
       return JSON.parse(value)
     } catch (e) {
