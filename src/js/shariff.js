@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 var $ = require('./dom');
 var url = require('url');
