@@ -97,7 +97,7 @@ class Shariff {
   }
 
   isEnabledService(serviceName) {
-    return this.options.services.indexOf(serviceName) > 0
+    return this.options.services.indexOf(serviceName) > -1
   }
 
   $socialshareElement() {
