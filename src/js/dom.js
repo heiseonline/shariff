@@ -36,7 +36,11 @@ function dq(selector, context) {
   var nodes = []
   context = context || document
   if (typeof selector === 'function') {
-    context.addEventListener('DOMContentLoaded', selector)
+    if (context.attachEvent ? context.readyState === 'complete' : context.readyState !== 'loading') {
+      selector()
+    } else {
+      context.addEventListener('DOMContentLoaded', selector)
+    }
   } else if (selector instanceof Element) {
     nodes = [ selector ]
   } else if (typeof selector === 'string') {
