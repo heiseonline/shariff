@@ -431,9 +431,9 @@ var getJSON = function (url, callback) {
   xhr.onload = function() {
     if (xhr.status >= 200 && xhr.status < 400) {
       var data = JSON.parse(xhr.responseText)
-      callback(null, data, xhr)
+      callback(data, xhr.status, xhr)
     } else {
-      callback(new Error(xhr.status), null, xhr)
+      callback(null, xhr.status, xhr)
     }
   }
 

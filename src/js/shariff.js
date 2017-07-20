@@ -157,8 +157,8 @@ class Shariff {
   }
 
   // add value of shares for each service
-  _updateCounts(err, data) {
-    if (err) return
+  _updateCounts(data, status, xhr) {
+    if (!data) return
     $.each(data, (serviceName, value) => {
       if (!this.isEnabledService(serviceName)) {
         return
