@@ -174,15 +174,15 @@ class Shariff {
 
   // add html for button-container
   _addButtonList() {
-    var $buttonList = $('<ul/>').addClass(
+    var $buttonList = $('<ul/>').addClass([
       'theme-' + this.options.theme,
       'orientation-' + this.options.orientation,
       'col-' + this.options.services.length
-    )
+    ].join(' '))
 
     // add html for service-links
     this.services.forEach(service => {
-      var $li = $('<li/>').addClass('shariff-button', service.name)
+      var $li = $('<li/>').addClass(`shariff-button ${service.name}`)
       var $shareText = $('<span/>')
         .addClass('share_text')
         .text(this.getLocalized(service, 'shareText'))
@@ -192,7 +192,7 @@ class Shariff {
         .append($shareText)
 
       if (typeof service.faName !== 'undefined') {
-        $shareLink.prepend($('<span/>').addClass('fa', service.faName))
+        $shareLink.prepend($('<span/>').addClass(`fa ${service.faName}`))
       }
 
       if (service.popup) {
