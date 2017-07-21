@@ -7,8 +7,8 @@
 * Added list of supported sharing services to READMEs.
 * Added `{url}` placeholder to `data-mail-body` option. (stephankellermayr)
 * Fixed Twitter popup opening twice when a tweet is embedded on a page. (Nebel54)
-* Improved service initialization code. [[#188](https://github.com/heiseonline/shariff/issues/188)]
-* Made DOM element creation consistent. [[#234](https://github.com/heiseonline/shariff/pull/234)]
+* Improved service initialization code. ([#188](https://github.com/heiseonline/shariff/issues/188))
+* Made DOM element creation consistent. ([#234](https://github.com/heiseonline/shariff/pull/234))
 
 ## 1.25.2 2017-06-13
 
