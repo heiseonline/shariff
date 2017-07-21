@@ -19,7 +19,7 @@ env:
     - TGZ_FILENAME=shariff-$VERSION.tar.gz
 
 script:
-  - grunt test
+  - npm run test
 
 before_deploy:
   - echo "$TRAVIS_TAG / $VERSION / $VVERSION"
