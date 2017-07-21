@@ -7,7 +7,7 @@ module.exports = {
     'space-before-function-paren': 0
   },
   env: {
-    jasmine: true,
+    mocha: true,
     browser: true,
     node: true,
     es6: true

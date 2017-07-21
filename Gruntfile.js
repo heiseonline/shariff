@@ -74,7 +74,7 @@ module.exports = function(grunt) {
         dest: 'demo/app.min.js'
       },
       specs: {
-        src: [ 'src/js/*.js', 'spec/**/*Spec.js' ],
+        src: [ 'src/js/**/*.js', 'spec/**/*Spec.js' ],
         dest: 'tmp/specs.js',
         options: {
           transform: [
@@ -116,6 +116,7 @@ module.exports = function(grunt) {
       specs: {
         src: [],
         options: {
+          keepRunner: true,
           outfile: 'tmp/_SpecRunner.html',
           specs: '<%= browserify.specs.dest %>'
         }
@@ -124,7 +125,7 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: ['src/js/dom.js', 'spec/**/*Spec.js'],
+        files: ['src/js/**/*.js', 'spec/**/*Spec.js'],
         tasks: ['test']
       },
     },

@@ -1,8 +1,10 @@
+const assert = require('assert')
+
 describe('DOMQuery', function() {
   var $ = require('../src/js/dom')
   var container = void (0)
 
-  beforeAll(function() {
+  before(() => {
     container = document.createElement('div')
     container.id = 'spec-html-container'
     document.body.appendChild(container)
@@ -19,60 +21,60 @@ describe('DOMQuery', function() {
 
   it('creates nodes from html fragment', function () {
     var nodes = $('<h2>Heading level 2</h2><p>Paragraph</p>')
-    expect(nodes.length).toBe(2)
-    expect(nodes[0].parentNode.parentNode).toBeNull()
-    expect(nodes[1].parentNode.parentNode).toBeNull()
-    expect(nodes[0].tagName).toEqual('H2')
-    expect(nodes[1].tagName).toEqual('P')
+    assert.equal(nodes.length, 2)
+    assert.equal(nodes[0].parentNode.parentNode, null)
+    assert.equal(nodes[1].parentNode.parentNode, null)
+    assert.equal(nodes[0].tagName, 'H2')
+    assert.equal(nodes[1].tagName, 'P')
   })
 
   it('finds elements with context', function () {
     var matches = $('span', $('p')[0])
-    expect(matches[0].textContent).toEqual('world')
+    assert.equal(matches[0].textContent, 'world')
   })
 
   describe('empty()', function() {
     it('clears a node of its children', function() {
       var h1 = $('h1').empty()
-      expect(h1[0].children.length).toEqual(0)
+      assert.equal(h1[0].children.length, 0)
     })
   })
 
   describe('text()', function() {
     it('returns text content of node', function() {
-      expect($('h1').text()).toEqual('hello')
+      assert.equal($('h1').text(), 'hello')
     })
 
     it('sets text content of node', function() {
       $('h1').text('goodbye')
-      expect($('h1').text()).toEqual('goodbye')
+      assert.equal($('h1').text(), 'goodbye')
     })
   })
 
   describe('attr()', function () {
     it('returns attribute value', function () {
-      expect($('h1').attr('class')).toEqual('header')
+      assert.equal($('h1').attr('class'), 'header')
     })
 
     it('sets attribute value', function () {
       $('h1').attr('class', 'new-value')
-      expect($('h1').attr('class')).toEqual('new-value')
+      assert.equal($('h1').attr('class'), 'new-value')
     })
   })
 
   describe('data()', function () {
     it('returns data attribute value', function () {
-      expect($('#data-attribute').data('key')).toEqual('data-value')
+      assert.equal($('#data-attribute').data('key'), 'data-value')
     })
 
     it('sets data attribute value', function () {
       $('#data-attribute').data('key', 'new-value')
-      expect($('#data-attribute').data('key')).toEqual('new-value')
+      assert.equal($('#data-attribute').data('key'), 'new-value')
     })
 
     it('deserializes data attribute json value', function() {
       var data = $('a[data-item]').data()
-      expect(data.item).toEqual(['object-1', 'object-2'])
+      assert.deepEqual(data.item, ['object-1', 'object-2'])
     })
   })
 
@@ -80,7 +82,7 @@ describe('DOMQuery', function() {
     it('returns found elements', function () {
       var matches = $('body').find('h1')
       var expectedNode = $('h1')[0]
-      expect(matches[0]).toBe(expectedNode)
+      assert.equal(matches[0], expectedNode)
     })
   })
 
@@ -88,52 +90,52 @@ describe('DOMQuery', function() {
     it('appends to html fragment', function () {
       $('body').append('<p>appended</p>')
       var bodyChildren = $('body')[0].children
-      expect(bodyChildren[bodyChildren.length - 1].textContent).toEqual('appended')
+      assert.equal(bodyChildren[bodyChildren.length - 1].textContent, 'appended')
     })
 
     it('appends elements', function () {
       var elements = [ document.createElement('div') ]
       $('body').append(elements)
       var div = document.body.children[document.body.children.length - 1]
-      expect(elements[0]).toBe(div)
+      assert.equal(elements[0], div)
     })
   })
 
   describe('prepend()', function () {
     it('prepends to html fragment', function () {
       $('body').prepend('<p>prepended</p>')
-      expect($('body')[0].firstChild.textContent).toEqual('prepended')
+      assert.equal($('body')[0].firstChild.textContent, 'prepended')
     })
 
     it('prepends elements', function () {
       var elements = [ document.createElement('div') ]
       $('body').prepend(elements)
-      expect(elements[0]).toBe(document.body.firstChild)
+      assert.equal(elements[0], document.body.firstChild)
     })
   })
 
   describe('addClass()', function () {
     it('adds class to element', function () {
       $('body').addClass('new-class')
-      expect(document.body.className).toEqual('new-class')
+      assert.equal(document.body.className, 'new-class')
     })
   })
 
   describe('removeClass()', function () {
     it('removes class from element', function () {
       $('h1').removeClass('header')
-      expect($('h1')[0].className).toEqual('')
+      assert.equal($('h1')[0].className, '')
     })
   })
 
   describe('on()', function () {
-    var clickSpy = jasmine.createSpy()
+    let clicked = false
 
     it('delegates an event listener', function () {
       var selector = 'a:last-child'
-      $('body').on('click', selector, clickSpy)
+      $('body').on('click', selector, () => { clicked = true })
       $(selector)[0].click()
-      expect(clickSpy).toHaveBeenCalled()
+      assert.ok(clicked)
     })
   })
 })
