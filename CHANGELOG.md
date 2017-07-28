@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.26.0, 2017-07-28
 
 * Added `npm run dev` command.
 * Added tests for the DOM library. (glaszig)
