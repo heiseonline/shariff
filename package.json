@@ -4,7 +4,7 @@
   "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
   "main": "src/js/shariff.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline --port 3000 --content-base demo",
+    "dev": "webpack-dev-server --hot --inline --port 3000 --content-base demo --entry app=./demo/app.js",
     "test": "eslint src && karma start --single-run",
     "build": "rm -fr dist && webpack -p"
   },
