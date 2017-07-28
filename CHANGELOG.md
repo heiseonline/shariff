@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+* Transpiled `./src` directory to ES5 to avoid problems in existing setups. The ES5 source directory was referenced in `package.json` main property.
+
 ## v1.26.1, 2017-07-28
 
 * Added missing `./build` directory.([#246](https://github.com/heiseonline/shariff/issues/246))

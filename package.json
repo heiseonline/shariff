@@ -2,7 +2,7 @@
   "name": "shariff",
   "version": "1.26.1",
   "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
-  "main": "src/js/shariff.js",
+  "main": "src.es5/js/shariff.js",
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --port 3000 --content-base demo --entry app=./demo/app.js",
     "test": "eslint src && karma start --single-run",
