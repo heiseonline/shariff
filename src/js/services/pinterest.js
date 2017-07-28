@@ -3,7 +3,7 @@
 var url = require('url')
 
 module.exports = function(shariff) {
-  var title = shariff.getMeta('DC.title') || shariff.getTitle()
+  var title = shariff.getTitle()
   var creator = shariff.getMeta('DC.creator')
   if (creator.length > 0) {
     title += ' - ' + creator

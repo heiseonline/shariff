@@ -30,10 +30,6 @@ const Defaults = {
     return url.format(shareUrl)
   },
 
-  mailSubject: function() {
-    return this.getMeta('DC.title') || this.getTitle()
-  },
-
   mailBody: function() { return this.getURL() },
 
   // Media (e.g. image) URL to be shared
@@ -141,7 +137,10 @@ class Shariff {
   }
 
   getTitle() {
-    return this.getOption('title')
+    let title = this.getOption('title') || this.getMeta('DC.title')
+    let creator = this.getMeta('DC.creator')
+    if (title && creator) title = `${title} - ${creator}`
+    return title
   }
 
   getReferrerTrack() {

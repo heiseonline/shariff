@@ -5,7 +5,7 @@ var url = require('url')
 module.exports = function(shariff) {
   var shareUrl = url.parse('https://share.diasporafoundation.org/', true)
   shareUrl.query.url = shariff.getURL()
-  shareUrl.query.title = shariff.getTitle() || shariff.getMeta('DC.title')
+  shareUrl.query.title = shariff.getTitle()
   shareUrl.protocol = 'https'
   delete shareUrl.search
 
