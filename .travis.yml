@@ -19,13 +19,14 @@ env:
     - TGZ_FILENAME=shariff-$VERSION.tar.gz
 
 script:
-  - grunt test
+  - npm run test
 
 before_deploy:
   - echo "$TRAVIS_TAG / $VERSION / $VVERSION"
   - echo "$ZIP_FILENAME / $TAR_FILENAME / $TGZ_FILENAME"
-  - bash -c 'if [ ! -f $ZIP_FILENAME ]; then 7z a -tzip ${ZIP_FILENAME} ./build/*; fi;'
-  - bash -c 'if [ ! -f $TAR_FILENAME ]; then 7z a -ttar ${TAR_FILENAME} ./build/*; fi;'
+  - npm run build
+  - bash -c 'if [ ! -f $ZIP_FILENAME ]; then 7z a -tzip ${ZIP_FILENAME} ./dist/*; fi;'
+  - bash -c 'if [ ! -f $TAR_FILENAME ]; then 7z a -ttar ${TAR_FILENAME} ./dist/*; fi;'
   - bash -c 'if [ ! -f $TGZ_FILENAME ]; then 7z a ${TGZ_FILENAME} ${TAR_FILENAME}; fi;'
 
 deploy:

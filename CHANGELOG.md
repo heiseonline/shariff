@@ -1,11 +1,12 @@
 # Changelog
 
-## TBD
+## v1.26.0, 2017-07-28
 
 * Added `npm run dev` command.
 * Added tests for the DOM library. (glaszig)
 * Added list of supported sharing services to READMEs.
 * Added `{url}` placeholder to `data-mail-body` option. (stephankellermayr)
+* Fixed Shariff to use `data-title` in favor of `meta[name=DC.title]` if present. ([#143](https://github.com/heiseonline/shariff/issues/143))
 * Fixed Twitter popup opening twice when a tweet is embedded on a page. (Nebel54)
 * Improved service initialization code. ([#188](https://github.com/heiseonline/shariff/issues/188))
 * Made DOM element creation consistent. ([#234](https://github.com/heiseonline/shariff/pull/234))

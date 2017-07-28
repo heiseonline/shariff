@@ -2,15 +2,8 @@
 
 module.exports = function(shariff) {
   var url = encodeURIComponent(shariff.getURL())
-  var title = shariff.getMeta('DC.title')
-  var creator = shariff.getMeta('DC.creator')
+  var title = shariff.getTitle()
   var description = shariff.getMeta('description')
-
-  if (title.length > 0 && creator.length > 0) {
-    title += ' - ' + creator
-  } else {
-    title = shariff.getTitle()
-  }
 
   return {
     popup: true,
