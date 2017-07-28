@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.26.1, 2017-07-28
 
 * Added missing `./build` directory.([#246](https://github.com/heiseonline/shariff/issues/246))
 
