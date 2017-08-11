@@ -103,6 +103,19 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
 | `data-url`         | The canonical URL of the page to check. | page's canonical URL or `og:url` or current URL |
 
+## Constructor arguments
+
+All data attributes above are also available as constructor arguments in JavaScript. However, the
+leading `data-` is omitted and the name is in camelCase instead of kebab-case:
+
+```js
+var buttonsContainer = $('.some-selector');
+new Shariff(buttonsContainer, {
+    backendUrl: '/my/backend/url',
+    orientation: 'vertical',
+    mailUrl: 'mailto:me@example.com',
+});
+```
 
 ## Supported browsers
 
