@@ -174,6 +174,7 @@ Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
 * [Kirby-CMS Shariff-Plugin](https://github.com/SpicyWeb-de/kirby-plugin-shariff)
 * [MediaWiki Extension](https://github.com/vonloxley/Shariff-Mediawiki/)
 * [Open Monograph Press-Plugin](https://github.com/langsci/shariff)
+* [Pagekit Extension](https://pagekit.com/marketplace/package/spqr/shariff)
 * [Serendipity Plugin](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
 * [SilverStripe-Modul](https://github.com/andrelohmann/silverstripe-shariff)
 * [Symfony ShariffBundle](https://github.com/core23/ShariffBundle)
