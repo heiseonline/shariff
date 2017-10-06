@@ -35,6 +35,7 @@
     }
   ],
   "dependencies": {
+    "eslint-loader": "^1.9.0",
     "font-awesome": "^4.3.0",
     "jquery": "^3.2.1"
   },
