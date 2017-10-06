@@ -182,7 +182,11 @@ DOMQuery.prototype.prepend = function(html) {
  * @returns {DOMQuery}
  */
 DOMQuery.prototype.addClass = function(names) {
-  return this.each(function() { this.classList.add(...names.split(' ')) })
+  return this.each(function(index, item) {
+    names.split(' ').forEach(function(name) {
+      item.classList.add(name)
+    })
+  })
 }
 
 /**
