@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.0.1, 2017-10-25
+
+- Fixed broken test call.
+- Upgraded dependencies.
+
 ## v2.0.0, 2017-10-25
 
 - Fixed IE 11 issues. ([#253](https://github.com/heiseonline/shariff/issues/253))

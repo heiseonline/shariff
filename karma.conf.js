@@ -1,6 +1,6 @@
 module.exports = function(config) {
   config.set({
-    webpack: require('./webpack.config.js'),
+    webpack: require('./webpack.config.js')[0],
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
