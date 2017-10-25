@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.0.0, 2017-10-25
+
+- Fixed IE 11 issues. ([#253](https://github.com/heiseonline/shariff/issues/253))
+
+This release contains breaking changes:
+
+- Build artifacts were deleted from the repository. Instead, they get published to the npm registry in the `./dist` folder.
+
 ## v1.26.1, 2017-07-28
 
 * Added missing `./build` directory.([#246](https://github.com/heiseonline/shariff/issues/246))

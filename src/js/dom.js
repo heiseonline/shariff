@@ -182,7 +182,12 @@ DOMQuery.prototype.prepend = function(html) {
  * @returns {DOMQuery}
  */
 DOMQuery.prototype.addClass = function(names) {
-  return this.each(function() { this.classList.add(...names.split(' ')) })
+  return this.each(function() {
+    // Workaround: IE only supports a single parameter to classList.add()
+    names.split(' ').forEach(className => {
+      this.classList.add(className)
+    })
+  })
 }
 
 /**

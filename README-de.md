@@ -102,6 +102,18 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
 | `data-url`         | URL, die geteilt werden soll. | Wenn `data-url` nicht gesetzt ist, wird `link[rel="canonical"]`, `meta[property="og:url"]` oder `location.href` verwendet. |
 
+## Konstruktor-Argumente
+
+Alle data-Attribute von oben sind auch als Konstruktor-Argumente in JavaScript verwendbar. Dabei wird das `data-` am Anfang weggestrichen und camelCase statt kebab-case verwendet:
+
+```js
+var buttonsContainer = $('.some-selector');
+new Shariff(buttonsContainer, {
+    backendUrl: '/my/backend/url',
+    orientation: 'vertical',
+    mailUrl: 'mailto:me@example.com',
+});
+```
 
 ## Unterstützte Browser
 
@@ -162,6 +174,7 @@ Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
 * [Kirby-CMS Shariff-Plugin](https://github.com/SpicyWeb-de/kirby-plugin-shariff)
 * [MediaWiki Extension](https://github.com/vonloxley/Shariff-Mediawiki/)
 * [Open Monograph Press-Plugin](https://github.com/langsci/shariff)
+* [Pagekit Extension](https://pagekit.com/marketplace/package/spqr/shariff)
 * [Serendipity Plugin](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
 * [SilverStripe-Modul](https://github.com/andrelohmann/silverstripe-shariff)
 * [Symfony ShariffBundle](https://github.com/core23/ShariffBundle)
