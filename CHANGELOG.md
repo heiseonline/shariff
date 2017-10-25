@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Fixed broken test call.
 - Upgraded dependencies.
 
 ## v2.0.0, 2017-10-25
