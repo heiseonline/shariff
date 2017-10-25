@@ -13,11 +13,7 @@ const webpack = require('webpack')
 
 const extractLess = new ExtractTextPlugin({filename: '[name].css'})
 
-module.exports = {
-  entry: {
-    'shariff.complete': './src/js/shariff.complete',
-    'shariff.min': './src/js/shariff.min'
-  },
+const baseConf = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
@@ -69,3 +65,19 @@ Licensed under the ${license} license`
     })
   ],
 }
+
+module.exports = [
+  Object.assign({}, baseConf, {
+    entry: {
+      'shariff.complete': './src/js/shariff.complete',
+    }
+  }),
+  Object.assign({}, baseConf, {
+    entry: {
+      'shariff.min': './src/js/shariff.min'
+    },
+    externals: {
+      './dom': 'jQuery',
+    },
+  }),
+]
