@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fixed IE 11 issues. ([#253](https://github.com/heiseonline/shariff/issues/253))
+
 This release contains breaking changes:
 
 - Build artifacts were deleted from the repository. Instead, they get published to the npm registry in the `./dist` folder.
