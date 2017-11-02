@@ -16,7 +16,7 @@ Shariff consists of two parts: a simple JavaScript client library and an optiona
 1. Download the [latest release](https://github.com/heiseonline/shariff/releases/latest)
 2. Include CSS in `<head>`:
     * `build/shariff.complete.css` contains all dependencies
-    * if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site, use `build/shariff.min.css` 
+    * if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site, use `build/shariff.min.css`
 3. Include JavaScript right before `</body>`:
     * `build/shariff.complete.js` contains all dependencies
     * if [jQuery](https://github.com/jquery/jquery) is already included in your site, use `build/shariff.min.js`
@@ -78,10 +78,8 @@ After downloading Shariff, install its dependencies by running `npm install`.
 $ git clone https://github.com/heiseonline/shariff.git
 $ cd shariff
 $ npm install
-$ grunt demo
+$ npm run dev
 ```
-
-Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli). Run `grunt demo` to start a local web server which displays several button configurations. The demo page uses [`shariff-backend-node`](https://github.com/heiseonline/shariff-backend-node) to request and display share counts.
 
 ## Options (data attributes)
 

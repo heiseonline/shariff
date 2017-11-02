@@ -71,16 +71,14 @@ new Shariff(buttonsContainer, {
 
 ## Demo-Webseite starten
 
-Nach dem Download von Shariff mit `npm install` die Abhängigkeiten installieren. Anschließend kann mit `grunt demo` ein lokaler Webserver gestartet werden, der eine Seite mit verschiedenen Konfigurations-Beispielen bereitstellt:
+Nach dem Download von Shariff mit `npm install` die Abhängigkeiten installieren. Anschließend kann mit `npm run dev` ein lokaler Webserver gestartet werden, der eine Seite mit verschiedenen Konfigurations-Beispielen bereitstellt:
 
 ```sh
 $ git clone https://github.com/heiseonline/shariff.git
 $ cd shariff
 $ npm install
-$ grunt demo
+$ npm run dev
 ```
-
-Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli) installiert sein. Die Beispielseite verwendet [`shariff-backend-node`](https://github.com/heiseonline/shariff-backend-node), um die Share-Counts für die Buttons bereitzustellen.
 
 ## Optionen (data-Attribute)
 
