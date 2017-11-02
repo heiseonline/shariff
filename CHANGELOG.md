@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.0.2, 2017-11-02
+
+- Fixed bower `main` entry. ([#259](https://github.com/heiseonline/shariff/issues/259))
+- Updated build workflow in README.md. ([#259](https://github.com/heiseonline/shariff/issues/259))
+
 ## v2.0.1, 2017-10-25
 
 - Fixed broken test call.

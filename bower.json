@@ -1,6 +1,6 @@
 {
   "name": "shariff",
-  "version": "1.26.1",
+  "version": "2.0.2",
   "homepage": "http://ct.de/-2467514",
   "authors": [
     "Ines Pauer <ipa@heise.de>",
@@ -10,8 +10,8 @@
     "Deniz Sesli <dzs@heise.de>"
   ],
   "main": [
-    "build/shariff.min.css",
-    "build/shariff.min.js"
+    "dist/shariff.min.css",
+    "dist/shariff.min.js"
   ],
   "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
   "keywords": [
