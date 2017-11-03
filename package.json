@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --port 3000 --content-base demo --entry app=./demo/app.js",
     "test": "eslint src && karma start --single-run",
-    "build": "rm -fr dist && webpack -p"
+    "build": "rm -fr dist && webpack -p",
+    "build_zip": "7z a -tzip $BASE_NAME.zip ./dist/* && 7z a -ttar $BASE_NAME.tar ./dist/* && 7z a $BASE_NAME.tar.gz $BASE_NAME.tar"
   },
   "repository": {
     "type": "git",

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Removed zip files from npm build artifacts.
 - Removed deprecated `version` property from `bower.json`.
 
 ## v2.0.2, 2017-11-02
