@@ -19,6 +19,7 @@ script:
 
 before_deploy:
   - npm run build
+  - npm run build_zip
 
 deploy:
   - provider: releases
@@ -28,7 +29,6 @@ deploy:
       - $BASE_NAME.zip
       - $BASE_NAME.tar.gz
     skip_cleanup: true
-    script: npm run build_zip
     on:
       repo: heiseonline/shariff
       tags: true

@@ -52,10 +52,16 @@ typings/
 
 # Output of 'npm pack'
 *.tgz
+*.zip
+*.tar
+*.tar.gz
 
 # Yarn Integrity file
 .yarn-integrity
 
 # dotenv environment variables file
 .env
+
+# macOS stuff
+.DS_Store
 
