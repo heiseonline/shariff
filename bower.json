@@ -9,8 +9,8 @@
     "Deniz Sesli <dzs@heise.de>"
   ],
   "main": [
-    "dist/shariff.min.css",
-    "dist/shariff.min.js"
+    "src/js/shariff.css",
+    "src/style/shariff.less"
   ],
   "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
   "keywords": [
@@ -23,7 +23,6 @@
     "/.*",
     "/*.js",
     "/*.png",
-    "src/",
     "**/.*",
     "node_modules",
     "bower_components",
