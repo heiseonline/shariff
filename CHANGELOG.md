@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.0.3, 2017-11-03
+
+- Fixed bower `main` entry. ([#259](https://github.com/heiseonline/shariff/issues/259))
+- Removed zip files from npm build artifacts.
+- Removed deprecated `version` property from `bower.json`.
+
 ## v2.0.2, 2017-11-02
 
 - Fixed bower `main` entry. ([#259](https://github.com/heiseonline/shariff/issues/259))
