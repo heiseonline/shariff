@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v2.0.3, 2017-11-03
 
 - Fixed bower `main` entry. ([#259](https://github.com/heiseonline/shariff/issues/259))
 - Removed zip files from npm build artifacts.
