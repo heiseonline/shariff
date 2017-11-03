@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.4, 2017-11-03
+
+- Fixed deployment to GitHub.
+
 ## v2.0.3, 2017-11-03
 
 - Fixed bower `main` entry. ([#259](https://github.com/heiseonline/shariff/issues/259))
