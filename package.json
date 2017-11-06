@@ -33,6 +33,10 @@
     {
       "name": "Deniz Sesli",
       "email": "dzs@heise.de"
+    },
+    {
+      "name": "Alexander Buch",
+      "email": "alexander.buch@cartware.de"
     }
   ],
   "dependencies": {
