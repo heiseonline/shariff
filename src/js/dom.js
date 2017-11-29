@@ -213,6 +213,23 @@ DOMQuery.prototype.on = function(event, selector, handler) {
 }
 
 /**
+ * Execute all handlers and behaviors attached to the matched elements for the
+ * given event type.
+ * @param {string} event - The event name
+ * @param {object} data - Event data
+ */
+DOMQuery.prototype.trigger = function(event, detail) {
+  this.each(function() {
+    var evt = new CustomEvent(event, {
+      detail: detail,
+      bubbles: true,
+      cancelable: true
+    })
+    this.dispatchEvent(evt)
+  })
+}
+
+/**
  * Removes each child of a node.
  * @private
  */

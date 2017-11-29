@@ -117,6 +117,36 @@ new Shariff(buttonsContainer, {
 });
 ```
 
+## Events
+
+Beim Klick auf einen Share-Button wird der `shariff-share` Event ausgelöst.
+
+```js
+$('body').on('shariff-share', function(event) {
+    var service = event.details;
+    ...
+});
+```
+
+Der Event kann verwendet werden um die Interaktionen mittels Analyse-Software aufzuzeichnen. Eine saubere Integration mit dem Tracker setzt voraus, dass der Event-Handler erst registriert wird nachdem das Analytics-Script geladen wurde.
+
+**Beispiel für Piwik:**
+
+```js
+(function() {
+  var _my_piwik_onload = function() {
+    var piwik = this;
+
+    $('body').on('shariff-share', function(event) {
+      var service = event.detail;
+      piwik.trackEvent('Sharing', service.name);
+    });
+  }
+
+  _paq.push([ _my_piwik_onload ]);
+})();
+```
+
 ## Unterstützte Browser
 
 Shariff unterstützt folgende Browser:
