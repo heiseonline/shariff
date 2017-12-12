@@ -87,6 +87,7 @@ $ npm run dev
 | `data-backend-url` | Pfad zum Shariff-[Backend](#backends). Der Wert `null` deaktiviert die Anzeige von Share-Counts.  | `null` |
 | `data-flattr-category` | Kategorie für Flattr-Spende. | `null` |
 | `data-flattr-user` | Benutzer, der die Flattr-Spende erhält. | `null` |
+| `data-info-url` | URL of the info page. | `http://ct.de/-2467514` |
 | `data-lang`      | Lokalisierung auswählen. Verfügbar: `bg`, `de`, `en`, `es`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Body verwendet. Der Mail-Body-Text sollte den Platzhalter `{url}` enthalten. Dieser wird durch die zu teilende URL ersetzt. | siehe `data-url` |
 | `data-mail-subject` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Betreff verwendet. | siehe `data-title` |
@@ -147,6 +148,9 @@ Shariff unterstützt folgende Social-Sharing-Services:
 - Weibo
 - WhatsApp
 - XING
+
+Zusätzlich stellt der Service `Info` einen Button zur Anzeige einer Infoseite über die Social-Sharing-Buttons bereit.
+Die URL dieser Seite kann mit einer Option festgelegt werden. Standardwert: `http://ct.de/-2467514`, d.h. der c't-Artikel zur Einführung von Shariff.
 
 ## Backends
 
