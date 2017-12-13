@@ -89,7 +89,7 @@ $ npm run dev
 | `data-flattr-category` | Category to be used for Flattr. | `null` |
 | `data-flattr-user` | User that receives Flattr donation. | `null` |
 | `data-info-url` | URL of the info page. | `http://ct.de/-2467514` |
-| `data-info-display` | Display type of the info page. Values: `blank`, `popup`, `self` | `blank` |
+| `data-info-display` | How to display the info page. Values: `blank`, `popup`, `self`. | `blank` |
 | `data-lang`      | The localisation to use. Available: `bg`, `de`, `en`, `es`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail body. The body text should contain the placeholder `{url}` which will be replaced with the share URL. | see `data-url`  |
 | `data-mail-subject` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail subject. | see `data-title` |
