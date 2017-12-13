@@ -88,6 +88,7 @@ $ npm run dev
 | `data-flattr-category` | Kategorie für Flattr-Spende. | `null` |
 | `data-flattr-user` | Benutzer, der die Flattr-Spende erhält. | `null` |
 | `data-info-url` | URL der Infoseite. | `http://ct.de/-2467514` |
+| `data-info-display` | Display-Art der Infoseite. Werte: `blank`, `popup`, `self` | `blank` |
 | `data-lang`      | Lokalisierung auswählen. Verfügbar: `bg`, `de`, `en`, `es`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Body verwendet. Der Mail-Body-Text sollte den Platzhalter `{url}` enthalten. Dieser wird durch die zu teilende URL ersetzt. | siehe `data-url` |
 | `data-mail-subject` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Betreff verwendet. | siehe `data-title` |
