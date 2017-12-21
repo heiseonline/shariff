@@ -12,7 +12,7 @@ addons:
 
 env:
   global:
-    - BASE_NAME=shariff-$TRAVIS_TAG
+    - BASE_NAME=shariff-plus-$TRAVIS_TAG
 
 script:
   - npm run test
