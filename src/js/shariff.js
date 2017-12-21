@@ -6,6 +6,11 @@ const $ = require('./dom')
 const services = require('./services')
 const url = require('url')
 
+const shariffScript = document.currentScript ||
+  document.querySelector('script[src$="shariff.js"]') ||
+  document.querySelector('script[src$="shariff.min.js"]')
+const shariffPath = shariffScript ? shariffScript.src.split('/').slice(0, -1).join('/') : ''
+
 // Defaults may be overridden either by passing "options" to Shariff constructor
 // or by setting data attributes.
 const Defaults = {
@@ -43,6 +48,12 @@ const Defaults = {
 
   // services to be enabled in the following order
   services: ['twitter', 'facebook', 'googleplus', 'info'],
+
+  dialogsMediaUrl: shariffPath,
+
+  facebookCountBtn: 'both',
+
+  facebooklikeOptions: { width: 450, layout: 'standard', action: 'like', size: 'large', show_faces: true, share: true, appId: null },
 
   title: function() {
     return $('head title').text()
@@ -155,9 +166,18 @@ class Shariff {
     return $.getJSON(url.format(baseUrl), callback)
   }
 
+  getDialogsMediaUrl() {
+    return this.options.dialogsMediaUrl || ''
+  }
+
+  getFacebooklikeOptions() {
+    return this.options.facebooklikeOptions
+  }
+
   // add value of shares for each service
   _updateCounts(data, status, xhr) {
     if (!data) return
+    var fbValue = null
     $.each(data, (serviceName, value) => {
       if (!this.isEnabledService(serviceName)) {
         return
@@ -165,10 +185,24 @@ class Shariff {
       if (value >= 1000) {
         value = Math.round(value / 1000) + 'k'
       }
-      $(this.element)
-        .find(`.${serviceName} a`)
-        .append($('<span/>').addClass('share_count').text(value))
+      var doAppend = true
+      if (serviceName === 'facebook') {
+        fbValue = value
+        if (this.options.facebookCountBtn === 'like') {
+          doAppend = false
+        }
+      }
+      if (doAppend) {
+        $(this.element)
+          .find(`.${serviceName} a`)
+          .append($('<span/>').addClass('share_count').text(value))
+      }
     })
+    if (this.isEnabledService('facebooklike') && (fbValue !== null) && this.options.facebookCountBtn !== 'share') {
+      $(this.element)
+        .find(`.facebooklike a`)
+        .append($('<span/>').addClass('share_count').text(fbValue))
+    }
   }
 
   // add html for button-container
@@ -178,6 +212,8 @@ class Shariff {
       'orientation-' + this.options.orientation,
       'col-' + this.options.services.length
     ].join(' '))
+
+    var dialogServices = []
 
     // add html for service-links
     this.services.forEach(service => {
@@ -192,6 +228,11 @@ class Shariff {
 
       if (typeof service.faName !== 'undefined') {
         $shareLink.prepend($('<span/>').addClass(`fa ${service.faName}`))
+      }
+
+      if (service.shareUrl.match(/javascript:/) && typeof service.dialogHtml !== 'undefined') {
+        $shareLink.attr('data-dlg-idx', dialogServices.length)
+        dialogServices[dialogServices.length] = service
       }
 
       if (service.popup) {
@@ -223,6 +264,21 @@ class Shariff {
         if (w.__twttr && w.__twttr.widgets && w.__twttr.widgets.loaded) {
           return
         }
+      }
+
+      var dialogIdx = $(this).attr('data-dlg-idx')
+
+      if (dialogIdx && !isNaN(dialogIdx) && typeof dialogServices[dialogIdx].dialogHtml !== 'undefined') {
+        var title = $(this).attr('title')
+        var headInnerHTML = '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+          '<title>' + title + '</title>'
+        if (typeof dialogServices[dialogIdx].dialogCssUrl !== 'undefined' && dialogServices[dialogIdx].dialogCssUrl) {
+          headInnerHTML += '<link rel="stylesheet" href="' + dialogServices[dialogIdx].dialogCssUrl + '">'
+        }
+        var newWin = global.window.open('', '_blank', 'width=600,height=460')
+        newWin.document.head.innerHTML = headInnerHTML
+        newWin.document.body.innerHTML = dialogServices[dialogIdx].dialogHtml
+        return
       }
 
       global.window.open(url, '_blank', 'width=600,height=460')
