@@ -1,37 +1,41 @@
 {
-  "name": "shariff",
-  "version": "2.0.4",
-  "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
+  "name": "shariff-plus",
+  "version": "1.0.0-dev",
+  "description": "Shariff-Plus enables website users to share or like their favorite content without compromising their privacy. It is based on Shariff by Heise Medien GmbH & Co. KG.",
   "main": "src/js/shariff.js",
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --port 3000 --content-base demo --entry app=./demo/app.js",
     "test": "eslint src && karma start --single-run",
-    "build": "rm -fr dist && webpack -p",
+    "build": "rm -fr dist && webpack -p && rm -f dist/*_dlg.js",
     "build_zip": "7z a -tzip $BASE_NAME.zip ./dist/* && 7z a -ttar $BASE_NAME.tar ./dist/* && 7z a $BASE_NAME.tar.gz $BASE_NAME.tar"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heiseonline/shariff"
+    "url": "https://github.com/richard67/shariff-plus"
   },
   "author": {
-    "name": "Ines Pauer",
-    "email": "ipa@heise.de"
+    "name": "Richard Fath (shariff-plus)",
+    "email": "richard@richard-fath.de"
   },
   "contributors": [
     {
-      "name": "Philipp Busse",
+      "name": "Ines Pauer (shariff)",
+      "email": "ipa@heise.de"
+    },
+    {
+      "name": "Philipp Busse (shariff)",
       "email": "pmb@heise.de"
     },
     {
-      "name": "Sebastian Hilbig",
+      "name": "Sebastian Hilbig (shariff)",
       "email": "seh@heise.de"
     },
     {
-      "name": "Erich Kramer",
+      "name": "Erich Kramer (shariff)",
       "email": "km@heise.de"
     },
     {
-      "name": "Deniz Sesli",
+      "name": "Deniz Sesli (shariff)",
       "email": "dzs@heise.de"
     }
   ],
@@ -42,7 +46,7 @@
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
   },
-  "homepage": "https://github.com/heiseonline/shariff",
+  "homepage": "https://github.com/richard67/shariff-plus",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
@@ -78,7 +82,9 @@
   },
   "keywords": [
     "heise",
+    "richard67",
     "social buttons",
+    "shariff-plus",
     "shariff"
   ],
   "license": "MIT"

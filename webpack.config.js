@@ -80,4 +80,9 @@ module.exports = [
       './dom': 'jQuery',
     },
   }),
+  Object.assign({}, baseConf, {
+    entry: {
+      'facebooklike_dlg': './src/js/dialogs/facebooklike_dlg',
+    }
+  }),
 ]
