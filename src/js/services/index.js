@@ -2,6 +2,7 @@ module.exports = {
   addthis: require('./addthis'),
   diaspora: require('./diaspora'),
   facebook: require('./facebook'),
+  facebooklike: require('./facebooklike'),
   flattr: require('./flattr'),
   googleplus: require('./googleplus'),
   info: require('./info'),
