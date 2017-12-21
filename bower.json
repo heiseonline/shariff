@@ -1,21 +1,24 @@
 {
-  "name": "shariff",
-  "homepage": "http://ct.de/-2467514",
+  "name": "shariff-plus",
+  "homepage": "https://github.com/richard67/shariff-plus",
   "authors": [
-    "Ines Pauer <ipa@heise.de>",
-    "Philipp Busse <pmb@heise.de>",
-    "Sebastian Hilbig <seh@heise.de>",
-    "Erich Kramer <km@heise.de>",
-    "Deniz Sesli <dzs@heise.de>"
+    "Richard Fath (shariff-plus) <richard@richard-fath.de>",
+    "Ines Pauer (shariff) <ipa@heise.de>",
+    "Philipp Busse (shariff) <pmb@heise.de>",
+    "Sebastian Hilbig (shariff) <seh@heise.de>",
+    "Erich Kramer (shariff) <km@heise.de>",
+    "Deniz Sesli (shariff) <dzs@heise.de>"
   ],
   "main": [
     "src/js/shariff.css",
     "src/style/shariff.less"
   ],
-  "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
+  "description": "Shariff-Plus enables website users to share or like their favorite content without compromising their privacy. It is based on Shariff by Heise Medien GmbH & Co. KG.",
   "keywords": [
     "heise",
+    "richard67",
     "social buttons",
+    "shariff-plus",
     "shariff"
   ],
   "license": "MIT",
