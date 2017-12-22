@@ -1,6 +1,6 @@
 # Shariff-Plus – Social-Media-Buttons mit Datenschutz [![Build Status](https://travis-ci.org/richard67/shariff-plus.svg?branch=master)](https://travis-ci.org/richard67/shariff-plus)
 
-Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu bewahren, können Webseiten-Betreiber mit dem Projekt Shariff-Plus eigene Social-Media-Buttons zum Teilen oder Anzeigen des Facebook-Buttons "Gefällt mir" integrieren.
+Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu bewahren, können Webseiten-Betreiber mit dem Projekt Shariff-Plus eigene Social-Media-Buttons zum Teilen oder Anzeigen des Facebook-Buttons "Gefällt mir" integrieren. [Demo](https://www.richard-fath.de/shariff-plus-demo/index.html)
 
 Shariff-Plus ist identisch mit [Shariff von Heise Medien](https://github.com/heiseonline/shariff) plus Erweiterungen wie die Anzeige des Facebook-Buttons "Gefällt mir" in einem Dialog, welche nicht für die Integration in Shariff vorgesehen sind, oder andere Erweiterungen und Korrekturen für Shariff, die (noch) nicht in Shariff integriert wurden.
 

@@ -1,7 +1,7 @@
 # Shariff-Plus – Social Media Buttons With Privacy [![Build Status](https://travis-ci.org/richard67/shariff-plus.svg?branch=master)](https://travis-ci.org/richard67/shariff-plus)
 
 
-Shariff-Plus enables website users to share and like their favorite content without compromising their privacy.
+Shariff-Plus enables website users to share and like their favorite content without compromising their privacy. [Demo](https://www.richard-fath.de/shariff-plus-demo/index.html)
 
 It is equal to [Shariff by Heise Medien](https://github.com/heiseonline/shariff) plus extensions like showing the Facebook "Like" button in a dialog, which is not intended to be ever included into Shariff, or other enhancements or corrections which have not been integrated into Shariff (yet).
 
