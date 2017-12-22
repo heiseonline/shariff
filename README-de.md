@@ -4,7 +4,7 @@ Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu be
 
 Shariff-Plus ist identisch mit [Shariff von Heise Medien](https://github.com/heiseonline/shariff) plus Erweiterungen wie die Anzeige des Facebook-Buttons "Gefällt mir" in einem Dialog, welche nicht für die Integration in Shariff vorgesehen sind, oder andere Erweiterungen und Korrekturen für Shariff, die (noch) nicht in Shariff integriert wurden.
 
-Der Code der offiziellen Buttons von Facebook, Google+ und Twitter überträgt von jedem Besucher kennzeichnende Daten an die Social-Media-Netzwerke. Shariff-Plus erzeugtze hingegen Buttons, die mit einem Klick die Dialoge zum Teilen oder Vergeben von "Gefällt mir" bei Facebook anzeigen, die Anzahl der Likes für die aktuelle Seite anzeigen und trotzdem keine unnötigen Daten übertragen.
+Der Code der offiziellen Buttons von Facebook, Google+ und Twitter überträgt von jedem Besucher kennzeichnende Daten an die Social-Media-Netzwerke. Shariff-Plus erzeugt hingegen Buttons, die mit einem Klick die Dialoge zum Teilen oder Vergeben von "Gefällt mir" bei Facebook anzeigen, die Anzahl der Likes für die aktuelle Seite anzeigen und trotzdem keine unnötigen Daten übertragen.
 
 **Shariff** `(/ˈʃɛɹɪf/)` ist ein Open-Source Projekt von c't und heise online.
 
