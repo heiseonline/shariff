@@ -60,7 +60,7 @@ module.exports = function(shariff) {
     stdWidth = 154
     break
   }
-  if (typeof fblikeOptions[opt] === 'undefined' || fblikeOptions.width === null) {
+  if (typeof fblikeOptions.width === 'undefined' || fblikeOptions.width === null) {
     fblikeOptions.width = stdWidth
   } else if (fblikeOptions.width < minWidth) {
     fblikeOptions.width = minWidth
