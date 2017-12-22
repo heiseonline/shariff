@@ -8,8 +8,9 @@ module.exports = function(shariff) {
   var dialogClose = 'Close'
   var fbUrl = 'https://www.facebook.com/plugins/like.php?href=' +
     encodeURIComponent(url) + shariff.getReferrerTrack()
-  var height = 20
+  var height = 65
   var minWidth = 47
+  var stdWidth = 103
   var dialogHtml = '<div>' + '<h1 class="dialogtitle">'
   var fblikeOptions = shariff.getFacebooklikeOptions()
   switch (shariffLang) {
@@ -46,19 +47,27 @@ module.exports = function(shariff) {
       height = 35
     }
     minWidth = 225
+    stdWidth = 450
     break
   case 'box_count':
     height = 65
     minWidth = 55
+    stdWidth = 103
     break
   case 'button_count':
+    height = 46
     minWidth = 90
+    stdWidth = 154
     break
   }
-  fblikeOptions.width = fblikeOptions.width < minWidth ? minWidth : fblikeOptions.width
+  if (typeof fblikeOptions[opt] === 'undefined' || fblikeOptions.width === null) {
+    fblikeOptions.width = stdWidth
+  } else if (fblikeOptions.width < minWidth) {
+    fblikeOptions.width = minWidth
+  }
   fblikeOptions.appId = fblikeOptions.appId || (shariff.getMeta('fb:app_id') || null)
   for (var opt in fblikeOptions) {
-    if (fblikeOptions.hasOwnProperty(opt) && fblikeOptions[opt] !== null) {
+    if (fblikeOptions.hasOwnProperty(opt) && typeof fblikeOptions[opt] !== 'undefined' && fblikeOptions[opt] !== null) {
       fbUrl += '&' + opt + '=' + fblikeOptions[opt]
     }
   }
