@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.3, 2017-12-24
+
+Fixed npm deployment.
+
 ## v1.0.2, 2017-12-24
 
 - Use getTitle() for facebooklike dialog heading ([#6](https://github.com/richard67/shariff-plus/pull/6)).
