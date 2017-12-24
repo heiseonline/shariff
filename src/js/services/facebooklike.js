@@ -2,7 +2,7 @@
 
 module.exports = function(shariff) {
   var url = shariff.getURL()
-  var dialogTitle = shariff.getMeta('og:title') || document.title
+  var dialogTitle = shariff.getTitle()
   var shariffLang = shariff.getOption('lang')
   var dialogLocale = 'en_GB'
   var dialogClose = 'Close'
