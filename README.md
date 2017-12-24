@@ -64,10 +64,10 @@ Edit your JS main script, include Shariff-Plus and initialize it in one or more 
 
 ```js
 // my-app.js
-var Shariff = require('shariff');
+var ShariffPlus = require('shariff-plus');
 var $ = require('jquery');
 var buttonsContainer = $('.some-selector');
-new Shariff(buttonsContainer, {
+new ShariffPlus(buttonsContainer, {
     orientation: 'vertical'
 });
 ```

@@ -63,10 +63,10 @@ Dann kann Shariff-Plus im eigenen Skript initialisiert und an DOM-Elemente gebun
 
 ```js
 // my-app.js
-var Shariff = require('shariff');
+var ShariffPlus = require('shariff-plus');
 var $ = require('jquery');
 var buttonsContainer = $('.some-selector');
-new Shariff(buttonsContainer, {
+new ShariffPlus(buttonsContainer, {
     orientation: 'vertical'
 });
 ```
