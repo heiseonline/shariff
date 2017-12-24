@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.2, 2017-12-24
+
+- Use getTitle() for facebooklike dialog heading ([#6](https://github.com/richard67/shariff-plus/pull/6)).
+
+- Add npm deployment for shariff-plus ([#7](https://github.com/richard67/shariff-plus/pull/7)).
+
 ## v1.0.1, 2017-12-22
 
 - Remove twitter backend from docs and demo (see [heiseonline#276](https://github.com/heiseonline/shariff/pull/276)).
