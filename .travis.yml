@@ -32,3 +32,11 @@ deploy:
     on:
       repo: richard67/shariff-plus
       tags: true
+  - provider: npm
+    email: richard.fath@t-online.de
+    api_key:
+      secure: "W036KiSfvzPegkQ+oyq4eE2nVUy7CmUO/5a8OYxF5J8yUo71FRaxF0R9zVKjzhDZXpCGmUSmF/AXaAKviyIhhY4ruAzthn7wUAHzfxBYKgf+VAZLQdSojR5VjPU4g8BbrwC4IGp9tTf49wyMGdpfJXjwchQWltWor1vDIqFw5gCFQVEx6Ryh5wT6sSPhkHQxsceaRE/SqDlroeT0SCtt6FrIS+/0Dbi6eK2Xk+Wr2JfrhjAC01iuG83O/UnlrDqSGeMwrGSgOsTJBHj0Uifsz9UeP3KLFa8rjZmnXikbbiH1cX4afrp9g8c+hRb0HxRZ1o98JI5tba/WTZ2zVFUVO4JCKQAPZSRrmWd9IrkE6Ee9qLg3BLJwF4Qu0uvF9OIo+/YWtJQ8pRJ5HBy/coEdsKMuHl6MyLWdQe/8+GrSQXK6+2iR5jGMZLuZf43f40eGCzPHWn+JPZ+iUMVsHto0Lzydbvka0rtSqYnj4oL/zmzb+Fb+VfsWE/dz57bWMr1lgdmWAC91/DGpkM6fnmsi3sko5S9niWVQnYUF5qd4aalURPu2tXAGbBY/JJYtfwxoZCopghG6Ea+gpYUa7ihByhoCRC3jq13btxbSNqSxov45cfm2zbuXvCX1Bp9Zz46JFXvvKE3kdlSP0IUYkYS1jBIKzEs3AP/J9fqAAzKI/6Q="
+    skip_cleanup: true
+    on:
+      repo: richard67/shariff-plus
+      tags: true

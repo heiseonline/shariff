@@ -50,6 +50,27 @@ Code-Beispiel:
 </html>
 ```
 
+## Shariff-Plus mit `npm` einrichten
+
+Shariff-Plus ist auch als Node-Paket verfügbar und kann mit `npm` in ein Projekt eingebunden werden:
+
+```sh
+$ cd my-project
+$ npm install shariff-plus --save
+```
+
+Dann kann Shariff-Plus im eigenen Skript initialisiert und an DOM-Elemente gebunden werden:
+
+```js
+// my-app.js
+var Shariff = require('shariff');
+var $ = require('jquery');
+var buttonsContainer = $('.some-selector');
+new Shariff(buttonsContainer, {
+    orientation: 'vertical'
+});
+```
+
 ## Demo-Webseite starten
 
 Nach dem Download von Shariff-Plus mit `npm install` die Abhängigkeiten installieren. Anschließend kann mit `npm run dev` ein lokaler Webserver gestartet werden, der eine Seite mit verschiedenen Konfigurations-Beispielen bereitstellt:

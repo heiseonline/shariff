@@ -51,6 +51,27 @@ Usage example:
 </html>
 ```
 
+## Getting Started using `npm`
+
+You can also use the Shariff-Plus node package by installing it via `npm`:
+
+```sh
+$ cd my-project
+$ npm install shariff-plus --save
+```
+
+Edit your JS main script, include Shariff-Plus and initialize it in one or more containers:
+
+```js
+// my-app.js
+var Shariff = require('shariff');
+var $ = require('jquery');
+var buttonsContainer = $('.some-selector');
+new Shariff(buttonsContainer, {
+    orientation: 'vertical'
+});
+```
+
 ## Running demo site
 
 After downloading Shariff-Plus, install its dependencies by running `npm install`.
