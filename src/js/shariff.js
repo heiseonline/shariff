@@ -193,9 +193,6 @@ class Shariff {
     if (!data) return
     var fbValue = null
     $.each(data, (serviceName, value) => {
-      if (!this.isEnabledService(serviceName)) {
-        return
-      }
       if (value >= 1000) {
         value = Math.round(value / 1000) + 'k'
       }
@@ -206,7 +203,7 @@ class Shariff {
           doAppend = false
         }
       }
-      if (doAppend) {
+      if (this.isEnabledService(serviceName) && doAppend) {
         $(this.element)
           .find(`.${serviceName} a`)
           .append($('<span/>').addClass('share_count').text(value))
