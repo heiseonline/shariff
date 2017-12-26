@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.4, 2017-12-26
+
+- Remove wrong data-info-url from parameters listing in 3rd example of demo ([#8](https://github.com/richard67/shariff-plus/pull/8)).
+
+- Add new project homepage for Shariff-Plus to docs and package info and make this the default for the "data-info-url" parameter ([#9](https://github.com/richard67/shariff-plus/pull/9)).
+
 ## v1.0.3, 2017-12-24
 
 Fixed npm deployment.
