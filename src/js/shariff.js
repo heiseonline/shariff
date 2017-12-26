@@ -20,7 +20,7 @@ const Defaults = {
   backendUrl: null,
 
   // Link to the "about" page
-  infoUrl: 'http://ct.de/-2467514',
+  infoUrl: 'https://www.richard-fath.de/en/software/shariff-plus.html',
 
   // Type of display for the "about" page: "blank", "popup" or "self", default = "blank"
   infoDisplay: 'blank',

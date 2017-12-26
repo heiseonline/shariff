@@ -1,6 +1,5 @@
 # Shariff-Plus – Social Media Buttons With Privacy [![Build Status](https://travis-ci.org/richard67/shariff-plus.svg?branch=master)](https://travis-ci.org/richard67/shariff-plus)
 
-
 Shariff-Plus enables website users to share and like their favorite content without compromising their privacy. [Demo](https://www.richard-fath.de/shariff-plus-demo/index.html)
 
 It is equal to [Shariff by Heise Medien](https://github.com/heiseonline/shariff) plus extensions like showing the Facebook "Like" button in a dialog, which is not intended to be ever included into Shariff, or other enhancements or corrections which have not been integrated into Shariff (yet).
@@ -93,7 +92,7 @@ $ npm run dev
 | `data-facebooklike-options` | An entity-encoded JSON string containing an object with options for the Facebook "Like" button as provided by the Facebook configurator for that button. Example with default values of Facebook: `data-facebooklike-options="{&quot;width&quot;:450,&quot;layout&quot;:&quot;standard&quot;,&quot;action&quot;:&quot;like&quot;,&quot;size&quot;:&quot;large&quot;,&quot;show_faces&quot;:true,&quot;share&quot;:true,&quot;appId&quot;:&quot;99999&quot;}"` with 99999 = Facebook `app_id`. | See example, with appId = value of the `fb:app_id` meta tag or `null` if not defined. |
 | `data-flattr-category` | Category to be used for Flattr. | `null` |
 | `data-flattr-user` | User that receives Flattr donation. | `null` |
-| `data-info-url` | URL of the info page. | `http://ct.de/-2467514` |
+| `data-info-url` | URL of the info page. | `https://www.richard-fath.de/en/software/shariff-plus.html` |
 | `data-info-display` | How to display the info page. Values: `blank`, `popup`, `self`. | `blank` |
 | `data-lang`      | The localisation to use. Available: `bg`, `de`, `en`, `es`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail body. The body text should contain the placeholder `{url}` which will be replaced with the share URL. | see `data-url`  |

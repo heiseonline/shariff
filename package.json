@@ -46,7 +46,7 @@
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
   },
-  "homepage": "https://github.com/richard67/shariff-plus",
+  "homepage": "https://www.richard-fath.de/en/software/shariff-plus.html",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
