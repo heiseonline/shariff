@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.5, 2017-12-27
+
+- Correct counter display for facebooklike in case if facebook is not enabled ([#10](https://github.com/richard67/shariff-plus/pull/10)).
+
 ## v1.0.4, 2017-12-26
 
 - Remove wrong data-info-url from parameters listing in 3rd example of demo ([#8](https://github.com/richard67/shariff-plus/pull/8)).
