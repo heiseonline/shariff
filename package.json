@@ -1,6 +1,6 @@
 {
   "name": "shariff-plus",
-  "version": "1.0.5",
+  "version": "1.0.6-dev",
   "description": "Shariff-Plus enables website users to share or like their favorite content without compromising their privacy. It is based on Shariff by Heise Medien GmbH & Co. KG.",
   "main": "src/js/shariff.js",
   "scripts": {
