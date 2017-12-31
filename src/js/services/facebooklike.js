@@ -34,7 +34,7 @@ module.exports = function(shariff) {
   case 'sk': dialogLocale = 'sk_SK'; dialogClose = 'Zatvoriť'; break
   case 'sl': dialogLocale = 'sl_SI'; dialogClose = 'Zapri'; break
   // Serbian latin is not suppported by Facebook Graph API, they only have kyrillic.
-  // case 'sr': dialogLocale = 'sr_RS'; dialogClose = 'Close'; break
+  case 'sr': dialogClose = 'Zatvori'; break
   case 'sv': dialogLocale = 'sv_SE'; dialogClose = 'Stäng'; break
   case 'tr': dialogLocale = 'tr_TR'; dialogClose = 'Kapatın'; break
   case 'zh': dialogLocale = 'zh_CN'; dialogClose = '关闭'; break
