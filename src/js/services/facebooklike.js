@@ -4,7 +4,6 @@ module.exports = function(shariff) {
   var url = shariff.getURL()
   var dialogTitle = shariff.getTitle()
   var shariffLang = shariff.getOption('lang')
-  var dialogLocale = 'en_GB'
   var dialogClose = 'Close'
   var fbUrl = 'https://www.facebook.com/plugins/like.php?href=' +
     encodeURIComponent(url) + shariff.getReferrerTrack()
@@ -14,30 +13,29 @@ module.exports = function(shariff) {
   var dialogHtml = '<div>' + '<h1 class="dialogtitle">'
   var fblikeOptions = shariff.getFacebooklikeOptions()
   switch (shariffLang) {
-  case 'bg': dialogLocale = 'bg_BG'; dialogClose = 'Близо'; break
-  case 'da': dialogLocale = 'da_DK'; dialogClose = 'Luk'; break
-  case 'de': dialogLocale = 'de_DE'; dialogClose = 'Schließen'; break
-  case 'es': dialogLocale = 'es_ES'; dialogClose = 'Cerrar'; break
-  case 'fi': dialogLocale = 'fi_FI'; dialogClose = 'Sulje'; break
-  case 'fr': dialogLocale = 'fr_FR'; dialogClose = 'Fermer'; break
-  case 'hr': dialogLocale = 'hr_HR'; dialogClose = 'Zatvoriti'; break
-  case 'hu': dialogLocale = 'hu_HU'; dialogClose = 'Bezár'; break
-  case 'it': dialogLocale = 'it_IT'; dialogClose = 'Chiudi'; break
-  case 'ja': dialogLocale = 'ja_JP'; dialogClose = '閉じる'; break
-  case 'ko': dialogLocale = 'ko_KR'; dialogClose = '닫기'; break
-  case 'nl': dialogLocale = 'nl_NL'; dialogClose = 'Sluiten'; break
-  case 'no': dialogLocale = 'nb_NO'; dialogClose = 'Lukk'; break
-  case 'pl': dialogLocale = 'pl_PL'; dialogClose = 'Zamknij'; break
-  case 'pt': dialogLocale = 'pt_PT'; dialogClose = 'Fechar'; break
-  case 'ro': dialogLocale = 'ro_RO'; dialogClose = 'Închide'; break
-  case 'ru': dialogLocale = 'ru_RU'; dialogClose = 'Закрыть'; break
-  case 'sk': dialogLocale = 'sk_SK'; dialogClose = 'Zatvoriť'; break
-  case 'sl': dialogLocale = 'sl_SI'; dialogClose = 'Zapri'; break
-  // Serbian latin is not suppported by Facebook Graph API, they only have kyrillic.
+  case 'bg': dialogClose = 'Близо'; break
+  case 'da': dialogClose = 'Luk'; break
+  case 'de': dialogClose = 'Schließen'; break
+  case 'es': dialogClose = 'Cerrar'; break
+  case 'fi': dialogClose = 'Sulje'; break
+  case 'fr': dialogClose = 'Fermer'; break
+  case 'hr': dialogClose = 'Zatvoriti'; break
+  case 'hu': dialogClose = 'Bezár'; break
+  case 'it': dialogClose = 'Chiudi'; break
+  case 'ja': dialogClose = '閉じる'; break
+  case 'ko': dialogClose = '닫기'; break
+  case 'nl': dialogClose = 'Sluiten'; break
+  case 'no': dialogClose = 'Lukk'; break
+  case 'pl': dialogClose = 'Zamknij'; break
+  case 'pt': dialogClose = 'Fechar'; break
+  case 'ro': dialogClose = 'Închide'; break
+  case 'ru': dialogClose = 'Закрыть'; break
+  case 'sk': dialogClose = 'Zatvoriť'; break
+  case 'sl': dialogClose = 'Zapri'; break
   case 'sr': dialogClose = 'Zatvori'; break
-  case 'sv': dialogLocale = 'sv_SE'; dialogClose = 'Stäng'; break
-  case 'tr': dialogLocale = 'tr_TR'; dialogClose = 'Kapatın'; break
-  case 'zh': dialogLocale = 'zh_CN'; dialogClose = '关闭'; break
+  case 'sv': dialogClose = 'Stäng'; break
+  case 'tr': dialogClose = 'Kapatın'; break
+  case 'zh': dialogClose = '关闭'; break
   }
   switch (fblikeOptions.layout) {
   case 'standard':
@@ -71,7 +69,7 @@ module.exports = function(shariff) {
       fbUrl += '&' + opt + '=' + fblikeOptions[opt]
     }
   }
-  fbUrl += '&height=' + height + '&locale=' + dialogLocale
+  fbUrl += '&height=' + height
   dialogHtml += dialogTitle + '</h1>' +
       '<a class="dialoglink" href="' + url + '">' +
       url + '</a></div>' +
