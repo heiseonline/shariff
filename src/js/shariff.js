@@ -131,13 +131,13 @@ class Shariff {
   }
 
   getInfoDisplayPopup() {
-    return (this.options.infoDisplay.toLowerCase() === 'popup')
+    return (this.options.infoDisplay === 'popup')
   }
 
   getInfoDisplayBlank() {
     return (
-      (this.options.infoDisplay.toLowerCase() !== 'popup') &&
-      (this.options.infoDisplay.toLowerCase() !== 'self')
+      (this.options.infoDisplay !== 'popup') &&
+      (this.options.infoDisplay !== 'self')
     )
   }
 
