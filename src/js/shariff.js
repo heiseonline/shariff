@@ -17,6 +17,9 @@ const Defaults = {
   // Link to the "about" page
   infoUrl: 'http://ct.de/-2467514',
 
+  // Type of display for the "about" page: "blank", "popup" or "self", default = "blank"
+  infoDisplay: 'blank',
+
   // localisation: "de" or "en"
   lang: 'de',
 
@@ -127,6 +130,17 @@ class Shariff {
     return this.options.infoUrl
   }
 
+  getInfoDisplayPopup() {
+    return (this.options.infoDisplay === 'popup')
+  }
+
+  getInfoDisplayBlank() {
+    return (
+      (this.options.infoDisplay !== 'popup') &&
+      (this.options.infoDisplay !== 'self')
+    )
+  }
+
   getURL() {
     return this.getOption('url')
   }
@@ -198,6 +212,7 @@ class Shariff {
         $shareLink.attr('data-rel', 'popup')
       } else if (service.blank) {
         $shareLink.attr('target', '_blank')
+        $shareLink.attr('rel', 'noopener noreferrer')
       }
       $shareLink.attr('title', this.getLocalized(service, 'title'))
 
