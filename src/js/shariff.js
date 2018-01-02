@@ -198,6 +198,7 @@ class Shariff {
         $shareLink.attr('data-rel', 'popup')
       } else if (service.blank) {
         $shareLink.attr('target', '_blank')
+        $shareLink.attr('rel', 'noopener noreferrer')
       }
       $shareLink.attr('title', this.getLocalized(service, 'title'))
 
