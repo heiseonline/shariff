@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v2.1.0, 2018-01-02
 
 - Added VK service. (dennis95stumm)
 - Added Telegram service. (dennis95stumm)
