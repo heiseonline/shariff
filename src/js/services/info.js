@@ -2,8 +2,8 @@
 
 module.exports = function(shariff) {
   return {
-    blank: true,
-    popup: false,
+    blank: shariff.getInfoDisplayBlank(),
+    popup: shariff.getInfoDisplayPopup(),
     shareText: 'Info',
     name: 'info',
     faName: 'fa-info',
