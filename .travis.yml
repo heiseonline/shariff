@@ -24,19 +24,11 @@ before_deploy:
 deploy:
   - provider: releases
     api_key:
-      secure: "QK+97CEzaL5FwA09hs7II9PnBKn1KRUUOLtmGnIw83FiqI5dUtAfPxe0WuA9dwIVX9FKOtPacn5nSoPb0LVvWwdTxGN2DOnYrUW8pIsPGng1Z5kbD2feJdTIeXkVmKb8JYssq76L7O6SyXQbkrbYq6KmrjFH9bEEpGlcUOyKY+k="
+      secure: "H6X2U+rjwgA9ieP48oeCEGMGmXDq//GhFQctJYY8cRGSmDMfG2roOP0pPY8aK0+y5JDaQg/AI8YNBNyaqiAwiVyYiGdnnmlcyCjXE6cMxObf+1MU98ncCuZUfkK9poq7VzrjYlnT0u1pCMBzgCNUxQNxn+QXZI+RbGHxvQzsnlHAU5SjQWLqi/jB4trCjeyeYbEhI+cRoE86IqzEmVBCUGnH+7XB0P6qUOVYKh2HquUGiRFN7OZyj3o03xzaBhrBnucn5hc8QhnJ2aR+GBmFw09NMxfARGkiU81TcnsluurFi0jrRYxpQbttIHHPJ0Jn+ExzzbqeUzZA6gM8tQU3dJLUU7Z9Y6RmT9z5iQBG5bq6BTMv6r3zfata2pU7d3WDjstXVDfDrh5EC471U4Lh16wqdAgNhbYTn+fp3uuiRyDNbF7TPbwmStGYo5wMevFOYsr+c8V+hc2qdyJp44I/6abAp/Ytbo4n26hKJZitWRzklVMbpHche2fRAHFN6MdhOgjFcJGJiO4LBEmbR8TXTPia5GIMO+Ejk6m4oB/7hCYA6+R2hPcxSnz1SpQVBYi4WA2Y7diH7ahmraY/ccPhd5V3JjrG03LQFBuu+F+FyOuIW2w6PaKWjKg7vxwcJcGomhm1hs5hHb2yx9r9/YB8qevpM4NtcxlZhcPjHLsSmTw="
     file:
       - $BASE_NAME.zip
       - $BASE_NAME.tar.gz
     skip_cleanup: true
     on:
-      repo: heiseonline/shariff
-      tags: true
-  - provider: npm
-    email: npmjs@heise.de
-    api_key:
-      secure: "hbiJOthZutV4G+4FidwK4XfDPPNXgdwWMeWjaFJueFdNwm5ifwnRl4CbSjPSW1os+0qRNF6HRFJbeRcZllqqQQfCSJB0fqB3AWFiSqvXzw+aJgO83EzEIxKSAD70/R+HME+ZX/JopBvFDe4mrsWGZk92kY2R/BS986yktIKGjJk="
-    skip_cleanup: true
-    on:
-      repo: heiseonline/shariff
+      repo: richard67/shariff-plus
       tags: true
