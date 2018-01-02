@@ -59,6 +59,6 @@ module.exports = function(shariff) {
       'tr': 'Telegram\'ta paylaş',
       'zh': '在Telegram上分享'
     },
-    shareUrl: 'https://t.me/share/url?url='+ url + shariff.getReferrerTrack()
+    shareUrl: 'https://t.me/share/url?url=' + url + shariff.getReferrerTrack()
   }
 }
