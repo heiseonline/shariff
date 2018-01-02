@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- Added VK service. (dennis95stumm)
+- Added Telegram service. (dennis95stumm)
+- Added display options to info service. (richard67)
+- Added documentation for info service. (richard67)
+- Improved demo. (richard67)
+- Improved security of links with `target="_blank"`. (richard67)
+- Removed references to Twitter backend from documentation. (richard67)
+
 ## v2.0.4, 2017-11-03
 
 - Fixed deployment to GitHub.
