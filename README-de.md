@@ -160,7 +160,8 @@ Shariff-Plus unterstützt folgende Social-Sharing-Services:
 Zusätzlich stellt der Service `facebooklike` einen Button zur Anzeige des Buttons "Gefällt mir" von Facebook bereit.
 
 Schließlich stellt der Service `Info` einen Button zur Anzeige einer Infoseite über die Social-Sharing-Buttons bereit.
-Die URL dieser Seite kann mit einer Option festgelegt werden. Standardwert: `http://ct.de/-2467514`, d.h. der c't-Artikel zur Einführung von Shariff.
+Die URL dieser Seite kann mit einer Option festgelegt werden. Standardwert: `https://www.richard-fath.de/en/software/shariff-plus.html`, das ist die englische Version der Shariff-Plus-Projekt-Homepage.
+Die Projekt-Homepage ist auch auf [Deutsch](https://www.richard-fath.de/de/software/shariff-plus.html) und [Russisch](https://www.richard-fath.de/ru/software/shariff-plus.html) verfügbar.
 
 ## Backends
 
