@@ -179,4 +179,4 @@ Die URL, unter der das Backend erreichbar ist, muss im `data`-Attribut `data-bac
 
 ## Drittanbieter-Integrationen
 
-Es gibt noch Shariff-Plus-Integrationen für Drittanbieter-Systeme.
+Es gibt noch keine Shariff-Plus-Integrationen in Drittanbieter-Software.
