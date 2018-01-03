@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.1, 2018-01-03
+
+- Fixed missing `dist` directory.
+
 ## v2.1.0, 2018-01-02
 
 - Added VK service. (dennis95stumm)
