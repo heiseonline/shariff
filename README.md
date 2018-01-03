@@ -161,7 +161,8 @@ Shariff-Plus supports the following social sharing services:
 In addition, the service `facebooklike` provides a button to show the Facebook "Like" button in a dialog.
 
 Finally, the service `Info` provides a button to show an info page about the social sharing buttons.
-The URL of this page can be set with an option. Default value: `http://ct.de/-2467514`, i.e. the c't article introducing Shariff. 
+The URL of this page can be set with an option. Default value: `https://www.richard-fath.de/en/software/shariff-plus.html`, which is the English version of the Shariff-Plus project homepage.
+The project homepage is also available in [German](https://www.richard-fath.de/de/software/shariff-plus.html) and [Russian](https://www.richard-fath.de/ru/software/shariff-plus.html).
 
 ## Backends
 
