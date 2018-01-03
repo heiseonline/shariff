@@ -2,15 +2,15 @@
 
 ## v1.0.6, 2018-01-03
 
-- Use Serbian language for facebooklike "Close" button if Shariff language is Serbian ([#11](https://github.com/richard67/shariff-plus/pull/11)).
+- Use Serbian language for facebooklike "Close" button if Shariff-Plus language is Serbian ([#11](https://github.com/richard67/shariff-plus/pull/11)).
 
 - Remove locale for Facebook "like" button ([#12](https://github.com/richard67/shariff-plus/pull/12)).
 
 - Remove case insensivity from check of the data-info-display option ([#13](https://github.com/richard67/shariff-plus/pull/13)).
 
-- Fetched from Shariff 2.1.0 and 2.1.1: Add VK and Telegram services (https://github.com/heiseonline/shariff/pull/279](https://github.com/heiseonline/shariff/pull/279)).
+- Fetched from Shariff 2.1.0 and 2.1.1: Add VK and Telegram services ([https://github.com/heiseonline/shariff/pull/279](https://github.com/heiseonline/shariff/pull/279)).
 
-All other changes from Shariff 2.1.0 and 2.1.1 have been implemented in SHariff-Plus in a previous version.
+All other changes from Shariff 2.1.0 and 2.1.1 have been implemented in Shariff-Plus in a previous version.
 
 So this version of Shariff-Plus is equal to Shariff 2.1.1 plus the `facebooklike` service.
 
