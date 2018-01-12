@@ -214,6 +214,7 @@ class Shariff {
         $shareLink.attr('data-rel', 'popup')
       } else if (service.blank) {
         $shareLink.attr('target', '_blank')
+        if (attrRel) attrRel += ' '
         attrRel += 'noopener noreferrer'
       }
 
