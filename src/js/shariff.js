@@ -204,6 +204,8 @@ class Shariff {
         .attr('href', service.shareUrl)
         .append($shareText)
 
+      var attrRel = service.name === 'info' ? '' : 'nofollow'
+
       if (typeof service.faName !== 'undefined') {
         $shareLink.prepend($('<span/>').addClass(`fa ${service.faName}`))
       }
@@ -212,8 +214,14 @@ class Shariff {
         $shareLink.attr('data-rel', 'popup')
       } else if (service.blank) {
         $shareLink.attr('target', '_blank')
-        $shareLink.attr('rel', 'noopener noreferrer')
+        if (attrRel) attrRel += ' '
+        attrRel += 'noopener noreferrer'
       }
+
+      if (attrRel) {
+        $shareLink.attr('rel', attrRel)
+      }
+
       $shareLink.attr('title', this.getLocalized(service, 'title'))
 
       // add attributes for screen readers
