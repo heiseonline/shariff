@@ -137,6 +137,6 @@ module.exports = function(shariff) {
     },
     shareUrl: 'javascript:void(0);',
     dialogHtml: dialogHtml,
-    dialogCssUrl: shariff.getDialogsMediaUrl() + '/facebooklike_dlg.css'
+    dialogCssUrl: shariff.getDialogsMediaUrl() + '/' + shariff.getFacebooklikeCss()
   }
 }
