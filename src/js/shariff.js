@@ -56,6 +56,8 @@ const Defaults = {
 
   facebookCountBtn: 'both',
 
+  facebooklikeCss: 'facebooklike_dlg.css',
+
   facebooklikeOptions: { width: 450, layout: 'standard', action: 'like', size: 'large', show_faces: true, share: true, appId: null },
 
   title: function() {
@@ -182,6 +184,10 @@ class Shariff {
 
   getDialogsMediaUrl() {
     return this.options.dialogsMediaUrl || ''
+  }
+
+  getFacebooklikeCss() {
+    return this.options.facebooklikeCss
   }
 
   getFacebooklikeOptions() {
