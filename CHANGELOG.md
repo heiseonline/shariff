@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.7, 2018-01-14
+
+- Open telegram in a popup (see [https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14](https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14)).
+
+- Add option data-facebooklike-css ([#14](https://github.com/richard67/shariff-plus/pull/14)).
+
+- Add rel="nofollow" to all sharing buttons' links ([#15](https://github.com/richard67/shariff-plus/pull/15), see also [https://github.com/heiseonline/shariff/pull/283](https://github.com/heiseonline/shariff/pull/283) for [heiseonline/shariff](https://github.com/heiseonline/shariff)).
+
+This version 1.0.7 of Shariff-Plus is equal to Shariff 2.1.1 plus
+- the `facebooklike` service
+- Open telegram in a popup
+- Add rel="nofollow" to all sharing buttons' links
+
 ## v1.0.6, 2018-01-03
 
 - Use Serbian language for facebooklike "Close" button if Shariff-Plus language is Serbian ([#11](https://github.com/richard67/shariff-plus/pull/11)).
