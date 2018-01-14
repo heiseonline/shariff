@@ -254,9 +254,18 @@ class Shariff {
 
       if (service.popup) {
         $shareLink.attr('data-rel', 'popup')
+        if (service.name !== 'info') {
+          $shareLink.attr('rel', 'nofollow')
+        }
       } else if (service.blank) {
         $shareLink.attr('target', '_blank')
-        $shareLink.attr('rel', 'noopener noreferrer')
+        if (service.name === 'info') {
+          $shareLink.attr('rel', 'noopener noreferrer')
+        } else {
+          $shareLink.attr('rel', 'nofollow noopener noreferrer')
+        }
+      } else if (service.name !== 'info') {
+        $shareLink.attr('rel', 'nofollow')
       }
       $shareLink.attr('title', this.getLocalized(service, 'title'))
 
