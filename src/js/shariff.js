@@ -56,6 +56,8 @@ const Defaults = {
 
   facebookCountBtn: 'both',
 
+  facebooklikeCss: 'facebooklike_dlg.css',
+
   facebooklikeOptions: { width: 450, layout: 'standard', action: 'like', size: 'large', show_faces: true, share: true, appId: null },
 
   title: function() {
@@ -184,6 +186,10 @@ class Shariff {
     return this.options.dialogsMediaUrl || ''
   }
 
+  getFacebooklikeCss() {
+    return this.options.facebooklikeCss
+  }
+
   getFacebooklikeOptions() {
     return this.options.facebooklikeOptions
   }
@@ -248,9 +254,18 @@ class Shariff {
 
       if (service.popup) {
         $shareLink.attr('data-rel', 'popup')
+        if (service.name !== 'info') {
+          $shareLink.attr('rel', 'nofollow')
+        }
       } else if (service.blank) {
         $shareLink.attr('target', '_blank')
-        $shareLink.attr('rel', 'noopener noreferrer')
+        if (service.name === 'info') {
+          $shareLink.attr('rel', 'noopener noreferrer')
+        } else {
+          $shareLink.attr('rel', 'nofollow noopener noreferrer')
+        }
+      } else if (service.name !== 'info') {
+        $shareLink.attr('rel', 'nofollow')
       }
       $shareLink.attr('title', this.getLocalized(service, 'title'))
 
