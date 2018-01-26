@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.1.2, 2018-01-26
+
+- Fixed SEO friendliness by adding `rel="nofollow"` to all button links. (richard67)
+- Fixed Telegram service not opening in a popup.
+
 ## v2.1.1, 2018-01-03
 
 - Fixed missing `dist` directory.

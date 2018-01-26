@@ -3,7 +3,7 @@
 To prepare a release you have to do the following tasks:
 
 1. Run `git flow release start [version]`.
-2. Bump versions in `package.json` and `bower.json`.
+2. Bump versions in `package.json`.
 3. Update [CHANGELOG.md](CHANGELOG.md).
 2. Run `git flow release finish`.
 
