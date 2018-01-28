@@ -8,7 +8,7 @@ Facebook, Google+ and Twitter supply official code snippets for their buttons wh
 
 **Shariff** `(/ˈʃɛɹɪf/)` is an open-source, low-maintenance, high-privacy solution maintained by German computer magazine c't and heise online.
 
-Shariff consists of two parts: a simple JavaScript client library and an optional server-side component. The latter fetches the number of likes and plus-ones. Share buttons and share counts work without a connection between your visitors' browsers and *social networks* (unless they decide to share, of course).
+Shariff consists of two parts: a simple JavaScript client library and an optional server-side component. The latter fetches the number of likes or shares. Share buttons and share counts work without a connection between your visitors' browsers and *social networks* (unless they decide to share, of course).
 
 **Shariff-Plus** is maintained by [me](https://github.com/richard67). It can be used instead of the Shariff JavaScript client library and optionally uses the original Shariff's server-side component.
 
