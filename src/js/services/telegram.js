@@ -7,6 +7,7 @@ module.exports = function(shariff) {
     popup: true,
     shareText: {
       'bg': 'cподеляне',
+      'cs': 'sdílet',
       'da': 'del',
       'de': 'teilen',
       'en': 'share',
@@ -35,6 +36,7 @@ module.exports = function(shariff) {
     faName: 'fa-telegram',
     title: {
       'bg': 'Сподели в Telegram',
+      'cs': 'Sdílet na Telegramu',
       'da': 'Del på Telegram',
       'de': 'Bei Telegram teilen',
       'en': 'Share on Telegram',

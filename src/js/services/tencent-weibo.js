@@ -9,6 +9,7 @@ module.exports = function(shariff) {
     popup: true,
     shareText: {
       'bg': 'cподеляне',
+      'cs': 'sdílet',
       'da': 'del',
       'de': 'teilen',
       'en': 'share',
@@ -36,6 +37,7 @@ module.exports = function(shariff) {
     name: 'tencent-weibo',
     faName: 'fa-tencent-weibo',
     title: {
+      'cs': 'Sdílet na tencent weibo',
       'de': 'Bei tencent weibo teilen',
       'en': 'Share on tencent weibo',
       'zh': '分享至腾讯微博'

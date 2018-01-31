@@ -20,6 +20,7 @@ module.exports = function(shariff) {
     faName: 'fa-envelope',
     title: {
       'bg': 'Изпрати по имейл',
+      'cs': 'Poslat mailem',
       'da': 'Sende via e-mail',
       'de': 'Per E-Mail versenden',
       'en': 'Send by email',
