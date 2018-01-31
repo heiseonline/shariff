@@ -9,6 +9,7 @@ module.exports = function(shariff) {
     faName: 'fa-info',
     title: {
       'bg': 'Повече информация',
+      'cs': 'Více informací',
       'da': 'Flere oplysninger',
       'de': 'Weitere Informationen',
       'en': 'More information',
