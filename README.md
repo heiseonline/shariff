@@ -159,12 +159,12 @@ The URL of this page can be set with an option. Default value: `http://ct.de/-24
 
 ## Backends
 
-In order to display share counts with Shariff, you need one of the following backends:
+In order to display share counts with Shariff, you need the following backend:
 
-* [shariff-backend-perl](http://github.com/heiseonline/shariff-backend-perl)
 * [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
 
 Third-party backends:
+
 * [shariff-backend-java](http://github.com/headissue/shariff-backend-java)
 
 Once you have one of these backends up and running, insert its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, the `data-backend-url` should be `/my-shariff-backend/`. The script will handle the rest.
