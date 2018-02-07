@@ -159,7 +159,6 @@ Die URL dieser Seite kann mit einer Option festgelegt werden. Standardwert: `htt
 
 Wenn in den Shariff-Buttons die Share-Counts angezeigt werden sollen, wird eines der folgenden Backends benötigt:
 
-* [shariff-backend-node](http://github.com/heiseonline/shariff-backend-node)
 * [shariff-backend-perl](http://github.com/heiseonline/shariff-backend-perl)
 * [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
 

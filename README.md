@@ -161,7 +161,6 @@ The URL of this page can be set with an option. Default value: `http://ct.de/-24
 
 In order to display share counts with Shariff, you need one of the following backends:
 
-* [shariff-backend-node](http://github.com/heiseonline/shariff-backend-node)
 * [shariff-backend-perl](http://github.com/heiseonline/shariff-backend-perl)
 * [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
 
