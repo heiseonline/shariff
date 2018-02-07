@@ -9,6 +9,7 @@ module.exports = function(shariff) {
     popup: true,
     shareText: {
       'bg': 'cподеляне',
+      'cs': 'sdílet',
       'da': 'del',
       'de': 'teilen',
       'en': 'share',
@@ -36,6 +37,7 @@ module.exports = function(shariff) {
     name: 'qzone',
     faName: 'fa-qq',
     title: {
+      'cs': 'Sdílet na Qzone',
       'de': 'Bei Qzone teilen',
       'en': 'Share on Qzone',
       'zh': '分享至QQ空间'

@@ -13,6 +13,7 @@ module.exports = function(shariff) {
     popup: true,
     shareText: {
       'de': 'teilen',
+      'cs': 'sdílet',
       'en': 'share',
       'zh': '分享'
     },
@@ -20,6 +21,7 @@ module.exports = function(shariff) {
     faName: 'fa-asterisk',
     title: {
       'de': 'Bei Diaspora teilen',
+      'cs': 'Sdílet na Diaspora',
       'en': 'Share on Diaspora',
       'zh': '分享至Diaspora'
     },

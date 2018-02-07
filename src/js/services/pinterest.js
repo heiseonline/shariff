@@ -25,6 +25,7 @@ module.exports = function(shariff) {
     name: 'pinterest',
     faName: 'fa-pinterest-p',
     title: {
+      'cs': 'Přidat na Pinterest',
       'de': 'Bei Pinterest pinnen',
       'en': 'Pin it on Pinterest',
       'es': 'Compartir en Pinterest',

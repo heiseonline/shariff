@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Added czech translations. (mat-hew1)
+
 ## v2.1.2, 2018-01-26
 
 - Fixed SEO friendliness by adding `rel="nofollow"` to all button links. (richard67)
