@@ -177,7 +177,6 @@ The project homepage is also available in [German](https://www.richard-fath.de/d
 
 In order to display share counts with Shariff-Plus, you need one of the following Shariff backends:
 
-* [shariff-backend-node](http://github.com/heiseonline/shariff-backend-node)
 * [shariff-backend-perl](http://github.com/heiseonline/shariff-backend-perl)
 * [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
 

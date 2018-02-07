@@ -176,7 +176,6 @@ Die Projekt-Homepage ist auch auf [Deutsch](https://www.richard-fath.de/de/softw
 
 Wenn in den Shariff-Plus-Buttons die Share-Counts angezeigt werden sollen, wird eines der folgenden Shariff-Backends benötigt:
 
-* [shariff-backend-node](http://github.com/heiseonline/shariff-backend-node)
 * [shariff-backend-perl](http://github.com/heiseonline/shariff-backend-perl)
 * [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
 
