@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Added czech translations. (mat-hew1)
+- Removed G+ counter from documentation and demo. (richard67)
 
 ## v2.1.2, 2018-01-26
 
