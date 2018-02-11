@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Remove GooglePlus counter from demo and docs ([#16](https://github.com/richard67/shariff-plus/pull/16), see also [heiseonline#286](https://github.com/heiseonline/shariff/pull/286).
+- Remove GooglePlus counter from demo and docs ([#16](https://github.com/richard67/shariff-plus/pull/16), see also [heiseonline#286](https://github.com/heiseonline/shariff/pull/286)).
 
 - Show differences between Shariff-Plus and Shariff in documents ([#17](https://github.com/richard67/shariff-plus/pull/17)).
 
@@ -18,7 +18,7 @@
 
 - Add option data-facebooklike-css ([#14](https://github.com/richard67/shariff-plus/pull/14)).
 
-- Add rel="nofollow" to all sharing buttons' links ([#15](https://github.com/richard67/shariff-plus/pull/15), see also [heiseonline#283](https://github.com/heiseonline/shariff/pull/283).
+- Add rel="nofollow" to all sharing buttons' links ([#15](https://github.com/richard67/shariff-plus/pull/15), see also [heiseonline#283](https://github.com/heiseonline/shariff/pull/283)).
 
 This version 1.0.7 of Shariff-Plus is equal to Shariff 2.1.1 plus
 - the `facebooklike` service
