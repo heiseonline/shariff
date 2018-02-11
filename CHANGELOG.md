@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+- Remove GooglePlus counter from demo and docs ([#16](https://github.com/richard67/shariff-plus/pull/16), see also [https://github.com/heiseonline/shariff/pull/286](https://github.com/heiseonline/shariff/pull/286) for [heiseonline/shariff](https://github.com/heiseonline/shariff)).
+
+- Show differences between Shariff-Plus and Shariff in documents ([#17](https://github.com/richard67/shariff-plus/pull/17)).
+
+- Added czech translations ([https://github.com/heiseonline/shariff/pull/287](https://github.com/heiseonline/shariff/pull/287)).
+
+- Remove node backend from readme (see [https://github.com/heiseonline/shariff/commit/96f45f2df2dddec3fac3a9e9a240c60efe698df2](https://github.com/heiseonline/shariff/commit/96f45f2df2dddec3fac3a9e9a240c60efe698df2)).
+
+- Remove perl backend from readme (see [https://github.com/heiseonline/shariff/commit/7a8bc9a7205f3f915d9356888b63a65c4a5eace2](https://github.com/heiseonline/shariff/commit/7a8bc9a7205f3f915d9356888b63a65c4a5eace2)).
+
 ## v1.0.7, 2018-01-14
 
 - Open telegram in a popup (see [https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14](https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14)).
