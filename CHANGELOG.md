@@ -8,22 +8,19 @@
 
 - Added czech translations ([heiseonline#287](https://github.com/heiseonline/shariff/pull/287)).
 
-- Remove node backend from readme (see [heiseonline/shariff/commit/96f45f2df2dddec3fac3a9e9a240c60efe698df2](https://github.com/heiseonline/shariff/commit/96f45f2df2dddec3fac3a9e9a240c60efe698df2)).
+- Remove node backend from readme ([heiseonline/shariff@96f45f2](https://github.com/heiseonline/shariff/commit/96f45f2df2dddec3fac3a9e9a240c60efe698df2)).
 
-- Remove perl backend from readme (see [heiseonline/shariff/commit/7a8bc9a7205f3f915d9356888b63a65c4a5eace2](https://github.com/heiseonline/shariff/commit/7a8bc9a7205f3f915d9356888b63a65c4a5eace2)).
+- Remove perl backend from readme ([heiseonline/shariff@7a8bc9a](https://github.com/heiseonline/shariff/commit/7a8bc9a7205f3f915d9356888b63a65c4a5eace2)).
 
 ## v1.0.7, 2018-01-14
 
-- Open telegram in a popup (see [heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14](https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14)).
+- Open telegram in a popup ([heiseonline/shariff@1555a72](https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14)).
 
 - Add option data-facebooklike-css ([#14](https://github.com/richard67/shariff-plus/pull/14)).
 
 - Add rel="nofollow" to all sharing buttons' links ([#15](https://github.com/richard67/shariff-plus/pull/15), see also [heiseonline#283](https://github.com/heiseonline/shariff/pull/283)).
 
-This version 1.0.7 of Shariff-Plus is equal to Shariff 2.1.1 plus
-- the `facebooklike` service
-- Open telegram in a popup
-- Add rel="nofollow" to all sharing buttons' links
+This version 1.0.7 of Shariff-Plus is equal to Shariff 2.1.2 plus the `facebooklike` service.
 
 ## v1.0.6, 2018-01-03
 
@@ -61,7 +58,7 @@ Fixed npm deployment.
 
 ## v1.0.1, 2017-12-22
 
-- Remove twitter backend from docs and demo (see [heiseonline#276](https://github.com/heiseonline/shariff/pull/276)).
+- Remove twitter backend from docs and demo ([heiseonline#276](https://github.com/heiseonline/shariff/pull/276)).
 
 - Add facebooklike to demo ([#4](https://github.com/richard67/shariff-plus/pull/4)).
 
