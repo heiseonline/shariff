@@ -12,6 +12,10 @@
 
 - Remove perl backend from readme ([heiseonline/shariff@7a8bc9a](https://github.com/heiseonline/shariff/commit/7a8bc9a7205f3f915d9356888b63a65c4a5eace2)).
 
+- Fixed handling of `data-mail-subject` ([heiseonline#291](https://github.com/heiseonline/shariff/pull/291)).
+
+- Improved distinguishability of reddit icon ([heiseonline#293](https://github.com/heiseonline/shariff/pull/293)).
+
 ## v1.0.7, 2018-01-14
 
 - Open telegram in a popup ([heiseonline/shariff@1555a72](https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14)).
