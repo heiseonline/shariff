@@ -17,7 +17,7 @@ module.exports = function(shariff) {
       'zh': '分享',
     },
     name: 'reddit',
-    faName: 'fa-reddit',
+    faName: 'fa-reddit-alien',
     title: {
       'cs': 'Sdílet na Redditu',
       'de': 'Bei Reddit teilen',
