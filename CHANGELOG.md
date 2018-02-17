@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.0.8, 2018-02-17
 
 - Remove GooglePlus counter from demo and docs ([#16](https://github.com/richard67/shariff-plus/pull/16), see also [heiseonline#286](https://github.com/heiseonline/shariff/pull/286)).
 
@@ -19,6 +19,8 @@ Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
 - Fixed handling of `data-mail-subject` ([heiseonline#291](https://github.com/heiseonline/shariff/pull/291)).
 
 - Improved distinguishability of reddit icon ([heiseonline#293](https://github.com/heiseonline/shariff/pull/293)).
+
+This version 1.0.8 of Shariff-Plus is equal to Shariff 2.1.2 plus the `facebooklike` service plus the changes fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff) mentioned above, which will be included in the next Shariff release.
 
 ## v1.0.7, 2018-01-14
 
