@@ -5,6 +5,7 @@ module.exports = function(shariff) {
   return {
     popup: true,
     shareText: {
+      'cs': 'sdílet',
       'de': 'teilen',
       'en': 'share',
       'es': 'compartir',
@@ -17,6 +18,7 @@ module.exports = function(shariff) {
     name: 'xing',
     faName: 'fa-xing',
     title: {
+      'cs': 'Sdílet na XINGu',
       'de': 'Bei XING teilen',
       'en': 'Share on XING',
       'es': 'Compartir en XING',

@@ -1,17 +1,36 @@
 # Changelog
 
+## v1.0.8, 2018-02-17
+
+- Remove GooglePlus counter from demo and docs ([#16](https://github.com/richard67/shariff-plus/pull/16), see also [heiseonline#286](https://github.com/heiseonline/shariff/pull/286)).
+
+- Show differences between Shariff-Plus and Shariff in documents ([#17](https://github.com/richard67/shariff-plus/pull/17)).
+
+- Add facebooklike to the default services, change default info url to German version so it fits to the language default, and let default button for Facebook counter be the facebooklike button ([#18](https://github.com/richard67/shariff-plus/pull/18)).
+
+Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
+
+- Added czech translations ([heiseonline#287](https://github.com/heiseonline/shariff/pull/287)).
+
+- Remove node backend from readme ([heiseonline/shariff@96f45f2](https://github.com/heiseonline/shariff/commit/96f45f2df2dddec3fac3a9e9a240c60efe698df2)).
+
+- Remove perl backend from readme ([heiseonline/shariff@7a8bc9a](https://github.com/heiseonline/shariff/commit/7a8bc9a7205f3f915d9356888b63a65c4a5eace2)).
+
+- Fixed handling of `data-mail-subject` ([heiseonline#291](https://github.com/heiseonline/shariff/pull/291)).
+
+- Improved distinguishability of reddit icon ([heiseonline#293](https://github.com/heiseonline/shariff/pull/293)).
+
+This version 1.0.8 of Shariff-Plus is equal to Shariff 2.1.2 plus the `facebooklike` service plus the changes fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff) mentioned above, which will be included in the next Shariff release.
+
 ## v1.0.7, 2018-01-14
 
-- Open telegram in a popup (see [https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14](https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14)).
+- Open telegram in a popup ([heiseonline/shariff@1555a72](https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14)).
 
 - Add option data-facebooklike-css ([#14](https://github.com/richard67/shariff-plus/pull/14)).
 
-- Add rel="nofollow" to all sharing buttons' links ([#15](https://github.com/richard67/shariff-plus/pull/15), see also [https://github.com/heiseonline/shariff/pull/283](https://github.com/heiseonline/shariff/pull/283) for [heiseonline/shariff](https://github.com/heiseonline/shariff)).
+- Add rel="nofollow" to all sharing buttons' links ([#15](https://github.com/richard67/shariff-plus/pull/15), see also [heiseonline#283](https://github.com/heiseonline/shariff/pull/283)).
 
-This version 1.0.7 of Shariff-Plus is equal to Shariff 2.1.1 plus
-- the `facebooklike` service
-- Open telegram in a popup
-- Add rel="nofollow" to all sharing buttons' links
+This version 1.0.7 of Shariff-Plus is equal to Shariff 2.1.2 plus the `facebooklike` service.
 
 ## v1.0.6, 2018-01-03
 
@@ -21,7 +40,7 @@ This version 1.0.7 of Shariff-Plus is equal to Shariff 2.1.1 plus
 
 - Remove case insensivity from check of the data-info-display option ([#13](https://github.com/richard67/shariff-plus/pull/13)).
 
-- Fetched from Shariff 2.1.0 and 2.1.1: Add VK and Telegram services ([https://github.com/heiseonline/shariff/pull/279](https://github.com/heiseonline/shariff/pull/279)).
+- Fetched from Shariff 2.1.0 and 2.1.1: Add VK and Telegram services ([heiseonline#279](https://github.com/heiseonline/shariff/pull/279)).
 
 All other changes from Shariff 2.1.0 and 2.1.1 have been implemented in Shariff-Plus in a previous version.
 
@@ -49,7 +68,7 @@ Fixed npm deployment.
 
 ## v1.0.1, 2017-12-22
 
-- Remove twitter backend from docs and demo (see [heiseonline#276](https://github.com/heiseonline/shariff/pull/276)).
+- Remove twitter backend from docs and demo ([heiseonline#276](https://github.com/heiseonline/shariff/pull/276)).
 
 - Add facebooklike to demo ([#4](https://github.com/richard67/shariff-plus/pull/4)).
 

@@ -14,6 +14,7 @@ module.exports = function(shariff) {
   var fblikeOptions = shariff.getFacebooklikeOptions()
   switch (shariffLang) {
   case 'bg': dialogClose = 'Близо'; break
+  case 'cs': dialogClose = 'Zavřít'; break
   case 'da': dialogClose = 'Luk'; break
   case 'de': dialogClose = 'Schließen'; break
   case 'es': dialogClose = 'Cerrar'; break
@@ -83,6 +84,7 @@ module.exports = function(shariff) {
     popup: true,
     shareText: {
       'bg': 'харесвам',
+      'cs': 'to se mi líbí',
       'da': 'synes godt om',
       'de': 'gefällt mir',
       'en': 'like',
@@ -111,6 +113,7 @@ module.exports = function(shariff) {
     faName: 'fa-thumbs-up',
     title: {
       'bg': 'Харесвам/Вече не харесвам във Facebook',
+      'cs': 'To se mi líbí/už se mi to nelíbí na Facebooku',
       'da': 'Synes godt om/Fjern Synes godt om på Facebook',
       'de': 'Gefällt mir/Gefällt mir nicht mehr bei Facebook',
       'en': 'Like/Unlike on Facebook',

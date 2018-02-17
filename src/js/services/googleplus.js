@@ -6,6 +6,7 @@ module.exports = function(shariff) {
     popup: true,
     shareText: {
       'bg': 'cподеляне',
+      'cs': 'sdílet',
       'da': 'del',
       'de': 'teilen',
       'en': 'share',
@@ -34,6 +35,7 @@ module.exports = function(shariff) {
     faName: 'fa-google-plus',
     title: {
       'bg': 'Сподели в Google+',
+      'cs': 'Sdílet na Google+',
       'da': 'Del på Google+',
       'de': 'Bei Google+ teilen',
       'en': 'Share on Google+',
