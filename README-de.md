@@ -90,12 +90,12 @@ Unterschiede zu Shariff sind mit (1), (2) usw. markiert und werden unterhalb der
 |------------------|--------------|---------|
 | `data-backend-url` | Pfad zum Shariff-[Backend](#backends). Der Wert `null` deaktiviert die Anzeige von Share-Counts.  | `null` |
 | `data-dialogs-media-url` (1) | Pfad zu css oder js für spezielle Dialoge wie z.B. den des Services `facebooklike` Dies muss eine absolute URL sein. Beispiel: `https://www.example.com/shariff`. Dies erlaubt es, eigene css z.B. für den Dialog `facebooklike` zu verwenden. | Pfad zum Verzeichnis, in dem Shariff-Plus installiert ist. |
-| `data-facebook-count-btn` (1) | Die Buttons(s), die den Zähler vom Backend anzeigen sollen, wenn beide Services `facebook` und `facebooklike` verwendet werden. Werte: `like`, `share`, `both`. | `both` |
+| `data-facebook-count-btn` (1) | Die Buttons(s), die den Zähler vom Backend anzeigen sollen, wenn beide Services `facebook` und `facebooklike` verwendet werden. Werte: `like`, `share`, `both`. | `like` |
 | `data-facebooklike-css` (1) | Name der CSS-Datei für den Dialog `facebooklike`. Die Datei muss im dem Ordner vorhanden sein, der mit der Option `data-dialogs-media-url` festgelegt wird. Beispiel : `data-facebooklike-css="my-styles.css"`. | `facebooklike_dlg.css` |
 | `data-facebooklike-options` (1) | Objekt mit Optionen für den Button "Gefällt mir" von Facebook, wie sie der Facebook Konfigurator für den Button liefert. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Beispiel mit den Standardwerten von Facebook: `data-facebooklike-options="{&quot;width&quot;:450,&quot;layout&quot;:&quot;standard&quot;,&quot;action&quot;:&quot;like&quot;,&quot;size&quot;:&quot;large&quot;,&quot;show_faces&quot;:true,&quot;share&quot;:true,&quot;appId&quot;:&quot;99999&quot;}"` mit 99999 = Facebook `app_id`. | Siehe Beispiel, mit appId = Wert des Meta-Tags `fb:app_id` oder `null`, wenn nicht definiert. |
 | `data-flattr-category` | Kategorie für Flattr-Spende. | `null` |
 | `data-flattr-user` | Benutzer, der die Flattr-Spende erhält. | `null` |
-| `data-info-url` (2) | URL der Infoseite. | `https://www.richard-fath.de/en/software/shariff-plus.html` |
+| `data-info-url` (2) | URL der Infoseite. | `https://www.richard-fath.de/de/software/shariff-plus.html` |
 | `data-info-display` | Wie die Infoseite angezeigt wird. Werte: `blank`, `popup`, `self`. | `blank` |
 | `data-lang`      | Lokalisierung auswählen. Verfügbar: `bg`, `cs`, `de`, `en`, `es`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Body verwendet. Der Mail-Body-Text sollte den Platzhalter `{url}` enthalten. Dieser wird durch die zu teilende URL ersetzt. | siehe `data-url` |
@@ -169,8 +169,8 @@ Shariff-Plus unterstützt folgende Social-Sharing-Services:
 Zusätzlich stellt der Service `facebooklike` einen Button zur Anzeige des Buttons "Gefällt mir" von Facebook bereit.
 
 Schließlich stellt der Service `Info` einen Button zur Anzeige einer Infoseite über die Social-Sharing-Buttons bereit.
-Die URL dieser Seite kann mit einer Option festgelegt werden. Standardwert: `https://www.richard-fath.de/en/software/shariff-plus.html`, das ist die englische Version der Shariff-Plus-Projekt-Homepage.
-Die Projekt-Homepage ist auch auf [Deutsch](https://www.richard-fath.de/de/software/shariff-plus.html) und [Russisch](https://www.richard-fath.de/ru/software/shariff-plus.html) verfügbar.
+Die URL dieser Seite kann mit einer Option festgelegt werden. Standardwert: `https://www.richard-fath.de/de/software/shariff-plus.html`, das ist die deutsche Version der Shariff-Plus-Projekt-Homepage.
+Die Projekt-Homepage ist auch auf [Englisch](https://www.richard-fath.de/en/software/shariff-plus.html) und [Russisch](https://www.richard-fath.de/ru/software/shariff-plus.html) verfügbar.
 
 ## Backends
 
