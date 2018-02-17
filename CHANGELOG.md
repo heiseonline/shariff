@@ -6,6 +6,10 @@
 
 - Show differences between Shariff-Plus and Shariff in documents ([#17](https://github.com/richard67/shariff-plus/pull/17)).
 
+- Add facebooklike to the default services, change default info url to German version so it fits to the language default, and let default button for Facebook counter be the facebooklike button ([#18](https://github.com/richard67/shariff-plus/pull/18)).
+
+Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
+
 - Added czech translations ([heiseonline#287](https://github.com/heiseonline/shariff/pull/287)).
 
 - Remove node backend from readme ([heiseonline/shariff@96f45f2](https://github.com/heiseonline/shariff/commit/96f45f2df2dddec3fac3a9e9a240c60efe698df2)).
