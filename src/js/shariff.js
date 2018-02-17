@@ -20,7 +20,7 @@ const Defaults = {
   backendUrl: null,
 
   // Link to the "about" page
-  infoUrl: 'https://www.richard-fath.de/en/software/shariff-plus.html',
+  infoUrl: 'https://www.richard-fath.de/de/software/shariff-plus.html',
 
   // Type of display for the "about" page: "blank", "popup" or "self", default = "blank"
   infoDisplay: 'blank',
@@ -50,11 +50,11 @@ const Defaults = {
   referrerTrack: null,
 
   // services to be enabled in the following order
-  services: ['twitter', 'facebook', 'googleplus', 'info'],
+  services: ['twitter', 'facebooklike', 'facebook', 'googleplus', 'info'],
 
   dialogsMediaUrl: shariffPath,
 
-  facebookCountBtn: 'both',
+  facebookCountBtn: 'like',
 
   facebooklikeCss: 'facebooklike_dlg.css',
 

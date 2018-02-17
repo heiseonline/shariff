@@ -11,13 +11,15 @@ module.exports = function(shariff) {
   return {
     popup: true,
     shareText: {
+      'cs': 'sdílet',
       'de': 'teilen',
       'en': 'share',
       'zh': '分享',
     },
     name: 'reddit',
-    faName: 'fa-reddit',
+    faName: 'fa-reddit-alien',
     title: {
+      'cs': 'Sdílet na Redditu',
       'de': 'Bei Reddit teilen',
       'en': 'Share on Reddit',
       'zh': '分享至Reddit'

@@ -8,6 +8,7 @@ module.exports = function(shariff) {
     popup: true,
     shareText: {
       'de': 'mitteilen',
+      'cs': 'sdílet',
       'en': 'share',
       'es': 'compartir',
       'fi': 'Jaa',
@@ -34,6 +35,7 @@ module.exports = function(shariff) {
     faName: 'fa-linkedin',
     title: {
       'bg': 'Сподели в LinkedIn',
+      'cs': 'Sdílet na LinkedIn',
       'da': 'Del på LinkedIn',
       'de': 'Bei LinkedIn teilen',
       'en': 'Share on LinkedIn',

@@ -11,6 +11,7 @@ module.exports = function(shariff) {
   return {
     popup: true,
     shareText: {
+      'cs': 'sdílet',
       'de': 'teilen',
       'en': 'share',
       'zh': '分享'
@@ -18,6 +19,7 @@ module.exports = function(shariff) {
     name: 'stumbleupon',
     faName: 'fa-stumbleupon',
     title: {
+      'cs': 'Sdílet na Stumbleuponu',
       'de': 'Bei Stumbleupon teilen',
       'en': 'Share on Stumbleupon',
       'zh': '分享至Stumbleupon'

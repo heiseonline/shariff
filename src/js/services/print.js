@@ -10,6 +10,7 @@ module.exports = function(shariff) {
     popup: false,
     shareText: {
       'bg': '',
+      'cs': 'tlačit',
       'da': '',
       'de': 'drucken',
       'en': 'print',
@@ -36,6 +37,7 @@ module.exports = function(shariff) {
     },
     title: {
       'bg': '',
+      'cs': 'tlačit',
       'da': '',
       'de': 'drucken',
       'en': 'print',

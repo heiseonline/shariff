@@ -6,6 +6,7 @@ module.exports = function(shariff) {
     popup: true,
     shareText: {
       'bg': 'cподеляне',
+      'cs': 'sdílet',
       'da': 'del',
       'de': 'teilen',
       'en': 'share',
@@ -34,6 +35,7 @@ module.exports = function(shariff) {
     faName: 'fa-facebook',
     title: {
       'bg': 'Сподели във Facebook',
+      'cs': 'Sdílet na Facebooku',
       'da': 'Del på Facebook',
       'de': 'Bei Facebook teilen',
       'en': 'Share on Facebook',
