@@ -12,7 +12,7 @@ addons:
 
 env:
   global:
-    - BASE_NAME=shariff-$TRAVIS_TAG
+    - BASE_NAME=shariff-plus-$TRAVIS_TAG
 
 script:
   - npm run test
@@ -24,19 +24,19 @@ before_deploy:
 deploy:
   - provider: releases
     api_key:
-      secure: "QK+97CEzaL5FwA09hs7II9PnBKn1KRUUOLtmGnIw83FiqI5dUtAfPxe0WuA9dwIVX9FKOtPacn5nSoPb0LVvWwdTxGN2DOnYrUW8pIsPGng1Z5kbD2feJdTIeXkVmKb8JYssq76L7O6SyXQbkrbYq6KmrjFH9bEEpGlcUOyKY+k="
+      secure: "H6X2U+rjwgA9ieP48oeCEGMGmXDq//GhFQctJYY8cRGSmDMfG2roOP0pPY8aK0+y5JDaQg/AI8YNBNyaqiAwiVyYiGdnnmlcyCjXE6cMxObf+1MU98ncCuZUfkK9poq7VzrjYlnT0u1pCMBzgCNUxQNxn+QXZI+RbGHxvQzsnlHAU5SjQWLqi/jB4trCjeyeYbEhI+cRoE86IqzEmVBCUGnH+7XB0P6qUOVYKh2HquUGiRFN7OZyj3o03xzaBhrBnucn5hc8QhnJ2aR+GBmFw09NMxfARGkiU81TcnsluurFi0jrRYxpQbttIHHPJ0Jn+ExzzbqeUzZA6gM8tQU3dJLUU7Z9Y6RmT9z5iQBG5bq6BTMv6r3zfata2pU7d3WDjstXVDfDrh5EC471U4Lh16wqdAgNhbYTn+fp3uuiRyDNbF7TPbwmStGYo5wMevFOYsr+c8V+hc2qdyJp44I/6abAp/Ytbo4n26hKJZitWRzklVMbpHche2fRAHFN6MdhOgjFcJGJiO4LBEmbR8TXTPia5GIMO+Ejk6m4oB/7hCYA6+R2hPcxSnz1SpQVBYi4WA2Y7diH7ahmraY/ccPhd5V3JjrG03LQFBuu+F+FyOuIW2w6PaKWjKg7vxwcJcGomhm1hs5hHb2yx9r9/YB8qevpM4NtcxlZhcPjHLsSmTw="
     file:
       - $BASE_NAME.zip
       - $BASE_NAME.tar.gz
     skip_cleanup: true
     on:
-      repo: heiseonline/shariff
+      repo: richard67/shariff-plus
       tags: true
   - provider: npm
-    email: npmjs@heise.de
+    email: richard.fath@t-online.de
     api_key:
-      secure: "TukgzT1vc1Sli1cKVdVHdEen/89NqBDMgjSFe3iDr/oTulYE7sqR1JkdxX2M5lnCC53DqRnUK0mUs4mrWcZmHF+Q1ocVSuHDOi30iBvHQgV2SigV0Ufq3xwDG+yS4R7kPLEWlUVzn8kb6IXR+WC/QmkHWNRX6mkCnH0RjrqCja4="
+      secure: "T1G1Qoi4TT7opqhDwXiP17m21zVJJuTOU3/JkUGbN5gbaM9fW/Hil8yQpHE5CHLtkA7W8I+NMG3vaL6+Mp9cqoO1tP1THppR19bP7FR9r7t1Oi+9NHNrQk8G1oZaOeAHYdD3BPUT58f1VkwwEb/QLlzLV4IUwZjdHg4r7wTjc9tDRphfm3wbVKIo9A3+L6DpTiO0sAT4xeQsKKSvdwpOlM+tt/ruifr7slSmuq9kpmjwYLMxxi0xW0sDkTSDqXcdfITiWaQ+x/2D/0yLkSlyh3J+BUruB91V5tGSZv5LzSBv9nPVU1sZzmHYwYfAPjae3d26QGFPjPpsE7E8uAaobgACNKoqlACu0IvusfTBBB46D9l/eU3DTefVBMmxaV7v+nEAuNVWdQj2rLOmwLXuOB4p9bUhEQlP/vy5PrmN0VoWlAzebuGyfUQp0CcNRbeQ2DCgXGIBXXBqq452O2jcN38FYQ/uszl8Rts4jDluHlFHk7evkcHuG7vu2mDxol/L6L34nHCSDD/u6p59XTgvqKA0IGzmYXI53WPmb4wIZ3zULSe2hTEKtfKcM5K1QgojqapVo6Zf8EwPWkfm0Ox5PXvk2q5HFESWDhFCU3mVOZ884YSqIm8NE19jGUCrj6aHPA/wr1jNAiRIcdVrdIYKcp/Vv6j5EVyv4RvPt+OOUBE="
     skip_cleanup: true
     on:
-      repo: heiseonline/shariff
+      repo: richard67/shariff-plus
       tags: true

@@ -1,221 +1,70 @@
 # Changelog
 
-## v2.1.2, 2018-01-26
+## v1.0.7, 2018-01-14
 
-- Fixed SEO friendliness by adding `rel="nofollow"` to all button links. (richard67)
-- Fixed Telegram service not opening in a popup.
+- Open telegram in a popup (see [https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14](https://github.com/heiseonline/shariff/commit/1555a72ced1a0362f203f0c2eb3fe8f071b76c14)).
 
-## v2.1.1, 2018-01-03
+- Add option data-facebooklike-css ([#14](https://github.com/richard67/shariff-plus/pull/14)).
 
-- Fixed missing `dist` directory.
+- Add rel="nofollow" to all sharing buttons' links ([#15](https://github.com/richard67/shariff-plus/pull/15), see also [https://github.com/heiseonline/shariff/pull/283](https://github.com/heiseonline/shariff/pull/283) for [heiseonline/shariff](https://github.com/heiseonline/shariff)).
 
-## v2.1.0, 2018-01-02
+This version 1.0.7 of Shariff-Plus is equal to Shariff 2.1.1 plus
+- the `facebooklike` service
+- Open telegram in a popup
+- Add rel="nofollow" to all sharing buttons' links
 
-- Added VK service. (dennis95stumm)
-- Added Telegram service. (dennis95stumm)
-- Added display options to info service. (richard67)
-- Added documentation for info service. (richard67)
-- Improved demo. (richard67)
-- Improved security of links with `target="_blank"`. (richard67)
-- Removed references to Twitter backend from documentation. (richard67)
+## v1.0.6, 2018-01-03
 
-## v2.0.4, 2017-11-03
+- Use Serbian language for facebooklike "Close" button if Shariff-Plus language is Serbian ([#11](https://github.com/richard67/shariff-plus/pull/11)).
 
-- Fixed deployment to GitHub.
+- Remove locale for Facebook "like" button ([#12](https://github.com/richard67/shariff-plus/pull/12)).
 
-## v2.0.3, 2017-11-03
+- Remove case insensivity from check of the data-info-display option ([#13](https://github.com/richard67/shariff-plus/pull/13)).
 
-- Fixed bower `main` entry. ([#259](https://github.com/heiseonline/shariff/issues/259))
-- Removed zip files from npm build artifacts.
-- Removed deprecated `version` property from `bower.json`.
+- Fetched from Shariff 2.1.0 and 2.1.1: Add VK and Telegram services ([https://github.com/heiseonline/shariff/pull/279](https://github.com/heiseonline/shariff/pull/279)).
 
-## v2.0.2, 2017-11-02
+All other changes from Shariff 2.1.0 and 2.1.1 have been implemented in Shariff-Plus in a previous version.
 
-- Fixed bower `main` entry. ([#259](https://github.com/heiseonline/shariff/issues/259))
-- Updated build workflow in README.md. ([#259](https://github.com/heiseonline/shariff/issues/259))
+So this version of Shariff-Plus is equal to Shariff 2.1.1 plus the `facebooklike` service.
 
-## v2.0.1, 2017-10-25
+## v1.0.5, 2017-12-27
 
-- Fixed broken test call.
-- Upgraded dependencies.
+- Correct counter display for facebooklike in case if facebook is not enabled ([#10](https://github.com/richard67/shariff-plus/pull/10)).
 
-## v2.0.0, 2017-10-25
+## v1.0.4, 2017-12-26
 
-- Fixed IE 11 issues. ([#253](https://github.com/heiseonline/shariff/issues/253))
+- Remove wrong data-info-url from parameters listing in 3rd example of demo ([#8](https://github.com/richard67/shariff-plus/pull/8)).
 
-This release contains breaking changes:
+- Add new project homepage for Shariff-Plus to docs and package info and make this the default for the "data-info-url" parameter ([#9](https://github.com/richard67/shariff-plus/pull/9)).
 
-- Build artifacts were deleted from the repository. Instead, they get published to the npm registry in the `./dist` folder.
+## v1.0.3, 2017-12-24
 
-## v1.26.1, 2017-07-28
+Fixed npm deployment.
 
-* Added missing `./build` directory.([#246](https://github.com/heiseonline/shariff/issues/246))
+## v1.0.2, 2017-12-24
 
-## v1.26.0, 2017-07-28
+- Use getTitle() for facebooklike dialog heading ([#6](https://github.com/richard67/shariff-plus/pull/6)).
 
-* Added `npm run dev` command.
-* Added tests for the DOM library. (glaszig)
-* Added list of supported sharing services to READMEs.
-* Added `{url}` placeholder to `data-mail-body` option. (stephankellermayr)
-* Fixed Shariff to use `data-title` in favor of `meta[name=DC.title]` if present. ([#143](https://github.com/heiseonline/shariff/issues/143))
-* Fixed Twitter popup opening twice when a tweet is embedded on a page. (Nebel54)
-* Improved service initialization code. ([#188](https://github.com/heiseonline/shariff/issues/188))
-* Made DOM element creation consistent. ([#234](https://github.com/heiseonline/shariff/pull/234))
+- Add npm deployment for shariff-plus ([#7](https://github.com/richard67/shariff-plus/pull/7)).
 
-## 1.25.2 2017-06-13
+## v1.0.1, 2017-12-22
 
-* Restored the jQuery dependency for the min.js version. (liayn)
-* Added Kirby third party integration. (AndiLeni)
-* Added support for DOM-ready functions. (glaszig)
-* Updated dependencies. (liayn)
-* Fixed shariff initializing before DOM is ready. (theseer)
-* Fixed handling of images in pinterest service. (7oot)
-* Fixed MediaWiki third party integration link. (AndiLeni)
-* Fixed Internet Explorer 11 support. (glaszig, heppstux, liayn)
+- Remove twitter backend from docs and demo (see [heiseonline#276](https://github.com/heiseonline/shariff/pull/276)).
 
-## 1.25.1 2017-04-21
+- Add facebooklike to demo ([#4](https://github.com/richard67/shariff-plus/pull/4)).
 
-* RELEASE reverted!
-* Replaced jQuery with vanilla js. (glaszig)
-* Removed obsolete build artifact.
+- Correct facebooklike size calculations ([#5](https://github.com/richard67/shariff-plus/pull/5)).
 
-## 1.25.0 2017-04-21
+- Add links to the Shariff-Plus demo in documents.
 
-* RELEASE reverted!
+## v1.0.0, 2017-12-21
 
-## 1.24.1 2016-11-17
+- New option info display ([#2](https://github.com/richard67/shariff-plus/pull/2)).
 
-* Fixed mail body handling on some mobile devices.
-* Improved readability of README. (aranaur)
-* Changed dependency on jQuery to allow all 2.x.x versions. (MoritzKn)
-* Added MediaWiki third party integration. (stefahn)
+- Add rel="noopener noreferrer" if target="_blank" ([#3](https://github.com/richard67/shariff-plus/pull/3)).
 
-## 1.24.0 2016-06-29
+- Corrected base name for deployment.
 
-* Fixed flexbox bug for Safari (yellowled)
-* Added Weibo, Tencent-Weibo, Qzone services. (shls)
-* Added Serendipity third party integration. (ddeimeke)
+## v1.0.0-rc, 2017-12-21
 
-## v1.23.2 2016-05-09
-
-* Attached build artifacts to broken 1.23.1 release.
-
-## v1.23.1 2016-05-09
-
-* Updated various third party integrations in README. (McAtze, core23)
-* Fixed font path for demo site. (craiq)
-
-## v1.23.0 2016-01-27
-
-* Changed diaspora share url to official one. (Faldrian)
-* Clarified browser support in README.
-* Made button text more accessible.
-
-## v1.22.0 2016-01-19
-
-* Changed G+ text from "+1" to "share". (dlueth)
-* Fixed offset for new G+ fa-icon. (flowdee)
-
-## v1.21.0 2015-11-06
-
-* Added Threema service. (medienverbinder)
-* Added StumbleUpon service. (craiq)
-* Added Reddit service. (craiq)
-* Changed rel=popup to data-rel.
-
-## v1.20.0 2015-10-22
-
-* Added Diaspora* service. (craiq)
-* Added Flattr service to README.
-
-## v1.19.0 2015-10-20
-
-* Added Flattr service. (core23)
-* Added twitter option to README-de.
-
-## v1.18.0 2015-09-16
-
-* Added tumblr service. (medienverbinder)
-
-## v1.17.1 2015-09-11
-
-* Fixed github-release not pointing to the release commit.
-
-## v1.17.0 2015-09-11
-
-* Added addThis service. (bozana)
-* Added Open Graph Tag fallback for pinterest image. (creatoras)
-* Forced Font-Awesome to load via https. (kraftner)
-* Fixed shariff not using correct title tag in some cases. (kraftner)
-
-## v1.16.0 2015-07-13
-
-* Made license SPDX compatible.
-* Updated grunt-connect-proxy dependency. (medienverbinder)
-
-## v1.15.0 2015-06-30
-
-* Fixed pinterest link. (startef)
-* Added attributes for screen readers. (startef)
-
-## v1.14.0 2015-06-02
-
-* Added available languages to documentation. (liayn)
-* Added list of third-party integrations to documentation. (NeoBlack, joomla-agency)
-* Added translations for LinkedIn. (dominikmarks)
-* Fixed defaults of `data-services` in README.md. (liayn)
-* Fixed LinkedIn `shareUrl` not using TLS. (dasexil)
-
-## v1.13.0 2015-05-12
-
-* Added partial translations for `bg`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh`. (heppstux)
-* Fixed LinkedIn colors. (dmarks2)
-
-## v1.12.0 2015-05-08
-
-* Added linkedin service. (dmarks2)
-* Improved mail service to enable customization of subject and body.
-
-## v1.11.0 2015-04-30
-
-* Added pinterest service. (jsor)
-
-## v1.10.1 2015-04-30
-* Fixed encoding issue in twitter service with text longer than 120 chars. (wegewerk-mdt)
-* Fixed info button width in col <= 3.
-* Fixed typo in README.md. (nyze2oo9)
-
-## v1.10.0 2015-04-15
-* Added xing service. (osahner)
-* Fixed mailto links opening in new tabs.
-* Updated node dependencies.
-
-## v1.9.3 2015-04-08
-* Added missing shariff.min.css in release.
-
-## v1.9.2 2015-04-08
-* Made sure shariff element does not have any children on initialization.
-
-## v1.9.1 2015-04-08
-* Fixed bower integration.
-
-## v1.9.0 2015-04-08
-* Added custom title support.
-* Added Shariff class to global window object so it can be used without Node.js.
-* Updated node dependencies.
-
-## v1.8.0 2015-03-19
-* Added data-mail-url feature which enables customization of the mail service button.
-* Added language support for da, fr, it and nl. (mikejpr)
-* Added responsive layout.
-* Fixed bug in backend url detection. (liayn)
-* Fixed bug in service popups where popups did not open in IE. (doerler)
-
-## v1.7.3 2015-02-14
-* Fixed shariff-complete.css to use font-awesome CDN.
-
-## v1.7.1 2015-02-05
-* Fixed bug twitter via detection.
-
-## v1.7.0 2015-02-02
-* Added support for twitter via.
+- Initial version based on Shariff v2.0.4 from 2017-11-03
