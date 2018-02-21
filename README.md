@@ -85,7 +85,7 @@ $ npm run dev
 
 | Attribute        | Description | Default |
 |------------------|-------------|---------|
-| `data-backend-url` | The path to your Shariff backend, see below. Settings the value to `null` disables the backend feature. No counts will occur.  | `null` |
+| `data-backend-url` | The path to your Shariff backend, see below. Setting the value to `null` disables the backend feature. No counts will occur.  | `null` |
 | `data-flattr-category` | Category to be used for Flattr. | `null` |
 | `data-flattr-user` | User that receives Flattr donation. | `null` |
 | `data-info-url` | URL of the info page. | `http://ct.de/-2467514` |
