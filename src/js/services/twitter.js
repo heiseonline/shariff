@@ -34,12 +34,17 @@ module.exports = function(shariff) {
     popup: true,
     shareText: {
       'en': 'tweet',
-      'zh': '分享'
+      'ja': 'のつぶやき',
+      'ko': '짹짹',
+      'ru': 'твит',
+      'sr': 'твеет',
+      'zh': '鸣叫'
     },
     name: 'twitter',
     faName: 'fa-twitter',
     title: {
       'bg': 'Сподели в Twitter',
+      'cs': 'Sdílet na Twiiteru',
       'da': 'Del på Twitter',
       'de': 'Bei Twitter teilen',
       'en': 'Share on Twitter',

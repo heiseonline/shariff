@@ -5,7 +5,7 @@ module.exports = function(shariff) {
 
   // mailto: link? Add body and subject.
   if (url.indexOf('mailto:') === 0) {
-    url += '?subject=' + encodeURIComponent(shariff.getTitle())
+    url += '?subject=' + encodeURIComponent(shariff.getOption('mailSubject') || shariff.getTitle())
     url += '&body=' + encodeURIComponent(shariff.getOption('mailBody').replace(/\{url\}/i, shariff.getURL()))
   }
 
@@ -20,6 +20,7 @@ module.exports = function(shariff) {
     faName: 'fa-envelope',
     title: {
       'bg': 'Изпрати по имейл',
+      'cs': 'Poslat mailem',
       'da': 'Sende via e-mail',
       'de': 'Per E-Mail versenden',
       'en': 'Send by email',

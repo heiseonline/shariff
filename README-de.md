@@ -8,7 +8,7 @@ Der Code der offiziellen Buttons von Facebook, Google+ und Twitter überträgt v
 
 Shariff `(/ˈʃɛɹɪf/)` ist ein Open-Source Projekt von c't und heise online.
 
-Shariff besteht aus zwei Teilen. Der erste Teil ist eine einfache JavaScript-Bibliothek einschließlich Vektor-Icons und CSS zur Formatierung der Knöpfe. Der zweite ist die optionale, server-seitige Komponente (derzeit für PHP, Perl oder NodeJS). Mit dem Shariff-Backend auf dem eigenen Server muss der Browser des Besuchers zur Darstellung der Share-Counts keine Verbindung zu Facebook oder Google+ aufbauen. Daten werden erst dann zum Social-Media-Netzwerk übertragen, wenn der Besucher den Inhalt tatsächlich teilen möchte.
+Shariff besteht aus zwei Teilen. Der erste Teil ist eine einfache JavaScript-Bibliothek einschließlich Vektor-Icons und CSS zur Formatierung der Knöpfe. Der zweite ist die optionale, server-seitige Komponente (derzeit für PHP, Perl oder NodeJS). Mit dem Shariff-Backend auf dem eigenen Server muss der Browser des Besuchers zur Darstellung der Share-Counts keine Verbindung zu den Social-Media-Netzwerken aufbauen. Daten werden erst dann übertragen, wenn der Besucher den Inhalt tatsächlich teilen möchte.
 
 ## Erste Schritte
 
@@ -89,7 +89,7 @@ $ npm run dev
 | `data-flattr-user` | Benutzer, der die Flattr-Spende erhält. | `null` |
 | `data-info-url` | URL der Infoseite. | `http://ct.de/-2467514` |
 | `data-info-display` | Wie die Infoseite angezeigt wird. Werte: `blank`, `popup`, `self`. | `blank` |
-| `data-lang`      | Lokalisierung auswählen. Verfügbar: `bg`, `de`, `en`, `es`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
+| `data-lang`      | Lokalisierung auswählen. Verfügbar: `bg`, `cs`, `da`, `de`, `en`, `es`, `fi`, `fr`, `hr`, `hu`, `it`, `ja`, `ko`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Body verwendet. Der Mail-Body-Text sollte den Platzhalter `{url}` enthalten. Dieser wird durch die zu teilende URL ersetzt. | siehe `data-url` |
 | `data-mail-subject` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Betreff verwendet. | siehe `data-title` |
 | `data-mail-url`  | Der Link des `mail`-Buttons | `?view=mail` |
@@ -157,10 +157,8 @@ Die URL dieser Seite kann mit einer Option festgelegt werden. Standardwert: `htt
 
 ## Backends
 
-Wenn in den Shariff-Buttons die Share-Counts angezeigt werden sollen, wird eines der folgenden Backends benötigt:
+Wenn in den Shariff-Buttons die Share-Counts angezeigt werden sollen, wird das folgende Backend benötigt:
 
-* [shariff-backend-node](http://github.com/heiseonline/shariff-backend-node)
-* [shariff-backend-perl](http://github.com/heiseonline/shariff-backend-perl)
 * [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
 
 Drittanbieter-Backends:

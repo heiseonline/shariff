@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.1.3, 2018-02-23
+
+- Added czech translations. (mat-hew1)
+- Removed G+ counter from documentation and demo. (richard67)
+- Fixed handling of `data-mail-subject`. (richard67)
+- Fixed crashes occuring if HTML document is missing a valid `<title>` tag. (richard67)
+- Fixed typo in documentation. (cedricziel)
+- Improved distinguishability of reddit icon. (richard67)
+- Improved translations and translation documentation. (richard67)
+
 ## v2.1.2, 2018-01-26
 
 - Fixed SEO friendliness by adding `rel="nofollow"` to all button links. (richard67)
@@ -64,7 +74,7 @@ This release contains breaking changes:
 
 ## 1.25.2 2017-06-13
 
-* Restored the jQuery dependency for the min.js version. (liayn)
+* Restored the jQuery dependency for the `min.js` version. (liayn)
 * Added Kirby third party integration. (AndiLeni)
 * Added support for DOM-ready functions. (glaszig)
 * Updated dependencies. (liayn)
@@ -121,7 +131,7 @@ This release contains breaking changes:
 * Added Threema service. (medienverbinder)
 * Added StumbleUpon service. (craiq)
 * Added Reddit service. (craiq)
-* Changed rel=popup to data-rel.
+* Changed `rel=popup` to `data-rel`.
 
 ## v1.20.0 2015-10-22
 
@@ -151,7 +161,7 @@ This release contains breaking changes:
 ## v1.16.0 2015-07-13
 
 * Made license SPDX compatible.
-* Updated grunt-connect-proxy dependency. (medienverbinder)
+* Updated `grunt-connect-proxy` dependency. (medienverbinder)
 
 ## v1.15.0 2015-06-30
 
@@ -187,11 +197,11 @@ This release contains breaking changes:
 
 ## v1.10.0 2015-04-15
 * Added xing service. (osahner)
-* Fixed mailto links opening in new tabs.
+* Fixed `mailto` links opening in new tabs.
 * Updated node dependencies.
 
 ## v1.9.3 2015-04-08
-* Added missing shariff.min.css in release.
+* Added missing `shariff.min.css` in release.
 
 ## v1.9.2 2015-04-08
 * Made sure shariff element does not have any children on initialization.
@@ -212,7 +222,7 @@ This release contains breaking changes:
 * Fixed bug in service popups where popups did not open in IE. (doerler)
 
 ## v1.7.3 2015-02-14
-* Fixed shariff-complete.css to use font-awesome CDN.
+* Fixed `shariff-complete.css` to use font-awesome CDN.
 
 ## v1.7.1 2015-02-05
 * Fixed bug twitter via detection.
