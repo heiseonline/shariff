@@ -7,6 +7,7 @@
 - Fixed handling of `data-mail-subject`. (richard67)
 - Fixed crashes occuring if HTML document is missing a valid `<title>` tag. (richard67)
 - Improved distinguishability of reddit icon. (richard67)
+- Improved translations and translation documentation. (richard67)
 
 ## v2.1.2, 2018-01-26
 
