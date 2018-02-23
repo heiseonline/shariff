@@ -47,9 +47,7 @@ const Defaults = {
   // services to be enabled in the following order
   services: ['twitter', 'facebook', 'googleplus', 'info'],
 
-  title: function() {
-    return $('head title').text()
-  },
+  title: global.document.title,
 
   twitterVia: null,
 
