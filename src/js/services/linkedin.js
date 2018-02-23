@@ -7,8 +7,10 @@ module.exports = function(shariff) {
   return {
     popup: true,
     shareText: {
-      'de': 'mitteilen',
+      'bg': 'cподеляне',
       'cs': 'sdílet',
+      'da': 'del',
+      'de': 'mitteilen',
       'en': 'share',
       'es': 'compartir',
       'fi': 'Jaa',

@@ -60,9 +60,7 @@ const Defaults = {
 
   facebooklikeOptions: { width: 450, layout: 'standard', action: 'like', size: 'large', show_faces: true, share: true, appId: null },
 
-  title: function() {
-    return $('head title').text()
-  },
+  title: global.document.title,
 
   twitterVia: null,
 
