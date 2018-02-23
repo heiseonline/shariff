@@ -6,6 +6,7 @@
 - Removed G+ counter from documentation and demo. (richard67)
 - Fixed handling of `data-mail-subject`. (richard67)
 - Fixed crashes occuring if HTML document is missing a valid `<title>` tag. (richard67)
+- Fixed typo in documentation. (cedricziel)
 - Improved distinguishability of reddit icon. (richard67)
 - Improved translations and translation documentation. (richard67)
 
