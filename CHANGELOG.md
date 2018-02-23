@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v2.1.3, 2018-02-23
 
 - Added czech translations. (mat-hew1)
 - Removed G+ counter from documentation and demo. (richard67)
