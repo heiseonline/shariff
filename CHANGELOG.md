@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.9, 2018-02-23
+
+Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
+
+- Fixed crashes occuring if HTML document is missing a valid `<title>` tag ([heiseonline#295](https://github.com/heiseonline/shariff/pull/295)).
+
+- Improved translations and translation documentation ([heiseonline#296](https://github.com/heiseonline/shariff/pull/296)).
+
+- Fixed typo in documentation ([heiseonline#299](https://github.com/heiseonline/shariff/pull/299)).
+
+This version 1.0.9 of Shariff-Plus is equal to Shariff 2.1.3 plus the `facebooklike` service.
+
 ## v1.0.8, 2018-02-17
 
 - Remove GooglePlus counter from demo and docs ([#16](https://github.com/richard67/shariff-plus/pull/16), see also [heiseonline#286](https://github.com/heiseonline/shariff/pull/286)).
