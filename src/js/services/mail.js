@@ -17,6 +17,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'mail',
+    faPrefix: 'fas',
     faName: 'fa-envelope',
     title: {
       'bg': 'Изпрати по имейл',

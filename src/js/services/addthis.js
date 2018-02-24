@@ -32,6 +32,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'addthis',
+    faPrefix: 'fas',
     faName: 'fa-plus',
     title: {
       'bg': 'Сподели в AddThis',

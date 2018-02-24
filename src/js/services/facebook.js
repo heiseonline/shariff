@@ -32,7 +32,8 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'facebook',
-    faName: 'fa-facebook',
+    faPrefix: 'fab',
+    faName: 'fa-facebook-f',
     title: {
       'bg': 'Сподели във Facebook',
       'cs': 'Sdílet na Facebooku',

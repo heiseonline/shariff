@@ -35,6 +35,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'threema',
+    faPrefix: 'fas',
     faName: 'fa-lock',
     title: {
       'bg': 'Сподели в Threema',
