@@ -35,6 +35,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'weibo',
+    faPrefix: 'fab',
     faName: 'fa-weibo',
     title: {
       'bg': 'Сподели в weibo',

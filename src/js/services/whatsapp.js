@@ -35,6 +35,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'whatsapp',
+    faPrefix: 'fab',
     faName: 'fa-whatsapp',
     title: {
       'bg': 'Сподели в Whatsapp',

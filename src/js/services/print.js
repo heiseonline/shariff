@@ -6,6 +6,7 @@ module.exports = function(shariff) {
 
   return {
     name: 'print',
+    faPrefix: 'fas',
     faName: 'fa-print',
     popup: false,
     shareText: {

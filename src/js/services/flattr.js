@@ -9,7 +9,8 @@ module.exports = function(shariff) {
     popup: true,
     shareText: 'Flattr',
     name: 'flattr',
-    faName: 'fa-money',
+    faPrefix: 'far',
+    faName: 'fa-money-bill-alt',
     title: {
       'de': 'Artikel flattrn',
       'en': 'Flattr this'

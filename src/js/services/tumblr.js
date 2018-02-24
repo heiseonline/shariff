@@ -33,6 +33,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'tumblr',
+    faPrefix: 'fab',
     faName: 'fa-tumblr',
     title: {
       'bg': 'Сподели в tumblr',

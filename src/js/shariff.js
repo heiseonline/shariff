@@ -241,8 +241,8 @@ class Shariff {
         .attr('href', service.shareUrl)
         .append($shareText)
 
-      if (typeof service.faName !== 'undefined') {
-        $shareLink.prepend($('<span/>').addClass(`fa ${service.faName}`))
+      if (typeof service.faPrefix !== 'undefined' && typeof service.faName !== 'undefined') {
+        $shareLink.prepend($('<span/>').addClass(`${service.faPrefix} ${service.faName}`))
       }
 
       if (service.shareUrl.match(/javascript:/) && typeof service.dialogHtml !== 'undefined') {
