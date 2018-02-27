@@ -173,6 +173,7 @@ Once you have one of these backends up and running, insert its URL into the `dat
 
 This is a list of integrations for third-party systems:
 
+* [Neos CMS package](https://packagist.org/packages/networkteam/neos-shariff)
 * [Contao integration](https://github.com/hofff/contao-shariff)
 * [Drupal module](https://www.drupal.org/project/shariff)
 * [Joomla! 3 Shariff Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
