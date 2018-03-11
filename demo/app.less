@@ -24,13 +24,21 @@ article {
             font-weight: bold;
         }
     }
-    &.wide {
+    &.wide, &.wide-icon, &.wide-icon-count {
         h1 {
             font-size: 2em;
             @media only screen and (min-width: 600px) {
                 font-size: 2.9em;
             }
         }
+        #article_content {
+            p {
+                margin: 0;
+                line-height: 1.4;
+            }
+        }
+    }
+    &.wide {
         #article_extras {
             @media only screen and (min-width: 600px) {
                 width: 30%;
@@ -46,10 +54,20 @@ article {
                 width: 70%;
                 float: left;
             }
-            p {
-                margin: 0;
-                line-height: 1.4;
-            }
+        }
+    }
+    &.wide-icon {
+        #article_extras {
+            width: 35px;
+            float: left;
+            padding-right: 30px;
+        }
+    }
+    &.wide-icon-count {
+        #article_extras {
+            width: 80px;
+            float: left;
+            padding-right: 30px;
         }
     }
 }
