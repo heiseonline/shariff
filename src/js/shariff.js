@@ -107,6 +107,16 @@ class Shariff {
 
   getLocalized(data, key) {
     if (typeof data[key] === 'object') {
+      if (typeof data.name !== 'undefined') {
+        let serviceName = data.name;
+        if (typeof this.options['l10n'] == 'object'
+          && typeof this.options.l10n[serviceName] !== 'undefined'
+          && typeof this.options.l10n[serviceName][key] !== 'undefined'
+        ) {
+          return this.options.l10n[serviceName][key];
+        }
+      }
+      
       if (typeof data[key][this.options.lang] === 'undefined') {
         return data[key][this.options.langFallback]
       } else {
