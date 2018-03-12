@@ -3,6 +3,7 @@ module.exports = {
   diaspora: require('./diaspora'),
   facebook: require('./facebook'),
   flattr: require('./flattr'),
+  flipboard: require('./flipboard'),
   googleplus: require('./googleplus'),
   info: require('./info'),
   linkedin: require('./linkedin'),
