@@ -23,6 +23,7 @@ module.exports = function(shariff) {
     popup: true,
     shareText: 'pin it',
     name: 'pinterest',
+    faPrefix: 'fab',
     faName: 'fa-pinterest-p',
     title: {
       'bg': 'Сподели в Pinterest',

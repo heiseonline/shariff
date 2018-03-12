@@ -35,6 +35,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'qzone',
+    faPrefix: 'fab',
     faName: 'fa-qq',
     title: {
       'bg': 'Сподели в Qzone',

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Updated Font Awesome to version 5 (free 1.0.3). (richard67)
+
 ## v2.1.3, 2018-02-23
 
 - Added czech translations. (mat-hew1)

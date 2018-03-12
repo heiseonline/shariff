@@ -32,6 +32,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'vk',
+    faPrefix: 'fab',
     faName: 'fa-vk',
     title: {
       'bg': 'Сподели във VK',
