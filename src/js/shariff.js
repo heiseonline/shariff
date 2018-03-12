@@ -188,7 +188,7 @@ class Shariff {
     var $buttonList = $('<ul/>').addClass([
       'theme-' + this.options.theme,
       'orientation-' + this.options.orientation,
-      'col-' + this.options.services.length
+      'shariff-col-' + this.options.services.length
     ].join(' '))
 
     // add html for service-links
