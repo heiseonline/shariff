@@ -104,7 +104,7 @@ Differences to Shariff are marked with (1), (2) and so on and explained below th
 | `data-media-url` | Media url to be shared (pinterest) | `null` |
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
-| `data-services` (3)   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `facebooklike`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard` | `twitter`, `facebook`, `googleplus`, `info` |
+| `data-services` (3)   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `facebooklike`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard` | `twitter`, `facebooklike`, `facebook`, `googleplus`, `info` |
 | `data-theme`       | We include 3 color schemes, `standard`, `grey` and `white`. | `standard` |
 | `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` |
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
