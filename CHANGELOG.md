@@ -8,6 +8,8 @@ Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
 - Added Flipboard service ([heiseonline#303](https://github.com/heiseonline/shariff/pull/303)).
 - Fixed compatibility with Bootstrap 4 ([heiseonline#304](https://github.com/heiseonline/shariff/pull/304)).
 - Fixed reddit icon ([heiseonline#305](https://github.com/heiseonline/shariff/pull/305)).
+- Add new option data-button-style to enable small buttons ([heiseonline#309](https://github.com/heiseonline/shariff/pull/309)).
+- Improved default service list documentation ([heiseonline#310](https://github.com/heiseonline/shariff/pull/310)).
 
 ## v1.0.9, 2018-02-23
 
