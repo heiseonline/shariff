@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added Flipboard service. (richard67)
 - Updated Font Awesome to version 5 (free 1.0.3). (richard67)
 - Fixed compatibility with Bootstrap 4. (richard67)
 - Fixed reddit icon. (richard67)
