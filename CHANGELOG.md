@@ -4,6 +4,7 @@
 
 - Updated Font Awesome to version 5 (free 1.0.3). (richard67)
 - Fixed compatibility with Bootstrap 4. (richard67)
+- Fixed reddit icon. (richard67)
 
 ## v2.1.3, 2018-02-23
 
