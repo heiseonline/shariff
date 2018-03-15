@@ -42,7 +42,9 @@
             vertical-align: middle;
             line-height: 35px;
         }
-        .fa {
+        .fab,
+        .far,
+        .fas {
             width: 35px;
             line-height: 35px;
             text-align: center;
@@ -126,14 +128,26 @@
     // ------------------------- vertical alignment
 
     .orientation-vertical {
-        min-width: 110px;
+        &.button-style-icon {
+            min-width: 35px;
+        }
+        &.button-style-icon-count {
+            min-width: 80px;
+        }
+        &.button-style-standard {
+            min-width: 110px;
+        }
         li {
             display: block;
             width: 100%;
             margin: 5px 0;
-            .share_count {
-                width: 24px;
-                text-align: right;
+        }
+        &.button-style-standard, &.button-style-icon-count {
+            li {
+                .share_count {
+                    width: 24px;
+                    text-align: right;
+                }
             }
         }
     }
@@ -145,17 +159,25 @@
     .shariff .orientation-horizontal {
         li {
             margin-right: 1.8%;
-            min-width: 80px;
-            width: auto;
-            flex: 1 0 auto;
-            .share_count {
-                display: block;
+        }
+        &.button-style-standard, &.button-style-icon-count {
+            li {
+                min-width: 80px;
+                .share_count {
+                    display: block;
+                }
             }
         }
-        &.col-1, &.col-2 {
+        &.button-style-standard {
+            li {
+                width: auto;
+                flex: 1 0 auto;
+            }
+        }
+        &.button-style-standard.shariff-col-1, &.button-style-standard.shariff-col-2 {
             .display-share-text;
         }
-        &.col-5, &.col-6 {
+        &.button-style-standard.shariff-col-5, &.button-style-standard.shariff-col-6 {
             li {
                 flex: none;
             }
@@ -164,15 +186,15 @@
 }
 
 @media only screen and (min-width: 640px) {
-    .shariff .orientation-horizontal.col-3 {
+    .shariff .orientation-horizontal.button-style-standard.shariff-col-3 {
         .display-share-text;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .shariff .orientation-horizontal {
+    .shariff .orientation-horizontal.button-style-standard {
         .display-share-text;
-        &.col-5, &.col-6 {
+        &.shariff-col-5, &.shariff-col-6 {
             li {
                 flex: 1 0 auto;
             }
@@ -189,7 +211,9 @@
             a {
                 height: 30px;
             }
-            .fa {
+            .fab,
+            .far,
+            .fas{
                 width: 30px;
                 line-height: 30px;
             }

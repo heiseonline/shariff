@@ -4,6 +4,7 @@ module.exports = {
   facebook: require('./facebook'),
   facebooklike: require('./facebooklike'),
   flattr: require('./flattr'),
+  flipboard: require('./flipboard'),
   googleplus: require('./googleplus'),
   info: require('./info'),
   linkedin: require('./linkedin'),

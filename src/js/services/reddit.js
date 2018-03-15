@@ -38,7 +38,8 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'reddit',
-    faName: 'fa-reddit',
+    faPrefix: 'fab',
+    faName: 'fa-reddit-alien',
     title: {
       'bg': 'Сподели в Reddit',
       'cs': 'Sdílet na Redditu',

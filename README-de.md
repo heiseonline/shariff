@@ -89,6 +89,7 @@ Unterschiede zu Shariff sind mit (1), (2) usw. markiert und werden unterhalb der
 | Attribut         | Beschreibung | Default |
 |------------------|--------------|---------|
 | `data-backend-url` | Pfad zum Shariff-[Backend](#backends). Der Wert `null` deaktiviert die Anzeige von Share-Counts.  | `null` |
+| `data-button-style` | Wie die Buttons angezeigt werden. Werte: `standard`, `icon`, `icon-count`. Bei `icon` wird nur das Icon angezeigt, bei `icon-count` werden Icon und Zähler und bei `standard` Icon, Text und Zähler abhängig von der Display-Größe angezeigt. | `standard` |
 | `data-dialogs-media-url` (1) | Pfad zu css oder js für spezielle Dialoge wie z.B. den des Services `facebooklike` Dies muss eine absolute URL sein. Beispiel: `https://www.example.com/shariff`. Dies erlaubt es, eigene css z.B. für den Dialog `facebooklike` zu verwenden. | Pfad zum Verzeichnis, in dem Shariff-Plus installiert ist. |
 | `data-facebook-count-btn` (1) | Die Buttons(s), die den Zähler vom Backend anzeigen sollen, wenn beide Services `facebook` und `facebooklike` verwendet werden. Werte: `like`, `share`, `both`. | `like` |
 | `data-facebooklike-css` (1) | Name der CSS-Datei für den Dialog `facebooklike`. Die Datei muss im dem Ordner vorhanden sein, der mit der Option `data-dialogs-media-url` festgelegt wird. Beispiel : `data-facebooklike-css="my-styles.css"`. | `facebooklike_dlg.css` |
@@ -104,7 +105,7 @@ Unterschiede zu Shariff sind mit (1), (2) usw. markiert und werden unterhalb der
 | `data-media-url` | Zu teilendes Bild (pinterest) | `null` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
-| `data-services` (3)   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `facebooklike`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`  | Twitter, Facebook, Google+ |
+| `data-services` (3)   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `facebooklike`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard`  | `twitter`, `facebooklike`, `facebook`, `googleplus`, `info` |
 | `data-theme`       | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
 | `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` |
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
@@ -148,6 +149,7 @@ Shariff-Plus unterstützt folgende Social-Sharing-Services:
 - diaspora*
 - facebook
 - Flattr
+- Flipboard
 - Google+
 - LinkedIn
 - Mail

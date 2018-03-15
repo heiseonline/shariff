@@ -46,6 +46,9 @@ const Defaults = {
   // horizontal/vertical
   orientation: 'horizontal',
 
+  // icon/icon-count/standard
+  buttonStyle: 'standard',
+
   // a string to suffix current URL
   referrerTrack: null,
 
@@ -105,7 +108,7 @@ class Shariff {
 
     this._addButtonList()
 
-    if (this.options.backendUrl !== null) {
+    if (this.options.backendUrl !== null && this.options.buttonStyle !== 'icon') {
       this.getShares(this._updateCounts.bind(this))
     }
   }
@@ -225,7 +228,8 @@ class Shariff {
     var $buttonList = $('<ul/>').addClass([
       'theme-' + this.options.theme,
       'orientation-' + this.options.orientation,
-      'col-' + this.options.services.length
+      'button-style-' + this.options.buttonStyle,
+      'shariff-col-' + this.options.services.length
     ].join(' '))
 
     var dialogServices = []
@@ -233,16 +237,17 @@ class Shariff {
     // add html for service-links
     this.services.forEach(service => {
       var $li = $('<li/>').addClass(`shariff-button ${service.name}`)
-      var $shareText = $('<span/>')
-        .addClass('share_text')
-        .text(this.getLocalized(service, 'shareText'))
+      var $shareLink = $('<a/>').attr('href', service.shareUrl)
 
-      var $shareLink = $('<a/>')
-        .attr('href', service.shareUrl)
-        .append($shareText)
+      if (this.options.buttonStyle === 'standard') {
+        var $shareText = $('<span/>')
+          .addClass('share_text')
+          .text(this.getLocalized(service, 'shareText'))
+        $shareLink.append($shareText)
+      }
 
-      if (typeof service.faName !== 'undefined') {
-        $shareLink.prepend($('<span/>').addClass(`fa ${service.faName}`))
+      if (typeof service.faPrefix !== 'undefined' && typeof service.faName !== 'undefined') {
+        $shareLink.prepend($('<span/>').addClass(`${service.faPrefix} ${service.faName}`))
       }
 
       if (service.shareUrl.match(/javascript:/) && typeof service.dialogHtml !== 'undefined') {

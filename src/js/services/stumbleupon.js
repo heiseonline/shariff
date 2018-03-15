@@ -38,6 +38,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'stumbleupon',
+    faPrefix: 'fab',
     faName: 'fa-stumbleupon',
     title: {
       'bg': 'Сподели в Stumbleupon',

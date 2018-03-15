@@ -32,7 +32,8 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'googleplus',
-    faName: 'fa-google-plus',
+    faPrefix: 'fab',
+    faName: 'fa-google-plus-g',
     title: {
       'bg': 'Сподели в Google+',
       'cs': 'Sdílet na Google+',

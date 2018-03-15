@@ -110,6 +110,7 @@ module.exports = function(shariff) {
       'zh': '赞'
     },
     name: 'facebooklike',
+    faPrefix: 'fas',
     faName: 'fa-thumbs-up',
     title: {
       'bg': 'Харесвам/Вече не харесвам във Facebook',
