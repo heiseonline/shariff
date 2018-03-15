@@ -86,6 +86,7 @@ $ npm run dev
 | Attribute        | Description | Default |
 |------------------|-------------|---------|
 | `data-backend-url` | The path to your Shariff backend, see below. Setting the value to `null` disables the backend feature. No counts will occur.  | `null` |
+| `data-button-style` | How to display the buttons. Values: `standard`, `icon`, `icon-count`. With `icon` only the icon is shown, with `icon-count` icon and counter and with `standard` icon, text and counter are shown, depending on the display size.  | `standard` |
 | `data-flattr-category` | Category to be used for Flattr. | `null` |
 | `data-flattr-user` | User that receives Flattr donation. | `null` |
 | `data-info-url` | URL of the info page. | `http://ct.de/-2467514` |
