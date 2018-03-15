@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v3.0.0, 2018-03-15
 
 - Added smaller share button variants. (richard67)
 - Added Flipboard service. (richard67)
