@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v2.0.0, 2018-03-15
 
 Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
 
