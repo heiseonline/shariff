@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.1, 2018-03-15
+
+Fixed demo/index.html
+
 ## v2.0.0, 2018-03-15
 
 Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
