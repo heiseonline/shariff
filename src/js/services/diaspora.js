@@ -39,6 +39,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'diaspora',
+    faPrefix: 'fas',
     faName: 'fa-asterisk',
     title: {
       'bg': 'Сподели в Diaspora',

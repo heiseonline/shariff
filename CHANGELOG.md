@@ -1,5 +1,14 @@
 # Changelog
 
+## v3.0.0, 2018-03-15
+
+- Added smaller share button variants. (richard67)
+- Added Flipboard service. (richard67)
+- Updated Font Awesome to version 5 (free 1.0.3). (richard67)
+- Improved default service list documentation. (richard67)
+- Fixed compatibility with Bootstrap 4. (richard67)
+- Fixed reddit icon. (richard67)
+
 ## v2.1.3, 2018-02-23
 
 - Added czech translations. (mat-hew1)

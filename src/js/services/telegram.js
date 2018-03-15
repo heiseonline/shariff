@@ -33,6 +33,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'telegram',
+    faPrefix: 'fab',
     faName: 'fa-telegram',
     title: {
       'bg': 'Сподели в Telegram',

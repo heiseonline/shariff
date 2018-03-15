@@ -34,7 +34,8 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'linkedin',
-    faName: 'fa-linkedin',
+    faPrefix: 'fab',
+    faName: 'fa-linkedin-in',
     title: {
       'bg': 'Сподели в LinkedIn',
       'cs': 'Sdílet na LinkedIn',

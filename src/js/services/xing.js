@@ -32,6 +32,7 @@ module.exports = function(shariff) {
       'zh': '分享'
     },
     name: 'xing',
+    faPrefix: 'fab',
     faName: 'fa-xing',
     title: {
       'bg': 'Сподели в XING',
