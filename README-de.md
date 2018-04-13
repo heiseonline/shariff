@@ -13,14 +13,15 @@ Shariff besteht aus zwei Teilen. Der erste Teil ist eine einfache JavaScript-Bib
 ## Erste Schritte
 
 1. Das [aktuellste Shariff-Release](https://github.com/heiseonline/shariff/releases/latest) herunterladen
-2.  CSS im `<head>` einbinden:
-    * `build/shariff.complete.css` enthält alle Abhängigkeiten
-    * `build/shariff.min.css` verwenden, wenn [Font Awesome](https://github.com/FortAwesome/Font-Awesome) bereits in Ihrer Seite geladen wird
-3. JavaScript unmittelbar vor `</body>` einbinden:
-    * `build/shariff.complete.js` enthält alle Abhängigkeiten
-    * `build/shariff.min.js` verwenden, wenn [jQuery](https://github.com/jquery/jquery) bereits in der Seite vorhanden ist
-4. Beliebig viele `<div class="shariff">` Elemente einfügen
-5. Mit den unten beschriebenen `data`-Attributen Aussehen und Funktion konfigurieren
+2. Alle im Release enthaltenen Dateien hochladen
+3.  CSS im `<head>` einbinden:
+    * `shariff.complete.css` verlässt sich auf die im Release enthaltenen Abhängigkeiten
+    * `shariff.min.css` verwenden, wenn [Font Awesome](https://github.com/FortAwesome/Font-Awesome) bereits in Ihrer Seite geladen wird
+4. JavaScript unmittelbar vor `</body>` einbinden:
+    * `shariff.complete.js` verlässt sich auf die im Release enthaltenen Abhängigkeiten
+    * `shariff.min.js` verwenden, wenn [jQuery](https://github.com/jquery/jquery) bereits in der Seite vorhanden ist
+5. Beliebig viele `<div class="shariff">` Elemente einfügen
+6. Mit den unten beschriebenen `data`-Attributen Aussehen und Funktion konfigurieren
 
 Die Share-Counts in den Buttons benötigen ein [Backend](#backends) auf ihrem Server.
 
