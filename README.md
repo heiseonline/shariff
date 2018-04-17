@@ -191,3 +191,4 @@ This is a list of integrations for third-party systems:
 * [WordPress Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
 * [Xenforo [ITM] ctSSB for Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
 * [Xenforo [WMTech] Social Share Privacy Plugin](https://wmtech.net/products/wmtech-social-share-privacy.41/)
+* [Yellow Plugin Shariff](https://github.com/schulle4u/yellow-plugin-shariff)

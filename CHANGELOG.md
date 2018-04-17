@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added Yellow CMS third party integration. (so-ri)
+
 This release contains changes relevant to security:
 
 - Fixed XSS vulnerability discovered by JoJoAction in twitter service. (liayn)
