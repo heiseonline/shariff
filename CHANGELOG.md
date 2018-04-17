@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+This release contains changes relevant to security:
+
+- Fixed XSS vulnerability discovered by JoJoAction in twitter service. (liayn)
+
 ## v3.0.0, 2018-03-15
 
 - Added smaller share button variants. (richard67)
