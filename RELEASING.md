@@ -5,7 +5,9 @@ To prepare a release you have to do the following tasks:
 1. Run `git flow release start [version]`.
 2. Bump versions in `package.json`.
 3. Update [CHANGELOG.md](CHANGELOG.md).
-2. Run `git flow release finish`.
+4. Run `npm install` to update `package-lock.json`.
+5. Commit changes.
+6. Run `git flow release finish`.
 
 After pushing the release tag to GitHub, Travis CI will create release downloads and push the release to [npmjs.com](https://www.npmjs.com).
 

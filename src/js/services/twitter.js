@@ -5,7 +5,8 @@ var url = require('url')
 // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
 var abbreviateText = function(text, length) {
   var div = document.createElement('div')
-  div.innerHTML = text
+  var node = document.createTextNode(text)
+  div.appendChild(node)
   var abbreviated = div.textContent
   if (abbreviated.length <= length) {
     return text
