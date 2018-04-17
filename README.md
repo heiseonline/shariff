@@ -14,14 +14,15 @@ Shariff consists of two parts: a simple JavaScript client library and an optiona
 ## Getting Started
 
 1. Download the [latest release](https://github.com/heiseonline/shariff/releases/latest)
-2. Include CSS in `<head>`:
-    * `build/shariff.complete.css` contains all dependencies
+2. Upload all files included in the release
+3. Include CSS in `<head>`:
+    * `shariff.complete.css` uses the dependencies included in the release files
     * if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site, use `build/shariff.min.css`
-3. Include JavaScript right before `</body>`:
-    * `build/shariff.complete.js` contains all dependencies
+4. Include JavaScript right before `</body>`:
+    * `shariff.complete.js` uses the dependencies included in the release files
     * if [jQuery](https://github.com/jquery/jquery) is already included in your site, use `build/shariff.min.js`
-4. Insert one or more `<div class="shariff">` elements.
-5. Customize the look using data-* attributes.
+5. Insert one or more `<div class="shariff">` elements.
+6. Customize the look using data-* attributes.
 
 To enable the counters in the buttons, see section [Backends](#backends).
 
@@ -190,3 +191,4 @@ This is a list of integrations for third-party systems:
 * [WordPress Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
 * [Xenforo [ITM] ctSSB for Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
 * [Xenforo [WMTech] Social Share Privacy Plugin](https://wmtech.net/products/wmtech-social-share-privacy.41/)
+* [Yellow Plugin Shariff](https://github.com/schulle4u/yellow-plugin-shariff)

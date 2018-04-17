@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.0.1, 2018-04-17
+
+- Added Yellow CMS third party integration. (so-ri)
+
+This release contains changes relevant to security:
+
+- Fixed XSS vulnerability discovered by JoJoAction in twitter service. (liayn)
+
 ## v3.0.0, 2018-03-15
 
 - Added smaller share button variants. (richard67)
