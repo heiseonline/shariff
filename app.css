@@ -1,0 +1,87 @@
+article {
+  font-family: Arial, sans-serif;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+article.slim h1 {
+  line-height: 1.2em;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+article.slim time {
+  display: block;
+  font-size: 0.8em;
+  margin-right: 20px;
+  margin-top: 12px;
+  color: #666;
+  font-size: .8em;
+}
+article.slim .deck {
+  font-size: .9em;
+  line-height: 1.4;
+  margin-top: 12px;
+  font-weight: bold;
+}
+article.wide h1,
+article.wide-icon h1,
+article.wide-icon-count h1 {
+  font-size: 2em;
+}
+@media only screen and (min-width: 600px) {
+  article.wide h1,
+  article.wide-icon h1,
+  article.wide-icon-count h1 {
+    font-size: 2.9em;
+  }
+}
+article.wide #article_content p,
+article.wide-icon #article_content p,
+article.wide-icon-count #article_content p {
+  margin: 0;
+  line-height: 1.4;
+}
+@media only screen and (min-width: 600px) {
+  article.wide #article_extras {
+    width: 30%;
+    min-width: 130px;
+    max-width: 190px;
+    float: left;
+    box-sizing: border-box;
+    padding-right: 30px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  article.wide #article_content {
+    width: 70%;
+    float: left;
+  }
+}
+article.wide-icon #article_extras {
+  width: 35px;
+  float: left;
+  padding-right: 30px;
+}
+article.wide-icon-count #article_extras {
+  width: 80px;
+  float: left;
+  padding-right: 30px;
+}
+hr {
+  margin: 40px 0 20px;
+  border-top: 3px dashed #ccc;
+  border-bottom: none;
+  clear: left;
+}
+.layout-hint {
+  font-size: .8em;
+}
+.layout-hint dt {
+  color: #666;
+  width: 10em;
+  float: left;
+}
+.layout-hint dd {
+  margin: 0;
+  color: #333;
+}

@@ -1,0 +1,91 @@
+article {
+    font-family: Arial,sans-serif;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    &.slim {
+        h1 {
+            line-height: 1.2em;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        time {
+            display: block;
+            font-size: 0.8em;
+            margin-right: 20px;
+            margin-top: 12px;
+            color: #666;
+            font-size: .8em;
+        }
+        .deck {
+            font-size: .9em;
+            line-height: 1.4;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+    }
+    &.wide, &.wide-icon, &.wide-icon-count {
+        h1 {
+            font-size: 2em;
+            @media only screen and (min-width: 600px) {
+                font-size: 2.9em;
+            }
+        }
+        #article_content {
+            p {
+                margin: 0;
+                line-height: 1.4;
+            }
+        }
+    }
+    &.wide {
+        #article_extras {
+            @media only screen and (min-width: 600px) {
+                width: 30%;
+                min-width: 130px;
+                max-width: 190px;
+                float: left;
+                box-sizing: border-box;
+                padding-right: 30px;
+            }
+        }
+        #article_content {
+            @media only screen and (min-width: 600px) {
+                width: 70%;
+                float: left;
+            }
+        }
+    }
+    &.wide-icon {
+        #article_extras {
+            width: 35px;
+            float: left;
+            padding-right: 30px;
+        }
+    }
+    &.wide-icon-count {
+        #article_extras {
+            width: 80px;
+            float: left;
+            padding-right: 30px;
+        }
+    }
+}
+hr {
+    margin: 40px 0 20px;
+    border-top: 3px dashed #ccc;
+    border-bottom: none;
+    clear: left;
+}
+.layout-hint {
+    font-size: .8em;
+    dt {
+        color: #666;
+        width: 10em;
+        float: left;
+    }
+    dd {
+        margin: 0;
+        color: #333;
+    }
+}
