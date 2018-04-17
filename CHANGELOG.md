@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.0.2, 2018-04-17
+
+Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
+
+- Fix installation instructions.
+- Fixed XSS vulnerability discovered by JoJoAction in twitter service ([heiseonline#319](https://github.com/heiseonline/shariff/pull/319)).
+- Update package-lock.json to match dependencies.
+
 ## v2.0.1, 2018-03-15
 
 Fixed demo/index.html
