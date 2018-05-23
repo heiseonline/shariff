@@ -152,9 +152,12 @@ class Shariff {
   }
 
   getTitle() {
-    let title = this.getOption('title') || this.getMeta('DC.title')
-    let creator = this.getMeta('DC.creator')
-    if (title && creator) title = `${title} - ${creator}`
+    let title = this.getOption('title')
+    if (!$(this.element).data()['title']) {
+        title = title || this.getMeta('DC.title')
+        let creator = this.getMeta('DC.creator')
+        if (title && creator) title = `${title} - ${creator}`
+    }
     return title
   }
 
