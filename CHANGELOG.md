@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
+
+- Improved build process ([heiseonline#326](https://github.com/heiseonline/shariff/pull/326)).
+
 ## v2.0.2, 2018-04-17
 
 Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
