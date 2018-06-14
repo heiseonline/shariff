@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Improved build process. (DanielRuf)
+- Replaced third party Java backend in readme. (shred)
+- Upgraded dependencies.
 - Twitter text: append creator only if data-title not set. (ksuess)
 
 ## v3.0.1, 2018-04-17
