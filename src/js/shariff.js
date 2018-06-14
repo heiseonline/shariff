@@ -153,12 +153,10 @@ class Shariff {
 
   getTitle() {
     let title = this.getOption('title')
-    if (!$(this.element).data()['title']) {
-      title = title || this.getMeta('DC.title')
-      let creator = this.getMeta('DC.creator')
-      if (title && creator) title = `${title} - ${creator}`
-    }
-    return title
+    if($(this.element).data()['title']) return title
+    title = title || this.getMeta('DC.title')
+    let creator = this.getMeta('DC.creator')
+    return (title && creator) ? `${title} - ${creator}` : title
   }
 
   getReferrerTrack() {
