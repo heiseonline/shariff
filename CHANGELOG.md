@@ -5,6 +5,7 @@
 - Improved build process. (DanielRuf)
 - Replaced third party Java backend in readme. (shred)
 - Upgraded dependencies.
+- Fixed creator being appended to title even though `data-title` has been set. (ksuess)
 
 ## v3.0.1, 2018-04-17
 
