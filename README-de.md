@@ -190,3 +190,4 @@ Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
 * [Xenforo [ITM] ctSSB für Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
 * [Xenforo [WMTech] Social Share Privacy Plugin](https://wmtech.net/products/wmtech-social-share-privacy.41/)
 * [Yellow Plugin Shariff](https://github.com/schulle4u/yellow-plugin-shariff)
+* [Magento 2 Shariff Social Share](https://www.jajuma.de/de/jajuma-develop/extensions/shariff-social-share-buttons-extension-fuer-magento-2)
