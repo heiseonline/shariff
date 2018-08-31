@@ -48,15 +48,15 @@
   },
   "homepage": "https://www.richard-fath.de/en/software/shariff-plus.html",
   "devDependencies": {
-    "autoprefixer": "^8.6.2",
+    "autoprefixer": "^8.6.5",
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^7.1.5",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
@@ -68,14 +68,14 @@
     "karma-mocha-reporter": "^2.2.5",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-webpack": "^2.0.13",
-    "less": "^3.0.4",
+    "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "mocha": "^5.2.0",
-    "postcss-loader": "^2.1.5",
+    "postcss-loader": "^2.1.6",
     "style-loader": "^0.21.0",
-    "url-loader": "^1.0.1",
+    "url-loader": "^1.1.1",
     "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.2"
+    "webpack-dev-server": "^2.11.3"
   },
   "browserify-shim": {
     "./dom": "global:jQuery"
