@@ -191,3 +191,7 @@ Once you have one of these backends up and running, insert its URL into the `dat
 ## Third-party integrations
 
 There are no third-party integrations of Shariff-Plus yet.
+
+If you have created such an integration, e.g. an integration of Shariff-Plus into your favourite CMS, create a pull request on GitHub to let your integration be listed here, or send me an email with the details using the contact form on my homepage.
+
+A good starting point for creating a third-party integrations of Shariff-Plus is to use an existing third-party integration of the original Shariff and then replace files from or references to Shariff by the same for Shariff-Plus.

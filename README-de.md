@@ -190,3 +190,7 @@ Die URL, unter der das Backend erreichbar ist, muss im `data`-Attribut `data-bac
 ## Drittanbieter-Integrationen
 
 Es gibt noch keine Shariff-Plus-Integrationen in Drittanbieter-Software.
+
+Wenn Sie eine solche Integration erstellt haben, z.B. eine Integration von Shariff-Plus in Ihr Lieblings-CMS, erstellen Sie bitte einen Pull-Request auf GitHub, um Ihre Integration hier aufzulisten, oder senden Sie mir über das Kontaktformular auf meiner Homepage eine E-Mail mit den Details.
+
+Ein guter Startpunkt zum Erstellen einer Shariff-Plus-Integration ist, eine vorhandene Integration von Original Shariff zu nehmen und darin vorhandene Dateien von oder Referenzen auf Shariff durch solche von Shariff-Plus zu ersetzen.
