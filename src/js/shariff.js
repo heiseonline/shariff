@@ -48,7 +48,7 @@ const Defaults = {
   referrerTrack: null,
 
   // services to be enabled in the following order
-  services: ['twitter', 'facebook', 'googleplus', 'info'],
+  services: ['twitter', 'facebook', 'info'],
 
   title: global.document.title,
 
