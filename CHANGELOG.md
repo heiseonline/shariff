@@ -5,7 +5,7 @@
 Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
 
 - Improved build process ([heiseonline#326](https://github.com/heiseonline/shariff/pull/326)).
-- Twitter text: append creator only if data-title not set ([heiseonline#328](https://github.com/heiseonline/shariff/pull/328)).
+- Fixed creator being appended to title even though data-title has been set ([heiseonline#328](https://github.com/heiseonline/shariff/pull/328)).
 - Replaced third party Java backend in readme ([heiseonline#332](https://github.com/heiseonline/shariff/pull/332)).
 - Upgraded dependencies.
 
