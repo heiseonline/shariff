@@ -65,7 +65,11 @@ const Defaults = {
 
     if (canonical.length > 0) {
       if (canonical.indexOf('http') < 0) {
-        canonical = global.document.location.protocol + '//' + global.document.location.host + canonical
+        if (canonical.indexOf('//') !== 0) {
+          canonical = global.document.location.protocol + '//' + global.document.location.host + canonical
+        } else {
+          canonical = global.document.location.protocol + canonical
+        }
       }
       url = canonical
     }
