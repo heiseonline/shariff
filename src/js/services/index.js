@@ -8,6 +8,7 @@ module.exports = {
   linkedin: require('./linkedin'),
   mail: require('./mail'),
   pinterest: require('./pinterest'),
+  pocket: require('./pocket'),
   print: require('./print'),
   qzone: require('./qzone'),
   reddit: require('./reddit'),
