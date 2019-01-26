@@ -7,6 +7,10 @@ Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
 - Improved build process ([heiseonline#326](https://github.com/heiseonline/shariff/pull/326)).
 - Fixed creator being appended to title even though data-title has been set ([heiseonline#328](https://github.com/heiseonline/shariff/pull/328)).
 - Replaced third party Java backend in readme ([heiseonline#332](https://github.com/heiseonline/shariff/pull/332)).
+- Name is diaspora* and not Diaspora ([heiseonline#342](https://github.com/heiseonline/shariff/pull/342)).
+- Handle protocol agnostic URI with domain in canonical link ([heiseonline#345](https://github.com/heiseonline/shariff/pull/345)).
+- Remove service googleplus ([heiseonline#348](https://github.com/heiseonline/shariff/pull/348)).
+- Add new service Pocket ([heiseonline#349](https://github.com/heiseonline/shariff/pull/349)).
 - Upgraded dependencies.
 
 ## v2.0.2, 2018-04-17
