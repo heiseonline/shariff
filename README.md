@@ -5,7 +5,7 @@ Shariff enables website users to share their favorite content without compromisi
 
 ![Shariff Logo © 2015 Heise Medien](http://www.heise.de/icons/ho/shariff-logo.png)
 
-Facebook, Google+ and Twitter supply official sharing code snippets which quietly siphon personal data from all page visitors. Shariff enables visitors to see how popular your page is on Facebook and share your content with others without needless data leaks.
+Some social service providers like e.g. Facebook supply official sharing code snippets which quietly siphon personal data from all page visitors. Shariff enables visitors to see how popular your page is on Facebook and share your content with others without needless data leaks.
 
 Shariff `(/ˈʃɛɹɪf/)` is an open-source, low-maintenance, high-privacy solution maintained by German computer magazine c't and heise online.
 
@@ -99,7 +99,7 @@ $ npm run dev
 | `data-media-url` | Media url to be shared (pinterest) | `null` |
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
-| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard` | `twitter`, `facebook`, `googleplus`, `info` |
+| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` Available service names: `twitter`, `facebook`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard`, `pocket` | `twitter`, `facebook`, `info` |
 | `data-theme`       | We include 3 color schemes, `standard`, `grey` and `white`. | `standard` |
 | `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` |
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
@@ -139,10 +139,10 @@ Shariff supports the following social sharing services:
 - facebook
 - Flattr
 - Flipboard
-- Google+
 - LinkedIn
 - Mail
 - Pinterest
+- Pocket
 - Print
 - Qzone
 - reddit
@@ -158,7 +158,7 @@ Shariff supports the following social sharing services:
 - XING
 
 In addition, the service `Info` provides a button to show an info page about the social sharing buttons.
-The URL of this page can be set with an option. Default value: `http://ct.de/-2467514`, i.e. the c't article introducing Shariff. 
+The URL of this page can be set with an option. Default value: `http://ct.de/-2467514`, i.e. the c't article introducing Shariff.
 
 ## Backends
 
@@ -168,7 +168,7 @@ In order to display share counts with Shariff, you need the following backend:
 
 Third-party backends:
 
-* [shariff-backend-java](http://github.com/headissue/shariff-backend-java)
+* [shariff-backend-java](https://github.com/shred/shariff-backend-java)
 
 Once you have one of these backends up and running, insert its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, the `data-backend-url` should be `/my-shariff-backend/`. The script will handle the rest.
 
@@ -191,4 +191,4 @@ This is a list of integrations for third-party systems:
 * [WordPress Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
 * [Xenforo [ITM] ctSSB for Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
 * [Xenforo [WMTech] Social Share Privacy Plugin](https://wmtech.net/products/wmtech-social-share-privacy.41/)
-* [Yellow Plugin Shariff](https://github.com/schulle4u/yellow-plugin-shariff)
+* [Magento 2 Shariff Social Share](https://www.jajuma.de/en/jajuma-develop/extensions/shariff-social-share-buttons-extension-for-magento-2)

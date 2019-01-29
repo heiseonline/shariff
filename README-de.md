@@ -4,7 +4,7 @@ Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu be
 
 ![Shariff Logo © 2015 Heise Medien](http://www.heise.de/icons/ho/shariff-logo.png)
 
-Der Code der offiziellen Buttons von Facebook, Google+ und Twitter überträgt von jedem Besucher kennzeichnende Daten an die Social-Media-Netzwerke. Shariff erzeugt hingegen Share-Buttons, die mit einem Klick teilen, die Anzahl der Likes und Plus-Ones für die aktuelle Seite anzeigen und trotzdem keine unnötigen Daten übertragen.
+Der Code der offiziellen Buttons beispielsweise von Facebook überträgt von jedem Besucher kennzeichnende Daten an die Social-Media-Netzwerke. Shariff erzeugt hingegen Share-Buttons, die mit einem Klick teilen, die Anzahl der Likes und Plus-Ones für die aktuelle Seite anzeigen und trotzdem keine unnötigen Daten übertragen.
 
 Shariff `(/ˈʃɛɹɪf/)` ist ein Open-Source Projekt von c't und heise online.
 
@@ -98,7 +98,7 @@ $ npm run dev
 | `data-media-url` | Zu teilendes Bild (pinterest) | `null` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
-| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard`  | `twitter`, `facebook`, `googleplus`, `info` |
+| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard`, `pocket`  | `twitter`, `facebook`, `info` |
 | `data-theme`       | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
 | `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` |
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
@@ -137,10 +137,10 @@ Shariff unterstützt folgende Social-Sharing-Services:
 - facebook
 - Flattr
 - Flipboard
-- Google+
 - LinkedIn
 - Mail
 - Pinterest
+- Pocket
 - Print
 - Qzone
 - reddit
@@ -166,7 +166,7 @@ Wenn in den Shariff-Buttons die Share-Counts angezeigt werden sollen, wird das f
 
 Drittanbieter-Backends:
 
-* [shariff-backend-java](http://github.com/headissue/shariff-backend-java)
+* [shariff-backend-java](https://github.com/shred/shariff-backend-java)
 
 Die URL, unter der das Backend erreichbar ist, muss im `data`-Attribut `data-backend-url` angegeben werden. Ein Backend unter der URL `http://example.com/my-shariff-backend/` wird in `data-backend-url` so angegeben: `/my-shariff-backend/`. Den Rest erledigt das Skript.
 
@@ -189,4 +189,4 @@ Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
 * [WordPress-Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
 * [Xenforo [ITM] ctSSB für Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
 * [Xenforo [WMTech] Social Share Privacy Plugin](https://wmtech.net/products/wmtech-social-share-privacy.41/)
-* [Yellow Plugin Shariff](https://github.com/schulle4u/yellow-plugin-shariff)
+* [Magento 2 Shariff Social Share](https://www.jajuma.de/de/jajuma-develop/extensions/shariff-social-share-buttons-extension-fuer-magento-2)

@@ -1,5 +1,19 @@
 # Changelog
 
+## v3.1.0, 2019-01-29
+
+- Added Pocket service. (richard67)
+- Improved build process. (DanielRuf)
+- Replaced third party Java backend in readme. (shred)
+- Upgraded dependencies.
+- Fixed creator being appended to title even though `data-title` has been set. (ksuess)
+- Fixed canonical URL handling. (OliverFriedrich)
+- Fixed typo in README. (richard67)
+
+This release removes a service:
+
+- Removed G+ service. (richard67)
+
 ## v3.0.1, 2018-04-17
 
 - Added Yellow CMS third party integration. (so-ri)
