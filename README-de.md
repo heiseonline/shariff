@@ -4,7 +4,7 @@ Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu be
 
 Shariff-Plus ist identisch mit [Shariff von Heise Medien](https://github.com/heiseonline/shariff) plus Erweiterungen wie die Anzeige des Facebook-Buttons "Gefällt mir" in einem Dialog, welche nicht für die Integration in Shariff vorgesehen sind, oder andere Erweiterungen und Korrekturen für Shariff, die (noch) nicht in Shariff integriert wurden.
 
-Der Code der offiziellen Buttons von Facebook, Google+ und Twitter überträgt von jedem Besucher kennzeichnende Daten an die Social-Media-Netzwerke. Shariff-Plus erzeugt hingegen Buttons, die mit einem Klick die Dialoge zum Teilen oder Vergeben von "Gefällt mir" bei Facebook anzeigen, die Anzahl der Likes für die aktuelle Seite anzeigen und trotzdem keine unnötigen Daten übertragen.
+Der Code der offiziellen Buttons beispielsweise von Facebook überträgt von jedem Besucher kennzeichnende Daten an die Social-Media-Netzwerke. Shariff-Plus erzeugt hingegen Buttons, die mit einem Klick die Dialoge zum Teilen oder Vergeben von "Gefällt mir" bei Facebook anzeigen, die Anzahl der Likes für die aktuelle Seite anzeigen und trotzdem keine unnötigen Daten übertragen.
 
 **Shariff** `(/ˈʃɛɹɪf/)` ist ein Open-Source Projekt von c't und heise online.
 
@@ -106,7 +106,7 @@ Unterschiede zu Shariff sind mit (1), (2) usw. markiert und werden unterhalb der
 | `data-media-url` | Zu teilendes Bild (pinterest) | `null` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
-| `data-services` (3)   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `facebooklike`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard`  | `twitter`, `facebooklike`, `facebook`, `googleplus`, `info` |
+| `data-services` (3)   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `facebooklike`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard`, `pocket`  | `twitter`, `facebooklike`, `facebook`, `info` |
 | `data-theme`       | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
 | `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` |
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
@@ -151,10 +151,10 @@ Shariff-Plus unterstützt folgende Social-Sharing-Services:
 - facebook
 - Flattr
 - Flipboard
-- Google+
 - LinkedIn
 - Mail
 - Pinterest
+- Pocket
 - Print
 - Qzone
 - reddit
@@ -183,10 +183,14 @@ Wenn in den Shariff-Buttons die Share-Counts angezeigt werden sollen, wird das f
 
 Drittanbieter-Backends:
 
-* [shariff-backend-java](http://github.com/headissue/shariff-backend-java)
+* [shariff-backend-java](https://github.com/shred/shariff-backend-java)
 
 Die URL, unter der das Backend erreichbar ist, muss im `data`-Attribut `data-backend-url` angegeben werden. Ein Backend unter der URL `http://example.com/my-shariff-backend/` wird in `data-backend-url` so angegeben: `/my-shariff-backend/`. Den Rest erledigt das Skript.
 
 ## Drittanbieter-Integrationen
 
 Es gibt noch keine Shariff-Plus-Integrationen in Drittanbieter-Software.
+
+Wenn Sie eine solche Integration erstellt haben, z.B. eine Integration von Shariff-Plus in Ihr Lieblings-CMS, erstellen Sie bitte einen Pull-Request auf GitHub, um Ihre Integration hier aufzulisten, oder senden Sie mir über das Kontaktformular auf meiner Homepage eine E-Mail mit den Details.
+
+Ein guter Startpunkt zum Erstellen einer Shariff-Plus-Integration ist, eine vorhandene Integration von Original Shariff zu nehmen und darin vorhandene Dateien von oder Referenzen auf Shariff durch solche von Shariff-Plus zu ersetzen.

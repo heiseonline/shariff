@@ -53,7 +53,7 @@ const Defaults = {
   referrerTrack: null,
 
   // services to be enabled in the following order
-  services: ['twitter', 'facebooklike', 'facebook', 'googleplus', 'info'],
+  services: ['twitter', 'facebooklike', 'facebook', 'info'],
 
   dialogsMediaUrl: shariffPath,
 
@@ -78,7 +78,11 @@ const Defaults = {
 
     if (canonical.length > 0) {
       if (canonical.indexOf('http') < 0) {
-        canonical = global.document.location.protocol + '//' + global.document.location.host + canonical
+        if (canonical.indexOf('//') !== 0) {
+          canonical = global.document.location.protocol + '//' + global.document.location.host + canonical
+        } else {
+          canonical = global.document.location.protocol + canonical
+        }
       }
       url = canonical
     }
@@ -165,10 +169,11 @@ class Shariff {
   }
 
   getTitle() {
-    let title = this.getOption('title') || this.getMeta('DC.title')
+    let title = this.getOption('title')
+    if ($(this.element).data()['title']) return title
+    title = title || this.getMeta('DC.title')
     let creator = this.getMeta('DC.creator')
-    if (title && creator) title = `${title} - ${creator}`
-    return title
+    return (title && creator) ? `${title} - ${creator}` : title
   }
 
   getReferrerTrack() {
