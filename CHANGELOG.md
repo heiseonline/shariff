@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v3.1.0, 2019-01-29
 
 - Added Pocket service. (richard67)
 - Improved build process. (DanielRuf)
