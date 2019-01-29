@@ -8,10 +8,17 @@ Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
 - Fixed creator being appended to title even though data-title has been set ([heiseonline#328](https://github.com/heiseonline/shariff/pull/328)).
 - Replaced third party Java backend in readme ([heiseonline#332](https://github.com/heiseonline/shariff/pull/332)).
 - Name is diaspora* and not Diaspora ([heiseonline#342](https://github.com/heiseonline/shariff/pull/342)).
-- Handle protocol agnostic URI with domain in canonical link ([heiseonline#345](https://github.com/heiseonline/shariff/pull/345)).
-- Remove service googleplus ([heiseonline#348](https://github.com/heiseonline/shariff/pull/348)).
-- Add new service Pocket ([heiseonline#349](https://github.com/heiseonline/shariff/pull/349)).
+- Fixed canonical URL handling ([heiseonline#345](https://github.com/heiseonline/shariff/pull/345)).
+- Removed googleplus service ([heiseonline#348](https://github.com/heiseonline/shariff/pull/348)).
+- Added Pocket service ([heiseonline#349](https://github.com/heiseonline/shariff/pull/349)).
 - Upgraded dependencies.
+
+Note that the Google+ service has been removed due to the shutdown of Google+.
+See [https://developers.google.com/+/integrations-shutdown](https://developers.google.com/+/integrations-shutdown)
+and [https://developers.google.com/+/web/+1button/](https://developers.google.com/+/web/+1button/):
+> Google+ APIs will be shut down on March 7, 2019. This includes Google+ Sign-in. Learn more.
+> Google+ integrations for web and mobile apps will also cease to function March 7, 2019. Learn more.
+> This will be a progressive shutdown, with intermittent failures starting as early as January 28, 2019.
 
 ## v2.0.2, 2018-04-17
 
