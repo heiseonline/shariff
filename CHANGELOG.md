@@ -11,6 +11,7 @@ Fetched from [heiseonline/shariff](https://github.com/heiseonline/shariff):
 - Fixed canonical URL handling ([heiseonline#345](https://github.com/heiseonline/shariff/pull/345)).
 - Removed googleplus service ([heiseonline#348](https://github.com/heiseonline/shariff/pull/348)).
 - Added Pocket service ([heiseonline#349](https://github.com/heiseonline/shariff/pull/349)).
+- Fixed typo in README ([heiseonline#350](https://github.com/heiseonline/shariff/pull/350)).
 - Upgraded dependencies.
 
 Note that the Google+ service has been removed due to the shutdown of Google+.
