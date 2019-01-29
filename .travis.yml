@@ -39,7 +39,7 @@ deploy:
   - provider: npm
     email: npmjs@heise.de
     api_key:
-      secure: "TukgzT1vc1Sli1cKVdVHdEen/89NqBDMgjSFe3iDr/oTulYE7sqR1JkdxX2M5lnCC53DqRnUK0mUs4mrWcZmHF+Q1ocVSuHDOi30iBvHQgV2SigV0Ufq3xwDG+yS4R7kPLEWlUVzn8kb6IXR+WC/QmkHWNRX6mkCnH0RjrqCja4="
+      secure: eNX4D2s8TLojBXYg3vCjiUpE+N4dgZlXVbI1eriti1puOyWJ9tO4JxbwGiO0cShSJV+gjpzC9KpWqZCuTlY2ZZIhUfskfE179HDu+0rue4GAF2iQz2dvs8hoeWidLPIkXgn3YofsS1iQMX3VxJ1j3GVBwEg9motbcuIb4zbxKCw=
     skip_cleanup: true
     on:
       repo: heiseonline/shariff
