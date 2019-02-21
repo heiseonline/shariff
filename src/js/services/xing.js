@@ -61,6 +61,6 @@ module.exports = function(shariff) {
       'tr': 'XING\'ta paylaş',
       'zh': '分享至XING'
     },
-    shareUrl: 'https://www.xing.com/social_plugins/share?url=' + url + shariff.getReferrerTrack()
+    shareUrl: 'https://www.xing.com/spi/shares/new?url=' + url + shariff.getReferrerTrack()
   }
 }
