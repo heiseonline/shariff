@@ -76,7 +76,7 @@ module.exports = function(shariff) {
       url + '</a></div>' +
       '<div class="facebooklike"><iframe src="' + fbUrl + '" ' +
       'width="' + fblikeOptions.width + '" height="' + height + '" style="border:none;overflow:hidden" ' +
-      'scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>' +
+      'scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe></div>' +
       '<div>' +
       '<button class="dialogbutton" onclick="self.close()">' +
       dialogClose + '</button></div>'
