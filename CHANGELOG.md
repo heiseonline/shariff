@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Updated dependencies.
 - Updated Font Awesome to version 5.8.1. (richard67)
 - Updated Xing share URL. (richard67)
 
