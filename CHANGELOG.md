@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Updated Xing share URL. (richard67)
+
 ## v3.1.1, 2019-01-29
 
 - Fixed deployment to npmjs.com.
