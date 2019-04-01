@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Updated Font Awesome to version 5.8.1. (richard67)
 - Updated Xing share URL. (richard67)
 
 ## v3.1.1, 2019-01-29
