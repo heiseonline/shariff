@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.2.0, 2019-04-01
+
+- Added buffer service. (richard67)
+- Updated dependencies.
+- Updated Font Awesome to version 5.8.1. (richard67)
+- Updated Xing share URL. (richard67)
+
 ## v3.1.1, 2019-01-29
 
 - Fixed deployment to npmjs.com.
