@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v3.2.0, 2019-04-01
 
 - Added buffer service. (richard67)
 - Updated dependencies.
