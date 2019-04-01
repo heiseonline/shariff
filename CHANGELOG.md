@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added buffer service. (richard67)
 - Updated dependencies.
 - Updated Font Awesome to version 5.8.1. (richard67)
 - Updated Xing share URL. (richard67)
