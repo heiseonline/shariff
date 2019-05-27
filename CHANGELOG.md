@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.2.1, 2019-05-27
+
+- Added translations for French, Italian, Polish, Russian and Dutch to print service. (Judapriest)
+- Updated dependencies.
+
 ## v3.2.0, 2019-04-01
 
 - Added buffer service. (richard67)
