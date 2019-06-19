@@ -28,7 +28,7 @@ before_deploy:
 deploy:
   - provider: releases
     api_key:
-      secure: "QK+97CEzaL5FwA09hs7II9PnBKn1KRUUOLtmGnIw83FiqI5dUtAfPxe0WuA9dwIVX9FKOtPacn5nSoPb0LVvWwdTxGN2DOnYrUW8pIsPGng1Z5kbD2feJdTIeXkVmKb8JYssq76L7O6SyXQbkrbYq6KmrjFH9bEEpGlcUOyKY+k="
+      secure: "OL2jzThEtg8cqPK/yyBncO5Tp3pypNV+Sh5H91TxbtdRfGF/POod3bsTRBojKWQh0C0VcxfvWyQnA0+2ZXOM5TX0ktfJbPnuIPY1RKBjprg50Gqz04aKJnlGo7SFWj/aKVoPZ9HOHRHFXAvdzZPo66SUPPXVBtb56Zp4yrcvOsY="
     file:
       - $BASE_NAME.zip
       - $BASE_NAME.tar.gz
