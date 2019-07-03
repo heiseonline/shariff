@@ -239,6 +239,11 @@ class Shariff {
 
       $li.append($shareLink)
 
+      // trigger a custom event when share button is clicked
+      $li.on('click', 'li', function(e) {
+        $li.trigger('shariff-share', service)
+      })
+
       $buttonList.append($li)
     })
 

@@ -119,6 +119,36 @@ new Shariff(buttonsContainer, {
 });
 ```
 
+## Events
+
+Shariff buttons emit the `shariff-share` event if they are clicked.
+
+```js
+$('body').on('shariff-share', function(event) {
+    var service = event.details;
+    ...
+});
+```
+
+This can be used to track shares using analytics software. It is recommended to register the event handler only after the analytics script becomes available.
+
+**Piwik example:**
+
+```js
+(function() {
+  var _my_piwik_onload = function() {
+    var piwik = this;
+
+    $('body').on('shariff-share', function(event) {
+      var service = event.detail;
+      piwik.trackEvent('Sharing', service.name);
+    });
+  }
+
+  _paq.push([ _my_piwik_onload ]);
+})();
+```
+
 ## Supported browsers
 
 Shariff supports the following Browsers:
