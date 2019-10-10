@@ -64,6 +64,6 @@ module.exports = function(shariff) {
       'tr': 'Whatsapp\'ta paylaş',
       'zh': '在Whatsapp上分享'
     },
-    shareUrl: 'whatsapp://send?text=' + encodeURIComponent(title) + '%20' + url + shariff.getReferrerTrack()
+    shareUrl: 'https://wa.me/?text=' + encodeURIComponent(title) + '%20' + url + shariff.getReferrerTrack()
   }
 }
