@@ -1,7 +1,6 @@
 'use strict'
 
 module.exports = function(shariff) {
-
   var url = 'javascript:' +
     'var d = document.createElement("input");' +
     'document.body.appendChild(d);' +
@@ -10,7 +9,6 @@ module.exports = function(shariff) {
     'd.setSelectionRange(0, 99999);' +
     'document.execCommand("copy");' +
     'document.body.removeChild(d);'
-
   return {
     popup: false,
     shareText: {
