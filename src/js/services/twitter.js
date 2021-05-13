@@ -23,12 +23,16 @@ module.exports = function(shariff) {
 
   var title = shariff.getTitle()
 
-  // 120 is the max character count left after twitters automatic url shortening with t.co
-  shareUrl.query.text = abbreviateText(title, 120)
   shareUrl.query.url = shariff.getURL()
   if (shariff.options.twitterVia !== null) {
     shareUrl.query.via = shariff.options.twitterVia
   }
+  // From Twitters documentation (May 2021):
+  // The length of your passed Tweet text should not exceed 280 characters
+  // when combined with any passed hashtags, via, or url parameters.
+  var remainingTextLength = (280 - (shareUrl.query.via || '').length - (shareUrl.query.url || '').length)
+  shareUrl.query.text = abbreviateText(title, remainingTextLength)
+
   delete shareUrl.search
 
   return {
