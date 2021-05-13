@@ -30,7 +30,7 @@ module.exports = function(shariff) {
   // From Twitters documentation (May 2021):
   // The length of your passed Tweet text should not exceed 280 characters
   // when combined with any passed hashtags, via, or url parameters.
-  var remainingTextLength = (280 - shareUrl.query.via.length - shareUrl.query.url.length)
+  var remainingTextLength = (280 - (shareUrl.query.via || '').length - (shareUrl.query.url || '').length)
   shareUrl.query.text = abbreviateText(title, remainingTextLength)
 
   delete shareUrl.search
