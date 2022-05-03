@@ -61,6 +61,6 @@ module.exports = function(shariff) {
       'tr': 'AddThis\'ta paylaş',
       'zh': '在AddThis上分享'
     },
-    shareUrl: 'http://api.addthis.com/oexchange/0.8/offer?url=' + url + shariff.getReferrerTrack()
+    shareUrl: 'https://api.addthis.com/oexchange/0.8/offer?url=' + url + shariff.getReferrerTrack()
   }
 }
