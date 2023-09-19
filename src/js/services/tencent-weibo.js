@@ -64,6 +64,6 @@ module.exports = function(shariff) {
       'tr': 'Tencent weibo\'ta paylaş',
       'zh': '分享至腾讯微博'
     },
-    shareUrl: 'http://v.t.qq.com/share/share.php?url=' + url + '&title=' + title + shariff.getReferrerTrack()
+    shareUrl: 'https://v.t.qq.com/share/share.php?url=' + url + '&title=' + title + shariff.getReferrerTrack()
   }
 }

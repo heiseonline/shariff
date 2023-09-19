@@ -6,7 +6,7 @@ module.exports = function(shariff) {
   var title = shariff.getTitle()
 
   return {
-    popup: false,
+    popup: true,
     shareText: {
       'bg': 'cподеляне',
       'cs': 'sdílet',
@@ -64,6 +64,6 @@ module.exports = function(shariff) {
       'tr': 'Whatsapp\'ta paylaş',
       'zh': '在Whatsapp上分享'
     },
-    shareUrl: 'whatsapp://send?text=' + encodeURIComponent(title) + '%20' + url + shariff.getReferrerTrack()
+    shareUrl: 'https://api.whatsapp.com/send?text=' + encodeURIComponent(title) + '%20' + url + shariff.getReferrerTrack()
   }
 }
