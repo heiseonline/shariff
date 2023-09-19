@@ -1,5 +1,6 @@
 module.exports = {
   buffer: require('./buffer'),
+  clipboard: require('./clipboard'),
   diaspora: require('./diaspora'),
   facebook: require('./facebook'),
   fediverse: require('./fediverse'),
