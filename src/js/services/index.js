@@ -23,5 +23,5 @@ module.exports = {
   vk: require('./vk'),
   weibo: require('./weibo'),
   whatsapp: require('./whatsapp'),
-  xing: require('./xing')
+  xing: require('./xing'),
 }

@@ -3,8 +3,10 @@
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Polyfill
 if (typeof Object.assign !== 'function') {
   // jshint maxdepth:4
-  Object.assign = function(target, varArgs) { // .length of function is 2
-    if (target === null) { // TypeError if undefined or null
+  Object.assign = function (target, varArgs) {
+    // .length of function is 2
+    if (target === null) {
+      // TypeError if undefined or null
       throw new TypeError('Cannot convert undefined or null to object')
     }
 
@@ -13,7 +15,8 @@ if (typeof Object.assign !== 'function') {
     for (var index = 1; index < arguments.length; index++) {
       var nextSource = arguments[index]
 
-      if (nextSource !== null) { // Skip over if undefined or null
+      if (nextSource !== null) {
+        // Skip over if undefined or null
         for (var nextKey in nextSource) {
           // Avoid bugs when hasOwnProperty is shadowed
           if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
@@ -36,13 +39,17 @@ function dq(selector, context) {
   var nodes = []
   context = context || document
   if (typeof selector === 'function') {
-    if (context.attachEvent ? context.readyState === 'complete' : context.readyState !== 'loading') {
+    if (
+      context.attachEvent
+        ? context.readyState === 'complete'
+        : context.readyState !== 'loading'
+    ) {
       selector()
     } else {
       context.addEventListener('DOMContentLoaded', selector)
     }
   } else if (selector instanceof Element) {
-    nodes = [ selector ]
+    nodes = [selector]
   } else if (typeof selector === 'string') {
     if (selector[0] === '<') {
       nodes = Array.prototype.slice.call(fragment(selector))
@@ -63,7 +70,9 @@ function DOMQuery(elements, context) {
   this.length = elements.length
   this.context = context
   var self = this
-  each(elements, function(i) { self[i] = this })
+  each(elements, function (i) {
+    self[i] = this
+  })
 }
 
 /**
@@ -71,7 +80,7 @@ function DOMQuery(elements, context) {
  * @param {eachArrayCallback} callback - A function to be called with a node
  * @returns {DOMQuery}
  */
-DOMQuery.prototype.each = function(callback) {
+DOMQuery.prototype.each = function (callback) {
   for (var i = this.length - 1; i >= 0; i--) {
     callback.call(this[i], i, this[i])
   }
@@ -82,7 +91,7 @@ DOMQuery.prototype.each = function(callback) {
  * Empties each node.
  * @returns {DOMQuery}
  */
-DOMQuery.prototype.empty = function() {
+DOMQuery.prototype.empty = function () {
   return this.each(empty)
 }
 
@@ -91,11 +100,13 @@ DOMQuery.prototype.empty = function() {
  * @param {string} [text] - The text content to set
  * @returns {DOMQuery|string}
  */
-DOMQuery.prototype.text = function(text) {
+DOMQuery.prototype.text = function (text) {
   if (text === undefined) {
     return this[0].textContent
   }
-  return this.each(function () { this.textContent = text })
+  return this.each(function () {
+    this.textContent = text
+  })
 }
 
 /**
@@ -111,7 +122,9 @@ DOMQuery.prototype.attr = function (name, value) {
   if (value === undefined) {
     return this[0].getAttribute(name)
   }
-  return this.each(function() { this.setAttribute(name, value) })
+  return this.each(function () {
+    this.setAttribute(name, value)
+  })
 }
 
 /**
@@ -121,7 +134,7 @@ DOMQuery.prototype.attr = function (name, value) {
  * @param {string} [value] - The value to set
  * @returns {DOMQuery|string|Object}
  */
-DOMQuery.prototype.data = function(key, value) {
+DOMQuery.prototype.data = function (key, value) {
   if (value) {
     return this.attr('data-' + key, value)
   }
@@ -129,7 +142,9 @@ DOMQuery.prototype.data = function(key, value) {
     return this.attr('data-' + key)
   }
   var data = Object.assign({}, this[0].dataset)
-  each(data, function(k, v) { data[k] = deserializeValue(v) })
+  each(data, function (k, v) {
+    data[k] = deserializeValue(v)
+  })
   return data
 }
 
@@ -139,12 +154,16 @@ DOMQuery.prototype.data = function(key, value) {
  * @param {string} selector - The CSS selector
  * @returns {DOMQuery}
  */
-DOMQuery.prototype.find = function(selector) {
+DOMQuery.prototype.find = function (selector) {
   var matches
   // querySelectorAll in the context of each element in the set
-  matches = map(this, function(el) { return el.querySelectorAll(selector) })
+  matches = map(this, function (el) {
+    return el.querySelectorAll(selector)
+  })
   // convert NodeList matches into Array
-  matches = map(matches, function(el) { return Array.prototype.slice.call(el) })
+  matches = map(matches, function (el) {
+    return Array.prototype.slice.call(el)
+  })
   // flatten the array
   matches = Array.prototype.concat.apply([], matches)
   return new DOMQuery(matches)
@@ -155,7 +174,7 @@ DOMQuery.prototype.find = function(selector) {
  * @param {string|Array} html - Nodes to append. May be a string containing HTML.
  * @returns {DOMQuery}
  */
-DOMQuery.prototype.append = function(html) {
+DOMQuery.prototype.append = function (html) {
   if (typeof html === 'string') {
     html = fragment(html)
   }
@@ -168,7 +187,7 @@ DOMQuery.prototype.append = function(html) {
  * @param {string|Array} html - Nodes to append. May be a string containing HTML.
  * @returns {DOMQuery}
  */
-DOMQuery.prototype.prepend = function(html) {
+DOMQuery.prototype.prepend = function (html) {
   if (typeof html === 'string') {
     html = fragment(html)
   }
@@ -181,10 +200,10 @@ DOMQuery.prototype.prepend = function(html) {
  * @param {string} name - Class name to add
  * @returns {DOMQuery}
  */
-DOMQuery.prototype.addClass = function(names) {
-  return this.each(function() {
+DOMQuery.prototype.addClass = function (names) {
+  return this.each(function () {
     // Workaround: IE only supports a single parameter to classList.add()
-    names.split(' ').forEach(className => {
+    names.split(' ').forEach((className) => {
       this.classList.add(className)
     })
   })
@@ -195,8 +214,10 @@ DOMQuery.prototype.addClass = function(names) {
  * @param {string} name - Class name to remove
  * @returns {DOMQuery}
  */
-DOMQuery.prototype.removeClass = function(name) {
-  return this.each(function() { this.classList.remove(name) })
+DOMQuery.prototype.removeClass = function (name) {
+  return this.each(function () {
+    this.classList.remove(name)
+  })
 }
 
 /**
@@ -206,8 +227,8 @@ DOMQuery.prototype.removeClass = function(name) {
  * @param {eventHandler} handler - The event handler function
  * @returns {DOMQuery}
  */
-DOMQuery.prototype.on = function(event, selector, handler) {
-  return this.each(function() {
+DOMQuery.prototype.on = function (event, selector, handler) {
+  return this.each(function () {
     delegateEvent(selector, event, handler, this)
   })
 }
@@ -218,12 +239,12 @@ DOMQuery.prototype.on = function(event, selector, handler) {
  * @param {string} event - The event name
  * @param {object} data - Event data
  */
-DOMQuery.prototype.trigger = function(event, detail) {
-  this.each(function() {
+DOMQuery.prototype.trigger = function (event, detail) {
+  this.each(function () {
     var evt = new CustomEvent(event, {
       detail: detail,
       bubbles: true,
-      cancelable: true
+      cancelable: true,
     })
     this.dispatchEvent(evt)
   })
@@ -344,9 +365,10 @@ var prepend = function (parent, nodes) {
  * @private
  * @see {@link https://gist.github.com/Daniel-Hug/abbded91dd55466e590b}
  */
-var closest = (function() {
+var closest = (function () {
   var element = HTMLElement.prototype
-  var matches = element.matches ||
+  var matches =
+    element.matches ||
     element.webkitMatchesSelector ||
     element.mozMatchesSelector ||
     element.msMatchesSelector
@@ -375,7 +397,7 @@ var closest = (function() {
  * @private
  */
 var delegateEvent = function (selector, event, handler, scope) {
-  (scope || document).addEventListener(event, function(event) {
+  ;(scope || document).addEventListener(event, function (event) {
     var listeningTarget = closest(event.target, selector)
     if (listeningTarget) {
       handler.call(listeningTarget, event)
@@ -409,7 +431,10 @@ var extend = function (objects) {
     for (var prop in obj) {
       if (Object.prototype.hasOwnProperty.call(obj, prop)) {
         // If deep merge and property is an object, merge properties
-        if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
+        if (
+          deep &&
+          Object.prototype.toString.call(obj[prop]) === '[object Object]'
+        ) {
           extended[prop] = extend(true, extended[prop], obj[prop])
         } else {
           extended[prop] = obj[prop]
@@ -450,7 +475,7 @@ var getJSON = function (url, callback) {
   xhr.setRequestHeader('Content-Type', 'application/json')
   xhr.setRequestHeader('Accept', 'application/json')
 
-  xhr.onload = function() {
+  xhr.onload = function () {
     if (xhr.status >= 200 && xhr.status < 400) {
       var data = JSON.parse(xhr.responseText)
       callback(data, xhr.status, xhr)
@@ -459,7 +484,7 @@ var getJSON = function (url, callback) {
     }
   }
 
-  xhr.onerror = function(e) {
+  xhr.onerror = function (e) {
     callback(new Error(e), null, xhr)
   }
 
@@ -475,12 +500,20 @@ var getJSON = function (url, callback) {
 var deserializeValue = function (value) {
   /* jshint maxcomplexity:7 */
   // boolean
-  if (value === 'true') { return true }
-  if (value === 'false') { return false }
+  if (value === 'true') {
+    return true
+  }
+  if (value === 'false') {
+    return false
+  }
   // null
-  if (value === 'null') { return null }
+  if (value === 'null') {
+    return null
+  }
   // number
-  if (+value + '' === value) { return +value }
+  if (+value + '' === value) {
+    return +value
+  }
   // json
   if (/^[[{]/.test(value)) {
     try {
