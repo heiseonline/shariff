@@ -138,4 +138,15 @@ describe('DOMQuery', function() {
       assert.ok(clicked)
     })
   })
+
+  describe('trigger()', function () {
+    let custom_detail = false
+
+    it('triggers an event', function () {
+      var selector = 'a:last-child'
+      $('body').on('custom', selector, (event) => { custom_detail = event.detail })
+      $(selector).trigger('custom', {'hello': 'world'})
+      assert.deepEqual(custom_detail, {'hello': 'world'})
+    })
+  })
 })
