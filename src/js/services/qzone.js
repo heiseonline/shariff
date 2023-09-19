@@ -64,6 +64,6 @@ module.exports = function(shariff) {
       'tr': 'Qzone\'ta paylaş',
       'zh': '分享至QQ空间'
     },
-    shareUrl: 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + url + '&title=' + title + shariff.getReferrerTrack()
+    shareUrl: 'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + url + '&title=' + title + shariff.getReferrerTrack()
   }
 }

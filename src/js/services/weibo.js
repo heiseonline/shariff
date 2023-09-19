@@ -64,6 +64,6 @@ module.exports = function(shariff) {
       'tr': 'Weibo\'ta paylaş',
       'zh': '分享至新浪微博'
     },
-    shareUrl: 'http://service.weibo.com/share/share.php?url=' + url + '&title=' + title + shariff.getReferrerTrack()
+    shareUrl: 'https://service.weibo.com/share/share.php?url=' + url + '&title=' + title + shariff.getReferrerTrack()
   }
 }

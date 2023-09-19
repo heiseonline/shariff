@@ -62,6 +62,6 @@ module.exports = function(shariff) {
       'tr': 'tumblr\'ta paylaş',
       'zh': '在tumblr上分享'
     },
-    shareUrl: 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + url + shariff.getReferrerTrack()
+    shareUrl: 'https://tumblr.com/widgets/share/tool?canonicalUrl=' + url + shariff.getReferrerTrack()
   }
 }

@@ -15,7 +15,7 @@ const Defaults = {
   backendUrl: null,
 
   // Link to the "about" page
-  infoUrl: 'http://ct.de/-2467514',
+  infoUrl: 'https://ct.de/-2467514',
 
   // Type of display for the "about" page: "blank", "popup" or "self", default = "blank"
   infoDisplay: 'blank',
