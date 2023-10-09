@@ -1,9 +1,9 @@
 # Shariff – Give Social Media Buttons Some Privacy [![Build Status](https://travis-ci.org/heiseonline/shariff.svg?branch=master)](https://travis-ci.org/heiseonline/shariff)
 
 
-Shariff enables website users to share their favorite content without compromising their privacy. [Demo](http://heiseonline.github.io/shariff/)
+Shariff enables website users to share their favorite content without compromising their privacy. [Demo](https://heiseonline.github.io/shariff/)
 
-![Shariff Logo © 2015 Heise Medien](http://www.heise.de/icons/ho/shariff-logo.png)
+![Shariff Logo © 2015 Heise Medien](https://www.heise.de/icons/ho/shariff-logo.png)
 
 Some social service providers like e.g. Facebook supply official sharing code snippets which quietly siphon personal data from all page visitors. Shariff enables visitors to see how popular your page is on Facebook and share your content with others without needless data leaks.
 
@@ -42,7 +42,7 @@ Usage example:
     <div class="shariff"></div>
 
     <h2>More advanced buttons:</h2>
-    <div class="shariff" data-backend-url="/path/to/backend" data-url="http://www.example.com/my-article.html" data-theme="grey" data-orientation="vertical"></div>
+    <div class="shariff" data-backend-url="/path/to/backend" data-url="https://www.example.com/my-article.html" data-theme="grey" data-orientation="vertical"></div>
 
     <!-- immediately before </body> -->
     <script src="/path/to/shariff.min.js"></script>
@@ -90,7 +90,7 @@ $ npm run dev
 | `data-button-style` | How to display the buttons. Values: `standard`, `icon`, `icon-count`. With `icon` only the icon is shown, with `icon-count` icon and counter and with `standard` icon, text and counter are shown, depending on the display size.  | `standard` |
 | `data-flattr-category` | Category to be used for Flattr. | `null` |
 | `data-flattr-user` | User that receives Flattr donation. | `null` |
-| `data-info-url` | URL of the info page. | `http://ct.de/-2467514` |
+| `data-info-url` | URL of the info page. | `https://ct.de/-2467514` |
 | `data-info-display` | How to display the info page. Values: `blank`, `popup`, `self`. | `blank` |
 | `data-lang`      | The localisation to use. Available: `bg`, `cs`, `da`, `de`, `en`, `es`, `fi`, `fr`, `hr`, `hu`, `it`, `ja`, `ko`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | If a `mailto:` link is used in `data-mail-url`, then this value is used as the mail body. The body text should contain the placeholder `{url}` which will be replaced with the share URL. | see `data-url`  |
@@ -189,19 +189,19 @@ Shariff supports the following social sharing services:
 - XING
 
 In addition, the service `Info` provides a button to show an info page about the social sharing buttons.
-The URL of this page can be set with an option. Default value: `http://ct.de/-2467514`, i.e. the c't article introducing Shariff.
+The URL of this page can be set with an option. Default value: `https:s//ct.de/-2467514`, i.e. the c't article introducing Shariff.
 
 ## Backends
 
 In order to display share counts with Shariff, you need the following backend:
 
-* [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
+* [shariff-backend-php](https://github.com/heiseonline/shariff-backend-php)
 
 Third-party backends:
 
 * [shariff-backend-java](https://github.com/shred/shariff-backend-java)
 
-Once you have one of these backends up and running, insert its URL into the `data-backend-url` attribute. For example, if the backend runs under `http://example.com/my-shariff-backend/`, the `data-backend-url` should be `/my-shariff-backend/`. The script will handle the rest.
+Once you have one of these backends up and running, insert its URL into the `data-backend-url` attribute. For example, if the backend runs under `https://example.com/my-shariff-backend/`, the `data-backend-url` should be `/my-shariff-backend/`. The script will handle the rest.
 
 ## Third-party integrations
 
@@ -217,7 +217,7 @@ This is a list of integrations for third-party systems:
 * [Serendipity](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
 * [SilverStripe Module](https://github.com/andrelohmann/silverstripe-shariff)
 * [Symfony ShariffBundle](https://github.com/core23/ShariffBundle)
-* [TYPO3 Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
+* [TYPO3 Plugin rx_shariff](https://typo3.org/extensions/repository/view/rx_shariff)
 * [Wordpress Plugin shariff-sharing](https://wordpress.org/plugins/shariff-sharing/)
 * [WordPress Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
 * [Xenforo [ITM] ctSSB for Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
