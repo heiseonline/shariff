@@ -189,7 +189,7 @@ Shariff supports the following social sharing services:
 - XING
 
 In addition, the service `Info` provides a button to show an info page about the social sharing buttons.
-The URL of this page can be set with an option. Default value: `https:s//ct.de/-2467514`, i.e. the c't article introducing Shariff.
+The URL of this page can be set with an option. Default value: `https://ct.de/-2467514`, i.e. the c't article introducing Shariff.
 
 ## Backends
 
