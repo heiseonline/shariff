@@ -69,7 +69,7 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "lint-staged": ">=10",
-    "mocha": "^5.2.0",
+    "mocha": "^10.2.0",
     "postcss-loader": "^2.1.6",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
