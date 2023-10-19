@@ -99,8 +99,7 @@ $ npm run dev
 | `data-media-url` | Media url to be shared (pinterest) | `null` |
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
-| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` Available service names: `buffer`, `clipboard`, `diaspora`, `facebook`, `flattr`, `flipboard`, `info`, `linkedin`, `mail`, `pinterest`, `pocket`, `print`, `qzone`, `reddit`, `stumbleupon`, `telegram`, `tencent-weibo`, `threema`, `tumblr`, `twitter`, `vk`, `weibo`, `whatsapp`, `xing` | `twitter`, `facebook`, `info` |
-| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` Available service names: `twitter`, `facebook`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard`, `pocket`, `buffer` | `twitter`, `facebook`, `info` |
+| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` Available service names: `buffer`, `clipboard`, `diaspora`, `facebook`, `fediverse`, `flattr`, `flipboard`, `info`, `linkedin`, `mail`, `pinterest`, `pocket`, `print`, `qzone`, `reddit`, `stumbleupon`, `telegram`, `tencent`, `threema`, `tumblr`, `twitter`, `vk`, `weibo`, `whatsapp`, `xing` | `twitter`, `facebook`, `info` |
 | `data-theme`       | We include 3 color schemes, `standard`, `grey` and `white`. | `standard` |
 | `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` |
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
@@ -166,8 +165,10 @@ The current and previous major releases of Firefox, Google Chrome, Internet Expl
 Shariff supports the following social sharing services:
 
 - buffer
+- Clipboard
 - diaspora*
 - facebook
+- Fediverse
 - Flattr
 - Flipboard
 - LinkedIn
