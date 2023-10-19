@@ -33,8 +33,8 @@ module.exports = function (shariff) {
       zh: '分享',
     },
     name: 'fediverse',
-    faPrefix: 'fas',
-    faName: 'fa-lock',
+    faPrefix: 'fab',
+    faName: 'fa-mastodon',
     title: {
       bg: 'Сподели в Fediverse',
       cs: 'Sdílet na Fediverse',
