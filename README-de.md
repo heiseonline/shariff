@@ -1,8 +1,8 @@
 # Shariff – Schützen und teilen [![Build Status](https://travis-ci.org/heiseonline/shariff.svg?branch=master)](https://travis-ci.org/heiseonline/shariff)
 
-Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu bewahren, können Webseiten-Betreiber mit dem Projekt Shariff eigene Teilen-Buttons integrieren.  [Demo](http://heiseonline.github.io/shariff/)
+Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu bewahren, können Webseiten-Betreiber mit dem Projekt Shariff eigene Teilen-Buttons integrieren.  [Demo](https://heiseonline.github.io/shariff/)
 
-![Shariff Logo © 2015 Heise Medien](http://www.heise.de/icons/ho/shariff-logo.png)
+![Shariff Logo © 2015 Heise Medien](https://www.heise.de/icons/ho/shariff-logo.png)
 
 Der Code der offiziellen Buttons beispielsweise von Facebook überträgt von jedem Besucher kennzeichnende Daten an die Social-Media-Netzwerke. Shariff erzeugt hingegen Share-Buttons, die mit einem Klick teilen, die Anzahl der Likes und Plus-Ones für die aktuelle Seite anzeigen und trotzdem keine unnötigen Daten übertragen.
 
@@ -31,7 +31,7 @@ Code-Beispiel:
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="/path/to/shariff.complete.css" rel="stylesheet">
+    <link href="/path/to/shariff.min.css" rel="stylesheet">
 </head>
 <body>
     <h1>My article</h1>
@@ -41,10 +41,10 @@ Code-Beispiel:
     <div class="shariff"></div>
 
     <h2>Fortgeschrittene Optionen:</h2>
-    <div class="shariff" data-backend-url="/path/to/backend" data-url="http://www.example.com/my-article.html" data-theme="grey" data-orientation="vertical"></div>
+    <div class="shariff" data-backend-url="/path/to/backend" data-url="https://www.example.com/my-article.html" data-theme="grey" data-orientation="vertical"></div>
 
     <!-- vor dem schließenden </body>-Tag -->
-    <script src="/path/to/shariff.complete.js"></script>
+    <script src="/path/to/shariff.min.js"></script>
 </body>
 </html>
 ```
@@ -87,9 +87,7 @@ $ npm run dev
 |------------------|--------------|---------|
 | `data-backend-url` | Pfad zum Shariff-[Backend](#backends). Der Wert `null` deaktiviert die Anzeige von Share-Counts.  | `null` |
 | `data-button-style` | Wie die Buttons angezeigt werden. Werte: `standard`, `icon`, `icon-count`. Bei `icon` wird nur das Icon angezeigt, bei `icon-count` werden Icon und Zähler und bei `standard` Icon, Text und Zähler abhängig von der Display-Größe angezeigt. | `standard` |
-| `data-flattr-category` | Kategorie für Flattr-Spende. | `null` |
-| `data-flattr-user` | Benutzer, der die Flattr-Spende erhält. | `null` |
-| `data-info-url` | URL der Infoseite. | `http://ct.de/-2467514` |
+| `data-info-url` | URL der Infoseite. | `https://ct.de/-2467514` |
 | `data-info-display` | Wie die Infoseite angezeigt wird. Werte: `blank`, `popup`, `self`. | `blank` |
 | `data-lang`      | Lokalisierung auswählen. Verfügbar: `bg`, `cs`, `da`, `de`, `en`, `es`, `fi`, `fr`, `hr`, `hu`, `it`, `ja`, `ko`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
 | `data-mail-body` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Body verwendet. Der Mail-Body-Text sollte den Platzhalter `{url}` enthalten. Dieser wird durch die zu teilende URL ersetzt. | siehe `data-url` |
@@ -98,8 +96,7 @@ $ npm run dev
 | `data-media-url` | Zu teilendes Bild (pinterest) | `null` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
-| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` <br> Verfügbare Dienste:`buffer`, `clipboard`, `diaspora`, `facebook`, `flattr`, `flipboard`, `info`, `linkedin`, `mail`, `pinterest`, `pocket`, `print`, `qzone`, `reddit`, `stumbleupon`, `telegram`, `tencent-weibo`, `threema`, `tumblr`, `twitter`, `vk`, `weibo`, `whatsapp`, `xing` | `twitter`, `facebook`, `info` |
-| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`, `telegram`, `vk`, `flipboard`, `pocket`, `buffer`  | `twitter`, `facebook`, `info` |
+| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` <br> Verfügbare Dienste: `buffer`, `clipboard`, `diaspora`, `facebook`, `fediverse`, `flipboard`, `info`, `linkedin`, `mail`, `pinterest`, `pocket`, `print`, `qzone`, `reddit`, `stumbleupon`, `telegram`, `tencent`, `threema`, `tumblr`, `twitter`, `vk`, `weibo`, `whatsapp`, `xing` | `twitter`, `facebook`, `info` |
 | `data-theme`       | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
 | `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` |
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
@@ -164,9 +161,10 @@ Die jeweils aktuell letzten und vorletzten Versionen von Firefox, Google Chrome,
 Shariff unterstützt folgende Social-Sharing-Services:
 
 - buffer
+- Clipboard
 - diaspora*
 - facebook
-- Flattr
+- Fediverse
 - Flipboard
 - LinkedIn
 - Mail
@@ -187,19 +185,19 @@ Shariff unterstützt folgende Social-Sharing-Services:
 - XING
 
 Zusätzlich stellt der Service `Info` einen Button zur Anzeige einer Infoseite über die Social-Sharing-Buttons bereit.
-Die URL dieser Seite kann mit einer Option festgelegt werden. Standardwert: `http://ct.de/-2467514`, d.h. der c't-Artikel zur Einführung von Shariff.
+Die URL dieser Seite kann mit einer Option festgelegt werden. Standardwert: `https://ct.de/-2467514`, d.h. der c't-Artikel zur Einführung von Shariff.
 
 ## Backends
 
 Wenn in den Shariff-Buttons die Share-Counts angezeigt werden sollen, wird das folgende Backend benötigt:
 
-* [shariff-backend-php](http://github.com/heiseonline/shariff-backend-php)
+* [shariff-backend-php](https://github.com/heiseonline/shariff-backend-php)
 
 Drittanbieter-Backends:
 
 * [shariff-backend-java](https://github.com/shred/shariff-backend-java)
 
-Die URL, unter der das Backend erreichbar ist, muss im `data`-Attribut `data-backend-url` angegeben werden. Ein Backend unter der URL `http://example.com/my-shariff-backend/` wird in `data-backend-url` so angegeben: `/my-shariff-backend/`. Den Rest erledigt das Skript.
+Die URL, unter der das Backend erreichbar ist, muss im `data`-Attribut `data-backend-url` angegeben werden. Ein Backend unter der URL `https://example.com/my-shariff-backend/` wird in `data-backend-url` so angegeben: `/my-shariff-backend/`. Den Rest erledigt das Skript.
 
 ## Drittanbieter-Integrationen
 
@@ -215,7 +213,7 @@ Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
 * [Serendipity Plugin](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
 * [SilverStripe-Modul](https://github.com/andrelohmann/silverstripe-shariff)
 * [Symfony ShariffBundle](https://github.com/core23/ShariffBundle)
-* [TYPO3-Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
+* [TYPO3-Plugin rx_shariff](https://typo3.org/extensions/repository/view/rx_shariff)
 * [Wordpress-Plugin shariff-sharing](https://wordpress.org/plugins/shariff-sharing/)
 * [WordPress-Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
 * [Xenforo [ITM] ctSSB für Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
