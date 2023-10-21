@@ -87,8 +87,6 @@ $ npm run dev
 |------------------|--------------|---------|
 | `data-backend-url` | Pfad zum Shariff-[Backend](#backends). Der Wert `null` deaktiviert die Anzeige von Share-Counts.  | `null` |
 | `data-button-style` | Wie die Buttons angezeigt werden. Werte: `standard`, `icon`, `icon-count`. Bei `icon` wird nur das Icon angezeigt, bei `icon-count` werden Icon und Zähler und bei `standard` Icon, Text und Zähler abhängig von der Display-Größe angezeigt. | `standard` |
-| `data-flattr-category` | Kategorie für Flattr-Spende. | `null` |
-| `data-flattr-user` | Benutzer, der die Flattr-Spende erhält. | `null` |
 | `data-info-url` | URL der Infoseite. | `https://ct.de/-2467514` |
 | `data-info-display` | Wie die Infoseite angezeigt wird. Werte: `blank`, `popup`, `self`. | `blank` |
 | `data-lang`      | Lokalisierung auswählen. Verfügbar: `bg`, `cs`, `da`, `de`, `en`, `es`, `fi`, `fr`, `hr`, `hu`, `it`, `ja`, `ko`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
@@ -98,7 +96,7 @@ $ npm run dev
 | `data-media-url` | Zu teilendes Bild (pinterest) | `null` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
-| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` <br> Verfügbare Dienste: `buffer`, `clipboard`, `diaspora`, `facebook`, `fediverse`, `flattr`, `flipboard`, `info`, `linkedin`, `mail`, `pinterest`, `pocket`, `print`, `qzone`, `reddit`, `stumbleupon`, `telegram`, `tencent`, `threema`, `tumblr`, `twitter`, `vk`, `weibo`, `whatsapp`, `xing` | `twitter`, `facebook`, `info` |
+| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;twitter&quot;]"` <br> Verfügbare Dienste: `buffer`, `clipboard`, `diaspora`, `facebook`, `fediverse`, `flipboard`, `info`, `linkedin`, `mail`, `pinterest`, `pocket`, `print`, `qzone`, `reddit`, `stumbleupon`, `telegram`, `tencent`, `threema`, `tumblr`, `twitter`, `vk`, `weibo`, `whatsapp`, `xing` | `twitter`, `facebook`, `info` |
 | `data-theme`       | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
 | `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` |
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
@@ -167,7 +165,6 @@ Shariff unterstützt folgende Social-Sharing-Services:
 - diaspora*
 - facebook
 - Fediverse
-- Flattr
 - Flipboard
 - LinkedIn
 - Mail
