@@ -42,7 +42,7 @@ module.exports = function (shariff) {
     popup: true,
     shareText: {
       de: 'posten',
-      en: 'post',
+      en: 'X',
       ja: '投稿',
       ko: '게시물',
       ru: 'Посты',

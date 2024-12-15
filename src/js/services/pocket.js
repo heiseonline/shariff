@@ -17,7 +17,7 @@ module.exports = function (shariff) {
       en: 'Save to Pocket',
       es: 'Guardar en Pocket',
       fi: 'Tallenna kohtaan Pocket',
-      fr: 'Enregistrer dans Pocket',
+      fr: 'Sauvegarder dans Pocket',
       hr: 'Spremi u Pocket',
       hu: 'Mentés "Pocket"-be',
       it: 'Salva in Pocket',

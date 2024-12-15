@@ -20,6 +20,7 @@ module.exports = function (shariff) {
     popup: false,
     shareText: {
       en: 'mail',
+      fr: 'messagerie électronique',
       zh: '分享',
     },
     name: 'mail',
@@ -33,7 +34,7 @@ module.exports = function (shariff) {
       en: 'Send by email',
       es: 'Enviar por email',
       fi: 'Lähetä sähköpostitse',
-      fr: 'Envoyer par courriel',
+      fr: 'Envoyer par messagerie électronique',
       hr: 'Pošaljite emailom',
       hu: 'Elküldés e-mailben',
       it: 'Inviare via email',

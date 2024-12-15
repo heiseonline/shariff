@@ -21,7 +21,7 @@ module.exports = function (shariff) {
 
   return {
     popup: true,
-    shareText: 'pin it',
+    shareText: 'Pinterest',
     name: 'pinterest',
     faPrefix: 'fab',
     faName: 'fa-pinterest-p',
@@ -33,7 +33,7 @@ module.exports = function (shariff) {
       en: 'Pin it on Pinterest',
       es: 'Compartir en Pinterest',
       fi: 'Jaa Pinterestissä',
-      fr: 'Partager sur Pinterest',
+      fr: 'Épingler sur Pinterest',
       hr: 'Podijelite na Pinterest',
       hu: 'Megosztás Pinteresten',
       it: 'Condividi su Pinterest',

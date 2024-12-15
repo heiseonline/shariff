@@ -5,7 +5,7 @@ module.exports = function (shariff) {
   var title = encodeURIComponent(shariff.getTitle())
   return {
     popup: true,
-    shareText: 'flip it',
+    shareText: 'Flipboard',
     name: 'flipboard',
     faPrefix: 'fab',
     faName: 'fa-flipboard',
