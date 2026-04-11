@@ -1,4 +1,5 @@
 module.exports = {
+  bluesky: require('./bluesky'),
   buffer: require('./buffer'),
   clipboard: require('./clipboard'),
   diaspora: require('./diaspora'),
